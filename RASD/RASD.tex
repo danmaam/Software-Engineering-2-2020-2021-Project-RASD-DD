@@ -1,6 +1,19 @@
 \documentclass{article}
+% \usepackage[margin=1in,includefoot]{geometry}
 \usepackage{graphicx}
-\graphicspath{ {./Desktop/RASD} }
+\usepackage[table]{xcolor}
+\newcommand\xrowht[2][0]
+{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
+% \newcolumntype{C}{>{\centering\arraybackslash}p{0.6cm}}
+% \newcolumntype{D}{>{\centering\arraybackslash}p{10cm}}
+\usepackage{stackengine}
+% \setlength{\parskip}{1em}
+
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\tabcolsep}{20pt}
+\renewcommand{\arraystretch}{1.5}
+
+\definecolor{Red}{rgb}{255,99,71}
 
 \begin{document}
 \begin{titlepage}
@@ -19,53 +32,317 @@
 		\rule{300pt}{3pt} \\
 		[1.0cm]
 		\textsc{\Large Computer Science and Engineering} \\ 
-		\textsc{\Huge Software Engineering 2} \\
+		\textsc{\Huge Software Engineering II} \\
 		\textsc{\Large A.A. 2020/2021} \\
-		[2cm]
-		\textsc{\LARGE Daniele Mammone - xxxxxxxx} \\
+		[1cm]
+		\textsc{\LARGE Daniele Mammone - 10625264} \\
 		\textsc{\LARGE Gianmarco Naro - 10610374} \\
-		\textsc{\LARGE Massimo Parisi - xxxxxxxx} \\
+		\textsc{\LARGE Massimo Parisi - 10583470} \\
 	\end{center}
 \end{titlepage}
 
 \newpage
 	
-	\renewcommand\contentsname{Indice}
+	\renewcommand\contentsname{Contents}
 	\tableofcontents
 	
 \newpage
 
 \section{Introduction}
+
 	\subsection{Purpose}
+	
+	CLup is a mobile service usable through app, made both for store managers and customers. The main purpose of CLup is to facilitate customers to book a visit to a store and, on the other hand, to help store managers to observe the new strict rules due to Coronavirus.
+	
+	A customer can book a visit, specifying preferred date and hour, and possibly the list of item they want to purchase (or the category to which they belong); the app should generate a QR code that the customer will have to use to enter and exit from the store. CLup should also estimates the waiting time before his visit, and allows store managers to monitor entrances.
+	
 	\subsection{Scope}
+	
+	The software wants to give users the possibility to book their visit in the supermarket, in this way the store manager can regulate the flow of people.
+	
+	The main functionalities offered by CLup are:
+	
+	\begin{itemize}
+		
+		\item {\bfseries Manage of lining up of the store}: the app will manage the accesses to the store, based on numbered tickets released to people. When it's the turn of a person, it will be authorized to enter the shop. Futhermore, the store manager is able to manage the access and the affluency to the store.
+		
+		\item {\bfseries Booking visit}: users can book a visit at the store, in a certain time frame decided in the booking process. For them, there is no requirement of ticket, since are able to access the store only scanning the QR Code at the store entrance. The system will grant access if the time of entering is correct.
+		
+		\item {\bfseries Alternatives}: the app is able to suggest other stores options and time if some store is full, or comfortable times aren't available at the moment of the booking.
+	
+	\end{itemize}
+
+		\newpage
+		
 		\subsubsection{World Phenomena}
-		extra
+		
+		\rowcolors{2}{}{gray!20}
+		\rowcolors{1}{gray!25}{white}
+		\begin{center}
+			
+			\begin{tabular}[h!]{|m{2.5em}|m{25em}|}
+				
+				\hline
+				\xrowht{5pt}
+				WP1 & A user enters a supermarket \\
+				\xrowht{5pt}
+				WP2 & A user waits in a lineup \\
+				\xrowht{5pt}
+				WP3 & A user exits the supermarket \\
+				\xrowht{5pt}
+				WP4 & A certain number of people is inside the supermarket \\
+				\xrowht{5pt}
+				WP5 & A certain number of people is at a specific repart of the supermarket \\
+				\hline
+			\end{tabular}
+		
+		\end{center}
+		
 		\subsubsection{Shared Phenomena}
-		extra
+		
+		\rowcolors{1}{gray!25}{white}
+		\begin{center}
+			
+			\begin{tabular}[h!]{|m{2.5em}|m{25em}|}
+				
+				\hline
+				\xrowht{5pt}
+				SP1 & The user gets a ticket/QR \\
+				\xrowht{5pt}
+				SP2 & The user books a visit to the store \\
+				\xrowht{5pt}
+				SP3 & The store generates in presence a ticket \\
+				\xrowht{5pt}
+				SP4 & The user comes to knows how much time they have to wait before entering \\
+				\xrowht{5pt}
+				SP5 & The users know how many people there are in a store at a certain moment \\
+				\xrowht{5pt}
+				SP6 & The user scan the QR code and enters in the supermarket \\
+				\xrowht{5pt}
+				SP7 & The user scan the QR code and exits from the supermarket \\
+				\xrowht{5pt}
+				SP8 & The user can indicate the categories of items that he intend to buy \\
+				\hline
+				
+			\end{tabular}
+			
+		\end{center}
+		
+		\newpage
+		
 		\subsubsection{Goals}
-		extra
+		
+		\rowcolors{1}{gray!25}{white}
+		\begin{center}
+	
+			\begin{tabular}[h!]{|m{2.5em}|m{25em}|}
+				
+				\hline
+				\xrowht{5pt}
+				G1 & Allow customers to select a store and book a spot on the queue from CLup app \\
+				\xrowht{5pt}
+				G2 & Allow customers to book a spot on the queue from a physical ticket dispenser \\
+				\xrowht{5pt}
+				G3 & Allow store managers to regulate the influx of people in the building \\
+				\xrowht{5pt}
+				G4 & Suggest days in which the selected store has the least amount of reservations \\
+				\xrowht{5pt}
+				G5 & Suggest to reserve a spot in a store with a fewer number of reservations \\
+				\xrowht{5pt}
+				G6 & Notify the user when they should go to the place \\
+				\xrowht{5pt}
+				G7 & Generate a waiting time before turns \\
+				\xrowht{5pt}
+				G8 & Generate visit plan depending on customers' preferences \\
+				\xrowht{5pt}
+				G9 & Generates the estimated visit time based on previous visits \\
+				\hline
+				
+			\end{tabular}
+			
+		\end{center}
+		
+		\newpage
+		
 	\subsection{Definitions, Acronyms, Abbreviations}
+		
 		\subsubsection{Definitions}
-		extra
+		
+		\begin{center}
+			
+			\begin{tabular}[h!]{|m{8em}|m{19.5em}|}
+				
+				\hline
+				\xrowht{5pt}
+				QR Code & Bidimensional bar code that allows the user to check-in/check-out \\
+				\xrowht{5pt}
+				Customer & The clients of the store, that uses the application part reserved to bookings \\
+				\xrowht{5pt}
+				Store manager & The user that access to stores' bookings and occupancy, in order to manage the flow of customers \\
+				\xrowht{5pt}
+				QR Code Reader & Device used to scan customers' QR Code \\
+				\xrowht{5pt}
+				Totem & Electronic device that allows customers to book a store visit, allowing them to specifiy the same parameters that can be inserted through the app \\
+				\xrowht{5pt}				
+				QR Code Printer & Device used to print QR Code at the stores \\
+				\xrowht{5pt}
+				Repart & Part of the store that contains the same category of products \\
+				\hline
+			\end{tabular}
+			
+		\end{center}
+		
 		\subsubsection{Acronyms}
-		extra
+		
+		\begin{center}
+			
+			\begin{tabular}[h!]{|m{3.5em}|m{24em}|}
+				
+				\hline
+				\xrowht{5pt}
+				RASD & Requirement Analysis and Specification Document \\
+				\xrowht{5pt}
+				ETA & Estimated Time of Arrival \\
+				\xrowht{5pt}
+				GPS & Global Positioning System \\
+				\hline
+				
+			\end{tabular}
+			
+		\end{center}
+		
+		\newpage
+		
 		\subsubsection{Abbreviations}
-		extra
+		
+		\begin{center}
+			
+			\begin{tabular}[h!]{|m{2.5em}|m{25em}|}
+				
+				\hline
+				\xrowht{5pt}
+				WPn & World phenomena number n \\
+				\xrowht{5pt}
+				SPn & Shared phenomena number n \\
+				\xrowht{5pt}
+				Gn & Goal number n \\
+				\xrowht{5pt}
+				Rn & Requirement number n \\
+				\hline
+				
+			\end{tabular}
+			
+		\end{center}
+		
 	\subsection{Revision History}
+	
+	\begin{center}
+		
+		\begin{tabular}[h!]{|m{4em}|m{5em}|m{14.5em}|}
+			
+			\hline
+			\xrowht{5pt}
+			Version & Date & Changelog \\
+			\hline
+			\xrowht{5pt}
+			1.0 & 10/11/2020 & Overview of the specifications and definitions of Goals and World and Shared Phenomena \\
+			\xrowht{5pt}
+			1.1 & 13/11/2020 & Detailed analysis of the functioning of the software in all its aspects \\
+			\hline
+		\end{tabular}
+		
+	\end{center}
+	
 	\subsection{Reference Documents}
+	
 	\subsection{Document Structure}
+	
 	
 
 \section{Overall Description}
+
 	\subsection{Product Perspective}
+	
+	In Figure ??? is reported an UML Class Diagram that represents the domain of the application with main concepts and data involved, including their relationships.
+	
+	The store managers registers to the application providing all necessary information and can decide at a later stage to modify the capability options (regarding each department of the store). The customer simply downloads the application on his device to be able to use it. Here we can identify the main aspects related to CLup:
+	
+	\begin{itemize}
+		
+		\item The customer can generate a reservation, choosing between the registered chain store (and one of their specific store) or a normal store, a time slot and, optionally, the departments that they want to access; CLup will retrieve a ticket containing the number of the reservation and a QR code.
+		
+		\item The customer can entry in the store where he has a reservation (on the right time slot) scanning the QR code with a totem/the help of a store manager.
+		
+		\item The customer exit the store reusing the QR code, notifying the application that a new spot in now free (on certain department).
+		
+	\end{itemize}
+	
+	The UML does not include every class of the actual implementation of the system.
+	
 		\subsubsection{UML Description}
-		extra
+
+		{\bfseries Inserire UML qui}
+		
 		\subsubsection{State Charts}
-		extra
+		
+		Now we are going to examine some essential aspects of the application, modelling their behaviours and showing the evolutin over time of their states through adequate state diagrams, which are reported below.
+		
 	\subsection{Product Functions}
+		
+	In this section are described the functions of the software.
+	
+	\begin{itemize}
+		
+		\item {\bfseries Book a visit}
+		
+		This is the main functionality of the software and allows to brand's customers to book a visit to the supermarket. To do this, the user has two options:
+		
+		\begin{enumerate}
+			
+			\item {\bfseries Book a visit with the app}:
+			
+			The app allows to brand's customers to book a visit in a store of their preference.
+			
+			First of all, the user can choose a specific store from the nearest ones to him (retrieved by GPS), or he can select a specific one from a list. Then he has to indicate the categories of items that he intend to buy in the store, so that it's possible to optimize the waiting time, or they may skip the process, booking a visit to the whole store, but this may lead to greater waiting time, because they can enter the store only when all the reparts are free at the same time. At this point, the software shows at the user the time table highlighting the days and the time slots available, in such a way as to allow the user to select the best option for him. If the options do not satisfy the user, he can ask the application for help to find other supermarkets with more comfortable hours. At the end, a QR Code and a line-up number is generated and the ETA of entering is shown. Depending on the position of the client (retrieved by GPS), and the preferred option of reaching the supermarket (eg. on foot, by car or public transport), the app will notify the client when he can exit home, to arrive in time to enter the supermarket, without losing its turn and avoiding long waiting times.
+			
+			If a reservation process is interrupted in the middle, the user will be able to resume it reopening the app. \\
+			
+			\item {\bfseries Book without the app}:
+			
+			If for some reasons the user isn't able to obtain a ticket on the app, he can obtain it at a totem positioned at the store entry, with the same process on the app, but without suggesting other chains' stores. At the end of the process, the user must specify his Name, Surname and Mobile Phone in order to confirm the reservation, due to contact tracing requirements. These reservations then will appear in the accounts associeted to the given phone number. \\
+			
+		\end{enumerate}
+	
+		\item {\bfseries Cancel a reservation}
+		
+		If the user can not reach the store in time, he can decide to cancel the booked visit. In this case the software delete the customer from the queue and rearrange the last one. \\
+		
+		\item {\bfseries Check-in\(\)Check-out}:
+		
+		At the store entries and exities, users have to scan their QR Codes to respectively Check-in and Check-Out in the supermarket. This is required to avoid bookings cancels, and to make statistics of time clients need to end the shopping. \\
+		
+		\item {\bfseries Store Capacity}:
+		
+		The app, also, allows store managers to see the store's affluency and to modify the store capacity in every single repart. When a repart capacity is changed, the latest overflowing bookings will be canceled, and a notify is sent to the customer, proposing him other comfortable options for the same preferences.\\
+		
+	\end{itemize}
+
 	\subsection{User Characteristics}
+	
+	CLup gives access to two different sets of functionalities based on the two different category of users:
+	
+	\begin{itemize}
+		
+		\item {\bfseries Customer}: Allows user to book a visit to the supermarket. The software generates a QR Code that the user can use to enter in the supermarket. The user can indicate the exact list of items that he intends to purchase, or, at least, the categories of items that he intends to buy and, also, he can indicates the approximate expected duration of the visit. Moreover, the user can see the ETA to enter the store. \\
+		
+		\item {\bfseries Store Manager}: The Store Manager Can view information about the store, in particular he can access to the reservations made by users to predict the future affluency and check the level of affluency in the store (and also in specific zones of the store) \\
+		
+	\end{itemize}
+
 	\subsection{Assumptions, Dependencies, Constraints}
+	
 		\subsubsection{Domain Assumptions}
+		
 		extra
 
 
