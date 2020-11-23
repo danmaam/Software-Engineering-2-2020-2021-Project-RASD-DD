@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>259</x>
+      <y>0</y>
+      <w>469</w>
+      <h>707</h>
+    </coordinates>
+    <panel_attributes>Store manager modify parameters</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>581</x>
+      <y>42</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>CLup</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>378</x>
+      <y>42</y>
+      <w>77</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>Store manager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>406</x>
+      <y>56</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>609</x>
+      <y>56</y>
+      <w>21</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>406</x>
+      <y>91</y>
+      <w>14</w>
+      <h>602</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>609</x>
+      <y>91</y>
+      <w>14</w>
+      <h>602</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>84</y>
+      <w>210</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1:modifyParameters(session)
+
+</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>126</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+2:"modify parameters" page</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>266</x>
+      <y>154</y>
+      <w>448</w>
+      <h>364</h>
+    </coordinates>
+    <panel_attributes>loop
+--
+halign=left
+[True]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>273</x>
+      <y>189</y>
+      <w>434</w>
+      <h>322</h>
+    </coordinates>
+    <panel_attributes>break
+--
+halign=left
+[click on "Save Changes"
+or "Discard Changes"]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>287</x>
+      <y>238</y>
+      <w>413</w>
+      <h>259</h>
+    </coordinates>
+    <panel_attributes>alt
+--
+halign=left
+[modify
+parameter]
+
+
+
+
+-.
+[add
+parameter]
+
+
+
+
+
+
+-.
+[delete
+parameter]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>252</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+3:updateParameter(IDParam, newValue)</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>343</y>
+      <w>210</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+5:addParameter(IDParam, value)
+
+</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>378</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+6:ack</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>434</y>
+      <w>210</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+7:delParameter(IDParam)
+
+</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>462</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+8:ack</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>287</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+4:ack</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>546</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+9:saveChanges()</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>574</y>
+      <w>203</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+10:update done</panel_attributes>
+    <additional_attributes>10.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>266</x>
+      <y>525</y>
+      <w>448</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>alt
+--
+halign=left
+[Save Changes]
+
+
+
+
+
+-.
+[Discard Changes]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>630</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+11:discardChanges()</panel_attributes>
+    <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>658</y>
+      <w>210</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+12:restored value</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+</diagram>
