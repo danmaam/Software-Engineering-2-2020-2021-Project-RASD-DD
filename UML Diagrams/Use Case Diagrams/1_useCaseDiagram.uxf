@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>378</x>
+      <y>54</y>
+      <w>810</w>
+      <h>963</h>
+    </coordinates>
+    <panel_attributes>**System**
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>216</x>
+      <y>405</y>
+      <w>72</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Customer
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>1305</x>
+      <y>432</y>
+      <w>108</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Store Manager
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>684</x>
+      <y>108</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Registration of a customer
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>684</x>
+      <y>171</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Registration of a store
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>684</x>
+      <y>243</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Login of a customer
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>684</x>
+      <y>306</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Login of a store manager
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>693</x>
+      <y>369</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Customer makes a reservation
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>693</x>
+      <y>423</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Customer visualizes reservations
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>666</x>
+      <y>477</y>
+      <w>261</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Store manager modifies store parameters
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>657</x>
+      <y>540</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>The store manager monitors the store situation
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>666</x>
+      <y>603</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Manager manages customers bookings
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>675</x>
+      <y>666</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Customers manage their reservations
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>666</x>
+      <y>729</y>
+      <w>279</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Customer get a ticket with the totem
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>666</x>
+      <y>783</y>
+      <w>288</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Customer selects the preferred mean of transport
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>117</y>
+      <w>459</w>
+      <h>342</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;360.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>252</y>
+      <w>459</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;210.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>378</y>
+      <w>468</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;70.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>423</y>
+      <w>468</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;500.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>432</y>
+      <w>450</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;480.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>432</y>
+      <w>441</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;470.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>243</x>
+      <y>432</y>
+      <w>441</w>
+      <h>387</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;470.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>882</x>
+      <y>180</y>
+      <w>495</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;530.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>882</x>
+      <y>315</y>
+      <w>495</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;530.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>459</y>
+      <w>459</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;40.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>927</x>
+      <y>459</y>
+      <w>450</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;110.0;480.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>936</x>
+      <y>459</y>
+      <w>432</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;initiate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;180.0;460.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>432</y>
+      <w>432</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;partecipate&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;460.0;210.0</additional_attributes>
+  </element>
+</diagram>
