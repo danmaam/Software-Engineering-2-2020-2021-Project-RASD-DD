@@ -185,13 +185,15 @@
 				\xrowht{5pt}
 				G7 & Allow customers to depart from their location in time to avoid waiting too much, and to avoid losing their turn in lineup \\
 				\xrowht{5pt}
-				G8 & Allow store managers to decide how many people to have in the store and in which department \\
+				G8 & Allow store managers to decide how many people, and how many booked clients to have in the store and in which department \\
 				\xrowht{5pt}
 				G9 & Allow the store manager to know the real situation of people that are inside the building and in which department of his store \\
 				\xrowht{5pt}
 				G10 & Allow to grant a fair managment of users that can access the building \\
 				\xrowht{5pt}
-				G11 & Allow to manage optimally the influx in the building \\
+				G11 & Allow to manage optimally the influx in the building and avoid gathering inside it \\
+				\xrowht{5pt}
+				G12 & Allow the store manager to manage customers’ bookings \\
 				\hline
 				
 				
@@ -438,7 +440,7 @@
 		
 		\subsubsection{Managing single department}
 		
-		If some account have non completed visits, depending on the position of the client (retrieved by \emph{GPS}), and the preferred option of reaching the selected store (eg. on foot, by car or public transport), the app will notify the client when he can exit home, to arrive in time to enter the supermarket, without losing its turn and avoiding long waiting times. Notice that not all of the moving options may be available in all the places, since it depends on the used map service. \\
+		The system can infer the average time spent by a user in the supermarket using the previous visits as informations. If the client is taking a spot on the queue or booking a visit on the app, he will be asked to insert a reasonable duration of his visit, or let the application to fill this parameter for him: if there aren't enough informations on the specific client, the app will use informations from other clients that did a similar shopping, else will infer the information from the specific client's previous visits. The same thing happens at the totem, where or the client inserts the estimation, or the system will use the other datas in its possession. \\
 		
 		\subsubsection{Notify users}
 		
@@ -450,13 +452,15 @@
 		
 		\subsubsection{Store capacity}
 		
-		The app, also, allows store managers to see the store's affluency and to modify the store capacity in every single departmente. When a department capacity is changed, the latest overflowing bookings will be cancelled, and a notify is sent to the customer, proposing him other comfortable options for the same preferences. \\
+		The app, also, allows store managers to see the store's affluency and to modify the store capacity in every single repart. When a repart capacity is changed, the already made bookings will be rescheduled at the first available entry time, notifiying each user of the change. The priority is to allow customers that booked the visit to enter in the same day, if it's possible. If any time on the same day can be allocated, the bookings will be cancelled and the user notified. A such operation may reduce in the already booked days the number of admitted non-booked clients. If this operation is made on working hours, it may be cause an anticipation of the time when the system will not deliver anymore other tickets for the queue. \\
 		
 		\subsubsection{Infer waiting time from users}
 		
 		The system can infer the average time spent by a user in the supermarket using the previous visits as informations. If the client is taking a spot on the queue or booking a visit on the app, he will be asked to insert a reasonable duration of his visit, or let the application to fill this parameter for him: if there aren't enough informations on the specific client, the app will use informations from other clients that did a similar shopping, else will infer the information from the specific client's previous visits. The same thing happens at the totem, where or the client inserts the estimation, or the system will use the other datas in its possession.  \\
+		
+		\subsection{Allow a fair management of the accesses}
+		The system is able to manage in a fair way the process of releasing tickets and accepting bookings. In fact, depending on the store's closing time, and others datas in its possession, such as the number of people in queue, the estimated time of permanency and some other statistics, it's able to block the generation of new tickets, to avoid the generation of turns that goes over the closing time. Moreover, the store manager is able to decide the maximum number of contemporary bookings allowed in the whole store and each department, to avoid that it's really difficult to enter the store without a booking.
 
-	\newpage
 	
 	\subsection{User Characteristics}
 	
@@ -513,14 +517,15 @@
 						\xrowht{5pt}
 						DA12 & Customer respects his time slot, without remaining over time \\
 						\xrowht{5pt}
-						DA13 & Each customer enters the supermarket only through the allowed entries \\
+						DA13 & Each customer scans his QR Code at the enter and enters the supermarket only through the allowed entries. \\
+						DA14 & Each paper ticket is not ruined and readable. \\
 						\hline
 						
 						
 					\end{tabular}
 				\end{adjustwidth}
 			\end{center}
-
+\newpage
 
 \section{Specific Requirements}
 
@@ -561,7 +566,7 @@
 						\xrowht{5pt}
 						R1 & The system must allow the customers to register \\
 						\xrowht{5pt}
-						R2 & The system must allow store managers to register his store \\
+						R2 & The system must allow store managers to register their store \\
 						\xrowht{5pt}
 						R3 & The system must allow customers to log in \\
 						\xrowht{5pt}
@@ -573,7 +578,7 @@
 						\xrowht{5pt}
 						R7 & The system must guarantee that each store manager ID is unique  \\
 						\xrowht{5pt}
-						R8 & The system must guarantee that each customer E-mail is unique  \\
+						R8 & The system must guarantee that each customer e-mail is unique  \\
 						\xrowht{5pt}
 						R9 & The system must guarantee that each reservation ID is unique  \\
 						\xrowht{5pt}
@@ -602,34 +607,302 @@
 						R21 & The system allows the manager to establish the maximum simultaneously
 						allowed booked clients in the store (or in a specific department) \\
 						\xrowht{5pt}
-						R22 & The store manager can handle the booking of each customer \\
+						R22 & The store manager can view the reservation of each client \\
 						\xrowht{5pt}
-						R23 & The store manager can handle the opening and closing time of the store \\
+						R23 & The store manager can modify the reservation of each client \\
 						\xrowht{5pt}
-						R24 & The system knows the situation in real time of each store \\
+						R24 & The store manager can cancel the reservation of each client \\
 						\xrowht{5pt}
-						R25 & The system takes trace of each customer entry and exit from the store \\
+						R25 & The store manager can handle the opening and closing time of the store \\
 						\xrowht{5pt}
-						R26 & The system contains a list of bookable stores \\
+						R26 & The system knows the situation in real time of each store \\
 						\xrowht{5pt}
-						R27 & The system allows to get a ticket from a physical dispenser \\
+						R27 & The system takes trace of each customer entry and exit from the store \\
 						\xrowht{5pt}
-						R28 & The system can reasonably estimate the time needed from a specific user to complete his shopping \\
+						R28 & The system contains a list of bookable stores \\
 						\xrowht{5pt}
-						R29 & The system must save clients’ tickets \\
+						R29 & The systemis able to print a paper ticket \\
 						\xrowht{5pt}
-						R30 & The system should estimate when it must stop generating other tickets to avoid turns after the closing time of the store \\
+						R30 & The system can reasonably estimate the time needed from a specific user to complete his shopping \\
+						\xrowht{5pt}
+						R31 & The system must save clients’ tickets \\
+						\xrowht{5pt}
+						R32 & The system should estimate when it must stop generating other tickets to avoid turns after the closing time of the store \\
+						R33 & The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building \\
+						R34 & The system is able to scan and analyze a QR Code \\
 						\hline
+
 						
 						
 					\end{longtable}
 				\end{adjustwidth}
 			\end{center}
-		\subsubsection{Mapping}
-		extra
+		\subsubsection{Mapping with goals}
+			
+			\begin{itemize}			
+
+			\item {\bfseries G1: Allow customers to select a store and book a spot on the queue from CLup
+app}			
+
+				\begin{itemize}
+				\item {\bfseries R1:} The system must allow the customers to register
+				\item {\bfseries R2:} The system must allow customers to log in
+				\item {\bfseries R5:} The system must save the customers data registration
+				\item {\bfseries R8:} The system must guarantee that each customer's e-mail is unique
+				\item {\bfseries R9:} The system must guarantee that each reservation ID is unique
+				\item {\bfseries R15:} The system must show the customers of the time periods in which they can enter the store in order to respect the time selected by the customers
+				\item {\bfseries R18:} The system is able to ask for the position of the customers
+				\item {\bfseries R28:} The system contains a list of bookable stores
+				\item {\bfseries R31:} The system must save clients’ tickets
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA3:} Customer’s position retrieved by GPS is accurate
+				\item {\bfseries DA9:} Every store has a unique name and address combination
+				
+				\end{itemize}
+		\item {\bfseries G2: Allow customers to select a store and take a spot on the queue to enter as soon as possible the store from CLup app}	
+
+			\begin{itemize}
+				\item {\bfseries R1:} The system must allow the customers to register
+				\item {\bfseries R2:} The system must allow customers to log in
+				\item {\bfseries R5:} The system must save the customers data registration
+				\item {\bfseries R8:} The system must guarantee that each customer's e-mail is unique
+				\item {\bfseries R9:} The system must guarantee that each reservation ID is unique
+				\item {\bfseries R18:} The system is able to ask for the position of the customers
+				\item {\bfseries R28:} The system contains a list of bookable stores
+				\item {\bfseries R31:} The system must save clients’ tickets
+				\item {\bfseries R32:} The system should estimate when it must stop generating other tickets to
+avoid turns after the closing time of the store
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA3:} Customer’s position retrieved by GPS is accurate
+				\item {\bfseries DA9:} Every store has a unique name and address combination
+				
+				\end{itemize}
+
+\item {\bfseries G3: Allow customers to take a spot on the queue from a physical ticket dispenser}	
+
+			\begin{itemize}
+				\item {\bfseries R9:} The system must guarantee that each reservation ID is unique
+				\item {\bfseries R29:} The system is able to print a paper ticket
+				\item {\bfseries R31:} The system must save clients’ tickets
+				\item {\bfseries R32:} The system should estimate when it must stop generating other tickets to
+avoid turns after the closing time of the store
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA6:} Totems always work properly and are not damaged
+				
+				\end{itemize}
+
+\item {\bfseries G4: Allow customers to select a better store option to avoid wasting a lot of time waiting to enter a specific store.}	
+
+			\begin{itemize}
+				\item {\bfseries R1:} The system must allow the customers to register
+				\item {\bfseries R2:} The system must allow customers to log in
+				\item {\bfseries R5:} The system must save the customers data registration
+				\item {\bfseries R8:} The system must guarantee that each customer's e-mail is unique
+				\item {\bfseries R13:} The system allows the customers to select their favorite means of trans-
+portation
+				\item {\bfseries R18:} The system is able to ask for the position of the customers
+				\item {\bfseries R26:} The system knows the situation in real time of each store
+				\item {\bfseries R28:} The system contains a list of bookable stores
+				\item {\bfseries R32:} The system should estimate when it must stop generating other tickets to
+avoid turns after the closing time of the store
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA3:} Customer’s position retrieved by GPS is accurate
+				\item {\bfseries DA8:} The Maps API always calculate the optimal route 
+				\item {\bfseries DA9:} Every store has a unique name and address combination
+				
+				
+				\end{itemize}
+
+\item {\bfseries G5: Allow customers to decrease waiting times specifying departments they want to visit}	
+
+			\begin{itemize}
+				\item {\bfseries R1:} The system must allow the customers to register
+				\item {\bfseries R2:} The system must allow customers to log in
+				\item {\bfseries R5:} The system must save the customers data registration
+				\item {\bfseries R8:} The system must guarantee that each customer's e-mail is unique
+
+				\item {\bfseries R13:} The system allows the customers to select their favorite means of trans-
+portation
+				\item {\bfseries R14:} The system allows the customers to select some or all the departments in
+which the customers are interested in doing shopping
+				\item {\bfseries R16:} The system have to make a reasonable estimate of when a user with a spot
+on the queue is able to enter the store
+				\item {\bfseries R27:} The system takes trace of each customer entry and exit from the store
+				\item {\bfseries R30:} The system can reasonably estimate the time needed from a specific user
+to complete his shopping
+
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				
+				
+				\end{itemize}
+
+\item {\bfseries G6: Allow customers users to manage their spots on the queue and their reservation}	
+
+			\begin{itemize}
+				\item {\bfseries R1:} The system must allow the customers to register
+				\item {\bfseries R2:} The system must allow customers to log in
+				\item {\bfseries R5:} The system must save the customers data registration
+				\item {\bfseries R8:} The system must guarantee that each customer's e-mail is unique
+				\item {\bfseries R9:} The system must guarantee that each reservation ID is unique
+				\item {\bfseries R10:} The system allows the customers to view their visits
+				\item {\bfseries R11:} The system allows the customers to cancel their visits
+				\item {\bfseries R12:} The system allows the customers to modify their visits
+				\item {\bfseries R31:} The system must save clients’ tickets
+
+			
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				
+				
+				\end{itemize}
+
+\item {\bfseries G7: Allow customers to depart from their location in time to avoid waiting too much, and to avoid losing their turn in lineup}	
+
+			\begin{itemize}
+				\item {\bfseries R1:} The system must allow the customers to register
+				\item {\bfseries R2:} The system must allow customers to log in
+				\item {\bfseries R5:} The system must save the customers data registration
+				\item {\bfseries R8:} The system must guarantee that each customer's e-mail is unique
+				\item {\bfseries R9:} The system must guarantee that each reservation ID is unique
+				\item {\bfseries R13:} The system allows the customers to select their favorite means of transportation
+				\item {\bfseries R14:} The system allows the customers to select some or all the departments in
+which the customers are interested in doing shopping
+				\item {\bfseries R17:} The system can send notification to the clients
+				\item {\bfseries R18:} The system is able to ask for the position of the customers
+				\item {\bfseries R27:} The system takes trace of each customer entry and exit from the store
+				\item {\bfseries R30:} The system can reasonably estimate the time needed from a specific user
+to complete his shopping
+				\item {\bfseries R31:} The system must save clients’ tickets
+			
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA8:} The Maps API always calculate the optimal route 
+				\item {\bfseries DA9:} Every store has a unique name and address combination
+				
+				
+				\end{itemize}	
+
+\item {\bfseries G8: Allow store managers to decide how many people, and how many simultaneous booked clients to have in the store and in which department}	
+
+			\begin{itemize}
+				\item {\bfseries R2:} The system must allow store managers to register their store
+				\item {\bfseries R4:} The system must allow store managers to log in
+				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
+				\item {\bfseries R19:} The system permits to store manager to modify the maximum capacity of
+the store and its departments
+				\item {\bfseries R10:} The system allows the manager to establish the maximum simultaneously
+allowed booked clients in the store (or in a specific department)
+				\item {\bfseries R17:} The system can send notification to the clients
+				\item {\bfseries R25:} The store manager can handle the opening and closing time of the store
+				\item {\bfseries R31:} The system must save clients’ tickets
+
+			
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				
+				
+				\end{itemize}	
+
+\item {\bfseries G9: Allow the store manager to know the real situation of people that are inside the building and in which department of his store}	
+
+			\begin{itemize}
+				\item {\bfseries R2:} The system must allow store managers to register their store
+				\item {\bfseries R4:} The system must allow store managers to log in
+				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
+				\item {\bfseries R20:} The system permits to store manager to view the store parameters
+				\item {\bfseries R27:} The system takes trace of each customer entry and exit from the store
+				\item {\bfseries R34:} The system is able to scan and analyze a QR Code			
+		
+
+			
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA10:} QR Code readers are always working
+				\item {\bfseries DA13:} Each customer scans his QR Code at the enter and enters the supermarket only through the allowed entries.
+				
+				
+				\end{itemize}
+
+\item {\bfseries G10: Allow to grant a fair management of users that can access the building.}	
+
+			\begin{itemize}
+				\item {\bfseries R2:} The system must allow store managers to register their store
+				\item {\bfseries R4:} The system must allow store managers to log in
+				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
+				\item {\bfseries R21:} The system allows the manager to establish the maximum simultaneously
+allowed booked clients in the store (or in a specific department)
+				\item {\bfseries R25:} The store manager can handle the opening and closing time of the store
+				\item {\bfseries R32:} The system should estimate when it must stop generating other tickets to
+avoid turns after the closing time of the store
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA5:} No one maliciously forge a ticket
+
+				\end{itemize}
+
+\item {\bfseries G11: Allow to manage optimally the influx in the building and avoid gathering inside it}	
+
+			\begin{itemize}
+				\item {\bfseries R2:} The system must allow store managers to register their store
+				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R27:} The system takes trace of each customer entry and exit from the store
+				\item {\bfseries R30:} The system must save clients’ tickets				
+				\item {\bfseries R33:} The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building
+				\item {\bfseries R34:} The system is able to scan and analyze a QR Code
+
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+				\item {\bfseries DA5:} No one maliciously forge a ticket
+				\item {\bfseries DA10:} QR Code readers are always working
+				\item{\bfseries DA7:} The customer’s smartphone screen is not damaged and the QR Code is
+readable
+				\item {\bfseries DA13:} Each customer scans his QR Code at the enter and enters the supermarket only through the allowed entries.				
+				\item {\bfseries DA14:} Each paper ticket is not ruined and readable.
+				\end{itemize}
+
+\item {\bfseries G12: Allow the store manager to manage customers’ bookings}	
+
+			\begin{itemize}
+				\item {\bfseries R2:} The system must allow store managers to register their store
+				\item {\bfseries R4:} The system must allow store managers to log in
+				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
+				\item {\bfseries R22:}  The store manager can cancel the reservation of each client
+				\item {\bfseries R23:} The store manager can modify the reservation of each client
+				\item {\bfseries R24:} The store manager can view the reservation of each client
+				\item {\bfseries R30:} The system must save clients’ tickets		
+
+
+
+				\item {\bfseries DA1:} Date and time on the devices on which CLup runs are always correct
+				\item {\bfseries DA2:} Internet connection works always without errors
+\newpage
+
+				\end{itemize}
+
+			\end{itemize}
+
 		\subsubsection{Use Cases}
 		
-			\newpage
+
 			
 			\paragraph{Registration of a customer}
 			
@@ -638,8 +911,8 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-1.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{27.5em}|}
+					\begin{adjustwidth}{-2.5cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{32em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -655,9 +928,9 @@
 							\item Customer visualizes the initial page of the app
 							\item Customer clicks on “Sign up as customer” button
 							\item Customer inserts a username, a password, an e-mail, his name, his surname and his phone number as mandatory fields
-							\item The system confirms the registration of the customer
+							\item The system checks the datas of the customer
 							\item The system saves the information of the customer
-							
+						
 						\end{enumerate}\\
 						\xrowht{5pt}
 						Exit Conditions & Customer is successfully registered to the application\\
@@ -673,10 +946,30 @@
 						\hline
 						
 					\end{tabular}
-					\end{adjustwidth}
+
 					
+					
+
+					\begin{figure}[!h]
+						\begin{adjustwidth} {-1cm}{}
+							\includegraphics[scale=0.36]{SD/1_customerRegistration.pdf}
+						\end{adjustwidth}
+						\caption{Sequence Diagram of User Registration}
+					\end{figure}
+
+					
+
+					\end{adjustwidth}
+					\begin{itemize}
+					\medskip
+					 {\bfseries Required functional requirements: }
+					\item {\bfseries R1: } The system must allow the customers to register
+					\item {\bfseries R5: } The system must save the customers data registration
+					\item {\bfseries R8: } The system must guarantee that each customer e-mail is unique	
+
+					\end{itemize}
 				\end{center}
-		
+		\bigskip
 			\paragraph{Registration of a store}
 			
 				\begin{center}
@@ -684,8 +977,8 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-1.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{27.5em}|}
+					\begin{adjustwidth}{-2.3cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{32em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -724,8 +1017,36 @@
 					\end{tabular}
 					\end{adjustwidth}
 					
+					\begin{itemize}
+					\bigskip
+					\bigskip
+					\bigskip
+					 {\bfseries Required functional requirements: }
+					\item {\bfseries R2: } The system must allow store managers to register their store
+					\item {\bfseries R6: } The system must save the store managers data registration
+					\item {\bfseries R7: } The system must guarantee that each store manager ID is unique
+
+					\end{itemize}
+				
+					
+						
+							\begin{figure}
+								\begin{adjustwidth} {-2.3cm}{}
+									\centering
+									\includegraphics[scale=0.5]{SD/2_storeManagerRegistration.pdf}\\
+									\caption{Sequence Diagram of Store Manager Registration}
+								\end{adjustwidth}
+							\end{figure}
+
+						
+						
+					
+
 				\end{center}
-		
+
+			\newpage
+
+
 			\paragraph{Login of a customer}
 			
 				\begin{center}
@@ -733,8 +1054,8 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-1.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{27.5em}|}
+					\begin{adjustwidth}{-2.5cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{32em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -761,8 +1082,8 @@
 						Exception & \begin{enumerate}
 							
 							\itemsep0em
-							\item Customer enters invalid Username
-							\item Customer enters invalid Password
+							\item Customer enters invalid email
+							\item Customer enters invalid password
 							
 						\end{enumerate}
 						If one or more of the above situations occur, the application will throw an error message and will return to the “Login as customer” page\\		
@@ -771,8 +1092,16 @@
 					\end{tabular}
 					\end{adjustwidth}
 					
+					\begin{figure}[!h]
+						\begin{adjustwidth} {-1.3cm}{}
+							\centering
+							\includegraphics[scale=0.36]{SD/3_customerLogin.pdf}\\
+							\caption{Sequence Diagram of Customer Login}
+						\end{adjustwidth}
+					\end{figure}
+
 				\end{center}
-			
+			\newpage
 			\paragraph{Login of a store manager}
 			
 				\begin{center}
