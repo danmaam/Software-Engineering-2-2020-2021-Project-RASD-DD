@@ -574,7 +574,7 @@
 						\xrowht{5pt}
 						R5 & The system must save the customers data registration \\
 						\xrowht{5pt}
-						R6 & The system must save the store managers data registration \\
+						R6 & The system must save the store managers data registration and store parameters \\
 						\xrowht{5pt}
 						R7 & The system must guarantee that each store manager ID is unique  \\
 						\xrowht{5pt}
@@ -631,6 +631,7 @@
 						R33 & The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building \\
 						R34 & The system is able to scan and analyze a QR Code \\
 						\hline
+
 
 						
 						
@@ -799,7 +800,7 @@ to complete his shopping
 			\begin{itemize}
 				\item {\bfseries R2:} The system must allow store managers to register their store
 				\item {\bfseries R4:} The system must allow store managers to log in
-				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R6:} The system must save the store managers data registration and store parameters
 				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
 				\item {\bfseries R19:} The system permits to store manager to modify the maximum capacity of
 the store and its departments
@@ -822,7 +823,7 @@ allowed booked clients in the store (or in a specific department)
 			\begin{itemize}
 				\item {\bfseries R2:} The system must allow store managers to register their store
 				\item {\bfseries R4:} The system must allow store managers to log in
-				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R6:} The system must save the store managers data registration and store parameters
 				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
 				\item {\bfseries R20:} The system permits to store manager to view the store parameters
 				\item {\bfseries R27:} The system takes trace of each customer entry and exit from the store
@@ -844,7 +845,7 @@ allowed booked clients in the store (or in a specific department)
 			\begin{itemize}
 				\item {\bfseries R2:} The system must allow store managers to register their store
 				\item {\bfseries R4:} The system must allow store managers to log in
-				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R6:} The system must save the store managers data registration and store parameters
 				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
 				\item {\bfseries R21:} The system allows the manager to establish the maximum simultaneously
 allowed booked clients in the store (or in a specific department)
@@ -861,7 +862,7 @@ avoid turns after the closing time of the store
 
 			\begin{itemize}
 				\item {\bfseries R2:} The system must allow store managers to register their store
-				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R6:} The system must save the store managers data registration and store parameters
 				\item {\bfseries R27:} The system takes trace of each customer entry and exit from the store
 				\item {\bfseries R30:} The system must save clients’ tickets				
 				\item {\bfseries R33:} The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building
@@ -883,7 +884,7 @@ readable
 			\begin{itemize}
 				\item {\bfseries R2:} The system must allow store managers to register their store
 				\item {\bfseries R4:} The system must allow store managers to log in
-				\item {\bfseries R6:} The system must save the store managers data registration
+				\item {\bfseries R6:} The system must save the store managers data registration and store parameters
 				\item {\bfseries R8:} The system must guarantee that each store manager ID is unique
 				\item {\bfseries R22:}  The store manager can cancel the reservation of each client
 				\item {\bfseries R23:} The store manager can modify the reservation of each client
@@ -911,8 +912,8 @@ readable
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{32em}|}
+					\begin{adjustwidth}{-2.8cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -977,8 +978,8 @@ readable
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.3cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{32em}|}
+					\begin{adjustwidth}{-2.8cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -1023,7 +1024,7 @@ readable
 					\bigskip
 					 {\bfseries Required functional requirements: }
 					\item {\bfseries R2: } The system must allow store managers to register their store
-					\item {\bfseries R6: } The system must save the store managers data registration
+					\item {\bfseries R6: } The system must save the store managers data registration and store parameters
 					\item {\bfseries R7: } The system must guarantee that each store manager ID is unique
 
 					\end{itemize}
@@ -1054,8 +1055,8 @@ readable
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{32em}|}
+					\begin{adjustwidth}{-2.8cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -1100,8 +1101,22 @@ readable
 						\end{adjustwidth}
 					\end{figure}
 
+					\begin{itemize}
+					\bigskip
+					\bigskip
+					\bigskip
+					 {\bfseries Required functional requirements: }
+					\item {\bfseries R3: } The system must allow customers to log in
+					\item {\bfseries R5: } The system must save the customers data registration
+					\item {\bfseries R8: } The system must guarantee that each customer e-mail is unique
+
+					\end{itemize}
+
 				\end{center}
-			\newpage
+			
+					\bigskip
+					\bigskip
+					\bigskip
 			\paragraph{Login of a store manager}
 			
 				\begin{center}
@@ -1109,8 +1124,8 @@ readable
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-1.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{27.5em}|}
+					\begin{adjustwidth}{-2.8cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -1146,6 +1161,25 @@ readable
 						
 					\end{tabular}
 					\end{adjustwidth}
+
+\begin{itemize}
+					\bigskip
+					\bigskip
+					\bigskip
+					 {\bfseries Required functional requirements: }
+					\item {\bfseries R4: } The system must allow store managers to log in
+					\item {\bfseries R6: } The system must save the store managers data registration and store parameters
+					\item {\bfseries R7: } The system must guarantee that each store manager ID is unique
+
+					\end{itemize}
+
+							\begin{figure}
+								\begin{adjustwidth} {-3cm}{}
+									\centering
+									\includegraphics[scale=0.7]{SD/4_managerLogin.pdf}\\
+									\caption{Sequence Diagram of Store Manager Login}
+								\end{adjustwidth}
+							\end{figure}
 					
 				\end{center}
 			
@@ -1156,8 +1190,8 @@ readable
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-1.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{27.5em}|}
+					\begin{adjustwidth}{-2.8cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -1171,31 +1205,25 @@ readable
 							
 							\itemsep-0.25em
 							\item Customer clicks on “Make a reservation”
-							\item The system opens the “Reservation” page
-							\item The customer can see the list of stores in his city and can filter this list by choosing a specific chain from a drop down menu
-							\item Customer selects a store and clicks on “Next” button
-							\item The system opens the “Objects’ category” page
-							\item Customer can see the list of all possible objects’ category and can select some of them (optional)
-							\item Customer click on “Next” button to confirm the selection
-							\item The system opens the “Time preference” page
+							\item The customer can see the list of stores in his city and can filter this list by choosing a specific chain from a drop down menu, selects a store and clicks on Next
+							\item Customer can see the list of all possible objects’ category and can select some of them (optional), and then clicks on Next
+							\item Customer can estimate a duration for his shopping, or let the system to do it, and then clicks on Next
 							\item Customer can see two button, “As soon as possible” and “Choose a time slot”
 							 
 							\begin{enumerate}
 								
 								\itemsep-0.25em
-								\item if the customer clicks on “As soon as possible” button, the system will check if there is a free spot on the following hour
+								\item if the clicks on “As soon as possible” button, the system will check if it's possible to assign a ticket with a reasonable waiting times in the day of the request, and by assuring it won't be over the store's closing time.
 								
-								\begin{enumerate}
+
 									
-									\itemsep0em
-									\item if there is a free spot, the system will generate a
-									QR code, show it to the customer and save it in the
-									database
-									\item otherwise, the system will inform the customer and suggest him stores less crowded
 									
-								\end{enumerate}
+									 If a ticket with low waiting time is generable, the system will generate it calculating the time nedded to reach the store, saves it on both itself and user's app, showing it on the latter.
+									 otherwise, the system suggests him stores less crowded, if any. If so, user can choose between the options proposed, including staying at the selected store. Else, if the ticket is generable, it will be generated even if with a high waiting time.
+									
+
 								
-								\item if the customer clicks on “Choose a time slot”, the system will open the “Time slots” page, where he can see all the available time slot, and clicking on one of them will generate a QR code, that will be showed to the customer and saved in the database
+								\item if the customer clicks on “Choose a time slot”, the user can choose a time slot among those availables on the “Time slots” page to generate and save a ticket, calculating the time needed to reach the store.
 								
 							\end{enumerate}
 							
@@ -1206,24 +1234,68 @@ readable
 						Exception & \begin{enumerate}
 							
 							\itemsep-0.25em
-							\item Customer click on a timeslot no longer available
-							\item Customer tries to book more than the set limit of reservations per week
+							\item Customer click on a timeslot no longer available or tries to book more than the set limit of reservations per week
 							
-							If the above situation occur, the application will throw an error message and will reload the “Time slots” page (updating it)
+							The application will throw an error message and will reload the “Time slots” page (updating it)
 							
 							\item Customer doesn’t select any product category
 							
-							If the above situation occurs, the application will throw an error and ask the client to select at least some item.
+							The application will throw an error and ask to select at least some item.
 							
-							\item Customer tries to get a ticket while he already have a unused one 
+							\item Customer tries to get a ticket while he already have a unused one
+
+							The application shows an error message and invite to use the pending ticket
+							\item In the selected store where get a spot on the queue there isn't availability in the day, and there isn't any available near store 
+
+							If the above situation occurs, the application will throw an error and leave the client the possibility to book his visit.
+							
 							
 						\end{enumerate}
-						If the above situation occurs, the application shows an error message and invite the client to use the pending ticket\\		
-						\hline
+							\\
+							\hline
+						
 						
 					\end{tabular}
 					\end{adjustwidth}
 					
+							\begin{figure}
+								\begin{adjustwidth} {0cm}{}
+									\centering
+									\includegraphics[scale=0.343]{SD/5_makeReservation.pdf}\\
+									\caption{Sequence Diagram of Getting Ticket from App Procedure}
+								\end{adjustwidth}
+							\end{figure}
+
+\begin{itemize}
+					\bigskip
+					\bigskip
+					\bigskip
+					 {\bfseries Required functional requirements: }
+
+
+					\item {\bfseries R8: }  The system must guarantee that each customer e-mail is unique
+					\item {\bfseries R9: } The system must guarantee that each reservation ID is unique
+					\item {\bfseries R14: } The system allows the customers to select some or all the departments in
+which the customers are interested in doing shopping
+					\item {\bfseries R15: } The system must show the customers of the time periods in which they can
+enter the store in order to respect the time selected by the customers
+
+					\item {\bfseries R16: } The system have to make a reasonable estimate of when a user with a spot
+on the queue is able to enter the store
+					\item {\bfseries R18: } The system is able to ask for the position of the customers
+					\item {\bfseries R26: } The system knows the situation in real time of each store
+
+					\item {\bfseries R27: } The system takes trace of each customer entry and exit from the store
+on the queue is able to enter the store
+					\item {\bfseries R28: } The system contains a list of bookable stores
+					\item {\bfseries R30: } The system can reasonably estimate the time needed from a specific user
+to complete his shopping
+
+					\item {\bfseries R31: } The system must save clients’ tickets
+					\item {\bfseries R32: } The system should estimate when it must stop generating other tickets to
+avoid turns after the closing time of the store
+
+					\end{itemize}
 				\end{center}
 			
 			\paragraph{Customer visualizes reservations}
@@ -1233,8 +1305,8 @@ readable
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-1.5cm}{}
-					\begin{tabular}[h!]{|m{7.5em}|m{27.5em}|}
+					\begin{adjustwidth}{-2.8cm}{}
+					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
 						\xrowht{5pt}
@@ -1242,7 +1314,7 @@ readable
 						\xrowht{5pt}
 						Actors & Customer\\
 						\xrowht{5pt}
-						Entry Condition & Customer is already logged in the application service and made a reservation\\
+						Entry Condition & Customer is already logged in the application service\\
 						\xrowht{5pt}
 						Event Flow & \begin{enumerate}
 							
@@ -1250,20 +1322,49 @@ readable
 							\item Customer clicks on “Show requests” button
 							\item The app show the list of bookings made and tickets requested
 							\item The customer select the desired option
-							\item The system opens the detail page of the selected option, that includes the “QR Code” and the number that should be called, among with the scheduled entry date and time
+							\item The system opens the detail page of the selected option, that includes the “QR Code” and the number that should be called, among with the scheduled entry date and time and expected time when depart for the store. 
 							
 						\end{enumerate}\\
 						\xrowht{5pt}
-						Exit Conditions & Customer can visualize the QR code\\
+						Exit Conditions & Customer can visualize the reservation\\
 						\xrowht{5pt}
-						Exception & None\\	
+						Exception & \begin{enumerate}
+						\item The client has not pending requests
+						If the above situation happen, the app shows an error message and bring the client to the home page.
+						\end{enumerate}	
+\\
 						\hline
 						
 					\end{tabular}
 					\end{adjustwidth}
-					
+
+
+\begin{itemize}
+					\bigskip
+					\bigskip
+					\bigskip
+					 {\bfseries Required functional requirements: }
+
+
+					\item {\bfseries R10: }  The system allows the customers to view their visits
+					\item {\bfseries R18: } The system is able to ask for the position of the customers
+					\item {\bfseries R31: } The system must save clients’ tickets
+
+
+
+
+
+
+					\end{itemize}
 				\end{center}
-			
+												\begin{figure}
+								\begin{adjustwidth} {-3cm}{}
+									\centering
+									\includegraphics[scale=0.8]{SD/6_visualizeReservation.pdf}\\
+									\caption{Sequence Diagram of Visualizing Customers' Reservations in app}
+								\end{adjustwidth}
+							\end{figure}
+			\newpage
 			\paragraph{Manager modifies store parameters}
 			
 				\begin{center}
@@ -1286,17 +1387,18 @@ readable
 							
 							\itemsep-0.25em
 							\item Store manager clicks on “Modify parameters” button
-							\item The system opens the “Modify parameters” page
-							\item Store manager can see the name of each parameter flanked by a modifiable text box containing the previous value of that parameter (eg. zone capacity, store capacity)
+							\item Store manager can see both the parameters relatives to the whole store (eg. ID, Pwd, Store Capacity, Max Simultaneous Reservations, Opening and Closing Time), and each department, with their parameters (max capacity and simultaneous allowed bookings)
 							
 							\begin{enumerate}
 								
 								\itemsep0em
-								\item Store manager modify one, more or none of the parameters and clicks “Save changes” button
-								\item Store manager choose to add/delete (except for the default parameters “Store capacity” and “Maximum number of weekly reservations for client”) some parameter of the store
+								\item Store manager modify one, more or none of the parameters of the store or of some departements (clicking on the pencil shaped button of the desidered department)
+								\item Store manager choose to add/delete some department respectively clicking on "Add a department" and on the bin shaped button of the desidered department
+								\item Store manager clicks on Save Changes
+					
 								
 							\end{enumerate}
-							\item The system save the changes and bring him back to “Store menu” page
+							\item The system saves and processe the changes (notifying clients if necessary) and bring him back to “Store menu” page
 							
 						\end{enumerate}\\
 						\xrowht{5pt}
@@ -1306,8 +1408,8 @@ readable
 							
 							\itemsep-0.25em
 							\item Store managers enters an invalid value for one or more parameters
-							\item The store manager tries to add an already existing parameter, or tries to delete the default “Store capacity” and “Maximum number of weekly reservations for client” parameters
-							\item The sum of the capacities of the single zones is greater than the store capacity
+							\item The store manager tries to add an already existing departement
+							\item The sum of the capacities of the single departments is greater than the store capacity
 							
 						\end{enumerate}
 					
@@ -1316,8 +1418,39 @@ readable
 						
 					\end{tabular}
 					\end{adjustwidth}
-					
+
+
+
+					\begin{itemize}
+					\medskip
+					 {\bfseries Required functional requirements: }
+
+
+					\item {\bfseries R6: }  The system must save the store managers data registration and store pa-
+rameters
+					\item {\bfseries R9: } The system must guarantee that each reservation ID is unique
+					\item {\bfseries R19: } The system permits to store manager to modify the maximum capacity of
+the store and its departments
+
+					\item {\bfseries R21: } The system allows the manager to establish the maximum simultaneously
+allowed booked clients in the store (or in a specific department)
+					\item {\bfseries R17: }  The system can send notification to the clients
+					\item {\bfseries R25: } The store manager can handle the opening and closing time of the store
+					\end{itemize}					
+
+							\begin{figure}[!h]
+								\begin{adjustwidth} {0cm}{}
+									\centering
+									\includegraphics[scale=0.35]{SD/7_modifyParameters.pdf}\\
+									\caption{Sequence Diagram of Visualizing Customers' Reservations in app}
+								\end{adjustwidth}
+							\end{figure}
+
 				\end{center}
+
+
+
+\newpage
 			
 			\paragraph{The store manager monitors the store situation}
 			
