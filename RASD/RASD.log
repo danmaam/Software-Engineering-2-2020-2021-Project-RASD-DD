@@ -1,87 +1,87 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.19)  1 DEC 2020 23:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.22)  4 DEC 2020 23:50
 entering extended mode
 **./RASD.tex
 (RASD.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-18>
-("C:\Program Files\MiKTeX\tex/latex/base\article.cls"
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Program Files\MiKTeX\tex/latex/base\size10.clo"
-File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+LaTeX2e <2020-10-01> patch level 1
+L3 programming layer <2020-10-05> xparse <2020-03-03>
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 )
-("C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty"
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-("C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty"
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-("C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen135
-\Gin@req@width=\dimen136
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
 )
-("C:\Program Files\MiKTeX\tex/latex/titlesec\titlesec.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box45
+\ttl@box=\box47
 \beforetitleunit=\skip49
 \aftertitleunit=\skip50
-\ttl@plus=\dimen137
-\ttl@minus=\dimen138
+\ttl@plus=\dimen141
+\ttl@minus=\dimen142
 \ttl@toksa=\toks16
-\titlewidth=\dimen139
-\titlewidthlast=\dimen140
-\titlewidthfirst=\dimen141
+\titlewidth=\dimen143
+\titlewidthlast=\dimen144
+\titlewidthfirst=\dimen145
 )
-("C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-
-("C:\Program Files\MiKTeX\tex/latex/colortbl\colortbl.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 
-("C:\Program Files\MiKTeX\tex/latex/tools\array.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen142
-\ar@mcellbox=\box46
-\extrarowheight=\dimen143
+\col@sep=\dimen146
+\ar@mcellbox=\box48
+\extrarowheight=\dimen147
 \NC@list=\toks17
 \extratabsurround=\skip51
 \backup@length=\skip52
-\ar@cellbox=\box47
+\ar@cellbox=\box49
 )
 \everycr=\toks18
 \minrowclearance=\skip53
 )
-\rownum=\count175
+\rownum=\count183
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -92,47 +92,49 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Program Files\MiKTeX\tex/latex/stackengine\stackengine.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/stackengine\stackengine
+.sty
 Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient 
 ways
 
-("C:\Program Files\MiKTeX\tex/latex/etoolbox\etoolbox.sty"
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count176
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count184
 )
-("C:\Program Files\MiKTeX\tex/latex/listofitems\listofitems.sty"
-("C:\Program Files\MiKTeX\tex/generic/listofitems\listofitems.tex"
-\loi_cnt_foreach_nest=\count177
-\loi_nestcnt=\count178
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/listofitems\listofitems
+.sty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofite
+ms.tex
+\loi_cnt_foreach_nest=\count185
+\loi_nestcnt=\count186
 )
 Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
 sep char (CT)
-)
-("C:\Program Files\MiKTeX\tex/latex/tools\calc.sty"
+) (C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count179
-\calc@Bcount=\count180
-\calc@Adimen=\dimen144
-\calc@Bdimen=\dimen145
+\calc@Acount=\count187
+\calc@Bcount=\count188
+\calc@Adimen=\dimen148
+\calc@Bdimen=\dimen149
 \calc@Askip=\skip54
 \calc@Bskip=\skip55
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count181
+\calc@Ccount=\count189
 \calc@Cskip=\skip56
 )
-\c@@stackindex=\count182
+\c@@stackindex=\count190
 \@boxshift=\skip57
 \stack@tmplength=\skip58
 \temp@stkl=\skip59
 \@stackedboxwidth=\skip60
-\@addedbox=\box48
-\@anchorbox=\box49
-\stackedbox=\box50
-\@centerbox=\box51
-\c@ROWcellindex@=\count183
+\@addedbox=\box50
+\@anchorbox=\box51
+\stackedbox=\box52
+\@centerbox=\box53
+\c@ROWcellindex@=\count191
 )
-("C:\Program Files\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
 \f@nch@headwidth=\skip61
@@ -145,33 +147,35 @@ s
 \f@nch@O@olf=\skip68
 \f@nch@O@orf=\skip69
 )
-("C:\Program Files\MiKTeX\tex/latex/tools\longtable.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip70
 \LTright=\skip71
 \LTpre=\skip72
 \LTpost=\skip73
-\LTchunksize=\count184
-\LTcapwidth=\dimen146
-\LT@head=\box52
-\LT@firsthead=\box53
-\LT@foot=\box54
-\LT@lastfoot=\box55
-\LT@cols=\count185
-\LT@rows=\count186
-\c@LT@tables=\count187
-\c@LT@chunks=\count188
+\LTchunksize=\count192
+\LTcapwidth=\dimen150
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@cols=\count193
+\LT@rows=\count194
+\c@LT@tables=\count195
+\c@LT@chunks=\count196
 \LT@p@ftn=\toks19
 )
-("C:\Program Files\MiKTeX\tex/latex/changepage\changepage.sty"
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/changepage\changepage.s
+ty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count189
-\cp@tempcnt=\count190
+\c@cp@cntr=\count197
+\cp@tempcnt=\count198
 )
-("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdfmode.def"
-File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count191
-\l__pdf_internal_box=\box56
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count199
+\l__pdf_internal_box=\box58
 ) (RASD.aux)
 \openout1 = `RASD.aux'.
 
@@ -189,20 +193,24 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
- ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count192
-\scratchdimen=\dimen147
-\scratchbox=\box57
-\nofMPsegments=\count193
-\nofMParguments=\count194
+\scratchcounter=\count266
+\scratchdimen=\dimen151
+\scratchbox=\box59
+\nofMPsegments=\count267
+\nofMParguments=\count268
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count195
-\MPscratchDim=\dimen148
-\MPnumerator=\count196
-\makeMPintoPDFobject=\count197
+\MPscratchCnt=\count269
+\MPscratchDim=\dimen152
+\MPnumerator=\count270
+\makeMPintoPDFobject=\count271
 \everyMPtoPDFconversion=\toks21
-) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
@@ -214,8 +222,8 @@ Package pdftex.def Info: LogoPolimi.PNG  used on input line 34.
 (pdftex.def)             Requested size: 224.64098pt x 169.8358pt.
  [1
 
-{C:/Users/Gianmarco Naro/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Logo
-Polimi.PNG>] (RASD.toc
+{C:/Users/danma/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./LogoPolimi.PN
+G>] (RASD.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -235,27 +243,27 @@ Overfull \hbox (46.8737pt too wide) in paragraph at lines 133--155
  []
 
 
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 170--199
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 170--201
 [][] 
  []
 
 [4]
-Overfull \hbox (45.73569pt too wide) in paragraph at lines 219--239
+Overfull \hbox (45.73569pt too wide) in paragraph at lines 221--241
 [][] 
  []
 
 [5]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 256--268
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 258--270
 [][] 
  []
 
 
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 285--299
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 287--301
 [][] 
  []
 
 [6]
-Overfull \hbox (46.87372pt too wide) in paragraph at lines 311--323
+Overfull \hbox (46.87372pt too wide) in paragraph at lines 313--325
 [][] 
  []
 
@@ -263,10 +271,10 @@ Overfull \hbox (46.87372pt too wide) in paragraph at lines 311--323
 <statechart1.PNG, id=47, 1515.6625pt x 883.3pt>
 File: statechart1.PNG Graphic file (type png)
 <use statechart1.PNG>
-Package pdftex.def Info: statechart1.PNG  used on input line 400.
+Package pdftex.def Info: statechart1.PNG  used on input line 402.
 (pdftex.def)             Requested size: 348.59505pt x 203.15472pt.
 
-Overfull \hbox (3.59505pt too wide) in paragraph at lines 400--400
+Overfull \hbox (3.59505pt too wide) in paragraph at lines 402--402
  [][] 
  []
 
@@ -274,66 +282,56 @@ Overfull \hbox (3.59505pt too wide) in paragraph at lines 400--400
 <statechart2.PNG, id=51, 642.4pt x 230.8625pt>
 File: statechart2.PNG Graphic file (type png)
 <use statechart2.PNG>
-Package pdftex.def Info: statechart2.PNG  used on input line 412.
+Package pdftex.def Info: statechart2.PNG  used on input line 414.
 (pdftex.def)             Requested size: 334.04993pt x 120.04918pt.
  [12 <./statechart2.PNG (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 429--430
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 445--446
+Underfull \hbox (badness 10000) in paragraph at lines 447--448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 449--450
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 467--468
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
-[]|[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 511--512
-[]|[]
  []
 
 
@@ -347,112 +345,234 @@ Underfull \hbox (badness 10000) in paragraph at lines 515--516
  []
 
 
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 488--521
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
+[]|[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
+[]|[]
+ []
+
+
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 492--526
 [][] 
  []
 
 [15] [16]
-Overfull \hbox (38.4148pt too wide) in alignment at lines 558--601
+Overfull \hbox (38.4148pt too wide) in alignment at lines 563--606
  [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 601
+Underfull \vbox (badness 10000) detected at line 606
  []
 
 
-Overfull \hbox (38.4148pt too wide) in alignment at lines 601--625
+Overfull \hbox (38.4148pt too wide) in alignment at lines 606--638
  [] [] 
  []
 
-[17] [18] [19]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 642--676
-[][] 
+[17] [18]
+Overfull \hbox (0.792pt too wide) in paragraph at lines 652--653
+[]\OT1/cmr/bx/n/10 R8: \OT1/cmr/m/n/10 The sys-tem must guar-an-tee that each c
+us-tomer's e-mail is unique 
+ []
+
+[19]
+Overfull \hbox (0.792pt too wide) in paragraph at lines 671--672
+[]\OT1/cmr/bx/n/10 R8: \OT1/cmr/m/n/10 The sys-tem must guar-an-tee that each c
+us-tomer's e-mail is unique 
  []
 
 
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 688--725
-[][] 
+Overfull \hbox (0.792pt too wide) in paragraph at lines 707--708
+[]\OT1/cmr/bx/n/10 R8: \OT1/cmr/m/n/10 The sys-tem must guar-an-tee that each c
+us-tomer's e-mail is unique 
  []
 
 [20]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 737--772
-[][] 
+Overfull \hbox (0.792pt too wide) in paragraph at lines 731--732
+[]\OT1/cmr/bx/n/10 R8: \OT1/cmr/m/n/10 The sys-tem must guar-an-tee that each c
+us-tomer's e-mail is unique 
  []
 
 [21]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 784--819
+Overfull \hbox (0.792pt too wide) in paragraph at lines 756--757
+[]\OT1/cmr/bx/n/10 R8: \OT1/cmr/m/n/10 The sys-tem must guar-an-tee that each c
+us-tomer's e-mail is unique 
+ []
+
+
+Overfull \hbox (0.792pt too wide) in paragraph at lines 777--778
+[]\OT1/cmr/bx/n/10 R8: \OT1/cmr/m/n/10 The sys-tem must guar-an-tee that each c
+us-tomer's e-mail is unique 
+ []
+
+[22] [23] [24] [25]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 916--950
+[][] 
+ []
+
+<SD/1_customerRegistration.pdf, id=97, 1084.05pt x 632.3625pt>
+File: SD/1_customerRegistration.pdf Graphic file (type pdf)
+<use SD/1_customerRegistration.pdf>
+Package pdftex.def Info: SD/1_customerRegistration.pdf  used on input line 956.
+
+(pdftex.def)             Requested size: 390.2577pt x 227.65033pt.
+
+Overfull \hbox (16.80496pt too wide) in paragraph at lines 956--957
+[][] 
+ []
+
+[26 <./SD/1_customerRegistration.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 982--1019
+[][] 
+ []
+
+<SD/2_storeManagerRegistration.pdf, id=105, 993.7125pt x 943.525pt>
+File: SD/2_storeManagerRegistration.pdf Graphic file (type pdf)
+<use SD/2_storeManagerRegistration.pdf>
+Package pdftex.def Info: SD/2_storeManagerRegistration.pdf  used on input line 
+1037.
+(pdftex.def)             Requested size: 496.85503pt x 471.76134pt.
+
+Overfull \hbox (86.4136pt too wide) in paragraph at lines 1037--1037
+ [] 
+ []
+
+[27] [28 <./SD/2_storeManagerRegistration.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1059--1094
+[][] 
+ []
+
+<SD/3_customerLogin.pdf, id=116, 1154.3125pt x 712.6625pt>
+File: SD/3_customerLogin.pdf Graphic file (type pdf)
+<use SD/3_customerLogin.pdf>
+Package pdftex.def Info: SD/3_customerLogin.pdf  used on input line 1099.
+(pdftex.def)             Requested size: 415.55219pt x 256.5583pt.
+
+Overfull \hbox (33.56352pt too wide) in paragraph at lines 1099--1099
+ [] 
+ []
+
+[29 <./SD/3_customerLogin.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1128--1163
+[][] 
+ []
+
+<SD/4_managerLogin.pdf, id=124, 732.7375pt x 712.6625pt>
+File: SD/4_managerLogin.pdf Graphic file (type pdf)
+<use SD/4_managerLogin.pdf>
+Package pdftex.def Info: SD/4_managerLogin.pdf  used on input line 1179.
+(pdftex.def)             Requested size: 512.91277pt x 498.86035pt.
+
+Overfull \hbox (82.5545pt too wide) in paragraph at lines 1179--1179
+ [] 
+ []
+
+
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1194--1259
+[][] 
+ []
+
+<SD/5_makeReservation.pdf, id=125, 1043.9pt x 1575.8875pt>
+File: SD/5_makeReservation.pdf Graphic file (type pdf)
+<use SD/5_makeReservation.pdf>
+Package pdftex.def Info: SD/5_makeReservation.pdf  used on input line 1264.
+(pdftex.def)             Requested size: 358.05923pt x 540.53174pt.
+
+Overfull \hbox (13.05923pt too wide) in paragraph at lines 1264--1264
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 17.47618pt on input line 1267.
+
+[30] [31 <./SD/4_managerLogin.pdf>] [32] [33 <./SD/5_makeReservation.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1309--1339
+[][] 
+ []
+
+[34]
+<SD/6_visualizeReservation.pdf, id=150, 672.5125pt x 441.65pt>
+File: SD/6_visualizeReservation.pdf Graphic file (type pdf)
+<use SD/6_visualizeReservation.pdf>
+Package pdftex.def Info: SD/6_visualizeReservation.pdf  used on input line 1363
+.
+(pdftex.def)             Requested size: 538.01073pt x 353.32047pt.
+
+Overfull \hbox (107.65247pt too wide) in paragraph at lines 1363--1363
+ [] 
+ []
+
+[35 <./SD/6_visualizeReservation.pdf>]
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 1376--1420
+[][] 
+ []
+
+[36]
+<SD/7_modifyParameters.pdf, id=162, 1033.8625pt x 1274.7625pt>
+File: SD/7_modifyParameters.pdf Graphic file (type pdf)
+<use SD/7_modifyParameters.pdf>
+Package pdftex.def Info: SD/7_modifyParameters.pdf  used on input line 1444.
+(pdftex.def)             Requested size: 361.8573pt x 446.17357pt.
+
+Overfull \hbox (16.8573pt too wide) in paragraph at lines 1444--1444
+ [] 
+ []
+
+[37 <./SD/7_modifyParameters.pdf>]
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 1463--1490
 [][] 
  []
 
 
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 831--896
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 1502--1578
 [][] 
  []
 
-[22]
-Overfull \vbox (35.48544pt too high) has occurred while \output is active []
-
-
-[23]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 908--934
-[][] 
- []
-
-
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 946--989
-[][] 
- []
-
-[24]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 1001--1028
-[][] 
- []
-
-[25]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 1040--1116
-[][] 
- []
-
-[26]
+[38]
 Overfull \vbox (55.98099pt too high) has occurred while \output is active []
 
 
-[27]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 1128--1176
+[39]
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 1590--1638
 [][] 
  []
 
 
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 1188--1222
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 1650--1684
 [][] 
  []
 
-[28]
-Overfull \hbox (45.73567pt too wide) in paragraph at lines 1234--1270
+[40]
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 1696--1732
 [][] 
  []
 
-[29] [30] (RASD.aux) ) 
+[41] [42] [43] [44] (RASD.aux) ) 
 Here is how much of TeX's memory you used:
- 2974 strings out of 480790
- 39343 string characters out of 2907026
- 311044 words of memory out of 3000000
- 18976 multiletter control sequences out of 15000+200000
- 536999 words of font info for 39 fonts, out of 3000000 for 9000
+ 3063 strings out of 480257
+ 43287 string characters out of 2881437
+ 346490 words of memory out of 3000000
+ 19583 multiletter control sequences out of 15000+200000
+ 539749 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,13n,45p,1749b,515s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Gianmarco Naro\AppData\Local\MiKTeX\fonts/pk/l
-jfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
- Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmti10.pfb>
-Output written on RASD.pdf (31 pages, 319825 bytes).
+ 60i,13n,66p,1749b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\danma\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/danma/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/danma/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/danma/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/dan
+ma/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/U
+sers/danma/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><C:/Users/danma/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsl10.pfb><C:/Users/danma/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmti10.pfb>
+Output written on RASD.pdf (45 pages, 368279 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
+ 221 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

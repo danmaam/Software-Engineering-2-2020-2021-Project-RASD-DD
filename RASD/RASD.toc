@@ -1,70 +1,70 @@
-\contentsline {section}{\numberline {1}Introduction}{3}%
-\contentsline {subsection}{\numberline {1.1}Purpose}{3}%
-\contentsline {subsection}{\numberline {1.2}Scope}{3}%
-\contentsline {subsubsection}{\numberline {1.2.1}World Phenomena}{4}%
-\contentsline {subsubsection}{\numberline {1.2.2}Shared Phenomena}{4}%
-\contentsline {subsubsection}{\numberline {1.2.3}Goals}{5}%
-\contentsline {subsection}{\numberline {1.3}Definitions, Acronyms, Abbreviations}{6}%
-\contentsline {subsubsection}{\numberline {1.3.1}Definitions}{6}%
-\contentsline {subsubsection}{\numberline {1.3.2}Acronyms}{6}%
-\contentsline {subsubsection}{\numberline {1.3.3}Abbreviations}{7}%
-\contentsline {subsection}{\numberline {1.4}Revision History}{7}%
-\contentsline {subsection}{\numberline {1.5}Reference Documents}{7}%
-\contentsline {subsection}{\numberline {1.6}Document Structure}{8}%
-\contentsline {section}{\numberline {2}Overall Description}{9}%
-\contentsline {subsection}{\numberline {2.1}Product Perspective}{9}%
-\contentsline {subsubsection}{\numberline {2.1.1}UML Description}{9}%
-\contentsline {subsubsection}{\numberline {2.1.2}State Charts}{11}%
-\contentsline {subsection}{\numberline {2.2}Product Functions}{12}%
-\contentsline {subsubsection}{\numberline {2.2.1}Getting a ticket}{12}%
-\contentsline {subsubsection}{\numberline {2.2.2}Calling process}{13}%
-\contentsline {subsubsection}{\numberline {2.2.3}Check-in/Check-out}{13}%
-\contentsline {subsubsection}{\numberline {2.2.4}Plan a visit}{13}%
-\contentsline {subsubsection}{\numberline {2.2.5}Managing single department}{13}%
-\contentsline {subsubsection}{\numberline {2.2.6}Notify users}{14}%
-\contentsline {subsubsection}{\numberline {2.2.7}Cancel a visit}{14}%
-\contentsline {subsubsection}{\numberline {2.2.8}Store capacity}{14}%
-\contentsline {subsubsection}{\numberline {2.2.9}Infer waiting time from users}{14}%
-\contentsline {subsection}{\numberline {2.3}User Characteristics}{15}%
-\contentsline {subsection}{\numberline {2.4}Assumptions, Dependencies, Constraints}{16}%
-\contentsline {subsubsection}{\numberline {2.4.1}Domain Assumptions}{16}%
-\contentsline {section}{\numberline {3}Specific Requirements}{16}%
-\contentsline {subsection}{\numberline {3.1}External Interface Requirements}{16}%
-\contentsline {subsubsection}{\numberline {3.1.1}User Interfaces}{16}%
-\contentsline {subsubsection}{\numberline {3.1.2}Hardware Interfaces}{17}%
-\contentsline {subsubsection}{\numberline {3.1.3}Software Interfaces}{17}%
-\contentsline {subsubsection}{\numberline {3.1.4}Communication Interfaces}{17}%
-\contentsline {subsection}{\numberline {3.2}Functional Requirements}{17}%
-\contentsline {subsubsection}{\numberline {3.2.1}List of Requirements}{17}%
-\contentsline {subsubsection}{\numberline {3.2.2}Mapping}{19}%
-\contentsline {subsubsection}{\numberline {3.2.3}Use Cases}{19}%
-\contentsline {paragraph}{\numberline {3.2.3.1}Registration of a customer}{20}%
-\contentsline {paragraph}{\numberline {3.2.3.2}Registration of a store}{20}%
-\contentsline {paragraph}{\numberline {3.2.3.3}Login of a customer}{21}%
-\contentsline {paragraph}{\numberline {3.2.3.4}Login of a store manager}{22}%
-\contentsline {paragraph}{\numberline {3.2.3.5}Customer makes a reservation}{22}%
-\contentsline {paragraph}{\numberline {3.2.3.6}Customer visualizes reservations}{24}%
-\contentsline {paragraph}{\numberline {3.2.3.7}Manager modifies store parameters}{24}%
-\contentsline {paragraph}{\numberline {3.2.3.8}The store manager monitors the store situation}{25}%
-\contentsline {paragraph}{\numberline {3.2.3.9}The store manager manages customers bookings}{26}%
-\contentsline {paragraph}{\numberline {3.2.3.10}Customers reservations management}{28}%
-\contentsline {paragraph}{\numberline {3.2.3.11}Customer get a ticket with the totem}{28}%
-\contentsline {paragraph}{\numberline {3.2.3.12}Customer selects the prefered means of transport}{29}%
-\contentsline {subsubsection}{\numberline {3.2.4}Sequence Diagram}{29}%
-\contentsline {subsubsection}{\numberline {3.2.5}Scenarios}{30}%
-\contentsline {subsection}{\numberline {3.3}Performance Requirements}{30}%
-\contentsline {subsection}{\numberline {3.4}Design Costraints}{30}%
-\contentsline {subsubsection}{\numberline {3.4.1}Standards Compliance}{30}%
-\contentsline {subsubsection}{\numberline {3.4.2}Hardware Limitations}{30}%
-\contentsline {subsubsection}{\numberline {3.4.3}Any Other Constraint}{30}%
-\contentsline {subsection}{\numberline {3.5}Software System Attributes}{30}%
-\contentsline {subsubsection}{\numberline {3.5.1}Reliability}{30}%
-\contentsline {subsubsection}{\numberline {3.5.2}Availability}{30}%
-\contentsline {subsubsection}{\numberline {3.5.3}Security}{30}%
-\contentsline {subsubsection}{\numberline {3.5.4}Maintainability}{30}%
-\contentsline {subsubsection}{\numberline {3.5.5}Portability}{30}%
-\contentsline {subsection}{\numberline {3.6}Additional Specifications}{30}%
-\contentsline {section}{\numberline {4}Formal Analysis Using Alloy}{30}%
-\contentsline {subsection}{\numberline {4.1}Alloy}{30}%
-\contentsline {section}{\numberline {5}Effort Spent}{30}%
-\contentsline {section}{\numberline {6}References}{30}%
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Purpose}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Scope}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}World Phenomena}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}Shared Phenomena}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}Goals}{5}{}%
+\contentsline {subsection}{\numberline {1.3}Definitions, Acronyms, Abbreviations}{6}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}Definitions}{6}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}Acronyms}{6}{}%
+\contentsline {subsubsection}{\numberline {1.3.3}Abbreviations}{7}{}%
+\contentsline {subsection}{\numberline {1.4}Revision History}{7}{}%
+\contentsline {subsection}{\numberline {1.5}Reference Documents}{7}{}%
+\contentsline {subsection}{\numberline {1.6}Document Structure}{8}{}%
+\contentsline {section}{\numberline {2}Overall Description}{9}{}%
+\contentsline {subsection}{\numberline {2.1}Product Perspective}{9}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}UML Description}{9}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}State Charts}{11}{}%
+\contentsline {subsection}{\numberline {2.2}Product Functions}{12}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}Getting a ticket}{12}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Calling process}{13}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}Check-in/Check-out}{13}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}Plan a visit}{13}{}%
+\contentsline {subsubsection}{\numberline {2.2.5}Managing single department}{13}{}%
+\contentsline {subsubsection}{\numberline {2.2.6}Notify users}{14}{}%
+\contentsline {subsubsection}{\numberline {2.2.7}Cancel a visit}{14}{}%
+\contentsline {subsubsection}{\numberline {2.2.8}Store capacity}{14}{}%
+\contentsline {subsubsection}{\numberline {2.2.9}Infer waiting time from users}{14}{}%
+\contentsline {subsection}{\numberline {2.3}Allow a fair management of the accesses}{15}{}%
+\contentsline {subsection}{\numberline {2.4}User Characteristics}{15}{}%
+\contentsline {subsection}{\numberline {2.5}Assumptions, Dependencies, Constraints}{16}{}%
+\contentsline {subsubsection}{\numberline {2.5.1}Domain Assumptions}{16}{}%
+\contentsline {section}{\numberline {3}Specific Requirements}{17}{}%
+\contentsline {subsection}{\numberline {3.1}External Interface Requirements}{17}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}User Interfaces}{17}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}Hardware Interfaces}{17}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}Software Interfaces}{17}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}Communication Interfaces}{17}{}%
+\contentsline {subsection}{\numberline {3.2}Functional Requirements}{17}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}List of Requirements}{17}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Mapping with goals}{19}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Use Cases}{26}{}%
+\contentsline {paragraph}{\numberline {3.2.3.1}Registration of a customer}{26}{}%
+\contentsline {paragraph}{\numberline {3.2.3.2}Registration of a store}{27}{}%
+\contentsline {paragraph}{\numberline {3.2.3.3}Login of a customer}{29}{}%
+\contentsline {paragraph}{\numberline {3.2.3.4}Login of a store manager}{30}{}%
+\contentsline {paragraph}{\numberline {3.2.3.5}Customer makes a reservation}{32}{}%
+\contentsline {paragraph}{\numberline {3.2.3.6}Customer visualizes reservations}{34}{}%
+\contentsline {paragraph}{\numberline {3.2.3.7}Manager modifies store parameters}{36}{}%
+\contentsline {paragraph}{\numberline {3.2.3.8}The store manager monitors the store situation}{38}{}%
+\contentsline {paragraph}{\numberline {3.2.3.9}The store manager manages customers bookings}{38}{}%
+\contentsline {paragraph}{\numberline {3.2.3.10}Customers reservations management}{40}{}%
+\contentsline {paragraph}{\numberline {3.2.3.11}Customer get a ticket with the totem}{40}{}%
+\contentsline {paragraph}{\numberline {3.2.3.12}Customer selects the prefered means of transport}{41}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}Sequence Diagram}{41}{}%
+\contentsline {subsubsection}{\numberline {3.2.5}Scenarios}{42}{}%
+\contentsline {subsection}{\numberline {3.3}Performance Requirements}{42}{}%
+\contentsline {subsection}{\numberline {3.4}Design Costraints}{43}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Standards Compliance}{43}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Hardware Limitations}{43}{}%
+\contentsline {subsection}{\numberline {3.5}Software System Attributes}{43}{}%
+\contentsline {subsubsection}{\numberline {3.5.1}Reliability}{43}{}%
+\contentsline {subsubsection}{\numberline {3.5.2}Availability}{43}{}%
+\contentsline {subsubsection}{\numberline {3.5.3}Security}{43}{}%
+\contentsline {subsubsection}{\numberline {3.5.4}Maintainability}{44}{}%
+\contentsline {subsubsection}{\numberline {3.5.5}Portability}{44}{}%
+\contentsline {subsection}{\numberline {3.6}Additional Specifications}{44}{}%
+\contentsline {section}{\numberline {4}Formal Analysis Using Alloy}{44}{}%
+\contentsline {subsection}{\numberline {4.1}Alloy}{44}{}%
+\contentsline {section}{\numberline {5}Effort Spent}{44}{}%
+\contentsline {section}{\numberline {6}References}{44}{}%
