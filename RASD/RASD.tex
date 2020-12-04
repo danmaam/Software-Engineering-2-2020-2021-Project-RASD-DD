@@ -1780,8 +1780,81 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 	
 	
 \section{Formal Analysis Using Alloy}
-	\subsection{Alloy}
-	extra
+	The following section considers the fundamental properties and constraints identified for the specification of the problem and formally define them with a formal model in which it is shown how they will be satisfied. The alloy modelling language is used to model the problem, and some possible comments are also provided in order to clarify the most critical aspects. 
+	\subsection{Alloy Model}
+	sig Username\{
+	
+		usr: one String
+		
+	\}
+	
+	
+	sig Password\{
+		
+		psw: one String
+		
+	\}
+
+
+	sig Email\{
+	
+		email: one String
+		
+	\}
+	
+	sig Name\{
+	
+		name: one String
+		
+	\}
+	
+	sig Surname\{
+	
+		surname: one String
+		
+	\}
+
+	sig Certification\{\}
+	
+	sig CustomerReg\{
+	
+		username: one Username,
+		
+		password: one Password,
+		
+		email: one Email,
+		
+		name: one Name,
+		
+		surname: one Surname
+		
+	\}
+
+	sig Customer\{
+	
+		registration: one CustomerReg
+		
+	\}
+
+	sig StoreReg\{
+	
+		name: one Name,
+		
+		password: one Password,
+		
+		certification: one Certification,
+		
+		capacity: one Int		
+		
+	\}
+	
+	sig Store\{
+	
+		registration: one StoreReg
+		
+	\}
+	
+	
 	
 	
 \section{Effort Spent}
