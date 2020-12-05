@@ -1745,23 +1745,123 @@ allowed booked clients in the store (or in a specific department)
 		\subsubsection{Scenarios}
 		extra
 	\subsection{Performance Requirements}
+	CLup app is aimed to reduce gatherings due to the Covid-19 pandemic. So, some components needs a certain responsiveness. Here there are described some parts of the system that are critical to the scope of entire system
+	\begin{itemize}
+		\item {\bfseries Requests saving system:} when a client got a ticket, the system needs to process and save it in a very low time, less than 2 seconds,  since the requested tickets in a day are really important to allow or deny people to get another ticket for the same day/book a visit in a certain moment of the day.  
+		\item {\bfseries QR Code processing:} each customer must scan his QR Code when he enters the store. This means that, to avoid delays in the queue, the component processing QR Codes must be really fast, and process them in no more than 5 seconds after the code is retrieved from the optical scanner.
+		\item {\bfseries Ticket calling system:} as for QR Codes processing, after a customer exits the store, the system must be able to process the next ticket to be called, if any, in a strict time, to avoid that people waits outside the store for long times. This process must not last more than 10 seconds.
+		\item {\bfseries User notifier: } the system must responsively notify users that they must depart for the store in time. 
+		\item{\bfseries Application data updates: } when the customer need to use the application for any purpose, the app must be responsive, and each object required over the network must be available in no more than 5 seconds from its request; if the retrieve from the net fails, the app will show the local stored data to avoid delays in the whole system (eg. the client must retrieve his QR Code to access the store) 
+		\item{\bfseries Totem ticket printing: } the totem must process each request and print the ticket in no more than 5 seconds.
+	\end{itemize} 
+The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect this timing. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 connected users per each store inside the system.
 	\subsection{Design Costraints}
 		\subsubsection{Standards Compliance}
+	System is compliant to some standards, such as:
+	\begin{itemize}
+		\item Generated QR Codes are compliant to ISO/IEC 18004:2015 standard
+		\item Network messages are exchanged through the internet protocol TCP/IP
+	\end{itemize}
+The same doesn't applies to requests of travel times, since the uses non-standard API of some map service.
 		\subsubsection{Hardware Limitations}
-		\subsubsection{Any Other Constraint}
+		To work properly, CLup needs some type of hardware, in base of the considered component.
+		\begin{itemize}
+			\item {\bfseries Customer Device:} Customer needs to have a device with a working network module, a GPS module and a high resolution display (minimum 720P).
+			\item {\bfseries Totem:} the totem must have a working network module, a ticket printer and a module to make possible interfacing between customer and totem
+			\item {\bfseries QR Code readers:} QR Code readers must have a working network module, and a optical scanner that takes no more than 5 seconds to read and interpret a QR code and its content
+		\end{itemize}
 	\subsection{Software System Attributes}
 		\subsubsection{Reliability}
+		The system must have a  very low probability of failure (less than 0,0001\%) to avoid inconveniences in crowd managing.
 		\subsubsection{Availability}
+		Due to the critic aspects the application handles, is required a 99,99\% of system reliability. It means that the application will be down only for 52.60 minutes per year, an estimate that is acceptable. Having a greater downtime per year, may lead to inconveniences in handling the queue outside a store, bringing to a possible assembly of people.
 		\subsubsection{Security}
+		Each communication between client and server is made over a secure transport protocol (eg. TLS). For each request the system will authenticate the user so that everyone access only to data he is authorized. An encryption and decryption system must be implemented so that QRs' Content is encrypted to avoid someone can forge a malicious ticket. Moreover, each user password is stored using its hash value. 
 		\subsubsection{Maintainability}
+		Since rules can change in every moment, the software must be developed in an extendible way, so that it'e easy to add new functions required by new restrictions. Moreover, the software can be used even if after the pandemic. So, it might be required to implement new feature to make the system more appealing.
 		\subsubsection{Portability}
-	\subsection{Additional Specifications}
-	extra
+		The application must be portable on the majority mobile OSes. For this reasons, the app will use a notification service accessible through the OS APIs. Furthermore, the software is thought so that is possible to implement different map service in different versions.
+		\subsection{Additional Specifications}
+	The system guarantees unicity of each customer's email and of each store manager's ID.
+	
 	
 	
 \section{Formal Analysis Using Alloy}
-	\subsection{Alloy}
-	extra
+	The following section considers the fundamental properties and constraints identified for the specification of the problem and formally define them with a formal model in which it is shown how they will be satisfied. The alloy modelling language is used to model the problem, and some possible comments are also provided in order to clarify the most critical aspects. 
+	\subsection{Alloy Model}
+	sig Username\{
+	
+		usr: one String
+		
+	\}
+	
+	
+	sig Password\{
+		
+		psw: one String
+		
+	\}
+
+
+	sig Email\{
+	
+		email: one String
+		
+	\}
+	
+	sig Name\{
+	
+		name: one String
+		
+	\}
+	
+	sig Surname\{
+	
+		surname: one String
+		
+	\}
+
+	sig Certification\{\}
+	
+	sig CustomerReg\{
+	
+		username: one Username,
+		
+		password: one Password,
+		
+		email: one Email,
+		
+		name: one Name,
+		
+		surname: one Surname
+		
+	\}
+
+	sig Customer\{
+	
+		registration: one CustomerReg
+		
+	\}
+
+	sig StoreReg\{
+	
+		name: one Name,
+		
+		password: one Password,
+		
+		certification: one Certification,
+		
+		capacity: one Int		
+		
+	\}
+	
+	sig Store\{
+	
+		registration: one StoreReg
+		
+	\}
+	
+	
 	
 	
 \section{Effort Spent}
