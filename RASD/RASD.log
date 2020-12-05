@@ -1,0 +1,980 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.10.22)  5 DEC 2020 16:36
+entering extended mode
+**./RASD.tex
+(RASD.tex
+LaTeX2e <2020-10-01> patch level 1
+L3 programming layer <2020-10-05> xparse <2020-03-03>
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box47
+\beforetitleunit=\skip49
+\aftertitleunit=\skip50
+\ttl@plus=\dimen141
+\ttl@minus=\dimen142
+\ttl@toksa=\toks16
+\titlewidth=\dimen143
+\titlewidthlast=\dimen144
+\titlewidthfirst=\dimen145
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen146
+\ar@mcellbox=\box48
+\extrarowheight=\dimen147
+\NC@list=\toks17
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box49
+)
+\everycr=\toks18
+\minrowclearance=\skip53
+)
+\rownum=\count183
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/stackengine\stackengine
+.sty
+Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient 
+ways
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count184
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/listofitems\listofitems
+.sty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/listofitems\listofite
+ms.tex
+\loi_cnt_foreach_nest=\count185
+\loi_nestcnt=\count186
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+sep char (CT)
+) (C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count187
+\calc@Bcount=\count188
+\calc@Adimen=\dimen148
+\calc@Bdimen=\dimen149
+\calc@Askip=\skip54
+\calc@Bskip=\skip55
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count189
+\calc@Cskip=\skip56
+)
+\c@@stackindex=\count190
+\@boxshift=\skip57
+\stack@tmplength=\skip58
+\temp@stkl=\skip59
+\@stackedboxwidth=\skip60
+\@addedbox=\box50
+\@anchorbox=\box51
+\stackedbox=\box52
+\@centerbox=\box53
+\c@ROWcellindex@=\count191
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip61
+\f@nch@O@elh=\skip62
+\f@nch@O@erh=\skip63
+\f@nch@O@olh=\skip64
+\f@nch@O@orh=\skip65
+\f@nch@O@elf=\skip66
+\f@nch@O@erf=\skip67
+\f@nch@O@olf=\skip68
+\f@nch@O@orf=\skip69
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip70
+\LTright=\skip71
+\LTpre=\skip72
+\LTpost=\skip73
+\LTchunksize=\count192
+\LTcapwidth=\dimen150
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@cols=\count193
+\LT@rows=\count194
+\c@LT@tables=\count195
+\c@LT@chunks=\count196
+\LT@p@ftn=\toks19
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/changepage\changepage.s
+ty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count197
+\cp@tempcnt=\count198
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex
+\pgfutil@everybye=\toks20
+\pgfutil@tempdima=\dimen151
+\pgfutil@tempdimb=\dimen152
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common-lists.tex))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def
+\pgfutil@abb=\box58
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2020/10/01 v3.1.6a (3.1.6a)
+))
+Package: pgf 2020/10/01 v3.1.6a (3.1.6a)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+Package: pgfsys 2020/10/01 v3.1.6a (3.1.6a)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+filtered.code.tex
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen153
+\pgf@y=\dimen154
+\pgf@xa=\dimen155
+\pgf@ya=\dimen156
+\pgf@xb=\dimen157
+\pgf@yb=\dimen158
+\pgf@xc=\dimen159
+\pgf@yc=\dimen160
+\pgf@xd=\dimen161
+\pgf@yd=\dimen162
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count199
+\c@pgf@countb=\count266
+\c@pgf@countc=\count267
+\c@pgf@countd=\count268
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
+\pgf@sys@id@count=\count269
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg
+File: pgf.cfg 2020/10/01 v3.1.6a (3.1.6a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-pdftex.def
+File: pgfsys-pdftex.def 2020/10/01 v3.1.6a (3.1.6a)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def
+File: pgfsys-common-pdf.def 2020/10/01 v3.1.6a (3.1.6a)
+)))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfsyssoftpath@smallbuffer@items=\count270
+\pgfsyssoftpath@bigbuffer@items=\count271
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex
+File: pgfsysprotocol.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+Package: pgfcore 2020/10/01 v3.1.6a (3.1.6a)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex
+\pgfmath@dimen=\dimen163
+\pgfmath@count=\count272
+\pgfmath@box=\box59
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex
+\c@pgfmathroundto@lastzeros=\count273
+))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex
+File: pgfcorepoints.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@picminx=\dimen164
+\pgf@picmaxx=\dimen165
+\pgf@picminy=\dimen166
+\pgf@picmaxy=\dimen167
+\pgf@pathminx=\dimen168
+\pgf@pathmaxx=\dimen169
+\pgf@pathminy=\dimen170
+\pgf@pathmaxy=\dimen171
+\pgf@xx=\dimen172
+\pgf@xy=\dimen173
+\pgf@yx=\dimen174
+\pgf@yy=\dimen175
+\pgf@zx=\dimen176
+\pgf@zy=\dimen177
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@path@lastx=\dimen178
+\pgf@path@lasty=\dimen179
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex
+File: pgfcorepathusage.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@shorten@end@additional=\dimen180
+\pgf@shorten@start@additional=\dimen181
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex
+File: pgfcorescopes.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfpic=\box60
+\pgf@hbox=\box61
+\pgf@layerbox@main=\box62
+\pgf@picture@serial@count=\count274
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgflinewidth=\dimen182
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex
+File: pgfcoretransformations.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@pt@x=\dimen183
+\pgf@pt@y=\dimen184
+\pgf@pt@temp=\dimen185
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex
+File: pgfcorequick.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex
+File: pgfcoreobjects.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex
+File: pgfcorearrows.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfarrowsep=\dimen186
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex
+File: pgfcoreshade.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@max=\dimen187
+\pgf@sys@shading@range@num=\count275
+\pgf@shadingcount=\count276
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex
+File: pgfcoreimage.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex
+File: pgfcoreexternal.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfexternal@startupbox=\box63
+))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex
+File: pgfcorelayers.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex
+File: pgfcoretransparency.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex
+File: pgfcorepatterns.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex
+File: pgfcorerdf.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfnodeparttextbox=\box64
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
+File: pgfmoduleplot.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
+Package: pgfcomp-version-0-65 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@nodesepstart=\dimen188
+\pgf@nodesepend=\dimen189
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
+Package: pgfcomp-version-1-18 2020/10/01 v3.1.6a (3.1.6a)
+))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
+Package: pgffor 2020/10/01 v3.1.6a (3.1.6a)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex)
+\pgffor@iter=\dimen190
+\pgffor@skip=\dimen191
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+Package: tikz 2020/10/01 v3.1.6a (3.1.6a)
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@plot@mark@count=\count277
+\pgfplotmarksize=\dimen192
+)
+\tikz@lastx=\dimen193
+\tikz@lasty=\dimen194
+\tikz@lastxsaved=\dimen195
+\tikz@lastysaved=\dimen196
+\tikz@lastmovetox=\dimen197
+\tikz@lastmovetoy=\dimen198
+\tikzleveldistance=\dimen199
+\tikzsiblingdistance=\dimen256
+\tikz@figbox=\box65
+\tikz@figbox@bg=\box66
+\tikz@tempbox=\box67
+\tikz@tempbox@bg=\box68
+\tikztreelevel=\count278
+\tikznumberofchildren=\count279
+\tikznumberofcurrentchild=\count280
+\tikz@fig@count=\count281
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
+File: pgfmodulematrix.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfmatrixcurrentrow=\count282
+\pgfmatrixcurrentcolumn=\count283
+\pgf@matrix@numberofcolumns=\count284
+)
+\tikz@expandcount=\count285
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)))
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count286
+\l__pdf_internal_box=\box69
+) (RASD.aux)
+\openout1 = `RASD.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count287
+\scratchdimen=\dimen257
+\scratchbox=\box70
+\nofMPsegments=\count288
+\nofMParguments=\count289
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count290
+\MPscratchDim=\dimen258
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
+\everyMPtoPDFconversion=\toks33
+)
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+<LogoPolimi.PNG, id=4, 748.7975pt x 566.115pt>
+File: LogoPolimi.PNG Graphic file (type png)
+<use LogoPolimi.PNG>
+Package pdftex.def Info: LogoPolimi.PNG  used on input line 35.
+(pdftex.def)             Requested size: 224.64098pt x 169.8358pt.
+ [1
+
+{C:/Users/danma/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./LogoPolimi.PN
+G>] (RASD.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+ [1])
+\tf@toc=\write4
+\openout4 = `RASD.toc'.
+
+ [2]
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 102--117
+[][] 
+ []
+
+[3]
+Overfull \hbox (46.8737pt too wide) in paragraph at lines 134--156
+[][] 
+ []
+
+
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 171--202
+[][] 
+ []
+
+[4]
+Overfull \hbox (45.73569pt too wide) in paragraph at lines 222--242
+[][] 
+ []
+
+[5]
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 259--271
+[][] 
+ []
+
+
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 288--302
+[][] 
+ []
+
+[6]
+Overfull \hbox (46.87372pt too wide) in paragraph at lines 314--326
+[][] 
+ []
+
+[7] [8] [9]
+<ClassDiagrams/classDiagram.pdf, id=47, 1174.3875pt x 582.175pt>
+File: ClassDiagrams/classDiagram.pdf Graphic file (type pdf)
+<use ClassDiagrams/classDiagram.pdf>
+Package pdftex.def Info: ClassDiagrams/classDiagram.pdf  used on input line 434
+.
+(pdftex.def)             Requested size: 528.4695pt x 325.99443pt.
+
+
+LaTeX Warning: Float too large for page by 4.41394pt on input line 437.
+
+[10] [11 <./ClassDiagrams/classDiagram.pdf>]
+<StateCharts/number_calling_system.pdf, id=58, 1515.6625pt x 883.3pt>
+File: StateCharts/number_calling_system.pdf Graphic file (type pdf)
+<use StateCharts/number_calling_system.pdf>
+Package pdftex.def Info: StateCharts/number_calling_system.pdf  used on input l
+ine 447.
+(pdftex.def)             Requested size: 485.02191pt x 282.66177pt.
+
+Overfull \hbox (66.89813pt too wide) in paragraph at lines 447--447
+ []| [] 
+ []
+
+[12 <./StateCharts/number_calling_system.pdf>]
+<StateCharts/qr_scanner_uml.pdf, id=68, 642.4pt x 230.8625pt>
+File: StateCharts/qr_scanner_uml.pdf Graphic file (type pdf)
+<use StateCharts/qr_scanner_uml.pdf>
+Package pdftex.def Info: StateCharts/qr_scanner_uml.pdf  used on input line 458
+.
+(pdftex.def)             Requested size: 449.67694pt x 161.60263pt.
+
+Overfull \hbox (47.77144pt too wide) in paragraph at lines 458--458
+ []| [] 
+ []
+
+<StateCharts/ticket_generator_system.pdf, id=69, 943.525pt x 361.35pt>
+File: StateCharts/ticket_generator_system.pdf Graphic file (type pdf)
+<use StateCharts/ticket_generator_system.pdf>
+Package pdftex.def Info: StateCharts/ticket_generator_system.pdf  used on input
+ line 471.
+(pdftex.def)             Requested size: 471.76134pt x 180.67456pt.
+
+Overfull \hbox (69.85583pt too wide) in paragraph at lines 471--471
+ []| [] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13 <./StateCharts/qr_scanner_uml.pdf>] [14 <./StateCharts/ticket_generator_sys
+tem.pdf>] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
+[]|[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 573--574
+[]|[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
+[]|[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
+[]|[]
+ []
+
+
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 550--584
+[][] 
+ []
+
+[17] [18] [19]
+Overfull \hbox (38.4148pt too wide) in alignment at lines 622--668
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 668
+ []
+
+
+Overfull \hbox (38.4148pt too wide) in alignment at lines 668--691
+ [] [] 
+ []
+
+[20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--736
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 752--753
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 790--791
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 805--806
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 825--826
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 844--845
+
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 877--878
+
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 895--896
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
+
+ []
+
+[27]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 936--970
+[][] 
+ []
+
+<SD/1_customerRegistration.pdf, id=125, 1084.05pt x 632.3625pt>
+File: SD/1_customerRegistration.pdf Graphic file (type pdf)
+<use SD/1_customerRegistration.pdf>
+Package pdftex.def Info: SD/1_customerRegistration.pdf  used on input line 976.
+
+(pdftex.def)             Requested size: 390.2577pt x 227.65033pt.
+
+Overfull \hbox (16.80496pt too wide) in paragraph at lines 976--977
+[][] 
+ []
+
+[28 <./SD/1_customerRegistration.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1002--1039
+[][] 
+ []
+
+<SD/2_storeManagerRegistration.pdf, id=133, 993.7125pt x 943.525pt>
+File: SD/2_storeManagerRegistration.pdf Graphic file (type pdf)
+<use SD/2_storeManagerRegistration.pdf>
+Package pdftex.def Info: SD/2_storeManagerRegistration.pdf  used on input line 
+1057.
+(pdftex.def)             Requested size: 496.85503pt x 471.76134pt.
+
+Overfull \hbox (86.4136pt too wide) in paragraph at lines 1057--1057
+ [] 
+ []
+
+[29] [30 <./SD/2_storeManagerRegistration.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1079--1114
+[][] 
+ []
+
+<SD/3_customerLogin.pdf, id=145, 1154.3125pt x 712.6625pt>
+File: SD/3_customerLogin.pdf Graphic file (type pdf)
+<use SD/3_customerLogin.pdf>
+Package pdftex.def Info: SD/3_customerLogin.pdf  used on input line 1119.
+(pdftex.def)             Requested size: 415.55219pt x 256.5583pt.
+
+Overfull \hbox (33.56352pt too wide) in paragraph at lines 1119--1119
+ [] 
+ []
+
+[31 <./SD/3_customerLogin.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1148--1183
+[][] 
+ []
+
+<SD/4_managerLogin.pdf, id=153, 732.7375pt x 712.6625pt>
+File: SD/4_managerLogin.pdf Graphic file (type pdf)
+<use SD/4_managerLogin.pdf>
+Package pdftex.def Info: SD/4_managerLogin.pdf  used on input line 1199.
+(pdftex.def)             Requested size: 512.91277pt x 498.86035pt.
+
+Overfull \hbox (82.5545pt too wide) in paragraph at lines 1199--1199
+ [] 
+ []
+
+
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1214--1279
+[][] 
+ []
+
+<SD/5_makeReservation.pdf, id=154, 1043.9pt x 1575.8875pt>
+File: SD/5_makeReservation.pdf Graphic file (type pdf)
+<use SD/5_makeReservation.pdf>
+Package pdftex.def Info: SD/5_makeReservation.pdf  used on input line 1284.
+(pdftex.def)             Requested size: 358.05923pt x 540.53174pt.
+
+Overfull \hbox (13.05923pt too wide) in paragraph at lines 1284--1284
+ [] 
+ []
+
+
+LaTeX Warning: Float too large for page by 17.47618pt on input line 1287.
+
+[32] [33 <./SD/4_managerLogin.pdf>] [34] [35 <./SD/5_makeReservation.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1329--1359
+[][] 
+ []
+
+[36]
+<SD/6_visualizeReservation.pdf, id=179, 672.5125pt x 441.65pt>
+File: SD/6_visualizeReservation.pdf Graphic file (type pdf)
+<use SD/6_visualizeReservation.pdf>
+Package pdftex.def Info: SD/6_visualizeReservation.pdf  used on input line 1383
+.
+(pdftex.def)             Requested size: 538.01073pt x 353.32047pt.
+
+Overfull \hbox (107.65247pt too wide) in paragraph at lines 1383--1383
+ [] 
+ []
+
+[37 <./SD/6_visualizeReservation.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1396--1440
+[][] 
+ []
+
+<SD/7_modifyParameters.pdf, id=187, 1033.8625pt x 1274.7625pt>
+File: SD/7_modifyParameters.pdf Graphic file (type pdf)
+<use SD/7_modifyParameters.pdf>
+Package pdftex.def Info: SD/7_modifyParameters.pdf  used on input line 1464.
+(pdftex.def)             Requested size: 382.52313pt x 471.65474pt.
+
+Overfull \hbox (37.52313pt too wide) in paragraph at lines 1464--1464
+ [] 
+ []
+
+[38] [39 <./SD/7_modifyParameters.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1483--1510
+[][] 
+ []
+
+<SD/8_monitorStoreSituation.pdf, id=198, 762.85pt x 542.025pt>
+File: SD/8_monitorStoreSituation.pdf Graphic file (type pdf)
+<use SD/8_monitorStoreSituation.pdf>
+Package pdftex.def Info: SD/8_monitorStoreSituation.pdf  used on input line 152
+7.
+(pdftex.def)             Requested size: 228.85677pt x 162.60875pt.
+[40 <./SD/8_monitorStoreSituation.pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1543--1613
+[][] 
+ []
+
+[41]
+<SD/9_manageReservations(store).pdf, id=209, 973.6375pt x 1063.975pt>
+File: SD/9_manageReservations(store).pdf Graphic file (type pdf)
+<use SD/9_manageReservations(store).pdf>
+Package pdftex.def Info: SD/9_manageReservations(store).pdf  used on input line
+ 1618.
+(pdftex.def)             Requested size: 408.92496pt x 446.86646pt.
+
+Overfull \hbox (21.24583pt too wide) in paragraph at lines 1618--1618
+ [] 
+ []
+
+[42 <./SD/9_manageReservations(store).pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1649--1697
+[][] 
+ []
+
+[43] [44]
+<SD/10_manageReservation(customer).pdf, id=224, 1134.2375pt x 993.7125pt>
+File: SD/10_manageReservation(customer).pdf Graphic file (type pdf)
+<use SD/10_manageReservation(customer).pdf>
+Package pdftex.def Info: SD/10_manageReservation(customer).pdf  used on input l
+ine 1738.
+(pdftex.def)             Requested size: 567.11737pt x 496.85503pt.
+
+Overfull \hbox (128.22319pt too wide) in paragraph at lines 1738--1738
+ [] 
+ []
+
+[45 <./SD/10_manageReservation(customer).pdf>]
+Overfull \hbox (93.74713pt too wide) in paragraph at lines 1752--1786
+[][] 
+ []
+
+<SD/11_getTicketAtTotem.pdf, id=232, 863.225pt x 883.3pt>
+File: SD/11_getTicketAtTotem.pdf Graphic file (type pdf)
+<use SD/11_getTicketAtTotem.pdf>
+Package pdftex.def Info: SD/11_getTicketAtTotem.pdf  used on input line 1815.
+(pdftex.def)             Requested size: 483.40271pt x 494.64464pt.
+
+Overfull \hbox (61.58037pt too wide) in paragraph at lines 1815--1815
+ [] 
+ []
+
+[46]
+
+LaTeX Warning: Text page 47 contains only floats.
+
+[47 <./SD/11_getTicketAtTotem.pdf>]
+Overfull \hbox (45.73567pt too wide) in paragraph at lines 1829--1867
+[][] 
+ []
+
+<SD/12_selectPreferredMeanOfTransport.pdf, id=243, 903.375pt x 612.2875pt>
+File: SD/12_selectPreferredMeanOfTransport.pdf Graphic file (type pdf)
+<use SD/12_selectPreferredMeanOfTransport.pdf>
+Package pdftex.def Info: SD/12_selectPreferredMeanOfTransport.pdf  used on inpu
+t line 1872.
+(pdftex.def)             Requested size: 379.41492pt x 257.159pt.
+
+Overfull \hbox (20.18855pt too wide) in paragraph at lines 1872--1872
+ [] 
+ []
+
+[48 <./SD/12_selectPreferredMeanOfTransport.pdf>]
+<UC/1_useCaseDiagram.pdf, id=252, 1375.1375pt x 923.45pt>
+File: UC/1_useCaseDiagram.pdf Graphic file (type pdf)
+<use UC/1_useCaseDiagram.pdf>
+Package pdftex.def Info: UC/1_useCaseDiagram.pdf  used on input line 1898.
+(pdftex.def)             Requested size: 577.55382pt x 387.84636pt.
+
+Overfull \hbox (130.12373pt too wide) in paragraph at lines 1898--1898
+ [] 
+ []
+
+[49 <./UC/1_useCaseDiagram.pdf>] [50] [51] [52] [53]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+952.
+
+(C:\Users\danma\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1952.
+
+
+[54] [55] (RASD.aux) ) 
+Here is how much of TeX's memory you used:
+ 13027 strings out of 480257
+ 265411 string characters out of 2881437
+ 533705 words of memory out of 3000000
+ 29325 multiletter control sequences out of 15000+200000
+ 539749 words of font info for 44 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 77i,13n,88p,1749b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\danma\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
+appen/ec/dpi600\tcrm1000.pk><C:/Users/danma/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/danma/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/danma/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/danma/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/danma
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Use
+rs/danma/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pf
+b><C:/Users/danma/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Users/danma/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmti10.pfb>
+Output written on RASD.pdf (56 pages, 355844 bytes).
+PDF statistics:
+ 314 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+
