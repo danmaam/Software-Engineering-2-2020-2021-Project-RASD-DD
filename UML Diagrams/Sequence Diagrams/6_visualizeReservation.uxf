@@ -28,8 +28,8 @@ fontsize=10
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>162</x>
-      <y>72</y>
+      <x>18</x>
+      <y>18</y>
       <w>1044</w>
       <h>738</h>
     </coordinates>
@@ -39,8 +39,8 @@ fontsize=10
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>180</x>
-      <y>144</y>
+      <x>36</x>
+      <y>90</y>
       <w>180</w>
       <h>54</h>
     </coordinates>
@@ -50,8 +50,8 @@ fontsize=10
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>558</x>
-      <y>144</y>
+      <x>414</x>
+      <y>90</y>
       <w>180</w>
       <h>54</h>
     </coordinates>
@@ -61,8 +61,8 @@ fontsize=10
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>252</x>
-      <y>180</y>
+      <x>108</x>
+      <y>126</y>
       <w>54</w>
       <h>126</h>
     </coordinates>
@@ -72,8 +72,8 @@ fontsize=10
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>180</y>
+      <x>486</x>
+      <y>126</y>
       <w>54</w>
       <h>144</h>
     </coordinates>
@@ -83,8 +83,8 @@ fontsize=10
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>252</x>
-      <y>270</y>
+      <x>108</x>
+      <y>216</y>
       <w>36</w>
       <h>450</h>
     </coordinates>
@@ -94,8 +94,8 @@ fontsize=10
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>630</x>
-      <y>288</y>
+      <x>486</x>
+      <y>234</y>
       <w>36</w>
       <h>450</h>
     </coordinates>
@@ -105,20 +105,20 @@ fontsize=10
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>252</y>
+      <x>126</x>
+      <y>198</y>
       <w>396</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-1:showRequests(session)</panel_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+1:showRequests(user)</panel_attributes>
     <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>432</y>
+      <x>126</x>
+      <y>270</y>
       <w>396</w>
       <h>72</h>
     </coordinates>
@@ -129,32 +129,32 @@ fontsize=10
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>540</y>
+      <x>126</x>
+      <y>342</y>
       <w>396</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 3:showRequestDetails(IDrequest)</panel_attributes>
     <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>648</y>
+      <x>126</x>
+      <y>594</y>
       <w>396</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
-6:request details</panel_attributes>
+8:request details</panel_attributes>
     <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>990</x>
-      <y>144</y>
+      <x>846</x>
+      <y>90</y>
       <w>180</w>
       <h>54</h>
     </coordinates>
@@ -164,20 +164,20 @@ fontsize=10
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>576</y>
-      <w>450</w>
+      <x>504</x>
+      <y>522</y>
+      <w>468</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
-4: getTimeToReachStore(position, storeID)</panel_attributes>
-    <additional_attributes>230.0;20.0;10.0;20.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+6: getTimeToReachStore(cPos, sPos, mean)</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
-      <y>180</y>
+      <x>936</x>
+      <y>126</y>
       <w>54</w>
       <h>450</h>
     </coordinates>
@@ -187,8 +187,8 @@ fontsize=10
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1062</x>
-      <y>594</y>
+      <x>936</x>
+      <y>540</y>
       <w>36</w>
       <h>108</h>
     </coordinates>
@@ -198,13 +198,37 @@ fontsize=10
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>612</y>
-      <w>450</w>
+      <x>504</x>
+      <y>558</y>
+      <w>468</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
-5: required time</panel_attributes>
-    <additional_attributes>10.0;20.0;230.0;20.0</additional_attributes>
+7: required time</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>396</y>
+      <w>396</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+4: requestPosition()</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>450</y>
+      <w>396</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+5:position</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>

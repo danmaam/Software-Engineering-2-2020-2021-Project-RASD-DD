@@ -215,13 +215,11 @@ lt=-&gt;</panel_attributes>
       <x>63</x>
       <y>245</y>
       <w>1029</w>
-      <h>280</h>
+      <h>273</h>
     </coordinates>
     <panel_attributes>Store is open
 --
-some more...
 
--.
 valign=top
 </panel_attributes>
     <additional_attributes/>
@@ -321,12 +319,12 @@ lt=-&gt;</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>581</x>
-      <y>518</y>
+      <y>511</y>
       <w>21</w>
-      <h>49</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
