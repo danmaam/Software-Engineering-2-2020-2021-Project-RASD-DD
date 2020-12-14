@@ -32,8 +32,7 @@ abstract sig Registration{
 sig Customer extends Registration {
 	customerRes: set Reservation,
 	notifications: set Notification
-}
-
+} 
 sig StoreManager extends Registration {
 	store: one Store
 }
@@ -42,7 +41,8 @@ sig Store {
 	storeDeps: some Department,
 	reservations: set Reservation,
 	calledReservations: set Reservation,
-	enteredReservations: set Reservation
+	enteredReservations: set Reservation,
+	maximumBookingsPerClient: Int
 } {
 	reservations & calledReservations & enteredReservations = none
 }
@@ -100,6 +100,13 @@ fact noTbcReservationsInStore {
 
 fact noStoreWithoutManager {
 	all s: Store | one m: StoreManager | m.store = s
+}
+
+fact noCustomerWithMoreThanAllowedBookings {
+	all c: Customer |
+		all r: c.customerRes |
+			all s: Store |
+				#(r.store -> s) < s.maximumBookingsPerClient
 }
 
 fact oneNotificationPerReservation {
