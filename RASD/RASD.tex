@@ -265,6 +265,8 @@
 				ETA & Estimated Time of Arrival \\
 				\xrowht{5pt}
 				GPS & Global Positioning System \\
+				\xrowht{5pt}
+				API & Application Programming Interface \\
 				\hline
 				
 			\end{tabular}
@@ -319,7 +321,7 @@
 			Version & Date & Changelog \\
 			\hline
 			\xrowht{5pt}
-			1.0 & 10/11/2020 & Overview of the specifications and initial draft of the document \\
+			1.0 & 10/11/2020 & First Version \\
 			\hline
 			
 		\end{tabular}
@@ -497,6 +499,8 @@
 		
 		The system can infer the average time spent by a user in the supermarket using the previous visits as informations. If the client is taking a spot on the queue or booking a visit on the app, he will be asked to insert a reasonable duration of his visit, or let the application to fill this parameter for him: if there aren't enough informations on the specific client, the app will use informations from other clients that did a similar shopping, else will infer the information from the specific client's previous visits. The same thing happens at the totem, where or the client inserts the estimation, or the system will use the other datas in its possession.
 		
+		\newpage
+		
 		\subsubsection{Notify users}
 		
 		If some account have non completed visits, depending on the position of the client (retrieved by \emph{GPS}), and the preferred option of reaching the selected store (eg. on foot, by car or public transport), the app will notify the client when he can exit home, to arrive in time to enter the supermarket, without losing its turn and avoiding long waiting times. Notice that not all of the moving options may be available in all the places, since it depends on the used map service.
@@ -513,7 +517,9 @@
 		
 		The system can infer the average time spent by a user in the supermarket using the previous visits as informations. If the client is taking a spot on the queue or booking a visit on the app, he will be asked to insert a reasonable duration of his visit, or let the application to fill this parameter for him: if there aren't enough informations on the specific client, the app will use informations from other clients that did a similar shopping, else will infer the information from the specific client's previous visits. The same thing happens at the totem, where or the client inserts the estimation, or the system will use the other datas in its possession.  \\
 		
-		\subsection{Allow a fair management of the accesses}
+		\newpage
+		
+		\subsubsection{Allow a fair management of the accesses}
 		The system is able to manage in a fair way the process of releasing tickets and accepting bookings. In fact, depending on the store's closing time, and others datas in its possession, such as the number of people in queue, the estimated time of permanency and some other statistics, it's able to block the generation of new tickets, to avoid the generation of turns that goes over the closing time. Moreover, the store manager is able to decide the maximum number of contemporary bookings allowed in the whole store and each department, to avoid that it's really difficult to enter the store without a booking.
 
 	\bigskip
@@ -1433,7 +1439,7 @@ avoid turns after the closing time of the store
 					\end{tabular}
 					\end{adjustwidth}
 
-
+					\bigskip
 
 					\begin{itemize}
 					\medskip
@@ -1908,11 +1914,18 @@ avoid turns after the closing time of the store
 		\item {\bfseries User notifier: } the system must responsively notify users that they must depart for the store in time. 
 		\item{\bfseries Application data updates: } when the customer need to use the application for any purpose, the app must be responsive, and each object required over the network must be available in no more than 5 seconds from its request; if the retrieve from the net fails, the app will show the local stored data to avoid delays in the whole system (eg. the client must retrieve his QR Code to access the store) 
 		\item{\bfseries Totem ticket printing: } the totem must process each request and print the ticket in no more than 5 seconds.
+		
 	\end{itemize} 
-The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect this timing. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 connected users per each store inside the system.
+
+		The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect this timing. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 connected users per each store inside the system.
+
+	\newpage
+	
 	\subsection{Design Costraints}
+	
 		\subsubsection{Standards Compliance}
-	System is compliant to some standards, such as:
+		
+			System is compliant to some standards, such as:
 	\begin{itemize}
 		\item Generated QR Codes are compliant to ISO/IEC 18004:2015 standard
 		\item Network messages are exchanged through the internet protocol TCP/IP
@@ -1944,6 +1957,7 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 \section{Formal Analysis Using Alloy}
 	The following section considers the fundamental properties and constraints identified for the specification of the problem and formally define them with a formal model in which it is shown how they will be satisfied. The alloy modelling language is used to model the problem, and some possible comments are also provided in order to clarify the most critical aspects. 
 	\subsection{Alloy Model}
+	
 	sig Username\{
 	
 		usr: one String
