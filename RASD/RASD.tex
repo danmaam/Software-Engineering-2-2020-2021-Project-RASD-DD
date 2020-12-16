@@ -259,8 +259,6 @@
 				ETA & Estimated Time of Arrival \\
 				\xrowht{5pt}
 				GPS & Global Positioning System \\
-				\xrowht{5pt}
-				API & Application Programming Interface \\
 				\hline
 				
 			\end{tabular}
@@ -315,7 +313,7 @@
 			Version & Date & Changelog \\
 			\hline
 			\xrowht{5pt}
-			1.0 & 10/11/2020 & First Version \\
+			1.0 & 10/11/2020 & Overview of the specifications and initial draft of the document \\
 			\hline
 			
 		\end{tabular}
@@ -493,10 +491,6 @@
 		
 		\subsubsection{Managing store and single departments}
 		
-<<<<<<< HEAD
-		\newpage
-		
-=======
 		Store managers are able to modify some settings of the store. It's possible to have different parameters for each day of the week. Regarding the entire store, the editable parameters per each day are:
 		\begin{itemize}
 			\item The available departments (with the constraint of at least one department per day)
@@ -513,7 +507,6 @@
 	 When a department capacity is changed, the already made bookings will be rescheduled at the first available entry time, notifying each user of the change. The priority is to allow customers that booked the visit to enter in the same day, if it's possible. If any time on the same day can be allocated, the bookings will be cancelled and the user notified. A such operation may reduce in the already booked days the number of admitted non-booked clients. If this operation is made on working hours, it may be cause an anticipation of the time when the system will not deliver no more other tickets for the queue.
 	 The app also allows store managers to see the real time situation in their stores.
 	
->>>>>>> a1313cc00777de0c2291b3f6ec25292c7f79e178
 		\subsubsection{Notify users}
 		
 		If some account have pending reservations, depending on the position of the customer (retrieved by \emph{GPS}), and the preferred option of reaching the selected store (eg. on foot, by car or public transport), the app will notify the client when he should depart from his position, by the selected mean, to arrive in time to enter the supermarket, without losing its turn and avoiding long waiting times. Notice that not all of the moving options may be available in all the places, since it depends on the used map service.
@@ -527,15 +520,8 @@
 		
 		The system can infer the average time spent by a user in the supermarket using previous visits as informations. If the client is taking a spot on the queue or booking a visit on the app, he will be asked to insert a reasonable duration of his visit; however, he can let the application to fill this parameter for him. If there aren't enough informations on the specific client, the app will infer this time from other clients' visits that did a similar shopping. Otherwise, it will find the information from client's previous visits. The same thing happens at the totem, where or the client inserts an estimation, or the system will use the whole stored informations.
 		
-<<<<<<< HEAD
-		\newpage
-		
-		\subsubsection{Allow a fair management of the accesses}
-		The system is able to manage in a fair way the process of releasing tickets and accepting bookings. In fact, depending on the store's closing time, and others datas in its possession, such as the number of people in queue, the estimated time of permanency and some other statistics, it's able to block the generation of new tickets, to avoid the generation of turns that goes over the closing time. Moreover, the store manager is able to decide the maximum number of contemporary bookings allowed in the whole store and each department, to avoid that it's really difficult to enter the store without a booking.
-=======
 		\subsection{Allow a fair management of the accesses}
 		The system is able to manage in a fair way the process of releasing tickets and accepting bookings. In fact, depending on the store's closing time, and other informations in its possession, such as the number of people in queue, the estimated time of permanency and some other statistics, it's able to block the generation of new tickets, to avoid turns that goes over the closing time. The store manager is able to decide the maximum number of contemporary bookings allowed in each department, to avoid that it's really difficult to enter the store without a booking. Moreover, a user can make a limited number of bookings per week, and on app can't simultaneously take more than one spot on a queue. \\
->>>>>>> a1313cc00777de0c2291b3f6ec25292c7f79e178
 
 	\bigskip
 	\subsection{User Characteristics}
@@ -1452,7 +1438,7 @@ avoid turns after the closing time of the store
 					\end{tabular}
 					\end{adjustwidth}
 
-					\bigskip
+
 
 					\begin{itemize}
 					\medskip
@@ -1927,18 +1913,11 @@ avoid turns after the closing time of the store
 		\item {\bfseries User notifier: } the system must responsively notify users that they must depart for the store in time. 
 		\item{\bfseries Application data updates: } when the customer need to use the application for any purpose, the app must be responsive, and each object required over the network must be available in no more than 5 seconds from its request; if the retrieve from the net fails, the app will show the local stored data to avoid delays in the whole system (eg. the client must retrieve his QR Code to access the store) 
 		\item{\bfseries Totem ticket printing: } the totem must process each request and print the ticket in no more than 5 seconds.
-		
 	\end{itemize} 
-
-		The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect this timing. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 connected users per each store inside the system.
-
-	\newpage
-	
+The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect this timing. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 connected users per each store inside the system.
 	\subsection{Design Costraints}
-	
 		\subsubsection{Standards Compliance}
-		
-			System is compliant to some standards, such as:
+	System is compliant to some standards, such as:
 	\begin{itemize}
 		\item Generated QR Codes are compliant to ISO/IEC 18004:2015 standard
 		\item Network messages are exchanged through the internet protocol TCP/IP
@@ -1970,7 +1949,6 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 \section{Formal Analysis Using Alloy}
 	The following section considers the fundamental properties and constraints identified for the specification of the problem and formally define them with a formal model in which it is shown how they will be satisfied. The alloy modelling language is used to model the problem, and some possible comments are also provided in order to clarify the most critical aspects. 
 	\subsection{Alloy Model}
-	
 	sig Username\{
 	
 		usr: one String
