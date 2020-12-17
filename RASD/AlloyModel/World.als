@@ -109,9 +109,6 @@ fact noCustomerWithMoreThanAllowedBookings {
 				#(r.store -> s) < s.maximumBookingsPerClient
 }
 
-fact oneNotificationPerReservation {
-	all r: Reservation | one n: Notification | one c: Customer | r in c.customerRes and n.reservation = r and n in c.notifications
-}
 
 fact allNotificationSentBeforeCallTime {
 	all n: Notification | one r: Reservation | n.timestamp < r.callTimestamp
@@ -128,7 +125,6 @@ fact noStoreWithSomeOtherStore {
 		all r: Reservation |
 			r.store != s and r in (s.reservations + s.calledReservations + s.enteredReservations)
 }
-
 
 fact reservationStatus {
 	all r: Reservation |
@@ -176,8 +172,8 @@ fun getCustomerStatistics[s: Store, c: Customer]: set VisitStatistic {
 
 //at this point of the specification document, no algorithm to intepretate departments'
 //statisticks has been described or implemented, so that here the function will return 
-//only the client average per department, just to model the functionality of
-//getting departments statistics
+//only the client visit time in a visit including the department, 
+//just to model the functionality of getting departments statistics
 
 fun getDepartmentStatistic[d: Department, s: Store]: set Int {
 	{
@@ -187,12 +183,10 @@ fun getDepartmentStatistic[d: Department, s: Store]: set Int {
 	}
 }
 
-
-
 pred checkModel() {
-#Customer = 2
-#StoreManager = 3
-#Store = 3
+#Customer >= 3
+#StoreManager >= 3
+#Store >= 3
 #Reservation >= 6
 #Department >= 2
 }

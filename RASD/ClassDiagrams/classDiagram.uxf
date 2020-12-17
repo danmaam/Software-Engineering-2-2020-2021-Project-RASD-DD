@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>8</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>456</x>
-      <y>288</y>
-      <w>96</w>
-      <h>40</h>
+      <x>737</x>
+      <y>352</y>
+      <w>132</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>Customer
 --
@@ -17,10 +17,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>160</y>
-      <w>128</w>
-      <h>56</h>
+      <x>770</x>
+      <y>176</y>
+      <w>176</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 User
@@ -31,10 +31,10 @@ getFunctionalities()</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>816</x>
-      <y>424</y>
-      <w>88</w>
-      <h>56</h>
+      <x>1232</x>
+      <y>539</y>
+      <w>121</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>Ticket
 --
@@ -48,10 +48,10 @@ img: QR
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>568</x>
-      <y>288</y>
-      <w>88</w>
-      <h>40</h>
+      <x>891</x>
+      <y>352</y>
+      <w>121</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>StoreManager
 --
@@ -61,10 +61,10 @@ img: QR
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>176</y>
-      <w>184</w>
-      <h>48</h>
+      <x>297</x>
+      <y>198</y>
+      <w>253</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 Transportation
@@ -75,10 +75,10 @@ Transportation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>264</x>
-      <y>424</y>
-      <w>128</w>
-      <h>48</h>
+      <x>473</x>
+      <y>539</y>
+      <w>176</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>CustomerStatistics
 --
@@ -90,10 +90,10 @@ Transportation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>424</x>
-      <y>392</y>
-      <w>80</w>
-      <h>40</h>
+      <x>693</x>
+      <y>495</y>
+      <w>110</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>Position
 --
@@ -104,17 +104,18 @@ Transportation
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>568</x>
-      <y>352</y>
-      <w>176</w>
-      <h>104</h>
+      <x>880</x>
+      <y>440</y>
+      <w>286</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>Store
 -
 Int: storeID
 List[Ticket]: queue
 List[Ticket]: bookedTicket
-List[Ticket]: inStoreTicket
+List[Ticket]: calledTicket
+Int: maxWeeklyBookingsPerCustomer
 Map&lt;Date, OpeningHours&gt;: open
 
 </panel_attributes>
@@ -123,24 +124,25 @@ Map&lt;Date, OpeningHours&gt;: open
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>352</x>
-      <y>488</y>
-      <w>144</w>
-      <h>48</h>
+      <x>594</x>
+      <y>616</y>
+      <w>198</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Department
 --
 Int: maxCapacity
-Int: maxAllowedBooking</panel_attributes>
+Int: maxAllowedBooking
+List[Ticket]: inStoreTicket</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
-      <y>488</y>
-      <w>168</w>
-      <h>104</h>
+      <x>968</x>
+      <y>627</y>
+      <w>231</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>Reservation
 --
@@ -155,10 +157,10 @@ Time: expectedExitTime</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>272</y>
-      <w>64</w>
-      <h>32</h>
+      <x>440</x>
+      <y>330</y>
+      <w>88</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>OnFoot
 --
@@ -168,10 +170,10 @@ Time: expectedExitTime</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>328</x>
-      <y>272</y>
-      <w>80</w>
-      <h>32</h>
+      <x>561</x>
+      <y>330</y>
+      <w>110</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>Car
 --
@@ -181,10 +183,10 @@ Time: expectedExitTime</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>272</y>
-      <w>120</w>
-      <h>32</h>
+      <x>110</x>
+      <y>330</y>
+      <w>165</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>PublicTransportation
 --
@@ -194,10 +196,10 @@ Time: expectedExitTime</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>424</y>
-      <w>136</w>
-      <h>56</h>
+      <x>275</x>
+      <y>539</y>
+      <w>187</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>DepartmentStatistics
 --
@@ -208,10 +210,10 @@ Time: timeAverage</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>344</y>
-      <w>104</w>
-      <h>48</h>
+      <x>385</x>
+      <y>429</y>
+      <w>143</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Abstract&gt;&gt;
 Statistics
@@ -222,10 +224,10 @@ Statistics
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>368</y>
-      <w>104</w>
-      <h>40</h>
+      <x>1243</x>
+      <y>462</y>
+      <w>143</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>ChainStore
 --
@@ -236,23 +238,23 @@ Int: chainID
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>488</x>
-      <y>448</y>
-      <w>128</w>
-      <h>96</h>
+      <x>781</x>
+      <y>572</y>
+      <w>176</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=n</panel_attributes>
-    <additional_attributes>130.0;10.0;130.0;90.0;10.0;90.0</additional_attributes>
+    <additional_attributes>130.0;10.0;130.0;100.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>736</x>
-      <y>384</y>
-      <w>80</w>
-      <h>32</h>
+      <x>1155</x>
+      <y>484</y>
+      <w>110</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -262,10 +264,10 @@ m2=n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>224</x>
-      <y>384</y>
-      <w>24</w>
-      <h>56</h>
+      <x>418</x>
+      <y>484</y>
+      <w>33</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -273,10 +275,10 @@ m2=n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>384</y>
-      <w>24</w>
-      <h>56</h>
+      <x>495</x>
+      <y>484</y>
+      <w>33</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -284,10 +286,10 @@ m2=n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>496</x>
-      <y>208</y>
-      <w>24</w>
-      <h>96</h>
+      <x>792</x>
+      <y>242</y>
+      <w>33</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
@@ -295,10 +297,10 @@ m2=n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>584</x>
-      <y>208</y>
-      <w>24</w>
-      <h>96</h>
+      <x>913</x>
+      <y>242</y>
+      <w>33</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
@@ -306,10 +308,10 @@ m2=n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>448</y>
-      <w>24</w>
-      <h>56</h>
+      <x>1034</x>
+      <y>572</y>
+      <w>33</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 </panel_attributes>
@@ -318,10 +320,10 @@ m2=n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>456</x>
-      <y>320</y>
-      <w>32</w>
-      <h>88</h>
+      <x>737</x>
+      <y>396</y>
+      <w>44</w>
+      <h>121</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
@@ -331,23 +333,23 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>496</x>
-      <y>408</y>
-      <w>88</w>
-      <h>32</h>
+      <x>792</x>
+      <y>517</y>
+      <w>110</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=1</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>320</y>
-      <w>112</w>
-      <h>256</h>
+      <x>836</x>
+      <y>396</y>
+      <w>154</w>
+      <h>352</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -357,10 +359,10 @@ m2=n</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>768</x>
-      <y>440</y>
-      <w>64</w>
-      <h>64</h>
+      <x>1166</x>
+      <y>561</y>
+      <w>88</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1= 1
@@ -370,10 +372,10 @@ m2= 1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>344</x>
-      <y>312</y>
-      <w>128</w>
-      <h>128</h>
+      <x>583</x>
+      <y>385</y>
+      <w>176</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -384,25 +386,25 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>184</x>
-      <y>472</y>
-      <w>184</w>
-      <h>72</h>
+      <x>363</x>
+      <y>605</y>
+      <w>253</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
 m2=1
 
 -contribute</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0;210.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;210.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>312</x>
-      <y>192</y>
-      <w>160</w>
-      <h>128</h>
+      <x>539</x>
+      <y>220</y>
+      <w>220</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -414,10 +416,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>216</y>
-      <w>80</w>
-      <h>72</h>
+      <x>330</x>
+      <y>253</y>
+      <w>110</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>80.0;10.0;80.0;50.0;10.0;50.0;10.0;70.0</additional_attributes>
@@ -425,10 +427,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>216</y>
-      <w>72</w>
-      <h>72</h>
+      <x>407</x>
+      <y>253</y>
+      <w>99</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;70.0;50.0;70.0;70.0</additional_attributes>
@@ -436,10 +438,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>216</y>
-      <w>168</w>
-      <h>72</h>
+      <x>407</x>
+      <y>253</y>
+      <w>231</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;190.0;50.0;190.0;70.0</additional_attributes>
@@ -447,10 +449,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>288</y>
-      <w>120</w>
-      <h>80</h>
+      <x>1001</x>
+      <y>352</y>
+      <w>165</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=1
@@ -461,10 +463,10 @@ m2=n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>272</y>
-      <w>64</w>
-      <h>32</h>
+      <x>297</x>
+      <y>330</y>
+      <w>88</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>Bike
 --
@@ -474,10 +476,10 @@ m2=n
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>48</x>
-      <y>216</y>
-      <w>192</w>
-      <h>72</h>
+      <x>176</x>
+      <y>253</y>
+      <w>264</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>220.0;10.0;220.0;50.0;10.0;50.0;10.0;70.0</additional_attributes>
@@ -485,41 +487,45 @@ m2=n
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>760</x>
-      <y>224</y>
-      <w>144</w>
-      <h>64</h>
+      <x>1155</x>
+      <y>264</y>
+      <w>220</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>OpeningHours
+    <panel_attributes>WorkingHours
 --
 Time: openingTime[0..1]
-TIme: closingTime[0..1]</panel_attributes>
+TIme: closingTime[0..1]
+Bool: opened
+
+
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>736</x>
-      <y>280</y>
-      <w>128</w>
-      <h>104</h>
+      <x>1155</x>
+      <y>341</y>
+      <w>143</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=n</panel_attributes>
-    <additional_attributes>10.0;100.0;130.0;100.0;130.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;100.0;100.0;100.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>424</x>
-      <y>528</y>
-      <w>216</w>
-      <h>72</h>
+      <x>693</x>
+      <y>693</y>
+      <w>297</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 m1=1
 m2=n</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0;250.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;250.0;50.0</additional_attributes>
   </element>
 </diagram>

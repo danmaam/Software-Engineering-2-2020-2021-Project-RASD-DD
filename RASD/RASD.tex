@@ -71,7 +71,7 @@
 	
 	\subsection{Scope}
 	
-	The main purpose of \emph{CLup} is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the user. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easier, and moreover can reduce the crowd in front of the store, that is one of the main purpose of the application. The main idea is that the system assigns a number to each customers' reservations (both queue spot and booking), and when a person's number is called, he can enter the supermarket. Moreover, the app should generate a \emph{QR Code} associated to the reservation, that customers must scan at the entry and at the exit of the store, so that the system knows in real time how many people there are in the store, and to build statistics about customers' shopping. In fact, \emph{CLup} should also estimates the \emph{ETA} from the turn of a person and to infer an estimate of the required time by a person to complete his shopping. Moreover, \emph{CLup} is able to suggest people other store options when there is a high waiting time to enter the chosen store. The app also allows people to physically reserve their spot at the supermarket and, in order to optimize the waiting time, people can select specifics departments where they want to go in the store. Not least, for reservation made by app, the system is able to notify customers when they should depart for the store, so that they arrives to the store at the right time. The lineup management must be fair, to avoid regrettable situations such as can't entering to the store without booking, getting a ticket that will be called after the store's closing time, or trying to access the store when it's the turn of somebody else.
+	The main purpose of \emph{CLup} is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the user. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easier, and moreover can reduce the crowd in front of the store, that is one of the main purpose of the application. The main idea is that the system assigns a number to each customers' reservations (both queue spot and booking), and when a person's number is called, he can enter the supermarket. For this purpose, the app generates a \emph{QR Code} associated to the reservation, useful to check-in and check-out a customer in the store. So, the system knows who is inside the store, and saves informations about customers' shopping sessions. By this data, it's possible to estimate time needed by people to complete what they need to do inside the store, and to calculate the ETA to enter the store from a specific moment. Also, \emph{CLup} can suggest customers alternatives to their choose, either reserving a spot on the queue, and booking a visit. For customers without an electronic device, it's possible to get into the queue at a totem, installed at each store entry. Since someone may need to use only a part of the store, customers can select only the department of their interest; the aim of this is to decrease waiting times. At least, for reservation made by app, notifications are sent when someone must depart from his location, to get to store in time for his turn. The line up management must be fair, to avoid regrettable situations such as can't entering to the store without booking or trying to access the store when it's the turn of somebody else. In the case the queue goes over the store working hours, customers are alerted by a warning message on their tickets.
 
 	In the following sections, there are described World and Shared Phenomenons through the "World and Machine" paradigm. In Shared Phenomena section, the \emph{M} stands for phenomenons controlled by Machine and observed by world, \emph{W} the vice versa.
 
@@ -171,7 +171,7 @@
 				\xrowht{5pt}
 				G3 & Allow customers to book a spot on the queue from a physical ticket dispenser \\
 				\xrowht{5pt}
-				G4 & Allow customers to select a better store option to avoid wasting a lot of time waiting to entry at a specific store or if the selected store is full all the day \\
+				G4 & Allow customers to have suggestions on better store options \\
 				\xrowht{5pt}
 				G5 & Allow customers to decrease waiting times specifying departments they want to visit \\
 				\xrowht{5pt}
@@ -366,7 +366,7 @@
 	
 	In Figure 1 is reported an {\bfseries UML Class Diagram} that represents the domain of the application with main concepts and data involved, including their relationships.
 	
-	The store managers registers to the application providing all the necessary informations and can decide at a later stage to modify some options (also regarding each department of the store), such as opening and closing time for each day, capacities. Customers download the application on their device and registers to the service to be able to use it, or requests ticket at the store entry. Here we can identify the main aspects related to CLup:
+	The store managers registers to the application providing all the necessary informations and can decide at a later stage to modify some options (also regarding each department of the store), such as working hours for each day, capacities. Customers download the application on their device and registers to the service to be able to use it, or requests ticket at the store entry. Here we can identify the main aspects related to CLup:
 	
 	\begin{itemize}
 		
@@ -409,9 +409,9 @@
 				
 				\end{itemize}
 			
-				\item {\bfseries Store}: Represents the store with his unique \emph{ID}. Each store is related to its departments, increasing its granularity, so that store manager that can control its parameters in a detailed way, and so that customers can choose to visit only a part of it. Moreover, a store is associated with its map position used to provide customers both the list of bookable store sorted by distance and the notification that alerts the customers to depart from their position with the aim of arriving in time at the store. Moreover, the store class manages the queue and has a opening and closing time for each day; if they are missing, it means that the store is closed for that day.
+				\item {\bfseries Store}: Represents the store with his unique \emph{ID}. Each store is related to its departments, increasing its granularity, so that store manager that can control its parameters in a detailed way, and so that customers can choose to visit only a part of it. Each store is associated with its map position, necessary to generate suggestions, and to know how much a customer need to reach the store's position from his location. Moreover, the store has a  queue of callable tickets, reservations for other days and the working hours for each day of the week, associated with a flag about store opening in that day.
 				
-				\item {\bfseries Department}: This class represents a store's department and is related to its statistics The store manager can modify the {\bfseries maxCapacity} and the {\bfseries maxAllowedBooking} parameters for each department's store in order to avoid an overcrowding inside the store, and to grant fair balance between allowed booked clients and non booked ones. Moreover, the class takes trace of each customer inside the store, that wants to visit that department.
+				\item {\bfseries Department}: This class represents a store's department and is related to its statistics The store manager can modify the {\bfseries maxCapacity} and the {\bfseries maxAllowedBooking} parameters for each department's store in order to avoid an overcrowding inside the store, and to grant fair balance between allowed booked clients and non booked ones. Moreover, the class takes trace of each customer inside the specific store zone.
 				
 				\item {\bfseries Chain store}: Each store could be part of a store chain.
 				
@@ -440,7 +440,7 @@
 			\caption{\emph{Number calling system}}
 		\end{figure}
 	
-		When the store manager opens the store, the system initialize itself and waits for some ticket that can be called. After a ticket is available to be called, the system notify in some way (e.g. through a store employee) that now certain ticket is allowed to enter the store. At this point, the system waits for the scan of the associated \emph{QR code}. If the customer doesn't check-in in the assigned time, the system discard the ticket and checks if there are other available tickets. If so, it returns in the calling number state; else, it will wait for an eligible ticket to be called. If the user, otherwise, scan his \emph{QR code} in time, the system checks the affluence of the store. If it's full, the system will wait for someone's check out, in order to check if some ticket can be called. Else, if the store isn't full, the system doesn't have to wait for a check out to check if there is some ticket eligible to be called. When at some time the store manager will close the store, the system begins its shutdown procedure. It's assumed that at the closure there isn't any other uncalled ticket, since at a certain point the generation of tickets will be blocked, so that that the last ticket will be served around the time of closure.
+		When the store manager opens the store, the system initialize itself, clean up the queue if some ticket remained from the previous day, initialize the queue with the booked tickets, and waits for some ticket that can be called. After a ticket is available to be called, the system notify in some way (e.g. through a store employee) that now certain ticket is allowed to enter the store. At this point, the system waits for the scan of the associated \emph{QR code}. If the customer doesn't check-in in the assigned time, the system discard the ticket and checks if there are other available tickets. If so, it returns in the calling number state; else, it will wait for an eligible ticket to be called. If the user, otherwise, scan his \emph{QR code} in time, the system checks the affluence of the store. If it's full, the system will wait for someone's check out, in order to check if some ticket can be called. Else, if the store isn't full, the system doesn't have to wait for a check out to check if there is some ticket eligible to be called. When at some time the store manager will close the store, the system begins its shutdown procedure.
 		
 		\bigskip
 		
@@ -460,11 +460,11 @@
 			
 			\centering
 			\hspace*{-2cm}\includegraphics[scale=0.5]{StateCharts/ticket_generation_system.pdf} \\
-			\caption{\emph{Ticket generator system state machine}}
+			\caption{\emph{Ticket generator system state machine for entering as soon as possible in the store}}
 			
 		\end{figure}
 	
-		To avoid generating tickets that will be called after the closing time of the store, thanks to the estimations of customers' shopping time, the system is able to decide if it can issue a ticket for entering as soon as possible in the store, or a new ticket's calling time goes over the store opening. After the system detects it can't issue tickets, the ticket generation system blocks ticket issuing until the store is closed, so that the next day the ticket generation can resume.
+		Here is described the state machine of the generation of ticket to enter as soon as possible in the store. First, the system calculates the waiting time. Then, if the request arrives from a totem, the reservation is issued; else, if the reservation process happens on the app, if the customer isn't already on the queue, the system elaborates data and two things happen, depending on waiting time: if it's low, an automatic response is sent, and the reservation processed; else, when the ETA is high, it's waited a response from customer, that can follow some suggestions from the system, or maintain his preference. Another situation may happen: there is no time to complete the shopping, since the customer may require to shop more time than how much is missing to the store closure. In this case, the ticket is not issued.
 
 	
 
@@ -475,26 +475,26 @@
 	
 		\subsubsection{Getting a ticket}
 		
-		In order to manage the access stores' buildings, it's used a system based on the "call of numbers". Each user in the queque has a unique ID, and when his number is called (eg. by a store employee), the user is authorized to enter. This mechanism works also for the booking feature, since the system generates a number that won't be called until the beginning of the time slot selected by the user, in according to the previously reported criteria. Users can get a ticket both on the application and at a totem installed at the entry of the store (obviously, on the app users are required to select some specific store of their preference from a given list, sorted by the nearest one from the position obtained from the \emph{GPS}). With the generation of the ticket, the user will get both an ID and a \emph{QR Code} associate to it, to be scanned at the enter of the store. When getting a ticket on the application, users must be logged in with their credentials (if not, they must register at the services), while at the Totem they can simply get the ticket without giving any data. On app, customers get a digital ticket with its associated \emph{QR Code}; at totem, the ticket and the QR Code are printed. On both of them, there is displayed the expeted time of call. Making the reservation, the user can indicate the department in which he is interested, and using the app can decide both to have a ticket to enter asap in the store or to plan his visit. At the store's totem, he can only get a ticket to enter as soon as possible. Once completed the operation on the app, the user will be able to see at any moment the reservation, along with the expected calling time, and the time needed to reach the store by the preferred mean of transport selected in the settings.
+		In order to manage the accesses to stores' buildings, it's used a system based on the "call of numbers". Each user in the queque has a unique ID, and when his number is called (eg. by a store employee), the user is authorized to enter. This mechanism works also for the booking feature, since the system generates a number that won't be called until the beginning of the time slot selected by the user, in according to the previously reported criteria. Users can get a ticket both on the application and at a totem installed at the entry of the store (obviously, on the app users are required to select some specific store of their preference from a given list, sorted by the nearest one from the position obtained from the \emph{GPS}). With the generation of the ticket, the user will get both an ID and a \emph{QR Code} associate to it, to be scanned at the enter of the store. When getting a ticket on the application, users must be logged in with their credentials (if not, they must register at the services), while at the Totem they can simply get the ticket without giving any data. At the store's totem, customers can only get a ticket to enter as soon as possible. On the app, customers can see at any moment their reservations, along with the expected calling time, and the time needed to reach the store by the preferred mean of transport selected in the settings. ID and QR Code are always available offline, while the other informations need an internet connection and a GPS signal to be updates (without them, inaccurate data may be visualized). On app, customers get a digital ticket with its associated \emph{QR Code}; at totem, the ticket and the QR Code are printed. On both of them, there is displayed the expected time of call, based on the queue situation at the ticket issuing. This time is indicative, and can decrease if some customers doesn't enter the store. In case it's estimated that a reservation can enter the store after store's closing time, a warning on tickets is printed, along with the time store closes. This reservations are always generated, since, as previously explained, customers may give up line, reducing waiting times. Making the reservation, the user can indicate the department in which he is interested, and using the app can decide both to have a ticket to enter asap in the store or to plan his visit. 
 		
 		\subsubsection{Calling process}
 		
-		The process to admit people without a booking in the store follows a \emph{FIFO} logic: the first one that got a ticket, is the first to access the store. When called, a person is authorized to access the store. To register his entry, he is requested to check-in at the entry in a certain amount of time. Tickets related to the \emph{FIFO} queue can be called as soon as the requested zones are available, and tickets related to bookings can be called only after the start time of the booked time slot, and will be called around this time, when all the booked zones become available (to avoid starvation on calling bookings, other tickets requesting at least one booked zone won't be called until the booked tickets enters the supermarket).
+		The process to admit people without a booking in the store follows a \emph{FIFO} logic: the first one that got a ticket, is the first to access the store. When called, a person is authorized to access the store. To register his entry, he is requested to check-in at the entry in a certain amount of time. Tickets related to the \emph{FIFO} queue can be called as soon as the requested zones are available, and tickets related to bookings can be called only after the start time of the booked time slot, and will be called around this time, when all the booked zones become available (to avoid starvation on calling bookings, other tickets requesting at least one booked zone won't be called until the booked tickets enters the supermarket). Obviously, in the queue may happen to be some reservations that needs to stay inside the store after the closing time. In such cases, these tickets are not called.
 		
 		\subsubsection{Check-in/Check-out}
 		
-		At the store entries and exits, users have to scan their \emph{QR Codes} to respectively Check-in and Check-Out in the supermarket. If someone doesn't check-in in a prefixed amount of time, definable by the store manager, he'll lost his turn in the queue. \emph{QR Code} scan is required for two important reasons: register someone's entry in the store for contact tracing purposed, and to check that the person entering the store is the one called, to avoid stoles of turns.
+		At the store entries and exits, users have to scan their \emph{QR Codes} to respectively Check-in and Check-Out in the supermarket. If someone doesn't check-in in a prefixed amount of time, definable by the store manager, he'll lost his turn in the queue. \emph{QR Code} scan is required for some important reasons: register someone's entry in the store for contact tracing purposes, to know the actual affluence of the store, and to check that the person entering the store is the one called, to avoid stoles of turns.
 		
 		\subsubsection{Plan a visit}
 		
-		The app allows customers to plan a visit in a store of their preference. At the end of the process of getting a reservation, customers can select to plan their visit to the store. After inserting the preferred day (in a 7 day range from the day of the request), the app will propose customer some time intervals in which he can enter the store, to satisfy both estimated time of permanency and the maximum simultaneously bookings allowed in a department. 
+		The app allows customers to plan a visit in a store of their preference. At the end of the process of getting a reservation, customers can select to plan their visit to the store. After inserting the preferred day (in a 7 day range from the day of the request), and available the time needed by customer to complete the shopping, the app will propose customer some time intervals in which he can enter the store, to satisfy both estimated time of permanency and the maximum simultaneously bookings allowed in a department. 
 		
 		\subsubsection{Managing store and single departments}
 		
-		Store managers are able to modify some settings of the store. It's possible to have different parameters for each day of the week. Regarding the entire store, the editable parameters per each day are:
+		Store managers are able to modify some settings of the store. It's possible to have different parameters for each day of the week. Regarding the entire store, the editable parameters are:
 		\begin{itemize}
 			\item The available departments (with the constraint of at least one department per day)
-			\item If the store is closed or opened, and if opened the working hours;
+			\item For each day, if the store is closed or opened, and if opened the working hours;
 			\item The maximum allowed bookings per week from a single customer;
 			\item The maximum waiting time between a ticket calling and its scan at the entry
 		\end{itemize}
@@ -504,7 +504,7 @@
 			\item The maximum number of simultaneous customers allowed in it;
 			\item The maximum number of simultaneous booked customers allowed in it.
 		\end{itemize}
-	 When a department capacity is changed, the already made bookings will be rescheduled at the first available entry time, notifying each user of the change. The priority is to allow customers that booked the visit to enter in the same day, if it's possible. If any time on the same day can be allocated, the bookings will be cancelled and the user notified. A such operation may reduce in the already booked days the number of admitted non-booked clients. If this operation is made on working hours, it may be cause an anticipation of the time when the system will not deliver no more other tickets for the queue.
+	 When a department capacity is changed, the already made bookings will be rescheduled at the first available entry time, notifying each user of the change. The priority is to allow customers that booked the visit to enter in the same day, if it's possible. If any time on the same day can be allocated, the bookings will be cancelled and the customers notified. For tickets got from the totem, customers will be alerted from a store assistant of the possible delays. A such operation may reduce in the already booked days the number of admitted non-booked clients. 
 	 The app also allows store managers to see the real time situation in their stores.
 	
 		\subsubsection{Notify users}
@@ -520,10 +520,17 @@
 		
 		The system can infer the average time spent by a user in the supermarket using previous visits as informations. If the client is taking a spot on the queue or booking a visit on the app, he will be asked to insert a reasonable duration of his visit; however, he can let the application to fill this parameter for him. If there aren't enough informations on the specific client, the app will infer this time from other clients' visits that did a similar shopping. Otherwise, it will find the information from client's previous visits. The same thing happens at the totem, where or the client inserts an estimation, or the system will use the whole stored informations.
 		
-		\subsection{Allow a fair management of the accesses}
+		\subsubsection{Allow a fair management of the accesses}
 		The system is able to manage in a fair way the process of releasing tickets and accepting bookings. In fact, depending on the store's closing time, and other informations in its possession, such as the number of people in queue, the estimated time of permanency and some other statistics, it's able to block the generation of new tickets, to avoid turns that goes over the closing time. The store manager is able to decide the maximum number of contemporary bookings allowed in each department, to avoid that it's really difficult to enter the store without a booking. Moreover, a user can make a limited number of bookings per week, and on app can't simultaneously take more than one spot on a queue. \\
+		
+		\subsubsection{Make suggestions}
+		\emph{CLup} is able to suggests customers better options than the chosen ones. In fact
+		\begin{itemize}
+			\item If the customer is taking a spot in the queue, and the waiting times are really high, depending on customer's \emph{GPS} position and the preferences inserted in the process, some alternative stores with lower waiting times (where we consider also the time needed to reach store's position) may be proposed.
+			\item If the customer is booking a visit, and the proposed time intervals are not of his interest, it's possible to request, from the same page, suggestions on other near stores with more booking possibilities.
+		\end{itemize}
 
-	\bigskip
+	
 	\subsection{User Characteristics}
 	
 	\emph{CLup} gives access to two different sets of functionalities to make easier the life of two categories of users:
@@ -581,6 +588,7 @@
 						DA12 & Each customer scans his QR Code at the enter and enters the supermarket only through the allowed entries. \\
 						DA13 & Each paper ticket is not ruined and readable. \\
 						DA14 & The working days and hours of the store inserted in the system are corrected\\
+						DA15 & All users are ready to depart for the store when they are notified \\
 						\hline
 						
 						
@@ -595,7 +603,7 @@
 	
 		\subsubsection{User Interfaces}
 		
-			Customers can use the service using a personal mobile device (eg. a smartphone, a smartwatch or a tablet), or through a totem externally installed at each store to get a spot on the queue. Store managers can also use a personal mobile device to manage the store. In this section we’ll present the general mockups relative to the smartphone version of both customer and manager sides, since it is the landmark for the development of all application's version.
+			Customers can use the service using a personal mobile device (eg. a smartphone, a smartwatch or a tablet), or through a totem externally installed at each store to get a spot on the queue. Store managers can also use a personal mobile device to manage the store. Here there are some mockups of the application. A complete description of all the UI will be in the Design Document, attached to this specification document.
 		\subsubsection{Hardware Interfaces}
 		
 			The managers’ side of the application doesn’t require any special hardware requirement except for a network module installed in their device, since all of the information required are already in the system. Clients’ devices, anyway, require a working GPS module, a working network module and a not broken display to scan the generated QR Code at the store entry. Instead, at the store are needed a device with a ticket printer and a working network module to generate and print tickets, some (at least one for entry and one for exit) optical scanners to scan QR Codes and another device with a working network module to manage ticket calling.
@@ -656,13 +664,13 @@
 						\xrowht{5pt}
 						R15 & The system is able to ask for the position of the customers \\
 						\xrowht{5pt}
-						R16 & The system permits to store manager to modify some critical parameters of the store related to customers' affluence management, for each day of the week \\
+						R16 & The system permits to store manager to modify some critical parameters of the store related to customers' affluence management \\
 						\xrowht{5pt}
 						R17 & The system permits to store manager to view the statistics of the store and its departments \\
 						\hline
 						\hline
 						\xrowht{5pt}
-						R18 & The system allows the manager to establish the maximum simultaneously allowed booked clients in a specific department, for each day of the week \\
+						R18 & The system allows the manager to establish the maximum simultaneously allowed booked clients in a specific department \\
 						\xrowht{5pt}
 						R19 & The store manager can view the reservation of each client \\
 						\xrowht{5pt}
@@ -670,7 +678,7 @@
 						\xrowht{5pt}
 						R21 & The store manager can cancel the reservation of each client \\
 						\xrowht{5pt}
-						R22 & The store manager can handle the working days and hours of the store \\
+						R22 & The store manager can handle the working days and hours of the store, for each day of the week \\
 						\xrowht{5pt}
 						R23 & The system knows the situation in real time of each store \\
 						\xrowht{5pt}
@@ -684,12 +692,12 @@
 						\xrowht{5pt}
 						R28 & The system saves clients' tickets \\
 						\xrowht{5pt}
-						R29 & The system should estimate when it must stop generating other tickets to avoid turns after the closing time of the store \\
-						R30 & The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building \\
-						R31 & The system is able to scan and analyze a QR Code \\
-						R32 & The system is able to send emails \\
-						R33 & The system knows how the maximum number of bookings allowed weekly per customer \\
-						R34 & The system can automatically rearrange reservations, if necessary, after store parameters' update \\
+						R29 & The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building \\
+						R30 & The system is able to scan and analyse a QR Code \\
+						R31 & The system is able to send emails \\
+						R32 & The system knows how the maximum number of bookings allowed weekly per customer \\
+						R33 & The system can automatically rearrange reservations, if necessary, after store parameters' update \\
+						R34 & The system can access to all the store parameters and settings \\
 						\hline
 						
 					\end{longtable}
@@ -709,14 +717,15 @@
 						
 						\item {\bfseries R1}: The system must allow the customers to register
 						\item {\bfseries R2}: The system must allow customers to log in
-						\item {\bfseries R9}: The system allows customers to selec the departments in which they are interested in doing shopping						\item {\bfseries R11}: The system must consider the estimate shopping time inserted by customers
+						\item {\bfseries R9}: The system allows customers to select the departments in which they are interested in doing shopping						\item {\bfseries R11}: The system must consider the estimate shopping time inserted by customers
 						\item {\bfseries R12}: The system must show the customers of the time periods in which they can enter the store, according to store's booking policies and the estimate of customers' shopping time
 						\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
 						\item {\bfseries R15}: The system is able to ask for the position of the customers
 						\item {\bfseries R23}: The system knows the situation in real time of each store 
 						\item {\bfseries R25}: The system contains a list of bookable stores
 						\item {\bfseries R27}: The system can reasonably estimate the time needed from a customer to complete his shopping
-						\item {\bfseries R28}: The system saves clients' tickets						
+						\item {\bfseries R28}: The system saves clients' tickets
+						\item {\bfseries R34}: The system can access to all the store parameters and settings\\					
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
 						\item {\bfseries DA3}: Customer’s position retrieved by GPS is accurate
@@ -737,7 +746,8 @@
 						\item {\bfseries R25}: The system contains a list of bookable stores
 						\item {\bfseries R27}: The system can reasonably estimate the time needed from a customer to complete his shopping
 						\item {\bfseries R28}: The system saves clients' tickets
-						\item {\bfseries R29}: The system should estimate when it must stop generating other tickets to avoid turns after the closing time of the store \\
+						\item {\bfseries R34}: The system can access to all the store parameters and settings		
+						 \\
 		
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
@@ -751,14 +761,14 @@
 
 					\begin{itemize}
 						
-						\item {\bfseries R9}: The system allows customers to selec the departments in which they are interested in doing shopping
+						\item {\bfseries R9}: The system allows customers to select the departments in which they are interested in doing shopping
 						\item {\bfseries R11}: The system must consider the estimate shopping time inserted by customers
 						\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
 						\item {\bfseries R26}: The system is able to print a paper ticket
 						\item {\bfseries R27}: The system can reasonably estimate the time needed from a customer to complete his shopping
 						\item {\bfseries R28}: The system saves clients' tickets
-						\item {\bfseries R29}: The system should estimate when it must stop generating other tickets to	avoid turns after the closing time of the store \\
-		
+						\item {\bfseries R34}: The system can access to all the store parameters and settings		
+						\\
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
 						\item {\bfseries DA5}: Totems always work properly and are not damaged
@@ -766,7 +776,7 @@
 						
 					\end{itemize}
 
-				\item {\bfseries G4: Allow customers to select a better store option to avoid wasting a lot of time waiting to entry at a specific store or if the selected store is full all the day}	
+				\item {\bfseries G4: Allow customers to have suggestions on better store options}	
 
 					\begin{itemize}
 						
@@ -779,7 +789,8 @@
 						\item {\bfseries R23}: The system knows the situation in real time of each store
 						\item {\bfseries R25}: The system contains a list of bookable stores
 						\item {\bfseries R27}: The system can reasonably estimate the time needed from a customer to complete his shopping
-						\item {\bfseries R29}: The system should estimate when it must stop generating other tickets to	avoid turns after the closing time of the store \\
+						\item {\bfseries R34}: The system can access to all the store parameters and settings		
+ \\
 		
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
@@ -800,7 +811,8 @@
 						\item {\bfseries R11}: The system must consider the estimate shopping time inserted by customers
 						\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
 						\item {\bfseries R24}: The system takes trace of each customer entry and exit from the store
-						\item {\bfseries R27}: The system can reasonably estimate the time needed from a customer to complete his shopping 		
+						\item {\bfseries R27}: The system can reasonably estimate the time needed from a customer to complete his shopping 
+						{\bfseries R34: }The system can access to all the store parameters and settings
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
 						\item {\bfseries DA14}: The working days and hours of the store inserted in the system are corrected
@@ -830,19 +842,21 @@
 						\item {\bfseries R1}: The system must allow the customers to register
 						\item {\bfseries R2}: The system must allow customers to log in
 						\item {\bfseries R8}: The system allows the customers to select their favourite means of transportation
-						\item {\bfseries R9}: The system allows customers to selec the departments in which they are interested in doing shopping
+						\item {\bfseries R9}: The system allows customers to select the departments in which they are interested in doing shopping
 						\item {\bfseries R11}: The system must consider the estimate shopping time inserted by customers
 						\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
 						\item {\bfseries R14}: The system can send notification to the clients
 						\item {\bfseries R15}: The system is able to ask for the position of the customers
 						\item {\bfseries R24}: The system takes trace of each customer entry and exit from the store
 						\item {\bfseries R27}: The system can reasonably estimate the time needed from a customer to complete his shopping
-						\item {\bfseries R28}: The system saves clients' tickets \\
+						\item {\bfseries R28}: The system saves clients' tickets
+						{\bfseries R34: }The system can access to all the store parameters and settings \\
 					
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
 						\item {\bfseries DA7}: The Maps API always calculate the optimal route 
 						\item {\bfseries DA8}: Every store has a unique name and address combination
+						\item{\bfseries DA15:} All users are ready to depart for the store when they are notified
 							
 					\end{itemize}	
 	
@@ -855,7 +869,7 @@
 						\item {\bfseries R4}: The system must allow store managers to log in
 						\item {\bfseries R17}: The system permits to store manager to view the statistics of the store and its departments
 						\item {\bfseries R24}: The system takes trace of each customer entry and exit from the store
-						\item {\bfseries R31}: The system is able to scan and analyze a QR Code \\		
+						\item {\bfseries R30}: The system is able to scan and analyse a QR Code \\		
 				
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
@@ -871,10 +885,10 @@
 						\item {\bfseries R2}: The system must allow store managers to register their store
 						\item {\bfseries R4}: The system must allow store managers to log in
 						\item {\bfseries R10}: The system must let in customers only if it's their turn
-						\item {\bfseries R18}: The system allows the manager to establish the maximum simultaneously allowed booked clients in a specific department, for each day of the week
-						\item {\bfseries R22}: The store manager can handle the working days and hours of the store
-						\item {\bfseries R29}: The system should estimate when it must stop generating other tickets to avoid turns after the closing time of the store 
-						\item {\bfseries R33}: The system knows how the maximum number of bookings allowed weekly per customer\\
+						\item {\bfseries R18}: The system allows the manager to establish the maximum simultaneously allowed booked clients in a specific department
+						\item {\bfseries R22}: The store manager can handle the working days and hours of the store, for each day of the week
+						 
+						\item {\bfseries R32}: The system knows how the maximum number of bookings allowed weekly per customer\\
 						
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
@@ -889,12 +903,13 @@
 						\item {\bfseries R27}: The system saves clients' tickets			
 											
 						\item {\bfseries R10}: The system must let in customers only if it's their turn
-						\item {\bfseries R16}: The system permits to store manager to modify some critical parameters of the store related to customers' affluence management, for each day of the week
+						\item {\bfseries R16}: The system permits to store manager to modify some critical parameters of the store related to customers' affluence management
 						\item {\bfseries R24}: The system takes trace of each customer entry and exit from the store
 						\item {\bfseries R27}: The system saves clients' tickets				
-						\item {\bfseries R30}: The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building
-						\item {\bfseries R31}: The system is able to scan and analyse a QR Code 
-						\item{\bfseries R34}: The system can automatically rearrange reservations, if necessary, after store parameters' update\\
+						\item {\bfseries R29}: The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building
+						\item {\bfseries R30}: The system is able to scan and analyse a QR Code 
+						\item{\bfseries R33}: The system can automatically rearrange reservations, if necessary, after store parameters' update
+						{\bfseries R34: }The system can access to all the store parameters and settings\\
 		
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
@@ -902,6 +917,7 @@
 						\item{\bfseries DA6}: The customer’s smartphone screen is not damaged and the QR Code is readable
 						\item {\bfseries DA12}: Each customer scans his QR Code at the enter and enters the supermarket only through the allowed entries
 						\item {\bfseries DA13:} Each paper ticket is not ruined and readable
+						\item {\bfseries DA14:} The working days and hours of the store inserted in the system are corrected
 					
 					\end{itemize}
 
@@ -915,7 +931,7 @@
 						\item {\bfseries R20}: The store manager can modify the reservation of each client
 						\item {\bfseries R21}: The store manager can view the reservation of each client
 						\item {\bfseries R27}: The system saves clients' tickets
-						\item{\bfseries R32}: The system is able to send emails \\
+						\item{\bfseries R31}: The system is able to send emails \\
 		
 						\item {\bfseries DA1}: Date and time on the devices on which CLup runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
@@ -953,7 +969,7 @@
 							\item Customer visualizes the initial page of the app
 							\item Customer clicks on “Sign up as customer” button
 							\item Customer inserts a username, a password, an e-mail, his name, his surname and his phone number as mandatory fields
-							\item The system checks the datas of the customer
+							\item The system checks the data of the customer
 							\item The system saves the information of the customer
 						
 						\end{enumerate}\\
@@ -1232,17 +1248,12 @@
 							\begin{enumerate}
 								
 								\itemsep-0.25em
-								\item if the clicks on “As soon as possible” button, the system will check if it's possible to assign a ticket with a reasonable waiting times in the day of the request, and by assuring it won't be over the store's closing time.
-								
-
-									
-									
-									 If a ticket with low waiting time is generable, the system will generate it calculating the time nedded to reach the store, saves it on both itself and user's app, showing it on the latter.
-									 otherwise, the system suggests him stores less crowded, if any. If so, user can choose between the options proposed, including staying at the selected store. Else, if the ticket is generable, it will be generated even if with a high waiting time.
-									
+								\item if the clicks on “As soon as possible” button, the system will check that the customer isn't already on the queue, and will calculate the waiting time to enter. If a ticket with low waiting time is issuable, the system will generate it, saves it on both itself and user's app, showing it on the latter.
+									 Otherwise, the system suggests him other options, included the previously selected store. If any good, customer accepts one of the suggested store and gets the reservation, otherwise cancel the procedure.
+									 \medskip	
 
 								
-								\item if the customer clicks on “Choose a time slot”, the user can choose a time slot among those availables on the “Time slots” page to generate and save a ticket, calculating the time needed to reach the store.
+								\item if the customer clicks on “Book”, the user can choose a time to enter the store among the time intervals available on the “Time slots” page to generate and save the reservation. If the customer is not satisfied with the proposed options, can click on the "Suggestion" button, and the system will retrieve him other stores, where he can book with the selected preferences. Selecting the store, the "Time slots" page updates with the new store's options. When the customer is satisfied with the selection, clicks on the Book button and the system will issue the reservation.
 								
 							\end{enumerate}
 							
@@ -1256,14 +1267,7 @@
 							\item Customer click on a timeslot no longer available or tries to book more than the set limit of reservations per week
 							
 							The application will throw an error message and will reload the “Time slots” page (updating it)
-							
-							\item Customer doesn’t select any product category
-							
-							The application will throw an error and ask to select at least some item.
-							
-							\item Customer tries to get a ticket while he already have a unused one
-
-							The application shows an error message and invite to use the pending ticket
+							\medskip
 							\item In the selected store where get a spot on the queue there isn't availability in the day, and there isn't any available near store 
 
 							If the above situation occurs, the application will throw an error and leave the client the possibility to book his visit.
@@ -1280,7 +1284,7 @@
 							\begin{figure}
 								\begin{adjustwidth} {0cm}{}
 									\centering
-									\includegraphics[scale=0.343]{SD/5_makeReservation.pdf}\\
+									\includegraphics[scale=0.32]{SD/5_makeReservation.pdf}\\
 									\caption{Sequence Diagram of Getting Ticket from App Procedure}
 								\end{adjustwidth}
 							\end{figure}
@@ -1295,23 +1299,19 @@
 					\item {\bfseries R9: } The system allows the customers to select some or all the departments in
 which the customers are interested in doing shopping
 					\item {\bfseries R12: } The system must show the customers of the time periods in which they can
-enter the store in order to respect the time selected by the customers
-
-
+					enter the store, accordingly to the estimate of customers' shopping time
 					\item {\bfseries R13: } The system have to make a reasonable estimate of when a user with a spot
 on the queue is able to enter the store
 					\item {\bfseries R15: } The system is able to ask for the position of the customers
 					\item {\bfseries R23: } The system knows the situation in real time of each store
 
 					\item {\bfseries R24: } The system takes trace of each customer entry and exit from the store
-on the queue is able to enter the store
 					\item {\bfseries R25: } The system contains a list of bookable stores
 					\item {\bfseries R27: } The system can reasonably estimate the time needed from a specific user
 to complete his shopping
 
 					\item {\bfseries R28: } The system saves clients' tickets
-					\item {\bfseries R29: } The system should estimate when it must stop generating other tickets to
-avoid turns after the closing time of the store
+	\item {\bfseries R34: } The system can access to all the store parameters and settings
 
 					\end{itemize}
 				\end{center}
@@ -1348,7 +1348,11 @@ avoid turns after the closing time of the store
 						\xrowht{5pt}
 						Exception & \begin{enumerate}
 						\item The client has not pending requests
+						\newline
 						If the above situation happen, the app shows an error message and bring the client to the home page.
+						\item The internet connection is not available
+						\newline
+						If the above situation happen, the app will load the local cached informations.
 						\end{enumerate}	
 \\
 						\hline
@@ -1356,7 +1360,7 @@ avoid turns after the closing time of the store
 					\end{tabular}
 					\end{adjustwidth}
 
-
+\newpage
 \begin{itemize}
 					\bigskip
 					\bigskip
@@ -1366,20 +1370,17 @@ avoid turns after the closing time of the store
 
 					\item {\bfseries R5: }  The system allows the customers to view their visits
 					\item {\bfseries R8: }  The system allows the customers to select their favourite means of transportation
+					\item {\bfseries R13: }  The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
 					\item {\bfseries R15: } The system is able to ask for the position of the customers
 					\item {\bfseries R28: } The system saves clients' tickets
-
-
-
-
-
-
+					\item {\bfseries R34: } The system can access to all the store parameters and settings
+					
 					\end{itemize}
 				\end{center}
 												\begin{figure}
-								\begin{adjustwidth} {-2cm}{}
+								\begin{adjustwidth} {-1cm}{}
 									\centering
-									\includegraphics[scale=0.75]{SD/6_visualizeReservation.pdf}\\
+									\includegraphics[scale=0.65]{SD/6_visualizeReservation.pdf}\\
 									\caption{Sequence Diagram of Visualizing Customers' Reservations in app}
 								\end{adjustwidth}
 							\end{figure}
@@ -1406,12 +1407,13 @@ avoid turns after the closing time of the store
 							
 							\itemsep-0.25em
 							\item Store manager clicks on “Modify parameters” button
-							\item Store manager can see both the parameters relatives to the whole store (eg. ID, Pwd, Opening and Closing Time), and each department with its parameters (max capacity and simultaneous allowed bookings)
+							\item Store manager can see both the parameters relatives to the whole store (eg. ID, Pwd, Working Hours for the selected day of the week), and each department with its parameters (max capacity and simultaneous allowed bookings)
 							
 							\begin{enumerate}
 								
 								\itemsep0em
-								\item Store manager modify one, more or none of the parameters of the store or of some departements (clicking on the pencil shaped button of the desidered department)
+								\item Store manager can choose a day of the week using the "Change Day" button, if the currently selected is of no interest to him and have to modify some options on store's working hours.
+								\item Store manager modify one, more or none of the parameters of the store or of some departements (clicking on the pencil shaped button of the desidered department) (remind that only working hours are dependent on the selected day)
 								\item Store manager choose to add/delete some department respectively clicking on "Add a department" and on the bin shaped button of the desidered department
 								\item Store manager clicks on Save Changes
 					
@@ -1449,7 +1451,8 @@ avoid turns after the closing time of the store
 
 					\item {\bfseries R28: } The system allows the manager to establish the maximum simultaneously allowed booked clients in a speciﬁc department
 					\item {\bfseries R14: }  The system can send notification to the clients
-					\item {\bfseries R22: } The store manager can handle the working days and hours of the store
+					\item {\bfseries R22: } The store manager can handle the working days and hours of the store, for each day of the week
+					\item {\bfseries R34: } The system can access to all the store parameters and settings
 					\end{itemize}					
 
 							\begin{figure}[!h]
@@ -1556,12 +1559,11 @@ avoid turns after the closing time of the store
 									
 									\begin{enumerate}
 										
-										\item The manager can choose to contact the client via mail clicking on the button “Email option”
 										
 										
 											
-											\item The app will show an interface where the manager can insert the text
-											\item The manger clicks on the “Send” button to send the message
+											\item The app will show an interface where the manager can insert the email text
+											\item The manger clicks on the “Send” button to send the email
 											
 										
 									
@@ -1579,7 +1581,7 @@ avoid turns after the closing time of the store
 										\item The app will show a dialog box where the manager can put-in an optional message, explaining the reasons of the cancel
 										\item The manager clicks on the “Delete button”
 										\item The app will show a confirmation box to ask if the manager is sure to proceed
-										\item The manager clicks on “Yes” to confirm the deletion
+										\item The manager clicks on “Yes” to confirm the deletion, and notifies the customer
 										\item The app closes the dialog box
 										
 									\end{enumerate}
@@ -1600,7 +1602,15 @@ avoid turns after the closing time of the store
 							\xrowht{5pt}
 							Exit Conditions & Store manager can manage the store and is able to edit reservations\\
 							\xrowht{5pt}
-							Exception & None\\	
+							Exception & \begin{enumerate}
+								
+								\itemsep-0.25em
+								\item There isn't any reservation
+								\newline
+								If the above situation occur, the app will show a dialogue box with an error message.
+								
+								
+							\end{enumerate}\\	
 							\hline
 							
 						\end{tabular}
@@ -1623,7 +1633,7 @@ avoid turns after the closing time of the store
 						\item {\bfseries R20: } The store manager can modify the reservation of each client
 						\item {\bfseries R21: } The store manager can cancel the reservation of each client
 						\item {\bfseries R28: } The system saves clients' tickets
-						\item {\bfseries R32: } The system is able to send emails
+						\item {\bfseries R31: } The system is able to send emails
 						
 
 					\end{itemize}	
@@ -1673,7 +1683,7 @@ avoid turns after the closing time of the store
 									
 									\begin{enumerate}
 										
-										\item If the modify button is selected, the app will restart the “Make a reservation process” described in Use Case n. 5. The customer can modify all the parameters of his reservation, including transforming it in a “As soon as possible ticket
+										\item If the modify button is selected, the app ask the customer all the parameters asked when making a reservation. This parameters can be modified, and at the end the modification confirmed, or discarded.
 										 
 									\end{enumerate}
 									
@@ -1683,7 +1693,15 @@ avoid turns after the closing time of the store
 							\xrowht{5pt}
 							Exit Conditions & The client can modify his reservation\\
 							\xrowht{5pt}
-							Exception & None\\	
+							Exception & \begin{enumerate}
+								
+								\itemsep-0.25em
+								\item There isn't any reservation
+								\newline
+								If the above situation occur, the app will show a dialogue box with an error message.
+								
+								
+							\end{enumerate}\\	
 							\hline
 							
 						\end{tabular}
@@ -1716,6 +1734,7 @@ avoid turns after the closing time of the store
 						\item {\bfseries R29: } The system should estimate when it must stop generating other tickets to
 						avoid turns after the closing time of the store
 						to complete his shopping
+						\item {\bfseries R34: } The system can access to all the store parameters and settings
 
 						
 						
@@ -1759,7 +1778,7 @@ avoid turns after the closing time of the store
 								
 								\item The customer enters the estimation of shopping time, or let the system to infer it
 								
-								\item Client confirms the options selected and the system generates and prints the associated number, the \emph{QR Code} and the \emph{ETA}
+								\item Client confirms the options selected and the system generates and prints the associated number, the \emph{QR Code} and the \emph{ETA}, with a warning if there is some risk on being able to enter only after the store is closed.
 								
 							\end{enumerate}\\
 							\xrowht{5pt}
@@ -1788,24 +1807,23 @@ avoid turns after the closing time of the store
 					{\bfseries Required functional requirements: }
 					
 					
-					\item {\bfseries R9: } The system allows the customers to select some or all the de-
-					partments in which the customers are interested in doing shopping
-					\item {\bfseries R11: } The system must consider the extimate shopping time insert
+					\item {\bfseries R9: } The system allows the customers to select some or all the departments in which the customers are interested in doing shopping
+					\item {\bfseries R11: } The system must consider the estimate shopping time insert
 					by customers
 					\item {\bfseries R13: } The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
 					\item {\bfseries R26: } The system is able to print a paper ticket
-					\item {\bfseries R27: } The system can reasonably estimate the time needed from a speciﬁc user to complete his shopping
+					\item {\bfseries R27: } The system can reasonably estimate the time needed from a specific user to complete his shopping
 					\item {\bfseries R28: } The system saves clients' tickets
-					\item {\bfseries R29: } The system should estimate when it must stop generating other tickets to avoid turns after the closing time of the store
+					\item {\bfseries R34: } The system can access to all the store parameters and settings
 					
 					
 					
 					
 				\end{itemize}
 								\begin{figure}[!htb]
-						\begin{adjustwidth} {-2,7cm}{}
+						\begin{adjustwidth} {-3.3cm}{}
 							\centering
-							\includegraphics[scale=0.56]{SD/11_getTicketAtTotem.pdf}\\
+							\includegraphics[scale=0.62]{SD/11_getTicketAtTotem.pdf}\\
 							\caption{Sequence Diagram of getting a ticket at a physical dispenser}
 						\end{adjustwidth}
 					\end{figure}
@@ -1839,7 +1857,7 @@ avoid turns after the closing time of the store
 								
 								\item The system gets his \emph{GPS} positions and checks if the selected option is available.
 								
-								\item The app saves the option and updates the notifies alerting customers when they should depart for the store. 
+								\item If the selected option is available, the app saves the option. Otherwise, shows an error message and invite the customer to repeat again the operation.
 								
 								 
 								
@@ -1847,13 +1865,7 @@ avoid turns after the closing time of the store
 							\xrowht{5pt}
 							Exit Conditions & The client selects the preferred mean of transport \\
 							\xrowht{5pt}
-							Exception & \begin{enumerate}
-								
-								\item The selected means of transport is not available
-								
-							\end{enumerate}
-							
-							If the above situation occur, the application will throw an error message and will ask the client to redo the selection \\
+							Exception & None \\
 							\hline
 							
 						\end{tabular}
@@ -1907,14 +1919,14 @@ avoid turns after the closing time of the store
 	\subsection{Performance Requirements}
 	CLup app is aimed to reduce gatherings due to the Covid-19 pandemic. So, some components needs a certain responsiveness. Here there are described some parts of the system that are critical to the scope of entire system
 	\begin{itemize}
-		\item {\bfseries Requests saving system:} when a client got a ticket, the system needs to process and save it in a very low time, less than 2 seconds,  since the requested tickets in a day are really important to allow or deny people to get another ticket for the same day/book a visit in a certain moment of the day.  
-		\item {\bfseries QR Code processing:} each customer must scan his QR Code when he enters the store. This means that, to avoid delays in the queue, the component processing QR Codes must be really fast, and process them in no more than 5 seconds after the code is retrieved from the optical scanner.
+		\item {\bfseries Requests saving system:} when a client got a ticket, the system needs to process and save it in a very low time, less than 5 seconds,  since the daily requests are fundamental in making estimations about waiting times.
+		\item {\bfseries QR Code processing:} each customer must scan his QR Code when he enters the store. This means that, to avoid delays and crowds of people, the component processing QR Codes must be really fast, and process them in no more than 5 seconds after the code is retrieved from the optical scanner.
 		\item {\bfseries Ticket calling system:} as for QR Codes processing, after a customer exits the store, the system must be able to process the next ticket to be called, if any, in a strict time, to avoid that people waits outside the store for long times. This process must not last more than 10 seconds.
-		\item {\bfseries User notifier: } the system must responsively notify users that they must depart for the store in time. 
-		\item{\bfseries Application data updates: } when the customer need to use the application for any purpose, the app must be responsive, and each object required over the network must be available in no more than 5 seconds from its request; if the retrieve from the net fails, the app will show the local stored data to avoid delays in the whole system (eg. the client must retrieve his QR Code to access the store) 
+		\item {\bfseries User notifier:} the system must responsively notify users that they must depart for the store in time, with a security margin to avoid lost of turns. 
+		\item{\bfseries Application data updates:} when the customer need to use the application for any purpose, the app must be responsive, and each object required over the network must be available in no more than 5 seconds from its request; if the retrieve from the net fails, the app will show the local stored data to avoid embarrassing situations  (eg. the client must retrieve his QR Code to access the store and internet isn't available) 
 		\item{\bfseries Totem ticket printing: } the totem must process each request and print the ticket in no more than 5 seconds.
 	\end{itemize} 
-The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect this timing. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 connected users per each store inside the system.
+The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect these timings. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 simultaneously connected users per each store inside the system.
 	\subsection{Design Costraints}
 		\subsubsection{Standards Compliance}
 	System is compliant to some standards, such as:
@@ -1938,7 +1950,7 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 		\subsubsection{Security}
 		Each communication between client and server is made over a secure transport protocol (eg. TLS). For each request the system will authenticate the user so that everyone access only to data he is authorized. An encryption and decryption system must be implemented so that QRs' Content is encrypted to avoid someone can forge a malicious ticket. Moreover, each user password is stored using its hash value. 
 		\subsubsection{Maintainability}
-		Since rules can change in every moment, the software must be developed in an extendible way, so that it'e easy to add new functions required by new restrictions. Moreover, the software can be used even if after the pandemic. So, it might be required to implement new feature to make the system more appealing.
+		Since rules can change in every moment, the software must be developed in an extendible way, so that it's easy to add new functions required by new restrictions. Moreover, the software can be used even if after the pandemic. So, it might be required to implement new feature to make the system more appealing.
 		\subsubsection{Portability}
 		The application must be portable on the majority mobile OSes. For this reasons, the app will use a notification service accessible through the OS APIs. Furthermore, the software is thought so that is possible to implement different map service in different versions.
 		\subsection{Additional Specifications}
