@@ -65,15 +65,15 @@
 
 	\subsection{Purpose}
 	
-	The main target of this document is to describe the CLup software through functional and non-functional requirement and is used as contractual basis between the customer and the developer. The structure of the document follows the one studied during lectures and aim to describe faithfully the software behaviour in all of its aspects.
+	The main target of this document is to describe the \emph{CLup} software through functional and non-functional requirement and is used as contractual basis between the customer and the developer. The structure of the document follows the one studied during lectures and aim to describe faithfully the software behaviour in all of its aspects.
 	
 	\emph{CLup} is a mobile service usable through app, made both for store managers and customers. It facilitates customers to book a visit to a store and to get a spot on the queue for entering the store and, on the other hand, helps store managers to observe the new strict rules due to \emph{Covid-19}.
 	
 	\subsection{Scope}
 	
-	The main purpose of \emph{CLup} is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the user. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easier, and moreover can reduce the crowd in front of the store, that is one of the main purpose of the application. The main idea is that the system assigns a number to each customers' reservations (both queue spot and booking), and when a person's number is called, he can enter the supermarket. For this purpose, the app generates a \emph{QR Code} associated to the reservation, useful to check-in and check-out a customer in the store. So, the system knows who is inside the store, and saves informations about customers' shopping sessions. By this data, it's possible to estimate time needed by people to complete what they need to do inside the store, and to calculate the ETA to enter the store from a specific moment. Also, \emph{CLup} can suggest customers alternatives to their choose, either reserving a spot on the queue, and booking a visit. For customers without an electronic device, it's possible to get into the queue at a totem, installed at each store entry. Since someone may need to use only a part of the store, customers can select only the department of their interest; the aim of this is to decrease waiting times. At least, for reservation made by app, notifications are sent when someone must depart from his location, to get to store in time for his turn. The line up management must be fair, to avoid regrettable situations such as can't entering to the store without booking or trying to access the store when it's the turn of somebody else. In the case the queue goes over the store working hours, customers are alerted by a warning message on their tickets.
+	The main purpose of \emph{CLup} is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the user. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easier, and moreover can reduce the crowd in front of the store, that is one of the main purpose of the application. The main idea is that the system assigns a number to each customers' reservations (both queue spot and booking), and when a person's number is called, he can enter the supermarket. For this purpose, the app generates a \emph{QR Code} associated to the reservation, useful to check-in and check-out a customer in the store. So, the system knows who is inside the store, and saves informations about customers' shopping sessions. By this data, it's possible to estimate time needed by people to complete what they need to do inside the store, and to calculate the \emph{ETA} to enter the store from a specific moment. Also, \emph{CLup} can suggest customers alternatives to their choose, either reserving a spot on the queue, and booking a visit. For customers without an electronic device, it's possible to get into the queue at a totem, installed at each store entry. Since someone may need to use only a part of the store, customers can select only the department of their interest; the aim of this is to decrease waiting times. At least, for reservation made by app, notifications are sent when someone must depart from his location, to get to store in time for his turn. The line up management must be {\bfseries fair}, to avoid regrettable situations such as can't entering to the store without booking or trying to access the store when it's the turn of somebody else. In the case the queue goes over the store working hours, customers are alerted by a warning message on their tickets.
 
-	In the following sections, there are described World and Shared Phenomenons through the "World and Machine" paradigm. In Shared Phenomena section, the \emph{M} stands for phenomenons controlled by Machine and observed by world, \emph{W} the vice versa.
+	In the following sections, there are described {\bfseries World and Shared Phenomenons} through the "World and Machine" paradigm. In Shared Phenomena section, the \emph{M} stands for phenomenons controlled by Machine and observed by world, \emph{W} the vice versa.
 
 
 		
@@ -87,7 +87,7 @@
 			\rowcolors{1}{gray!20}{white}
 			\renewcommand{\arraystretch}{2.5}
 		
-					\begin{adjustwidth}{-2.2cm}{}
+			\begin{adjustwidth}{-2.3cm}{}
 			\begin{tabular}[h!]{|m{2.5em}|m{37em}|}
 				
 				\hline
@@ -121,7 +121,7 @@
 			\rowcolors{1}{gray!20}{white}
 			\renewcommand{\arraystretch}{2.5}
 			
-			\begin{adjustwidth}{-2,2cm}{}
+			\begin{adjustwidth}{-2.3cm}{}
 			\begin{tabular}[h!]{|m{2.5em}|m{32em}|m{1em}|}
 				
 				\hline
@@ -160,32 +160,32 @@
 			\rowcolors{1}{gray!20}{white}
 			\renewcommand{\arraystretch}{2.5}
 			
-			\begin{adjustwidth}{-1.5cm}{}
-			\begin{tabular}[h!]{|m{2.5em}|m{33em}|}
+			\begin{adjustwidth}{-2.3cm}{}
+			\begin{tabular}[h!]{|m{2.5em}|m{37em}|}
 				
 				\hline
 				\xrowht{5pt}
-				G1 & Allow customers to select a store and book a visit on a certain date and time from \emph{CLup} app \\
+				\centering G1 & Allow customers to select a store and book a visit on a certain date and time from \emph{CLup} app \\
 				\xrowht{5pt}
-				G2 & Allow customers to select a store and take a spot on the queue to enter as soon as possible the store from \emph{CLup} app \\
+				\centering G2 & Allow customers to select a store and take a spot on the queue to enter as soon as possible the store from \emph{CLup} app \\
 				\xrowht{5pt}
-				G3 & Allow customers to book a spot on the queue from a physical ticket dispenser \\
+				\centering G3 & Allow customers to book a spot on the queue from a physical ticket dispenser \\
 				\xrowht{5pt}
-				G4 & Allow customers to have suggestions on better store options \\
+				\centering G4 & Allow customers to have suggestions on better store options \\
 				\xrowht{5pt}
-				G5 & Allow customers to decrease waiting times specifying departments they want to visit \\
+				\centering G5 & Allow customers to decrease waiting times specifying departments they want to visit \\
 				\xrowht{5pt}
-				G6 & Allow customers users to manage their spots on the queue and their bookings \\
+				\centering G6 & Allow customers users to manage their spots on the queue and their bookings \\
 				\xrowht{5pt}
-				G7 & Allow customers to depart from their location in time to avoid waiting too much, and to avoid losing their turn for entering \\
+				\centering G7 & Allow customers to depart from their location in time to avoid waiting too much, and to avoid losing their turn for entering \\
 				\xrowht{5pt}
-				G8 & Allow the store manager to know the real situation of people that are inside the building and in which departments of his store \\
+				\centering G8 & Allow the store manager to know the real situation of people that are inside the building and in which departments of his store \\
 				\xrowht{5pt}
-				G9 & Allow to grant a fair management of users that can access the building \\
+				\centering G9 & Allow to grant a fair management of users that can access the building \\
 				\xrowht{5pt}
-				G10 & Allow to manage optimally the influx in the building and avoid gathering inside it \\
+				\centering G10 & Allow to manage optimally the influx in the building and avoid gathering inside it \\
 				\xrowht{5pt}
-				G11 & Allow the store manager to interact with customers and reservations \\
+				\centering G11 & Allow the store manager to interact with customers and reservations \\
 				\hline
 				
 				
@@ -209,8 +209,8 @@
 			\rowcolors{1}{gray!20}{white}
 			\renewcommand{\arraystretch}{2.5}
 			
-			\begin{adjustwidth}{-1.5cm}{}
-			\begin{tabular}[h!]{|m{8em}|m{27em}|}
+			\begin{adjustwidth}{-2.3cm}{}
+			\begin{tabular}[h!]{|m{8em}|m{31em}|}
 				
 				
 				\hline
@@ -249,8 +249,8 @@
 			\rowcolors{1}{gray!20}{white}
 			\renewcommand{\arraystretch}{2.5}
 			
-			\begin{adjustwidth}{-1.5cm}{}
-			\begin{tabular}[h!]{|m{3.5em}|m{31.5em}|}
+			\begin{adjustwidth}{-2.3cm}{}
+			\begin{tabular}[h!]{|m{4em}|m{35em}|}
 				
 				\hline
 				\xrowht{5pt}
@@ -278,18 +278,18 @@
 			\rowcolors{1}{gray!20}{white}
 			\renewcommand{\arraystretch}{2.5}
 			
-			\begin{adjustwidth}{-1.5cm}{}
-			\begin{tabular}[h!]{|m{2.5em}|m{32.5em}|}
+			\begin{adjustwidth}{-2.3cm}{}
+			\begin{tabular}[h!]{|m{2.5em}|m{36.5em}|}
 				
 				\hline
 				\xrowht{5pt}
 				WPn & World phenomena number n \\
 				\xrowht{5pt}
-				SPn & Shared phenomena number n \\
+				\centering SPn & Shared phenomena number n \\
 				\xrowht{5pt}
-				Gn & Goal number n \\
+				\centering Gn & Goal number n \\
 				\xrowht{5pt}
-				Rn & Requirement number n \\
+				\centering Rn & Requirement number n \\
 				\hline
 				
 			\end{tabular}
@@ -304,16 +304,20 @@
 	
 	\begin{center}
 		
-		\begin{adjustwidth}{-1.5cm}{}
-		\begin{tabular}[h!]{|m{4em}|m{5em}|m{22em}|}
+		\renewcommand{\arraystretch}{2.5}
+		\begin{adjustwidth}{-2.3cm}{}
+		\begin{tabular}[h!]{|m{4em}|m{5em}|m{26em}|}
 			
 			\hline
 			\rowcolor{gray!20}
 			\xrowht{5pt}
-			Version & Date & Changelog \\
+			\centering Version & \centering Date & Changelog \\
 			\hline
 			\xrowht{5pt}
-			1.0 & 10/11/2020 & Overview of the specifications and initial draft of the document \\
+			\centering 1.0 & 17/12/2020 & First version \\
+			\hline
+			\xrowht{5pt}
+			\centering 1.1 & 18/12/2020 & First revision \\
 			\hline
 			
 		\end{tabular}
@@ -364,17 +368,17 @@
 	\subsection{Product Perspective}
 	
 	
-	In Figure 1 is reported an {\bfseries UML Class Diagram} that represents the domain of the application with main concepts and data involved, including their relationships.
+	In \emph{Figure 1} is reported an {\bfseries UML Class Diagram} that represents the domain of the application with main concepts and data involved, including their relationships.
 	
-	The store managers registers to the application providing all the necessary informations and can decide at a later stage to modify some options (also regarding each department of the store), such as working hours for each day, capacities. Customers download the application on their device and registers to the service to be able to use it, or requests ticket at the store entry. Here we can identify the main aspects related to CLup:
+	The store managers registers to the application providing all the necessary informations and can decide at a later stage to modify some options (also regarding each department of the store), such as working hours for each day, capacities. Customers download the application on their device and registers to the service to be able to use it, or requests ticket at the store entry. Here we can identify the main aspects related to \emph{CLup}:
 	
 	\begin{itemize}
 		
-		\item The customer can generate a reservation, choosing between a registered chain store (and one of their specific store) or a normal store and, optionally, the departments that they want to access; \emph{CLup} will store the reservation and send customers a (digital) ticket containing the reservation's ID and a \emph{QR Code}.
+		\item The customer can generate a {\bfseries reservation}, choosing between a registered chain store (and one of their specific store) or a normal store and, optionally, the departments that they want to access; \emph{CLup} will store the reservation and send customers a (digital) ticket containing the reservation's \emph{ID} and a \emph{QR Code}.
 		
-		\item The customer can entry in the store where he has a reservation (when his ticket's number is called to entry) scanning the \emph{QR Code} through the \emph{QR Code Reader}. The system registers his entry.
+		\item The customer can {\bfseries entry} in the store where he has a reservation (when his ticket's number is called to entry) scanning the \emph{QR Code} through the \emph{QR Code Reader}. The system registers his entry.
 		
-		\item The customer exits the store reusing the same \emph{QR Code}, updating the number of people inside the store.
+		\item The customer {\bfseries exits} the store reusing the same \emph{QR Code}, updating the number of people inside the store.
 		
 	\end{itemize}
 
@@ -382,10 +386,10 @@
 		
 		\subsubsection{UML Description}
 		
-			The {\bfseries UML Class Diagram} in Figure 1 contains many classes and in this section we are going to explain shortly their functions and their scope in the project.
+			The {\bfseries UML Class Diagram} in \emph{Figure 1} contains many classes and in this section we are going to explain shortly their functions and their scope in the project.
 			
 			\begin{itemize}
-				\item {\bfseries Transportation}: Is an abstract class that defines the generic means of transport that could be chosen by the customer, such as
+				\item {\bfseries Transportation}: Is an abstract class that defines the generic means of transport that could be chosen by the customer, such as:
 				
 					\begin{itemize}
 						\item Public transport
@@ -411,7 +415,7 @@
 			
 				\item {\bfseries Store}: Represents the store with his unique \emph{ID}. Each store is related to its departments, increasing its granularity, so that store manager that can control its parameters in a detailed way, and so that customers can choose to visit only a part of it. Each store is associated with its map position, necessary to generate suggestions, and to know how much a customer need to reach the store's position from his location. Moreover, the store has a  queue of callable tickets, reservations for other days and the working hours for each day of the week, associated with a flag about store opening in that day.
 				
-				\item {\bfseries Department}: This class represents a store's department and is related to its statistics The store manager can modify the {\bfseries maxCapacity} and the {\bfseries maxAllowedBooking} parameters for each department's store in order to avoid an overcrowding inside the store, and to grant fair balance between allowed booked clients and non booked ones. Moreover, the class takes trace of each customer inside the specific store zone.
+				\item {\bfseries Department}: This class represents a store's department and is related to its statistics The store manager can modify the \emph{maxCapacity} and the \emph{maxAllowedBooking} parameters for each department's store in order to avoid an overcrowding inside the store, and to grant fair balance between allowed booked clients and non booked ones. Moreover, the class takes trace of each customer inside the specific store zone.
 				
 				\item {\bfseries Chain store}: Each store could be part of a store chain.
 				
@@ -436,7 +440,7 @@
 		
 		\begin{figure}[!h]
 			\centering
-			\hspace*{-2.57cm}\includegraphics[scale=0.32]{StateCharts/number_calling_system.pdf} \\
+			\hspace*{-1.9cm}\includegraphics[scale=0.32]{StateCharts/number_calling_system.pdf} \\
 			\caption{\emph{Number calling system}}
 		\end{figure}
 	
@@ -447,7 +451,7 @@
 		\begin{figure}[!h]
 			
 			\centering
-			\hspace*{-2cm}\includegraphics[scale=0.7]{StateCharts/qr_scanner_uml.pdf} \\
+			\hspace*{-0.0cm}\includegraphics[scale=0.54]{StateCharts/qr_scanner_uml.pdf} \\
 			\caption{\emph{QR Code scanner state machine for entering the store}}
 			
 		\end{figure}
@@ -459,12 +463,12 @@
 		\begin{figure}[!h]
 			
 			\centering
-			\hspace*{-2cm}\includegraphics[scale=0.5]{StateCharts/ticket_generation_system.pdf} \\
+			\hspace*{-1.9cm}\includegraphics[scale=0.55]{StateCharts/ticket_generation_system.pdf} \\
 			\caption{\emph{Ticket generator system state machine for entering as soon as possible in the store}}
 			
 		\end{figure}
 	
-		Here is described the state machine of the generation of ticket to enter as soon as possible in the store. First, the system calculates the waiting time. Then, if the request arrives from a totem, the reservation is issued; else, if the reservation process happens on the app, if the customer isn't already on the queue, the system elaborates data and two things happen, depending on waiting time: if it's low, an automatic response is sent, and the reservation processed; else, when the ETA is high, it's waited a response from customer, that can follow some suggestions from the system, or maintain his preference. Another situation may happen: there is no time to complete the shopping, since the customer may require to shop more time than how much is missing to the store closure. In this case, the ticket is not issued.
+		Here is described the state machine of the generation of ticket to enter as soon as possible in the store. First, the system calculates the waiting time. Then, if the request arrives from a totem, the reservation is issued; else, if the reservation process happens on the app, if the customer isn't already on the queue, the system elaborates data and two things happen, depending on waiting time: if it's low, an automatic response is sent, and the reservation processed; else, when the \emph{ETA} is high, it's waited a response from customer, that can follow some suggestions from the system, or maintain his preference. Another situation may happen: there is no time to complete the shopping, since the customer may require to shop more time than how much is missing to the store closure. In this case, the ticket is not issued.
 
 	
 
@@ -475,7 +479,7 @@
 	
 		\subsubsection{Getting a ticket}
 		
-		In order to manage the accesses to stores' buildings, it's used a system based on the "call of numbers". Each user in the queque has a unique ID, and when his number is called (eg. by a store employee), the user is authorized to enter. This mechanism works also for the booking feature, since the system generates a number that won't be called until the beginning of the time slot selected by the user, in according to the previously reported criteria. Users can get a ticket both on the application and at a totem installed at the entry of the store (obviously, on the app users are required to select some specific store of their preference from a given list, sorted by the nearest one from the position obtained from the \emph{GPS}). With the generation of the ticket, the user will get both an ID and a \emph{QR Code} associate to it, to be scanned at the enter of the store. When getting a ticket on the application, users must be logged in with their credentials (if not, they must register at the services), while at the Totem they can simply get the ticket without giving any data. At the store's totem, customers can only get a ticket to enter as soon as possible. On the app, customers can see at any moment their reservations, along with the expected calling time, and the time needed to reach the store by the preferred mean of transport selected in the settings. ID and QR Code are always available offline, while the other informations need an internet connection and a GPS signal to be updates (without them, inaccurate data may be visualized). On app, customers get a digital ticket with its associated \emph{QR Code}; at totem, the ticket and the QR Code are printed. On both of them, there is displayed the expected time of call, based on the queue situation at the ticket issuing. This time is indicative, and can decrease if some customers doesn't enter the store. In case it's estimated that a reservation can enter the store after store's closing time, a warning on tickets is printed, along with the time store closes. This reservations are always generated, since, as previously explained, customers may give up line, reducing waiting times. Making the reservation, the user can indicate the department in which he is interested, and using the app can decide both to have a ticket to enter asap in the store or to plan his visit. 
+		In order to manage the accesses to stores' buildings, it's used a system based on the "call of numbers". Each user in the queque has a unique \emph{ID}, and when his number is called (eg. by a store employee), the user is authorized to enter. This mechanism works also for the booking feature, since the system generates a number that won't be called until the beginning of the time slot selected by the user, in according to the previously reported criteria. Users can get a ticket both on the application and at a totem installed at the entry of the store (obviously, on the app users are required to select some specific store of their preference from a given list, sorted by the nearest one from the position obtained from the \emph{GPS}). With the generation of the ticket, the user will get both an \emph{ID} and a \emph{QR Code} associate to it, to be scanned at the enter of the store. When getting a ticket on the application, users must be logged in with their credentials (if not, they must register at the services), while at the \emph{totem} they can simply get the ticket without giving any data. At the store's \emph{totem}, customers can only get a ticket to enter as soon as possible. On the app, customers can see at any moment their reservations, along with the expected calling time, and the time needed to reach the store by the preferred mean of transport selected in the settings. \emph{ID} and \emph{QR Code} are always available offline, while the other informations need an internet connection and a \emph{GPS} signal to be updates (without them, inaccurate data may be visualized). On app, customers get a digital ticket with its associated \emph{QR Code}; at \emph{totem}, the ticket and the \emph{QR Code} are printed. On both of them, there is displayed the expected time of call, based on the queue situation at the ticket issuing. This time is indicative, and can decrease if some customers doesn't enter the store. In case it's estimated that a reservation can enter the store after store's closing time, a warning on tickets is printed, along with the time store closes. This reservations are always generated, since, as previously explained, customers may give up line, reducing waiting times. Making the reservation, the user can indicate the department in which he is interested, and using the app can decide both to have a ticket to enter as soon as possible in the store or to plan his visit. 
 		
 		\subsubsection{Calling process}
 		
@@ -483,7 +487,7 @@
 		
 		\subsubsection{Check-in/Check-out}
 		
-		At the store entries and exits, users have to scan their \emph{QR Codes} to respectively Check-in and Check-Out in the supermarket. If someone doesn't check-in in a prefixed amount of time, definable by the store manager, he'll lost his turn in the queue. \emph{QR Code} scan is required for some important reasons: register someone's entry in the store for contact tracing purposes, to know the actual affluence of the store, and to check that the person entering the store is the one called, to avoid stoles of turns.
+		At the store entries and exits, users have to scan their \emph{QR Code} to respectively Check-in and Check-Out in the supermarket. If someone doesn't check-in in a prefixed amount of time, definable by the store manager, he'll lost his turn in the queue. \emph{QR Code} scan is required for some important reasons: register someone's entry in the store for contact tracing purposes, to know the actual affluence of the store, and to check that the person entering the store is the one called, to avoid stoles of turns.
 		
 		\subsubsection{Plan a visit}
 		
@@ -504,7 +508,7 @@
 			\item The maximum number of simultaneous customers allowed in it;
 			\item The maximum number of simultaneous booked customers allowed in it.
 		\end{itemize}
-	 When a department capacity is changed, the already made bookings will be rescheduled at the first available entry time, notifying each user of the change. The priority is to allow customers that booked the visit to enter in the same day, if it's possible. If any time on the same day can be allocated, the bookings will be cancelled and the customers notified. For tickets got from the totem, customers will be alerted from a store assistant of the possible delays. A such operation may reduce in the already booked days the number of admitted non-booked clients. 
+	 When a department capacity is changed, the already made bookings will be rescheduled at the first available entry time, notifying each user of the change. The priority is to allow customers that booked the visit to enter in the same day, if it's possible. If any time on the same day can be allocated, the bookings will be cancelled and the customers notified. For tickets got from the \emph{totem}, customers will be alerted from a store assistant of the possible delays. A such operation may reduce in the already booked days the number of admitted non-booked clients. 
 	 The app also allows store managers to see the real time situation in their stores.
 	
 		\subsubsection{Notify users}
@@ -530,6 +534,7 @@
 			\item If the customer is booking a visit, and the proposed time intervals are not of his interest, it's possible to request, from the same page, suggestions on other near stores with more booking possibilities.
 		\end{itemize}
 
+	\bigskip
 	
 	\subsection{User Characteristics}
 	
@@ -538,7 +543,7 @@
 	\bigskip
 	\begin{itemize}
 		
-		\item {\bfseries Customer}: COVID-19 made challenging going to a store in the right time to avoid crowds and high waiting times. So, for customers, the aim of the application is to make less frustrating going at a supermarket, helping them to plan a visit, to take a spot on queue before exiting home and to be alerted when they should depart from home. \\
+		\item {\bfseries Customer}: \emph{Covid-19} made challenging going to a store in the right time to avoid crowds and high waiting times. So, for customers, the aim of the application is to make less frustrating going at a supermarket, helping them to plan a visit, to take a spot on queue before exiting home and to be alerted when they should depart from home. \\
 		
 		\item {\bfseries Store Manager}: The pandemic made life harder also for store managers. Now, with this system they can manage in an almost automatic and safe way the access to their stores. \\
 		
@@ -546,49 +551,47 @@
 
 	\subsection{Assumptions, Dependencies, Constraints}
 	
-	\smallskip
+	\bigskip
 	
 		\subsubsection{Domain Assumptions}
-		
-			\bigskip
 			
 			\begin{center}
 				
 				\rowcolors{2}{}{gray!20}
 				\rowcolors{1}{gray!20}{white}
-				\renewcommand{\arraystretch}{2}
+				\renewcommand{\arraystretch}{2.5}
 				
-				\begin{adjustwidth}{-1.5cm}{}
-					\begin{tabular}[h!]{|m{2.5em}|m{32.5em}|}
+				\begin{adjustwidth}{-2.4cm}{}
+					\begin{tabular}[h!]{|m{3em}|m{37em}|}
 						
 						\hline
 						\xrowht{5pt}
-						DA1 & Date and time on the devices on which \emph{CLup} runs are always correct \\
+						\centering DA1 & Date and time on the devices on which \emph{CLup} runs are always correct \\
 						\xrowht{5pt}
-						DA2 & Internet connection works always without errors \\
+						\centering DA2 & Internet connection works always without errors \\
 						\xrowht{5pt}
-						DA3 & Customer’s position retrieved by \emph{GPS} is accurate \\
+						\centering DA3 & Customer’s position retrieved by \emph{GPS} is accurate \\
 						\xrowht{5pt}
-						DA4 & In each store, different objects belonging to the same category are in the same department \\
+						\centering DA4 & In each store, different objects belonging to the same category are in the same department \\
 						\xrowht{5pt}
-						DA5 & Totems always work properly and are not damaged \\
+						\centering DA5 & Totems always work properly and are not damaged \\
 						\xrowht{5pt}
-						DA6 & The customer’s smartphone screen is not damaged and the \emph{QR Code} is readable \\
+						\centering DA6 & The customer’s smartphone screen is not damaged and the \emph{QR Code} is readable \\
 						\xrowht{5pt}
-						DA7 & The \emph{Maps API} always calculate the optimal route \\
+						\centering DA7 & The \emph{Maps API} always calculate the optimal route \\
 						\xrowht{5pt}
-						DA8 & Every store has a unique name and address combination \\
+						\centering DA8 & Every store has a unique name and address combination \\
 						\xrowht{5pt}
-						DA9 & \emph{QR Code} readers are always working \\
+						\centering DA9 & \emph{QR Code} readers are always working \\
 						\xrowht{5pt}
-						DA10 & The store capacity inserted by store manager is always correct \\
+						\centering DA10 & The store capacity inserted by store manager is always correct \\
 						\xrowht{5pt}
-						DA11 & Customer respects his time slot, without remaining over time \\
+						\centering DA11 & Customer respects his time slot, without remaining over time \\
 						\xrowht{5pt}
-						DA12 & Each customer scans his QR Code at the enter and enters the supermarket only through the allowed entries. \\
-						DA13 & Each paper ticket is not ruined and readable. \\
-						DA14 & The working days and hours of the store inserted in the system are corrected\\
-						DA15 & All users are ready to depart for the store when they are notified \\
+						\centering DA12 & Each customer scans his QR Code at the enter and enters the supermarket only through the allowed entries. \\
+						\centering DA13 & Each paper ticket is not ruined and readable. \\
+						\centering DA14 & The working days and hours of the store inserted in the system are corrected\\
+						\centering DA15 & All users are ready to depart for the store when they are notified \\
 						\hline
 						
 						
@@ -1197,7 +1200,7 @@
 					\end{tabular}
 					\end{adjustwidth}
 
-\begin{itemize}
+					\begin{itemize}
 					\bigskip
 					\bigskip
 					\bigskip
