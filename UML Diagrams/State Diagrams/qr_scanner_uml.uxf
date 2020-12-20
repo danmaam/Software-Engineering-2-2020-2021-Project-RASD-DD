@@ -121,4 +121,26 @@ QR</panel_attributes>
 lt=-&gt;</panel_attributes>
     <additional_attributes>180.0;10.0;180.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
   </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>336</y>
+      <w>42</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>336</x>
+      <y>322</y>
+      <w>28</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

@@ -7,7 +7,7 @@
       <x>275</x>
       <y>22</y>
       <w>902</w>
-      <h>913</h>
+      <h>825</h>
     </coordinates>
     <panel_attributes>Client makes a reservation at the totem</panel_attributes>
     <additional_attributes/>
@@ -40,7 +40,7 @@
       <x>484</x>
       <y>176</y>
       <w>22</w>
-      <h>704</h>
+      <h>627</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -238,12 +238,12 @@ halign=left
     <id>Relation</id>
     <coordinates>
       <x>484</x>
-      <y>836</y>
+      <y>792</y>
       <w>33</w>
-      <h>110</h>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -251,106 +251,9 @@ halign=left
       <x>858</x>
       <y>616</y>
       <w>33</w>
-      <h>198</h>
+      <h>231</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>528</x>
-      <y>176</y>
-      <w>121</w>
-      <h>319</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-
-
-
-{&gt; 1s &amp; &lt; 2m}</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>528</x>
-      <y>220</y>
-      <w>33</w>
-      <h>275</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;230.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLFrame</id>
-    <coordinates>
-      <x>286</x>
-      <y>154</y>
-      <w>869</w>
-      <h>770</h>
-    </coordinates>
-    <panel_attributes>alt
---
-halign=left
-[respected timeout]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--.
-[expired timeout]</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>495</x>
-      <y>770</y>
-      <w>220</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-9: cancelOperation()</panel_attributes>
-    <additional_attributes>20.0;40.0;50.0;40.0;50.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLGeneric</id>
-    <coordinates>
-      <x>495</x>
-      <y>792</y>
-      <w>22</w>
-      <h>66</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
   </element>
 </diagram>

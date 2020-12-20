@@ -187,8 +187,8 @@ pred checkModel() {
 #Customer >= 3
 #StoreManager >= 3
 #Store >= 3
-#Reservation >= 6
+#Reservation >= 7
 #Department >= 2
 }
 
-run checkModel for 6
+run checkModel for 10

@@ -241,11 +241,11 @@ halign=left
     <coordinates>
       <x>520</x>
       <y>320</y>
-      <w>310</w>
+      <w>270</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-6: updateNotifications(client, newOpt)</panel_attributes>
+6: updateClient(client, newOpt)</panel_attributes>
     <additional_attributes>20.0;50.0;60.0;50.0;60.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>

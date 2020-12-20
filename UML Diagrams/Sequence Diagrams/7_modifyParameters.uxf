@@ -86,7 +86,7 @@
       <w>300</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 1: modifyParameters(session)
 
 </panel_attributes>
@@ -101,7 +101,7 @@
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
-2: "modify parameters" page</panel_attributes>
+2: old values</panel_attributes>
     <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
   </element>
   <element>
@@ -175,7 +175,7 @@ parameter]
       <w>300</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 3: updateParameter(IDParam, newValue)</panel_attributes>
     <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
   </element>
@@ -187,7 +187,7 @@ parameter]
       <w>300</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 5: addParameter(IDParam, value)
 
 </panel_attributes>
@@ -213,7 +213,7 @@ parameter]
       <w>300</w>
       <h>60</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 7: delParameter(IDParam)
 
 </panel_attributes>
@@ -251,7 +251,7 @@ parameter]
       <w>300</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 9: saveChanges()</panel_attributes>
     <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
   </element>
@@ -311,7 +311,7 @@ halign=left
       <w>300</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;&lt;&lt;-
 13: discardChanges()</panel_attributes>
     <additional_attributes>280.0;20.0;10.0;20.0</additional_attributes>
   </element>
@@ -420,10 +420,10 @@ system</panel_attributes>
       <x>960</x>
       <y>1010</y>
       <w>30</w>
-      <h>170</h>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -436,5 +436,27 @@ system</panel_attributes>
     <panel_attributes>lt=&lt;-
 11: notifyClient(client, bookingID)</panel_attributes>
     <additional_attributes>300.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>1190</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>1190</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
   </element>
 </diagram>

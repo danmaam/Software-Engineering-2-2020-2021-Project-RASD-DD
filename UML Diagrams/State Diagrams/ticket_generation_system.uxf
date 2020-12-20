@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>350</x>
-      <y>350</y>
-      <w>20</w>
-      <h>20</h>
+      <x>506</x>
+      <y>517</y>
+      <w>22</w>
+      <h>22</h>
     </coordinates>
     <panel_attributes>type=initial</panel_attributes>
     <additional_attributes/>
@@ -15,130 +15,227 @@
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>450</x>
-      <y>330</y>
-      <w>130</w>
-      <h>60</h>
+      <x>627</x>
+      <y>506</y>
+      <w>99</w>
+      <h>44</h>
     </coordinates>
-    <panel_attributes>Idle</panel_attributes>
+    <panel_attributes>Wait for 
+requests</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>847</x>
+      <y>506</y>
+      <w>99</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Calculate
+waiting time</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>350</x>
-      <y>350</y>
-      <w>120</w>
-      <h>30</h>
+      <x>506</x>
+      <y>517</y>
+      <w>143</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLState</id>
-    <coordinates>
-      <x>900</x>
-      <y>330</y>
-      <w>110</w>
-      <h>60</h>
-    </coordinates>
-    <panel_attributes>Check Ticket
-Availability</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>570</x>
-      <y>340</y>
-      <w>350</w>
-      <h>50</h>
+      <x>715</x>
+      <y>506</y>
+      <w>154</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-Some ticket is
-required</panel_attributes>
-    <additional_attributes>10.0;20.0;330.0;20.0</additional_attributes>
+Request</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>900</x>
-      <y>210</y>
-      <w>120</w>
-      <h>60</h>
+      <x>847</x>
+      <y>385</y>
+      <w>99</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>Generate
-Ticket</panel_attributes>
+ticket</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>950</x>
-      <y>260</y>
-      <w>150</w>
-      <h>90</h>
+      <x>880</x>
+      <y>418</y>
+      <w>88</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-A ticket is generable</panel_attributes>
-    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+Ticket at
+totem</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>230</y>
-      <w>410</w>
-      <h>120</h>
+      <x>660</x>
+      <y>396</y>
+      <w>209</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>390.0;10.0;10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>170.0;10.0;10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>935</x>
+      <y>506</y>
+      <w>165</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Ticket on app</panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>900</x>
-      <y>450</y>
-      <w>130</w>
-      <h>70</h>
+      <x>1232</x>
+      <y>506</y>
+      <w>99</w>
+      <h>44</h>
     </coordinates>
-    <panel_attributes>Don't allow ticket
-generation</panel_attributes>
+    <panel_attributes>Send info
+to system</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>950</x>
-      <y>380</y>
-      <w>30</w>
-      <h>90</h>
+      <x>1023</x>
+      <y>275</y>
+      <w>275</w>
+      <h>253</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>230.0;210.0;230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>935</x>
+      <y>264</y>
+      <w>99</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Wait for
+response</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1020</x>
-      <y>460</y>
-      <w>230</w>
-      <h>70</h>
+      <x>935</x>
+      <y>297</y>
+      <w>110</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-Some ticket is required</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;10.0;70.0;50.0;10.0;50.0</additional_attributes>
+Accept</panel_attributes>
+    <additional_attributes>40.0;10.0;40.0;100.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>510</x>
-      <y>380</y>
-      <w>410</w>
-      <h>120</h>
+      <x>638</x>
+      <y>264</y>
+      <w>319</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-Store is closed</panel_attributes>
-    <additional_attributes>390.0;100.0;10.0;100.0;10.0;10.0</additional_attributes>
+Reject</panel_attributes>
+    <additional_attributes>270.0;20.0;10.0;20.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>583</x>
+      <y>539</y>
+      <w>209</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Store closed</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>572</x>
+      <y>616</y>
+      <w>22</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>451</y>
+      <w>198</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+No time to complete
+shopping</panel_attributes>
+    <additional_attributes>160.0;50.0;160.0;20.0;10.0;20.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1078</x>
+      <y>506</y>
+      <w>99</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Check
+customer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1166</x>
+      <y>506</y>
+      <w>88</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Ok</panel_attributes>
+    <additional_attributes>10.0;20.0;60.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>539</y>
+      <w>451</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Already took a spot on the queue</panel_attributes>
+    <additional_attributes>390.0;10.0;390.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
