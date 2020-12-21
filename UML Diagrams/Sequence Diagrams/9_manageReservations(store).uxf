@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>13</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>260</x>
+      <x>144</x>
       <y>0</y>
-      <w>1209</w>
-      <h>1326</h>
+      <w>1116</w>
+      <h>1224</h>
     </coordinates>
     <panel_attributes>Manager monitors the store situation</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>507</x>
-      <y>78</y>
-      <w>156</w>
-      <h>39</h>
+      <x>372</x>
+      <y>72</y>
+      <w>144</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>Store Manager</panel_attributes>
     <additional_attributes/>
@@ -26,10 +26,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>858</x>
-      <y>78</y>
-      <w>156</w>
-      <h>39</h>
+      <x>696</x>
+      <y>72</y>
+      <w>144</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>CLup</panel_attributes>
     <additional_attributes/>
@@ -37,10 +37,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>572</x>
-      <y>156</y>
-      <w>26</w>
-      <h>1118</h>
+      <x>432</x>
+      <y>144</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -48,10 +48,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
-      <y>104</y>
-      <w>39</w>
-      <h>78</h>
+      <x>432</x>
+      <y>96</y>
+      <w>36</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -59,10 +59,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>923</x>
-      <y>156</y>
-      <w>26</w>
-      <h>1118</h>
+      <x>756</x>
+      <y>144</y>
+      <w>24</w>
+      <h>1032</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -70,10 +70,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>923</x>
-      <y>104</y>
-      <w>39</w>
-      <h>78</h>
+      <x>756</x>
+      <y>96</y>
+      <w>36</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -81,10 +81,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>143</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>132</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 1: manageBookings(store)</panel_attributes>
@@ -93,10 +93,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>195</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>180</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 2: bookings</panel_attributes>
@@ -105,10 +105,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>247</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>228</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 3: getReservation(ID)</panel_attributes>
@@ -117,10 +117,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>299</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>276</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 4: reservation</panel_attributes>
@@ -129,10 +129,10 @@
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>299</x>
-      <y>533</y>
-      <w>1118</w>
-      <h>754</h>
+      <x>180</x>
+      <y>492</y>
+      <w>1032</w>
+      <h>696</h>
     </coordinates>
     <panel_attributes>alt
 --
@@ -145,7 +145,7 @@ halign=left
 
 
 -.
-[Cancel booking]
+[Cancel reservation]
 
 
 
@@ -162,16 +162,16 @@ halign=left
 
 
 -.
-[Reschedule booking]</panel_attributes>
+[Reschedule reservation]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>533</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>492</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 5: contactClient(resID, email, txt)</panel_attributes>
@@ -180,10 +180,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>754</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>696</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 9: cancelBooking(resID, reason)</panel_attributes>
@@ -192,46 +192,46 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>819</y>
-      <w>351</w>
-      <h>52</h>
+      <x>768</x>
+      <y>828</y>
+      <w>324</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-10: notifyClient(client, resID, msg)</panel_attributes>
+11: notifyClient(client, resID, msg)</panel_attributes>
     <additional_attributes>250.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>1079</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>984</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-13: rescheduleBooking(resID, reason)</panel_attributes>
+14: rescheduleBooking(resID, reason)</panel_attributes>
     <additional_attributes>260.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>1183</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>1140</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
-16: ack</panel_attributes>
+18: ack</panel_attributes>
     <additional_attributes>10.0;20.0;260.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>663</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>612</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 8: ack</panel_attributes>
@@ -240,22 +240,22 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>910</y>
-      <w>364</w>
-      <h>52</h>
+      <x>444</x>
+      <y>912</y>
+      <w>336</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
-12: ack</panel_attributes>
+13: ack</panel_attributes>
     <additional_attributes>10.0;20.0;260.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1209</x>
-      <y>78</y>
-      <w>130</w>
-      <h>52</h>
+      <x>1020</x>
+      <y>72</y>
+      <w>120</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Notification 
 System</panel_attributes>
@@ -264,21 +264,21 @@ System</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1261</x>
-      <y>117</y>
-      <w>39</w>
-      <h>728</h>
+      <x>1068</x>
+      <y>108</y>
+      <w>36</w>
+      <h>756</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;540.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;610.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1261</x>
-      <y>819</y>
-      <w>26</w>
-      <h>78</h>
+      <x>1068</x>
+      <y>840</y>
+      <w>24</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -286,45 +286,45 @@ System</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>845</y>
-      <w>351</w>
-      <h>52</h>
+      <x>768</x>
+      <y>864</y>
+      <w>324</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
-11: ack</panel_attributes>
+12: ack</panel_attributes>
     <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>1144</y>
-      <w>351</w>
-      <h>52</h>
+      <x>768</x>
+      <y>1116</y>
+      <w>324</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
-15: ack</panel_attributes>
+17: ack</panel_attributes>
     <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1261</x>
-      <y>884</y>
-      <w>39</w>
-      <h>247</h>
+      <x>1068</x>
+      <y>900</y>
+      <w>36</w>
+      <h>204</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1261</x>
-      <y>1105</y>
-      <w>26</w>
-      <h>91</h>
+      <x>1068</x>
+      <y>1080</y>
+      <w>24</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -332,33 +332,33 @@ System</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>1105</y>
-      <w>351</w>
-      <h>52</h>
+      <x>768</x>
+      <y>1092</y>
+      <w>324</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-14: notifyClient(client, resID, msg)</panel_attributes>
+16: notifyClient(client, resID, msg)</panel_attributes>
     <additional_attributes>250.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1261</x>
-      <y>1183</y>
-      <w>39</w>
-      <h>156</h>
+      <x>1068</x>
+      <y>1152</y>
+      <w>36</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1066</x>
-      <y>78</y>
-      <w>130</w>
-      <h>39</h>
+      <x>888</x>
+      <y>72</y>
+      <w>120</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>Mail Service</panel_attributes>
     <additional_attributes/>
@@ -366,10 +366,10 @@ System</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1118</x>
-      <y>104</y>
-      <w>39</w>
-      <h>403</h>
+      <x>936</x>
+      <y>96</y>
+      <w>36</w>
+      <h>372</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
@@ -377,10 +377,10 @@ System</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>559</y>
-      <w>208</w>
-      <h>52</h>
+      <x>768</x>
+      <y>528</y>
+      <w>192</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 6: send(mail, txt)</panel_attributes>
@@ -389,10 +389,10 @@ System</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1118</x>
-      <y>481</y>
-      <w>26</w>
-      <h>221</h>
+      <x>936</x>
+      <y>444</y>
+      <w>24</w>
+      <h>204</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -400,10 +400,10 @@ System</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>936</x>
-      <y>598</y>
-      <w>208</w>
-      <h>52</h>
+      <x>768</x>
+      <y>564</y>
+      <w>192</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 7: ack</panel_attributes>
@@ -412,10 +412,10 @@ System</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1118</x>
-      <y>689</y>
-      <w>39</w>
-      <h>650</h>
+      <x>936</x>
+      <y>636</y>
+      <w>36</w>
+      <h>600</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;480.0</additional_attributes>
@@ -423,10 +423,10 @@ System</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>273</x>
-      <y>351</y>
-      <w>1183</w>
-      <h>962</h>
+      <x>156</x>
+      <y>324</y>
+      <w>1092</w>
+      <h>888</h>
     </coordinates>
     <panel_attributes>loop
 --
@@ -438,10 +438,10 @@ has to handle]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
-      <y>1261</y>
-      <w>39</w>
-      <h>91</h>
+      <x>432</x>
+      <y>1164</y>
+      <w>36</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -449,12 +449,58 @@ has to handle]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>923</x>
-      <y>1261</y>
-      <w>39</w>
-      <h>91</h>
+      <x>756</x>
+      <y>1164</y>
+      <w>36</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>768</x>
+      <y>744</y>
+      <w>24</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>744</y>
+      <w>288</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+10: cancelReservation(resID)</panel_attributes>
+    <additional_attributes>10.0;40.0;40.0;40.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>768</x>
+      <y>1032</y>
+      <w>24</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>1032</y>
+      <w>384</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+15: processModification(resID, newValue)</panel_attributes>
+    <additional_attributes>10.0;40.0;40.0;40.0;40.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

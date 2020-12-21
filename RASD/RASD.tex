@@ -4,6 +4,7 @@
 % \usepackage[margin=1in,includefoot]{geometry}
 \usepackage{graphicx}
 \usepackage{titlesec}
+\usepackage{array}
 \usepackage[table]{xcolor}
 \usepackage{color, colortbl}
 \usepackage{stackengine}
@@ -605,7 +606,7 @@
 						\xrowht{5pt}
 						\centering DA10 & The store capacity inserted by store manager is always correct \\
 						\xrowht{5pt}
-						\centering DA11 & Customer respects his time slot, without remaining over time \\
+						\centering DA11 & Customer tries to respect their estimate, without remaining over time \\
 						\xrowht{5pt}
 						\centering DA12 & Each customer scans his \emph{QR Code} at the enter and enters the supermarket only through the allowed entries. \\
 						\centering DA13 & Each paper ticket is not ruined and readable. \\
@@ -746,7 +747,7 @@
 					\centering R29 & The system is able to scan and analyse a \emph{QR Code} \\
 					\centering R30 & The system is able to send emails \\
 					\centering R31 & The system knows how the maximum number of bookings allowed weekly per customer \\
-					\centering R32 & The system can automatically rearrange reservations, if necessary, after store parameters' update \\
+					\centering R32 & The system can automatically rearrange reservations, if necessary \\
 					\hline
 					
 				\end{longtable}
@@ -895,13 +896,13 @@
 					
 						\item {\bfseries DA1}: Date and time on the devices on which \emph{CLup} runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
+						\item{\bfseries DA3}: Customer’s position retrieved by \emph{GPS} is accurate
 						\item {\bfseries DA7}: The \emph{Maps API} always calculate the optimal route 
 						\item {\bfseries DA8}: Every store has a unique name and address combination
 						\item{\bfseries DA15:} All users are ready to depart for the store when they are notified
 							
 					\end{itemize}	
-	
-				\newpage
+
 
 				\item {\bfseries G8: Allow the store manager to know the real situation of people that are inside the building and in which department of his store}	
 
@@ -909,7 +910,6 @@
 						
 						\item {\bfseries R2}: The system must allow store managers to register their store
 						\item {\bfseries R4}: The system must allow store managers to log in
-						\item {\bfseries R17}: DEMOLISCI
 						\item {\bfseries R23}: The system takes trace of each customer entry and exit from the store
 						\item {\bfseries R29}: The system is able to scan and analyse a \emph{QR Code} \\		
 				
@@ -934,6 +934,7 @@
 						
 						\item {\bfseries DA1}: Date and time on the devices on which \emph{CLup} runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
+						\item{\bfseries DA11}: Customer tries to respect their estimate, without remaining over time
 					
 					\end{itemize}
 				
@@ -942,7 +943,6 @@
 					\begin{itemize}
 						\item {\bfseries R2}: The system must allow store managers to register their store
 						\item {\bfseries R4}: The system must allow store managers to log in
-						\item {\bfseries R26}: The system saves clients' tickets			
 											
 						\item {\bfseries R10}: The system must let in customers only if it's their turn
 						\item {\bfseries R16}: The system permits to store manager to modify some critical parameters of the store related to customers' affluence management
@@ -950,7 +950,7 @@
 						\item {\bfseries R26}: The system saves clients' tickets				
 						\item {\bfseries R28}: The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building
 						\item {\bfseries R29}: The system is able to scan and analyse a \emph{QR Code}
-						\item{\bfseries R32}: The system can automatically rearrange reservations, if necessary, after store parameters' update \\
+						\item{\bfseries R32}: The system can automatically rearrange reservations, if necessary \\
 		
 						\item {\bfseries DA1}: Date and time on the devices on which \emph{CLup} runs are always correct
 						\item {\bfseries DA2}: Internet connection works always without errors
@@ -1002,7 +1002,7 @@
 						\xrowht{5pt}
 						Actors & Customer\\
 						\xrowht{5pt}
-						Entry Condition & Customer has the internet connection available and has accessed the application on its device\\
+						Entry Condition & Customer has the internet connection available and has accessed on the application on its device\\
 						\xrowht{5pt}
 						Event Flow & \begin{enumerate}
 							
@@ -1343,7 +1343,7 @@ on the queue is able to enter the store
 to complete his shopping
 
 					\item {\bfseries R27: } The system saves clients' tickets
-	\item {\bfseries R34: } The system can access to all the store parameters and settings
+
 
 					\end{itemize}
 				\end{center}
@@ -1372,7 +1372,7 @@ to complete his shopping
 							\item Customer clicks on “Show requests” button
 							\item The app show the list of bookings made and tickets requested
 							\item The customer select the desired option
-							\item The system opens the detail page of the selected option, that includes the “\emph{QR Code}” and the number that should be called, among with the scheduled entry date and time and expected time when depart for the store. 
+							\item The system opens the detail page of the selected option, that includes the “\emph{QR Code}” and the number that should be called, among with the real time entry date and time and time needed to reach the store. 
 							
 						\end{enumerate}\\
 						\xrowht{5pt}
@@ -1405,7 +1405,7 @@ to complete his shopping
 					\item {\bfseries R13: }  The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
 					\item {\bfseries R15: } The system is able to ask for the position of the customers
 					\item {\bfseries R27: } The system saves clients' tickets
-					\item {\bfseries R34: } The system can access to all the store parameters and settings
+
 					
 					\end{itemize}
 				\end{center}
@@ -1477,12 +1477,13 @@ to complete his shopping
 					\bigskip
 					{\bfseries Required functional requirements: }
 
-					\item {\bfseries R16: } The system permits to store manager to modify the maximum capacity of the store’s departments
+					\item {\bfseries R14}:  The system can send notification to the clients
+					\item {\bfseries R16}: The system permits to store manager to modify some critical parameters of the store
+					related to customers' affluence management
 
-					\item {\bfseries R27: } The system allows the manager to establish the maximum simultaneously allowed booked clients in a speciﬁc department
-					\item {\bfseries R14: }  The system can send notification to the clients
-					\item {\bfseries R21: } The store manager can handle the working days and hours of the store, for each day of the week
-					\item {\bfseries R34: } The system can access to all the store parameters and settings
+					\item {\bfseries R17}: The system allows the manager to establish the maximum simultaneously allowed booked clients in a speciﬁc department
+
+					\item {\bfseries R21}: The store manager can handle the working days and hours of the store, for each day of the week
 					\end{itemize}					
 
 							\begin{figure}[!h]
@@ -1544,7 +1545,6 @@ to complete his shopping
 					
 					\item {\bfseries R9: }  The system allows the customers to select some or all the departments in
 					which the customers are interested in doing shopping
-					\item {\bfseries R17: } DEMOLISCI
 					\item {\bfseries R23: } The system takes trace of each customer entry and exit from the store
 				
 				\end{itemize}
@@ -1662,6 +1662,7 @@ to complete his shopping
 						\item {\bfseries R20: } The store manager can cancel the reservation of each client
 						\item {\bfseries R27: } The system saves clients' tickets
 						\item {\bfseries R30: } The system is able to send emails
+						\item{\bfseries R32: } The system can automatically rearrange reservations, if necessary
 						
 
 					\end{itemize}	
@@ -1746,8 +1747,8 @@ to complete his shopping
 						which the customers are interested in doing shopping
 						\item {\bfseries R11: } The system must consider the estimate shopping time inserted by customers
 						
-						\item {\bfseries R12: } The system must show the customers of the time periods in which they can
-						enter the store in order to respect the time selected by the customers
+						\item {\bfseries R12: } The system must show the customers of the time periods in which they can enter the
+						store, accordingly to the estimate of customers' shopping time
 						\item {\bfseries R13: } The system have to make a reasonable estimate of when a user with a spot
 						on the queue is able to enter the store
 						\item {\bfseries R15: } The system is able to ask for the position of the customers
@@ -1755,11 +1756,9 @@ to complete his shopping
 						\item {\bfseries R26: } The system can reasonably estimate the time needed from a specific user
 						to complete his shopping
 						\item {\bfseries R27: } The system saves clients' tickets
-						
-						\item {\bfseries R28: } The system should estimate when it must stop generating other tickets to
-						avoid turns after the closing time of the store
-						to complete his shopping
-						\item {\bfseries R34: } The system can access to all the store parameters and settings
+						\item{\bfseries R32: } The system can automatically rearrange reservations, if necessary
+
+
 
 						
 						
@@ -1812,6 +1811,7 @@ to complete his shopping
 							Exception & \begin{enumerate}
 								
 								\item Client has not completed the operation in the prefixed time
+								\item Client need more time to complete shopping than the remaining from the store's closing
 								
 							\end{enumerate}
 						
@@ -1839,8 +1839,7 @@ to complete his shopping
 					\item {\bfseries R25: } The system is able to print a paper ticket
 					\item {\bfseries R26: } The system can reasonably estimate the time needed from a specific user to complete his shopping
 					\item {\bfseries R27: } The system saves clients' tickets
-					\item {\bfseries R34: } The system can access to all the store parameters and settings
-					
+
 					
 					
 					
@@ -1861,11 +1860,11 @@ to complete his shopping
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-1.5cm}{}
-						\begin{tabular}[h!]{|m{7.5em}|m{27.5em}|}
+					\begin{adjustwidth}{-3.2cm}{}
+						\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 							\hline
 							\xrowht{5pt}
-							Name & Customer selects the prefered means of transport \\
+							Name & Customer selects the preferred mean of transport \\
 							\xrowht{5pt}
 							Actors & Customer \\
 							\xrowht{5pt}
@@ -1937,14 +1936,16 @@ to complete his shopping
 			{\bfseries Scenario 2: Fake \emph{QR Code}} \\
 			Jonathan arrives at the store and notices that he has many people in line before him. Jonathan is not a very patient guy, so having kept another \emph{QR Code}, he tries to skip the line trying to scan it. The system recognizes that the \emph{QR Code} is not valid, therefore it does not allow Jonathan to enter the store, forcing him to respect the queue. \\ \\
 			{\bfseries Scenario 3: User books from the application} \\
-			Adalgiso must go shopping but does not want to wait a long time outside the store and wants to be sure that he can enter the moment he arrives. So, he opens \emph{CLup} on his smartphone, sets up a preferred means of transport and begins a reservation. He Selects the store, the departments he wants to visit and the estimated time. Once the booking is complete, the app will send the notification to Adalgiso, inviting him to depart from his position to go to the store in time. When he will arrive, his number will be called shortly.\\ \\
+			Adalgiso must go shopping but does not want to wait a long time outside the store and wants to be sure that he can enter the moment he arrives. So, he opens \emph{CLup} on his smartphone, sets up a preferred means of transport and begins a reservation. He selects the store, the departments he wants to visit and the estimated time. Once the booking is complete, the app will send the notification to Adalgiso, inviting him to depart from his position to go to the store in time. When he will arrive, his number will be called shortly.\\ \\
 			{\bfseries Scenario 4: Store manager have to smartly manage accesses} \\
-			Apu is a store manager whose work is made more difficult by the current pandemic, since he has a small shop and no ways to manage crowds. Thanks to our application, now Apu is able to avoid assembles in front his store, he doesn't worry anymore about the number of people inside the store, and thanks to the statistics, he is able to regulate the number of allowed people and booked ones for each department of his small store.
+			Apu is a store manager whose work is made more difficult by the current pandemic, since he has a small shop and no ways to manage crowds. Thanks to our application, now Apu is able to avoid assembles in front his store, he doesn't worry anymore about the number of people inside the store, and thanks to the real time statistics, he is able to regulate better the number of allowed people and booked ones for each department of his small store.\\\\
+			{\bfseries Scenario 5: Arrives near the store closing} \\
+			Caterina arrives at the store near the closing, but her shopping would last over the closing time. To avoid that she waits in vain, a ticket isn't issued. So, Caterina reduces the departments that she should visit. She may have time to complete the shopping, but she have to hope that the crowd runs fast, or her ticket won't be called. Since there are possibilities to enter, the ticket is issued, but she is alerted that may not be able to enter the store.
 		\newpage
 	\subsection{Performance Requirements}
 	\emph{CLup} app is aimed to reduce gatherings due to the Covid-19 pandemic. So, some components needs a certain responsiveness. Here there are described some parts of the system that are critical to the scope of entire system
 	\begin{itemize}
-		\item {\bfseries Requests saving system:} when a client got a ticket, the system needs to process and save it in a very low time, less than 5 seconds,  since the daily requests are fundamental in making estimations about waiting times.
+		\item {\bfseries Requests saving system:} when a client got a reservation, the system needs to process and save it in a very low time, less than 5 seconds, since the requests are fundamental in making estimations about waiting times.
 		\item {\bfseries \emph{QR Code} processing:} each customer must scan his \emph{QR Code} when he enters the store. This means that, to avoid delays and crowds of people, the component processing \emph{QR Codes} must be really fast, and process them in no more than 5 seconds after the code is retrieved from the optical scanner.
 		\item {\bfseries Ticket calling system:} as for \emph{QR Codes} processing, after a customer exits the store, the system must be able to process the next ticket to be called, if any, in a strict time, to avoid that people waits outside the store for long times. This process must not last more than 10 seconds.
 		\item {\bfseries User notifier:} the system must responsively notify users that they must depart for the store in time, with a security margin to avoid lost of turns. 
@@ -1962,13 +1963,13 @@ The above reported performance constraints must be always verified; that implies
 		\item Generated \emph{QR Codes} are compliant to ISO/IEC 18004:2015 standard
 		\item Network messages are exchanged through the internet protocol TCP/IP
 	\end{itemize}
-The same doesn't applies to requests of travel times, since the uses non-standard \emph{API} of some map service.
+The same doesn't applies to requests of travel times and for mail sending, since they are achieved by \emph{APIs} of some external services.
 		\subsubsection{Hardware Limitations}
 		To work properly, \emph{CLup} needs some type of hardware, in base of the considered component.
 		\begin{itemize}
-			\item {\bfseries Customer Device:} Customer needs to have a device with a working network module, a \emph{GPS} module and a high resolution display (minimum 720P).
-			\item {\bfseries Totem:} the totem must have a working network module, a ticket printer and a module to make possible interfacing between customer and totem
-			\item {\bfseries \emph{QR Code} readers:} \emph{QR Code} readers must have a working network module, and a optical scanner that takes no more than 5 seconds to read and interpret a \emph{QR Code} and its content
+			\item {\bfseries Customer Device:} Customer needs to have a device with a working network module, a \emph{GPS} module and a high resolution display for the QR-Cod scanners.
+			\item {\bfseries Totem:} the totem must have a working network module, a ticket printer and a module to make possible interfacing between customer and totem.
+			\item {\bfseries \emph{QR Code} readers:} \emph{QR Code} readers must have a working network module, and a optical scanner that takes no more than 5 seconds to read and interpret a \emph{QR Code} and its content.
 		\end{itemize}
 	
 	\subsection{Software System Attributes}
@@ -1981,7 +1982,7 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 		\subsubsection{Maintainability}
 		Since rules can change in every moment, the software must be developed in an extendible way, so that it's easy to add new functions required by new restrictions. Moreover, the software can be used even if after the pandemic. So, it might be required to implement new feature to make the system more appealing.
 		\subsubsection{Portability}
-		The application must be portable on the majority mobile OSes. For this reasons, the app will use a notification service accessible through the OS APIs. Furthermore, the software is thought so that is possible to implement different map service in different versions.
+		The application must be portable on the majority mobile OSes. For this reasons, the app will use a notification service accessible through the OS APIs. Furthermore, the software is thought so that is possible to implement different external services in different versions.
 		\subsection{Additional Specifications}
 	The system guarantees unicity of each customer's email and of each store manager's ID.
 	
@@ -2074,7 +2075,7 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 		
 		\renewcommand{\arraystretch}{1.2}
 		
-			\begin{tabular}[h!]{|m{14em}|m{12em}|}
+			\begin{tabular}[h!]{|m{14em}|>{\centering\arraybackslash}m{12em}|}
 				\rowcolor{gray!20}
 				\hline
 				\xrowht{5pt}
@@ -2111,11 +2112,11 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 		
 		\renewcommand{\arraystretch}{1.2}
 		
-		\begin{tabular}[h!]{|m{14em}|m{12em}|}
+		\begin{tabular}[h!]{|m{14em}|>{\centering\arraybackslash}m{12em}|}
 			\rowcolor{gray!20}
 			\hline
 			\xrowht{5pt}
-			\centering Task & Gianmarco Naro's Hours\thickspace\thickspace\thickspace \space\\
+			\centering Task & Gianmarco Naro's Hours\\
 			\hline
 			Introduction & 000 \\
 			\hline
@@ -2142,7 +2143,7 @@ The same doesn't applies to requests of travel times, since the uses non-standar
 		
 		\renewcommand{\arraystretch}{1.2}
 		
-		\begin{tabular}[h!]{|m{14em}|m{12em}|}
+		\begin{tabular}[h!]{|m{14em}|>{\centering\arraybackslash}m{12em}|}
 			\rowcolor{gray!20}
 			\hline
 			\xrowht{5pt}
