@@ -15,7 +15,7 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{alloy_language}
-\usepackage{caption}
+\usepackage{float}
 
 \newcommand\xrowht[2][0]
 {\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
@@ -397,7 +397,7 @@
 	
 	\begin{itemize}
 		
-		\item The customer can generate a {\bfseries reservation}, choosing between a registered chain store (and one of their specific store) or a normal store and, optionally, the departments that they want to access; \emph{CLup} will store the reservation and send customers a (digital) ticket containing the reservation's \emph{ID} and a \emph{QR Code}. Furthermore, the ticket contains the ETA to enter the store, and it's always recalculated when it's visualized on the application.
+		\item The customer can generate a {\bfseries reservation}, choosing between a registered chain store (and one of their specific store) or a normal store and, optionally, the departments that they want to access; \emph{CLup} will store the reservation and send customers a (digital) ticket containing the reservation's \emph{ID} and a \emph{QR Code}. Furthermore, the ticket contains the \emph{ETA} to enter the store, and it's always recalculated when it's visualized on the application.
 		
 		\item The customer can {\bfseries entry} in the store where he has a reservation (when his ticket's number is called to entry) scanning the \emph{QR Code} through the \emph{QR Code Reader}. The system registers his entry.
 		
@@ -415,6 +415,7 @@
 				\item {\bfseries Transportation}: Is an abstract class that defines the generic means of transport that could be chosen by the customer, such as:
 				
 					\begin{itemize}
+						\itemsep-0.20em
 						\item Public transport
 						\item On foot
 						\item Bike
@@ -440,17 +441,17 @@
 				
 				\item {\bfseries Department}: This class represents a store's department and is related to its statistics The store manager can modify the \emph{maxCapacity} and the \emph{maxAllowedBooking} parameters for each department's store in order to avoid an overcrowding inside the store, and to grant fair balance between allowed booked clients and non booked ones. Moreover, the class takes trace of each customer inside the specific store zone.
 				
-				\item {\bfseries Chain store}: Each store could be part of a store chain.
+				\item {\bfseries Chain Store}: Each store can belongs to a chain
 				
 				\item {\bfseries Reservation}: Each reservation is associated to a customer and is managed by the store and it has many attributes that provides informations about both the entry and exit time (expected and effective).
 				
 				\item {\bfseries Ticket}: Every reservation has a ticket that provides the most important things: \emph{QR Code} and number to be called. Indeed, if a customer want enter or exit the shop, must scan his \emph{QR Code}.
 			\end{itemize}
 		
-			\begin{figure}
+		\begin{figure}
 			\begin{adjustwidth}{-3cm}{}
 				\centering
-				\includegraphics[scale=0.45, angle=90, trim= 0 0 0 -5cm]{ClassDiagrams/classDiagram.pdf} \\
+				\includegraphics[scale=0.43, angle=90, trim= 0 0 0 -5cm]{ClassDiagrams/classDiagram.pdf} \\
 				\caption{\emph{UML Class Diagram}}
 			\end{adjustwidth}
 		\end{figure}
@@ -467,7 +468,7 @@
 			\caption{\emph{Number calling system}}
 		\end{figure}
 	
-		When the store manager opens the store, the system initialize itself, clean up the queue if some ticket remained from the previous day, initialize the queue with the booked tickets, and waits for some ticket that can be called. After a ticket is available to be called, the system notify in some way (e.g. through a store employee) that now certain ticket is allowed to enter the store. At this point, the system waits for the scan of the associated \emph{QR code}. If the customer doesn't check-in in the assigned time, the system discard the ticket and checks if there are other available tickets. If so, it returns in the calling number state; else, it will wait for an eligible ticket to be called. If the user, otherwise, scan his \emph{QR code} in time, the system checks the affluence of the store. If it's full, the system will wait for someone's check out, in order to check if some ticket can be called. Else, if the store isn't full, the system doesn't have to wait for a check out to check if there is some ticket eligible to be called. When at some time the store manager will close the store, the system begins its shutdown procedure.
+		When the store manager opens the store, the system initialize itself, clean up the queue if some ticket remained from the previous day, initialize the queue with the booked tickets, and waits for some ticket that can be called. After a ticket is available to be called, the system notify in some way (e.g. through a store employee) that now certain ticket is allowed to enter the store. At this point, the system waits for the scan of the associated \emph{QR Code}. If the customer doesn't check-in in the assigned time, the system discard the ticket and checks if there are other available tickets. If so, it returns in the calling number state; else, it will wait for an eligible ticket to be called. If the user, otherwise, scan his \emph{QR Code} in time, the system checks the affluence of the store. If it's full, the system will wait for someone's check out, in order to check if some ticket can be called. Else, if the store isn't full, the system doesn't have to wait for a check out to check if there is some ticket eligible to be called. When at some time the store manager will close the store, the system begins its shutdown procedure.
 		
 		\bigskip
 		
@@ -479,7 +480,7 @@
 			
 		\end{figure}
 		
-		The system doesn't allow entries until a ticket is called by the system described above. Then, the \emph{QR Code} reader waits for a \emph{QR code} to be scanned. When a \emph{QR Code} is passed under the optical reader, the system checks if it's a valid one; if so, allows the entry, otherwise notify the wrong \emph{QR Code} and continue waiting for the right one. If the valid \emph{QR Code} isn't scanned in time, the system blocks the entry, discards the current called ticket and waits for the next reservation to be called. Otherwise, if the valid \emph{QR Code} is scanned in time, the system allows and registers the entry.
+		The system doesn't allow entries until a ticket is called by the system described above. Then, the \emph{QR Code} reader waits for a \emph{QR Code} to be scanned. When a \emph{QR Code} is passed under the optical reader, the system checks if it's a valid one; if so, allows the entry, otherwise notify the wrong \emph{QR Code} and continue waiting for the right one. If the valid \emph{QR Code} isn't scanned in time, the system blocks the entry, discards the current called ticket and waits for the next reservation to be called. Otherwise, if the valid \emph{QR Code} is scanned in time, the system allows and registers the entry.
 		
 		\bigskip
 		
@@ -493,8 +494,19 @@
 	
 		Here is described the state machine of the generation of ticket to enter as soon as possible in the store. First, the system calculates the waiting time. Then, if there is time to complete shopping and the request arrives from a totem, the reservation is issued; else, if the reservation process happens on the app, and there is time to complete shopping, if the customer isn't already on the queue, the system elaborates data and two things happen, depending on waiting time: if it's low, an automatic response is sent, and the reservation processed; else, when the \emph{ETA} is high, it's waited a response from customer, that can follow some suggestions from the system, or maintain his preference. Another situation may happen: there is no time to complete the shopping, since the customer may require to shop more time than how much is missing to the store closure. In this case, the ticket is not issued.
 
+	\newpage
+	\subsubsection{Scenarios}
 	
-
+	{\bfseries Scenario 1: User without application} \\
+	Marta is a university student unfavorable to consumerism and for this reason she does not have a smartphone. She go to her favorite store to do shopping and thanks to our system she can still book a place in the queue to enter in the store. To do this, she just go to the totem placed near the supermarket and fill in the reservation with the requested data, that is the departments she intends to visit and an estimate of the time spent inside the store. In this way, the system will queue her to enter as soon as possible, providing her with an estimated entry time. Knowing this, Marta can still do other activities before being called to enter the store, so as not to create crowds at the store exit. As with the app, Marta has to scan the ticket at the  entrance and exit. In this way the system can manage the queue and reservations. \\ \\
+	{\bfseries Scenario 2: Fake \emph{QR Code}} \\
+	Jonathan arrives at the store and notices that he has many people in line before him. Jonathan is not a very patient guy, so having kept another \emph{QR Code}, he tries to skip the line trying to scan it. The system recognizes that the \emph{QR Code} is not valid, therefore it does not allow Jonathan to enter the store, forcing him to respect the queue. \\ \\
+	{\bfseries Scenario 3: User books from the application} \\
+	Adalgiso must go shopping but does not want to wait a long time outside the store and wants to be sure that he can enter the moment he arrives. So, he opens \emph{CLup} on his smartphone, sets up a preferred means of transport and begins a reservation. He selects the store, the departments he wants to visit and the estimated time. Once the booking is complete, the app will send the notification to Adalgiso, inviting him to depart from his position to go to the store in time. When he will arrive, his number will be called shortly.\\ \\
+	{\bfseries Scenario 4: Store manager have to smartly manage accesses} \\
+	Apu is a store manager whose work is made more difficult by the current pandemic, since he has a small shop and no ways to manage crowds. Thanks to our application, now Apu is able to avoid assembles in front his store, he doesn't worry anymore about the number of people inside the store, and thanks to the real time statistics, he is able to regulate better the number of allowed people and booked ones for each department of his small store.\\\\
+	{\bfseries Scenario 5: Arrives near the store closing} \\
+	Caterina arrives at the store near the closing, but her shopping would last over the closing time. To avoid that she waits in vain, a ticket isn't issued. So, Caterina reduces the departments that she should visit. She may have time to complete the shopping, but she have to hope that the crowd runs fast, or her ticket won't be called. Since there are possibilities to enter, the ticket is issued, but she is alerted that may not be able to enter the store.
 	\newpage
 	\subsection{Product Functions}
 		
@@ -638,12 +650,12 @@
 				\centering
 				\begin{minipage}[!h]{0.4\textwidth}
 					\includegraphics[width=\textwidth]{../Mockups/InitialPage.png}
-					\caption{Home page}
+					\caption{\emph{Home page}}
 				\end{minipage}
 				\hfill
 				\begin{minipage}[!h]{0.4\textwidth}
 					\includegraphics[width=\textwidth]{../Mockups/MenuCustomer.png}
-					\caption{Customer menu}
+					\caption{\emph{Customer menu}}
 				\end{minipage}
 
 			\end{figure}
@@ -652,12 +664,12 @@
 		\begin{figure}[!h]
 		\begin{minipage}[!h]{0.4\textwidth}
 			\includegraphics[width=\textwidth]{../Mockups/MenuStore.png}
-			\caption{Store manager menu}
+			\caption{\emph{Store manager menu}}
 		\end{minipage}
 	\hfill
 		\begin{minipage}[!h]{0.4\textwidth}
 			\includegraphics[width=\textwidth]{../Mockups/ModifyParameters.png}
-			\caption{Modify store parameters.}
+			\caption{\emph{Modify store parameters}}
 		\end{minipage}
 	\end{figure}
 			
@@ -822,7 +834,7 @@
 						\item {\bfseries DA14}: The working days and hours of the store inserted in the system are corrected
 						
 					\end{itemize}
-
+				\newpage
 				\item {\bfseries G4: Allow customers to have suggestions on better store options}	
 
 					\begin{itemize}
@@ -902,7 +914,7 @@
 						\item{\bfseries DA3}: Customer’s position retrieved by \emph{GPS} is accurate
 						\item {\bfseries DA7}: The \emph{Maps API} always calculate the optimal route 
 						\item {\bfseries DA8}: Every store has a unique name and address combination
-						\item{\bfseries DA15:} All users are ready to depart for the store when they are notified
+						\item{\bfseries DA15}: All users are ready to depart for the store when they are notified
 							
 					\end{itemize}	
 
@@ -960,11 +972,11 @@
 						\item {\bfseries DA9}: \emph{QR Code} readers are always working
 						\item{\bfseries DA6}: The customer’s smartphone screen is not damaged and the \emph{QR Code} is readable
 						\item {\bfseries DA12}: Each customer scans his \emph{QR Code} at the enter and enters the supermarket only through the allowed entries
-						\item {\bfseries DA13:} Each paper ticket is not ruined and readable
-						\item {\bfseries DA14:} The working days and hours of the store inserted in the system are corrected
+						\item {\bfseries DA13}: Each paper ticket is not ruined and readable
+						\item {\bfseries DA14}: The working days and hours of the store inserted in the system are corrected
 					
 					\end{itemize}
-
+				\newpage
 				\item {\bfseries G11: Allow the store manager to interact with customers and reservations}	
 
 					\begin{itemize}
@@ -996,7 +1008,7 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
@@ -1036,17 +1048,17 @@
 					
 
 					\begin{figure}[!h]
-						\begin{adjustwidth} {-1cm}{}
+						\begin{adjustwidth} {-0.8cm}{}
 							\includegraphics[scale=0.36]{SD/1_customerRegistration.pdf}
 						\end{adjustwidth}
-						\caption{Sequence Diagram of Customer Registration}
+						\caption{\emph{Sequence Diagram of Customer Registration}}
 					\end{figure}
 					\end{adjustwidth}
 				
 					\begin{itemize}
 					\medskip
 					{\bfseries Required functional requirements: }
-					\item {\bfseries R1: } The system must allow the customers to register
+					\item {\bfseries R1}: The system must allow the customers to register
 
 
 					\end{itemize}
@@ -1059,7 +1071,7 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
@@ -1109,10 +1121,10 @@
 					\end{itemize}
 				
 							\begin{figure}
-								\begin{adjustwidth} {-2.3cm}{}
+								\begin{adjustwidth} {-2.5cm}{}
 									\centering
 									\includegraphics[scale=0.5]{SD/2_storeManagerRegistration.pdf}\\
-									\caption{Sequence Diagram of Store Manager Registration}
+									\caption{\emph{Sequence Diagram of Store Manager Registration}}
 								\end{adjustwidth}
 							\end{figure}
 
@@ -1127,7 +1139,7 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
@@ -1169,7 +1181,7 @@
 						\begin{adjustwidth} {-1.3cm}{}
 							\centering
 							\includegraphics[scale=0.36]{SD/3_customerLogin.pdf}\\
-							\caption{Sequence Diagram of Customer Login}
+							\caption{\emph{Sequence Diagram of Customer Login}}
 						\end{adjustwidth}
 					\end{figure}
 
@@ -1178,7 +1190,7 @@
 					\bigskip
 					\bigskip
 					 {\bfseries Required functional requirements: }
-					\item {\bfseries R3: } The system must allow customers to log in
+					\item {\bfseries R3}: The system must allow customers to log in
 
 					\end{itemize}
 
@@ -1194,7 +1206,7 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
@@ -1246,7 +1258,7 @@
 								\begin{adjustwidth} {-3cm}{}
 									\centering
 									\includegraphics[scale=0.7]{SD/4_managerLogin.pdf}\\
-									\caption{Sequence Diagram of Store Manager Login}
+									\caption{\emph{Sequence Diagram of Store Manager Login}}
 								\end{adjustwidth}
 							\end{figure}
 					
@@ -1260,7 +1272,7 @@
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
@@ -1320,32 +1332,27 @@
 								\begin{adjustwidth} {0cm}{}
 									\centering
 									\includegraphics[scale=0.33]{SD/5_makeReservation.pdf}\\
-									\caption{Sequence Diagram of Getting Ticket from App Procedure}
+									\caption{\emph{Sequence Diagram of Getting Ticket from App Procedure}}
 								\end{adjustwidth}
 							\end{figure}
 
-\begin{itemize}
+					\begin{itemize}
 					\bigskip
 					\bigskip
 					\bigskip
 					 {\bfseries Required functional requirements: }
 
 
-					\item {\bfseries R9: } The system allows the customers to select some or all the departments in
-which the customers are interested in doing shopping
-					\item {\bfseries R12: } The system must show the customers of the time periods in which they can
+					\item {\bfseries R9}: The system allows the customers to select some or all the departments in which the customers are interested in doing shopping
+					\item {\bfseries R12}: The system must show the customers of the time periods in which they can
 					enter the store, accordingly to the estimate of customers' shopping time
-					\item {\bfseries R13: } The system have to make a reasonable estimate of when a user with a spot
-on the queue is able to enter the store
-					\item {\bfseries R15: } The system is able to ask for the position of the customers
-					\item {\bfseries R22: } The system knows the situation in real time of each store
-
-					\item {\bfseries R23: } The system takes trace of each customer entry and exit from the store
-					\item {\bfseries R24: } The system contains a list of bookable stores
-					\item {\bfseries R26: } The system can reasonably estimate the time needed from a specific user
-to complete his shopping
-
-					\item {\bfseries R27: } The system saves clients' tickets
+					\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
+					\item {\bfseries R15}: The system is able to ask for the position of the customers
+					\item {\bfseries R22}: The system knows the situation in real time of each store
+					\item {\bfseries R23}: The system takes trace of each customer entry and exit from the store
+					\item {\bfseries R24}: The system contains a list of bookable stores
+					\item {\bfseries R26}: The system can reasonably estimate the time needed from a specific user to complete his shopping
+					\item {\bfseries R27}: The system saves clients' tickets
 
 
 					\end{itemize}
@@ -1358,7 +1365,7 @@ to complete his shopping
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
@@ -1395,30 +1402,31 @@ to complete his shopping
 					\end{tabular}
 					\end{adjustwidth}
 
-\newpage
-\begin{itemize}
+					\newpage
+					
+					\begin{itemize}
 					\bigskip
 					\bigskip
 					\bigskip
 					 {\bfseries Required functional requirements: }
 
 
-					\item {\bfseries R5: }  The system allows the customers to view their visits
-					\item {\bfseries R8: }  The system allows the customers to select their favourite means of transportation
-					\item {\bfseries R13: }  The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
-					\item {\bfseries R15: } The system is able to ask for the position of the customers
-					\item {\bfseries R27: } The system saves clients' tickets
+					\item {\bfseries R5}: The system allows the customers to view their visits
+					\item {\bfseries R8}: The system allows the customers to select their favourite means of transportation
+					\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
+					\item {\bfseries R15}: The system is able to ask for the position of the customers
+					\item {\bfseries R27}: The system saves clients' tickets
 
 					
 					\end{itemize}
 				\end{center}
-												\begin{figure}
-								\begin{adjustwidth} {-1cm}{}
-									\centering
-									\includegraphics[scale=0.65]{SD/6_visualizeReservation.pdf}\\
-									\caption{Sequence Diagram of Visualizing Customers' Reservations in app}
-								\end{adjustwidth}
-							\end{figure}
+					\begin{figure}
+						\begin{adjustwidth} {-1cm}{}
+							\centering
+							\includegraphics[scale=0.65]{SD/6_visualizeReservation.pdf}\\
+							\caption{\emph{Sequence Diagram of Visualizing Customers' Reservations in app}}
+						\end{adjustwidth}
+					\end{figure}
 			\newpage
 			\paragraph{Manager modifies store parameters}
 			
@@ -1427,7 +1435,7 @@ to complete his shopping
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						
 						\hline
@@ -1480,28 +1488,26 @@ to complete his shopping
 					\bigskip
 					{\bfseries Required functional requirements: }
 
-					\item {\bfseries R14}:  The system can send notification to the clients
+					\item {\bfseries R14}: The system can send notification to the clients
 					\item {\bfseries R16}: The system permits to store manager to modify some critical parameters of the store
 					related to customers' affluence management
-
 					\item {\bfseries R17}: The system allows the manager to establish the maximum simultaneously allowed booked clients in a speciﬁc department
 
 					\item {\bfseries R21}: The store manager can handle the working days and hours of the store, for each day of the week
 					\end{itemize}					
 
 							\begin{figure}[!h]
-								\begin{adjustwidth} {-1,1cm}{}
+								\begin{adjustwidth} {-1cm}{}
 									\centering
 									\includegraphics[scale=0.385]{SD/7_modifyParameters.pdf}\\
-									\caption{Sequence Diagram of Visualizing Customers' Reservations in app}
+									\caption{\emph{Sequence Diagram of Visualizing Customers' Reservations in app}}
 								\end{adjustwidth}
 							\end{figure}
-
 				\end{center}
 
 
 
-\newpage
+			\newpage
 			
 			\paragraph{The store manager monitors the store situation}
 			
@@ -1510,7 +1516,7 @@ to complete his shopping
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 						\hline
 						\xrowht{5pt}
@@ -1546,9 +1552,8 @@ to complete his shopping
 					{\bfseries Required functional requirements: }
 					
 					
-					\item {\bfseries R9: }  The system allows the customers to select some or all the departments in
-					which the customers are interested in doing shopping
-					\item {\bfseries R23: } The system takes trace of each customer entry and exit from the store
+					\item {\bfseries R9}:  The system allows the customers to select some or all the departments in which the customers are interested in doing shopping
+					\item {\bfseries R23}: The system takes trace of each customer entry and exit from the store
 				
 				\end{itemize}
 			
@@ -1556,7 +1561,7 @@ to complete his shopping
 						\begin{adjustwidth} {0cm}{}
 							\centering
 							\includegraphics[scale=0.25]{SD/8_monitorStoreSituation.pdf}\\
-							\caption{Sequence Diagram of Visualizing Store and Departments Situation}
+							\caption{\emph{Sequence Diagram of Visualizing Store and Departments Situation}}
 						\end{adjustwidth}
 					\end{figure}
 					
@@ -1570,7 +1575,7 @@ to complete his shopping
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 						\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 							\hline
 							\xrowht{5pt}
@@ -1591,18 +1596,11 @@ to complete his shopping
 									
 									\item The manager can press on the button “Contact client” to contact the client for some reasons.
 									
-									\begin{enumerate}
-										
-										
-										
+									\begin{enumerate}	
 											
 											\item The app will show an interface where the manager can insert the email text
 											\item The manger clicks on the “Send” button to send the email
-											
-										
-									
-									
-									
+
 										\item The app returns to the previous page
 										
 										
@@ -1648,10 +1646,10 @@ to complete his shopping
 					\end{adjustwidth}
 				\newpage
 					\begin{figure}[!h]
-						\begin{adjustwidth} {-1,5cm}{}
+						\begin{adjustwidth} {-1.3cm}{}
 							\centering
 							\includegraphics[scale=0.42]{SD/9_manageReservations(store)}\\
-							\caption{Sequence Diagram of Visualizing Store and Departments Situation}
+							\caption{\emph{Sequence Diagram of Visualizing Store and Departments Situation}}
 						\end{adjustwidth}
 					\end{figure}
 					\begin{itemize}
@@ -1659,13 +1657,13 @@ to complete his shopping
 						
 						{\bfseries Required functional requirements: }
 						
-						\item {\bfseries R14: } The system can send notiﬁcation to the clients
-						\item {\bfseries R18: }  The store manager can view the reservation of each client
-						\item {\bfseries R19: } The store manager can modify the reservation of each client
-						\item {\bfseries R20: } The store manager can cancel the reservation of each client
-						\item {\bfseries R27: } The system saves clients' tickets
-						\item {\bfseries R30: } The system is able to send emails
-						\item{\bfseries R32: } The system can automatically rearrange reservations, if necessary
+						\item {\bfseries R14}: The system can send notiﬁcation to the clients
+						\item {\bfseries R18}: The store manager can view the reservation of each client
+						\item {\bfseries R19}: The store manager can modify the reservation of each client
+						\item {\bfseries R20}: The store manager can cancel the reservation of each client
+						\item {\bfseries R27}: The system saves clients' tickets
+						\item {\bfseries R30}: The system is able to send emails
+						\item{\bfseries R32}: The system can automatically rearrange reservations, if necessary
 						
 
 					\end{itemize}	
@@ -1680,7 +1678,7 @@ to complete his shopping
 					\rowcolors{1}{gray!20}{white}
 					
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 							\hline
 							\xrowht{5pt}
@@ -1741,40 +1739,31 @@ to complete his shopping
 						{\bfseries Required functional requirements: }
 						
 						
-						\item {\bfseries R5: } The system allows the customers to view their visits
-						\item {\bfseries R6: } The system allows the customers to cancel their visits
-						\item {\bfseries R7: } The system allows the customers to modify their visits
-						
-						\item {\bfseries R8: } The system allows the customers to select their favourite means of transportation
-						\item {\bfseries R9: } The system allows the customers to select some or all the departments in
-						which the customers are interested in doing shopping
-						\item {\bfseries R11: } The system must consider the estimate shopping time inserted by customers
-						
-						\item {\bfseries R12: } The system must show the customers of the time periods in which they can enter the
+						\item {\bfseries R5}: The system allows the customers to view their visits
+						\item {\bfseries R6}: The system allows the customers to cancel their visits
+						\item {\bfseries R7}: The system allows the customers to modify their visits		
+						\item {\bfseries R8}: The system allows the customers to select their favourite means of transportation
+						\item {\bfseries R9}: The system allows the customers to select some or all the departments in which the customers are interested in doing shopping
+						\item {\bfseries R11}: The system must consider the estimate shopping time inserted by customers
+						\item {\bfseries R12}: The system must show the customers of the time periods in which they can enter the
 						store, accordingly to the estimate of customers' shopping time
-						\item {\bfseries R13: } The system have to make a reasonable estimate of when a user with a spot
-						on the queue is able to enter the store
-						\item {\bfseries R15: } The system is able to ask for the position of the customers
-						\item {\bfseries R22: } The system knows the situation in real time of each store
-						\item {\bfseries R26: } The system can reasonably estimate the time needed from a specific user
-						to complete his shopping
-						\item {\bfseries R27: } The system saves clients' tickets
-						\item{\bfseries R32: } The system can automatically rearrange reservations, if necessary
+						\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot	on the queue is able to enter the store
+						\item {\bfseries R15}: The system is able to ask for the position of the customers
+						\item {\bfseries R22}: The system knows the situation in real time of each store
+						\item {\bfseries R26}: The system can reasonably estimate the time needed from a specific user to complete his shopping
+						\item {\bfseries R27}: The system saves clients' tickets
+						\item{\bfseries R32}: The system can automatically rearrange reservations, if necessary
 
-
-
-						
-						
 					\end{itemize}
 				
 
 				\end{center}
 			\newpage
 			\begin{figure}[!htb]
-				\begin{adjustwidth} {-3,3cm}{}
+				\begin{adjustwidth} {-3.8cm}{}
 					\centering
 					\includegraphics[scale=0.5]{SD/10_manageReservation(customer).pdf}\\
-					\caption{Sequence Diagram of managing reservations customer side}
+					\caption{\emph{Sequence Diagram of managing reservations customer side}}
 				\end{adjustwidth}
 			\end{figure}
 		\newpage
@@ -1786,7 +1775,7 @@ to complete his shopping
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-2.8cm}{}
+					\begin{adjustwidth}{-3cm}{}
 					\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 							\hline
 							\xrowht{5pt}
@@ -1822,12 +1811,10 @@ to complete his shopping
 							\hline
 							
 						\end{tabular}
-					
 
-				
 					\end{adjustwidth}
 				
-														\begin{itemize}
+					\begin{itemize}
 					\bigskip
 					\bigskip
 					\bigskip
@@ -1835,23 +1822,20 @@ to complete his shopping
 					{\bfseries Required functional requirements: }
 					
 					
-					\item {\bfseries R9: } The system allows the customers to select some or all the departments in which the customers are interested in doing shopping
-					\item {\bfseries R11: } The system must consider the estimate shopping time insert
+					\item {\bfseries R9}: The system allows the customers to select some or all the departments in which the customers are interested in doing shopping
+					\item {\bfseries R11}: The system must consider the estimate shopping time insert
 					by customers
-					\item {\bfseries R13: } The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
-					\item {\bfseries R25: } The system is able to print a paper ticket
-					\item {\bfseries R26: } The system can reasonably estimate the time needed from a specific user to complete his shopping
-					\item {\bfseries R27: } The system saves clients' tickets
+					\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store
+					\item {\bfseries R25}: The system is able to print a paper ticket
+					\item {\bfseries R26}: The system can reasonably estimate the time needed from a specific user to complete his shopping
+					\item {\bfseries R27}: The system saves clients' tickets
 
-					
-					
-					
 				\end{itemize}
-								\begin{figure}[!htb]
-						\begin{adjustwidth} {-3.3cm}{}
+					\begin{figure}[!htb]
+						\begin{adjustwidth} {-3.2cm}{}
 							\centering
 							\includegraphics[scale=0.62]{SD/11_getTicketAtTotem.pdf}\\
-							\caption{Sequence Diagram of getting a ticket at a physical dispenser}
+							\caption{\emph{Sequence Diagram of getting a ticket at a physical dispenser}}
 						\end{adjustwidth}
 					\end{figure}
 				\end{center}
@@ -1863,7 +1847,7 @@ to complete his shopping
 					\rowcolors{2}{}{gray!20}
 					\rowcolors{1}{gray!20}{white}
 					
-					\begin{adjustwidth}{-3.2cm}{}
+					\begin{adjustwidth}{-3cm}{}
 						\begin{tabular}[h!]{|m{7.5em}|m{36em}|}
 							\hline
 							\xrowht{5pt}
@@ -1899,10 +1883,10 @@ to complete his shopping
 					\end{adjustwidth}
 					
 					\begin{figure}[!htb]
-						\begin{adjustwidth} {-0,5cm}{}
+						\begin{adjustwidth} {-0.5cm}{}
 							\centering
 							\includegraphics[scale=0.42]{SD/12_selectPreferredMeanOfTransport.pdf}\\
-							\caption{Sequence Diagram of changing preferred mean of transport}
+							\caption{\emph{Sequence Diagram of changing preferred mean of transport}}
 						\end{adjustwidth}
 
 					\end{figure}
@@ -1914,8 +1898,8 @@ to complete his shopping
 						{\bfseries Required functional requirements: }
 						
 						
-						\item {\bfseries R8: } The system allows the customers to select their favourite means of transportation
-						\item {\bfseries R15: } The system is able to ask for the position of the customers
+						\item {\bfseries R8}: The system allows the customers to select their favourite means of transportation
+						\item {\bfseries R15}: The system is able to ask for the position of the customers
 											
 						
 					\end{itemize}
@@ -1927,26 +1911,13 @@ to complete his shopping
 			\begin{adjustwidth} {-3,6cm}{}
 				\centering
 				\includegraphics[scale=0.42]{UC/1_useCaseDiagram.pdf}\\
-				\caption{Use Case Diagram}
+				\caption{\emph{Use Case Diagram}}
 			\end{adjustwidth}
 			
 		\end{figure}
-		
-		\subsubsection{Scenarios}
-			
-			{\bfseries Scenario 1: User without application} \\
-			Marta is a university student unfavorable to consumerism and for this reason she does not have a smartphone. She go to her favorite store to do shopping and thanks to our system she can still book a place in the queue to enter in the store. To do this, she just go to the totem placed near the supermarket and fill in the reservation with the requested data, that is the departments she intends to visit and an estimate of the time spent inside the store. In this way, the system will queue her to enter as soon as possible, providing her with an estimated entry time. Knowing this, Marta can still do other activities before being called to enter the store, so as not to create crowds at the store exit. As with the app, Marta has to scan the ticket at the  entrance and exit. In this way the system can manage the queue and reservations. \\ \\
-			{\bfseries Scenario 2: Fake \emph{QR Code}} \\
-			Jonathan arrives at the store and notices that he has many people in line before him. Jonathan is not a very patient guy, so having kept another \emph{QR Code}, he tries to skip the line trying to scan it. The system recognizes that the \emph{QR Code} is not valid, therefore it does not allow Jonathan to enter the store, forcing him to respect the queue. \\ \\
-			{\bfseries Scenario 3: User books from the application} \\
-			Adalgiso must go shopping but does not want to wait a long time outside the store and wants to be sure that he can enter the moment he arrives. So, he opens \emph{CLup} on his smartphone, sets up a preferred means of transport and begins a reservation. He selects the store, the departments he wants to visit and the estimated time. Once the booking is complete, the app will send the notification to Adalgiso, inviting him to depart from his position to go to the store in time. When he will arrive, his number will be called shortly.\\ \\
-			{\bfseries Scenario 4: Store manager have to smartly manage accesses} \\
-			Apu is a store manager whose work is made more difficult by the current pandemic, since he has a small shop and no ways to manage crowds. Thanks to our application, now Apu is able to avoid assembles in front his store, he doesn't worry anymore about the number of people inside the store, and thanks to the real time statistics, he is able to regulate better the number of allowed people and booked ones for each department of his small store.\\\\
-			{\bfseries Scenario 5: Arrives near the store closing} \\
-			Caterina arrives at the store near the closing, but her shopping would last over the closing time. To avoid that she waits in vain, a ticket isn't issued. So, Caterina reduces the departments that she should visit. She may have time to complete the shopping, but she have to hope that the crowd runs fast, or her ticket won't be called. Since there are possibilities to enter, the ticket is issued, but she is alerted that may not be able to enter the store.
 		\newpage
 	\subsection{Performance Requirements}
-	\emph{CLup} app is aimed to reduce gatherings due to the Covid-19 pandemic. So, some components needs a certain responsiveness. Here there are described some parts of the system that are critical to the scope of entire system
+	\emph{CLup} app is aimed to reduce gatherings due to the \emph{Covid-19} pandemic. So, some components needs a certain responsiveness. Here there are described some parts of the system that are critical to the scope of entire system
 	\begin{itemize}
 		\item {\bfseries Requests saving system:} when a client got a reservation, the system needs to process and save it in a very low time, less than 5 seconds, since the requests are fundamental in making estimations about waiting times.
 		\item {\bfseries \emph{QR Code} processing:} each customer must scan his \emph{QR Code} when he enters the store. This means that, to avoid delays and crowds of people, the component processing \emph{QR Codes} must be really fast, and process them in no more than 5 seconds after the code is retrieved from the optical scanner.
@@ -2005,42 +1976,40 @@ The same doesn't applies to requests of travel times and for mail sending, since
 	\end{itemize}
 	\lstinputlisting[language=alloy]{AlloyModel/World.als}
 	
-
-	\begin{figure}
+	\begin{figure}[H]
 		\begin{adjustwidth} {-3cm}{}
 			\centering			
 			\includegraphics[scale=0.5]{AlloyModel/capacityRespected.png}\\
-			\captionsetup{justification=centering}		
-			\caption{Department Capacity respected. In this model, it's shown that the parameters of capacity and maximum allowed booked customers are respected.}
 		\end{adjustwidth}
+		\caption{\emph{Department Capacity respected. In this model, it's shown that the parameters of capacity and maximum allowed booked customers are respected}}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\begin{adjustwidth} {-3cm}{}
+			\centering
+			\includegraphics[scale=0.5]{AlloyModel/reservationStatus.png}\\	
+		\end{adjustwidth}
+		\caption{\emph{Coherent reservations status. Here the intent is to show that the status of all the reservations is coherent}}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\begin{adjustwidth} {-3cm}{}
+			\centering
+			\includegraphics[scale=0.4, angle = 90]{AlloyModel/customerReservation.png}\\
+		\end{adjustwidth}
+		\caption{\emph{Customer reservations. Here is shown how constraints on customer's ability to make a reservation are respected}}
 	\end{figure}
 
-
-	\begin{figure}
-	\begin{adjustwidth} {-3cm}{}
-		\centering
-		\includegraphics[scale=0.5]{AlloyModel/reservationStatus.png}\\		
-		\caption{Coherent reservations status. 	Here the intent is to show that the status of all the reservations is coherent.}
-	\end{adjustwidth}
-\end{figure}
-	
-	\begin{figure}
-	\begin{adjustwidth} {-3cm}{}
-		\centering
-		\includegraphics[scale=0.4, angle = 90]{AlloyModel/customerReservation.png}\\
-		\caption{Customer reservations.\newline Here is shown how constraints on customer's ability to make a reservation are respected.}
-	\end{adjustwidth}
-\end{figure}
-
-
-	
-	
-	
-	
-	
+\section{References}
+	\begin{itemize}
+		\item Alloy Documentation: \url{https://alloytools.org/documentation.html}
+		\item \LaTeX Documentation: \url{https://www.latex-project.org/help/documentation/}
+	\end{itemize}	
+	\bigskip
 	
 \section{Effort Spent}
-
+	
 	\bigskip
 	\bigskip
 	
@@ -2048,7 +2017,7 @@ The same doesn't applies to requests of travel times and for mail sending, since
 		
 		\renewcommand{\arraystretch}{1.2}
 		
-			\begin{tabular}[h!]{|m{14em}|>{\centering\arraybackslash}m{12em}|}
+			\begin{tabular}[H]{|m{14em}|>{\centering\arraybackslash}m{12em}|}
 				\rowcolor{gray!20}
 				\hline
 				\xrowht{5pt}
@@ -2140,6 +2109,8 @@ The same doesn't applies to requests of travel times and for mail sending, since
 		\end{tabular}
 	\end{center}
 
+	\bigskip
+
 	\begin{center}
 		
 		\renewcommand{\arraystretch}{1.2}
@@ -2184,10 +2155,5 @@ The same doesn't applies to requests of travel times and for mail sending, since
 			\hline
 		\end{tabular}
 	\end{center}
-
-\section{References}	
-
-	
-	
 	
 \end{document}
