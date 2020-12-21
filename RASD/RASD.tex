@@ -13,6 +13,9 @@
 \usepackage{changepage}
 \usepackage{tikz, graphicx}
 \usepackage{hyperref}
+\usepackage{listings}
+\usepackage{alloy_language}
+\usepackage{caption}
 
 \newcommand\xrowht[2][0]
 {\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
@@ -1989,79 +1992,49 @@ The same doesn't applies to requests of travel times and for mail sending, since
 	\newpage
 	
 \section{Formal Analysis Using Alloy}
-	The following section considers the fundamental properties and constraints identified for the specification of the problem and formally define them with a formal model in which it is shown how they will be satisfied. The alloy modelling language is used to model the problem, and some possible comments are also provided in order to clarify the most critical aspects. 
-	\subsection{Alloy Model}
-	sig Username\{
+	In this section a formal analysis of the previously described system is done, through the MIT's Alloy Tool.\\
+	This analysis doesn't aim to cover all the system aspect. For example, no dynamic analysis have been done. Instead, here is conducted a static analysis of the most critic part the system: the absence of overcrowding in stores, and the fairness in reservations management.\\
+	In particular, the principal functionalities that have been tested are:
+	\begin{itemize}
+		\item In each store department, there aren't more people than its capacity, and the maximum booked customers parameter is respected
+		\item There isn't any customer with more than one spot on a store queue
+		\item Reservations status is coherent with the list of reservations each store have
+		\item No reservations on closure day, no same reservations across different store
+		\item Coherence between timestamps of reservations notification, calling, entering and exit
+		\item Customers are always notified to depart in time for the store through notification
+	\end{itemize}
+	\lstinputlisting[language=alloy]{AlloyModel/World.als}
 	
-		usr: one String
-		
-	\}
-	
-	
-	sig Password\{
-		
-		psw: one String
-		
-	\}
+
+	\begin{figure}
+		\begin{adjustwidth} {-3cm}{}
+			\centering			
+			\includegraphics[scale=0.5]{AlloyModel/capacityRespected.png}\\
+			\captionsetup{justification=centering}		
+			\caption{Department Capacity respected. In this model, it's shown that the parameters of capacity and maximum allowed booked customers are respected.}
+		\end{adjustwidth}
+	\end{figure}
 
 
-	sig Email\{
+	\begin{figure}
+	\begin{adjustwidth} {-3cm}{}
+		\centering
+		\includegraphics[scale=0.5]{AlloyModel/reservationStatus.png}\\		
+		\caption{Coherent reservations status. 	Here the intent is to show that the status of all the reservations is coherent.}
+	\end{adjustwidth}
+\end{figure}
 	
-		email: one String
-		
-	\}
-	
-	sig Name\{
-	
-		name: one String
-		
-	\}
-	
-	sig Surname\{
-	
-		surname: one String
-		
-	\}
+	\begin{figure}
+	\begin{adjustwidth} {-3cm}{}
+		\centering
+		\includegraphics[scale=0.4, angle = 90]{AlloyModel/customerReservation.png}\\
+		\caption{Customer reservations.\newline Here is shown how constraints on customer's ability to make a reservation are respected.}
+	\end{adjustwidth}
+\end{figure}
 
-	sig Certification\{\}
-	
-	sig CustomerReg\{
-	
-		username: one Username,
-		
-		password: one Password,
-		
-		email: one Email,
-		
-		name: one Name,
-		
-		surname: one Surname
-		
-	\}
 
-	sig Customer\{
 	
-		registration: one CustomerReg
-		
-	\}
-
-	sig StoreReg\{
 	
-		name: one Name,
-		
-		password: one Password,
-		
-		certification: one Certification,
-		
-		capacity: one Int		
-		
-	\}
-	
-	sig Store\{
-	
-		registration: one StoreReg
-		
-	\}
 	
 	
 	
@@ -2081,23 +2054,37 @@ The same doesn't applies to requests of travel times and for mail sending, since
 				\xrowht{5pt}
 				\centering Task & Daniele Mammone's Hours \\
 				\hline
-				Introduction & 000 \\
+				Introduction & 2 \\
 				\hline
-				Product Perspective & 000 \\
+				Product Perspective & 2 \\
 				\hline
-				Product Functions & 000 \\
+				Product Functions & 6 \\
 				\hline
-				Domain Assumptions & 000 \\
+				Domain Assumptions & 3 \\
 				\hline
-				External Interface Requirements & 000 \\
+				State Charts & 4 \\
 				\hline
-				Functional Requirements & 000 \\
+				Use Cases & 8 \\
 				\hline
-				Non-Functional Requirements & 000 \\
+				Class Diagram & 1 \\
 				\hline
-				Formal Analysis Using Alloy & 000 \\
+				External Interface Requirements & 1 \\
 				\hline
-				Document Drafting & 000 \\
+				Mockups & 0 \\
+				\hline
+				Functional Requirements & 6 \\
+				\hline
+				Non-Functional Requirements & 1 \\
+				\hline
+				Formal Analysis Using Alloy & 6 \\
+				\hline
+				Scenarios & 1\\
+				\hline
+				Revision & 5\\
+				\hline
+				Document Drafting & 3 \\
+				\hline
+				Total Hours & 49\\
 				\hline
 			\end{tabular}
 		
@@ -2118,23 +2105,37 @@ The same doesn't applies to requests of travel times and for mail sending, since
 			\xrowht{5pt}
 			\centering Task & Gianmarco Naro's Hours\\
 			\hline
-			Introduction & 000 \\
+			Introduction & 2 \\
 			\hline
-			Product Perspective & 000 \\
+			Product Perspective & 3 \\
 			\hline
-			Product Functions & 000 \\
+			Product Functions & 3 \\
 			\hline
-			Domain Assumptions & 000 \\
+			Domain Assumptions & 3 \\
 			\hline
-			External Interface Requirements & 000 \\
+			State Charts & 1 \\
 			\hline
-			Functional Requirements & 000 \\
+			Use Cases & 4 \\
 			\hline
-			Non-Functional Requirements & 000 \\
+			Class Diagram & 3 \\
 			\hline
-			Formal Analysis Using Alloy & 000 \\
+			External Interface Requirements & 1 \\
 			\hline
-			Document Drafting & 000 \\
+			Mockups & 0 \\
+			\hline
+			Functional Requirements & 7 \\
+			\hline
+			Non-Functional Requirements & 1 \\
+			\hline
+			Formal Analysis Using Alloy & 2 \\
+			\hline
+			Scenarios & 2\\
+			\hline
+			Revision & 5\\
+			\hline
+			Document Drafting & 6 \\
+			\hline
+			Total Hours & 43\\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -2149,23 +2150,37 @@ The same doesn't applies to requests of travel times and for mail sending, since
 			\xrowht{5pt}
 			\centering Task & Massimo Parisi's Hours \\
 			\hline
-			Introduction & 000 \\
+			Introduction & 2 \\
 			\hline
-			Product Perspective & 000 \\
+			Product Perspective & 2 \\
 			\hline
-			Product Functions & 000 \\
+			Product Functions & 2 \\
 			\hline
-			Domain Assumptions & 000 \\
+			Domain Assumptions & 3 \\
 			\hline
-			External Interface Requirements & 000 \\
+			State Charts & 2 \\
 			\hline
-			Functional Requirements & 000 \\
+			Use Cases & 7 \\
 			\hline
-			Non-Functional Requirements & 000 \\
+			Class Diagram & 3 \\
 			\hline
-			Formal Analysis Using Alloy & 000 \\
+			External Interface Requirements & 4 \\
 			\hline
-			Document Drafting & 000 \\
+			Mockups & 5 \\
+			\hline
+			Functional Requirements & 5 \\
+			\hline
+			Non-Functional Requirements & 1 \\
+			\hline
+			Formal Analysis Using Alloy & 2 \\
+			\hline
+			Scenarios & 0\\
+			\hline
+			Revision & 2\\
+			\hline
+			Document Drafting & 2 \\
+			\hline
+			Total Hours & 42\\
 			\hline
 		\end{tabular}
 	\end{center}
