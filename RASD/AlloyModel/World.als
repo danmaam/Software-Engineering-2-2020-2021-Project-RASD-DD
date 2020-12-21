@@ -9,6 +9,9 @@ one sig Called extends ReservationStatus{}
 one sig Discarded extends ReservationStatus{}
 one sig Validated extends ReservationStatus{}
 
+sig Date{}
+
+
 abstract sig MerchType{}
 
 sig Notification {
@@ -42,13 +45,18 @@ sig Store {
 	reservations: set Reservation,
 	calledReservations: set Reservation,
 	enteredReservations: set Reservation,
-	maximumBookingsPerClient: Int
+	maximumBookingsPerClient: Int,
+	closedDates: set Date,
+	currentDate : Date
 } {
 	reservations & calledReservations & enteredReservations = none
 }
 
+
+
 sig Reservation {
 	status: one ReservationStatus,
+	date: one Date,
 	type: one ReservationType,
 	departments: some Department,
 	store: one Store,
@@ -159,6 +167,15 @@ fact reservationStatus {
 			r.exitTimestamp = none and
 			not r in (r.store.reservations + r.store.calledReservations + r.store.enteredReservations)
 		)
+}
+
+fact noReservationInClosedDays {
+	all s: Store | all d: s.closedDates | no r: Reservation | r in (s.reservations + s.calledReservations + s.enteredReservations) 
+	and r.date = d
+}
+
+fact onlyReservationsOfTheDay {
+	all s: Store | all r: s.calledReservations | r.date = s.currentDate
 }
 
 //FUNCTIONS
