@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>14</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>14</x>
-      <y>0</y>
-      <w>1148</w>
-      <h>1036</h>
+      <x>143</x>
+      <y>88</y>
+      <w>902</w>
+      <h>814</h>
     </coordinates>
     <panel_attributes>Client makes a reservation at the totem</panel_attributes>
     <additional_attributes/>
@@ -15,10 +15,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>224</x>
-      <y>112</y>
-      <w>140</w>
-      <h>42</h>
+      <x>308</x>
+      <y>176</y>
+      <w>110</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>Totem</panel_attributes>
     <additional_attributes/>
@@ -26,10 +26,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>140</y>
-      <w>42</w>
-      <h>84</h>
+      <x>352</x>
+      <y>198</y>
+      <w>33</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -37,10 +37,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>280</x>
-      <y>196</y>
-      <w>28</w>
-      <h>812</h>
+      <x>352</x>
+      <y>242</y>
+      <w>22</w>
+      <h>638</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -48,10 +48,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>196</y>
-      <w>266</w>
-      <h>126</h>
+      <x>363</x>
+      <y>242</y>
+      <w>209</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 1: startProcess()</panel_attributes>
@@ -60,10 +60,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>700</x>
-      <y>112</y>
-      <w>140</w>
-      <h>42</h>
+      <x>682</x>
+      <y>176</y>
+      <w>110</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>CLup</panel_attributes>
     <additional_attributes/>
@@ -71,10 +71,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>756</x>
-      <y>140</y>
-      <w>42</w>
-      <h>210</h>
+      <x>726</x>
+      <y>198</y>
+      <w>33</w>
+      <h>165</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
@@ -82,10 +82,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>322</y>
-      <w>490</w>
-      <h>56</h>
+      <x>363</x>
+      <y>341</y>
+      <w>385</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 2: selectCategories(categories)</panel_attributes>
@@ -94,10 +94,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>756</x>
-      <y>322</y>
-      <w>28</w>
-      <h>84</h>
+      <x>726</x>
+      <y>341</y>
+      <w>22</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -105,10 +105,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>364</y>
-      <w>490</w>
-      <h>56</h>
+      <x>363</x>
+      <y>374</y>
+      <w>385</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 3: selection is okay</panel_attributes>
@@ -117,10 +117,10 @@
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>84</x>
-      <y>476</y>
-      <w>896</w>
-      <h>140</h>
+      <x>198</x>
+      <y>462</y>
+      <w>704</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>alt
 --
@@ -133,10 +133,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>756</x>
-      <y>392</y>
-      <w>42</w>
-      <h>98</h>
+      <x>726</x>
+      <y>396</y>
+      <w>33</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -144,10 +144,10 @@ halign=left
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>756</x>
-      <y>462</y>
-      <w>28</w>
-      <h>476</h>
+      <x>726</x>
+      <y>451</y>
+      <w>22</w>
+      <h>374</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -155,10 +155,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>490</y>
-      <w>490</w>
-      <h>56</h>
+      <x>363</x>
+      <y>473</y>
+      <w>385</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 4: sendTimeEstimation(time)</panel_attributes>
@@ -167,10 +167,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>546</y>
-      <w>490</w>
-      <h>56</h>
+      <x>363</x>
+      <y>517</y>
+      <w>385</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 5: automaticEstimation()</panel_attributes>
@@ -179,10 +179,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>826</y>
-      <w>490</w>
-      <h>56</h>
+      <x>363</x>
+      <y>737</y>
+      <w>385</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 8: ticket</panel_attributes>
@@ -191,10 +191,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>770</x>
-      <y>770</y>
-      <w>364</w>
-      <h>84</h>
+      <x>737</x>
+      <y>693</y>
+      <w>286</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 7: saveReservations(date, time)</panel_attributes>
@@ -203,10 +203,10 @@ halign=left
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>770</x>
-      <y>798</y>
-      <w>28</w>
-      <h>42</h>
+      <x>737</x>
+      <y>715</y>
+      <w>22</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -214,10 +214,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>854</y>
-      <w>280</w>
-      <h>84</h>
+      <x>363</x>
+      <y>759</y>
+      <w>220</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 9: printTicket(ticket)</panel_attributes>
@@ -226,10 +226,10 @@ halign=left
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>294</x>
-      <y>882</y>
-      <w>28</w>
-      <h>42</h>
+      <x>363</x>
+      <y>781</y>
+      <w>22</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -237,10 +237,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>994</y>
-      <w>42</w>
-      <h>56</h>
+      <x>352</x>
+      <y>869</y>
+      <w>33</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;20.0</additional_attributes>
@@ -248,10 +248,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>756</x>
-      <y>924</y>
-      <w>42</w>
-      <h>84</h>
+      <x>726</x>
+      <y>814</y>
+      <w>33</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -259,10 +259,10 @@ halign=left
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>770</x>
-      <y>672</y>
-      <w>28</w>
-      <h>42</h>
+      <x>737</x>
+      <y>616</y>
+      <w>22</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -270,10 +270,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>770</x>
-      <y>644</y>
-      <w>420</w>
-      <h>70</h>
+      <x>737</x>
+      <y>594</y>
+      <w>319</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 6: checkTicketAvailabAndETA(user)</panel_attributes>
@@ -282,10 +282,10 @@ halign=left
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>84</x>
-      <y>770</y>
-      <w>1036</w>
-      <h>252</h>
+      <x>198</x>
+      <y>693</y>
+      <w>814</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>alt
 --
@@ -304,10 +304,10 @@ halign=left
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>756</x>
-      <y>980</y>
-      <w>28</w>
-      <h>28</h>
+      <x>726</x>
+      <y>858</y>
+      <w>22</w>
+      <h>22</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes/>
@@ -315,10 +315,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>756</x>
-      <y>994</y>
-      <w>42</w>
-      <h>70</h>
+      <x>726</x>
+      <y>869</y>
+      <w>33</w>
+      <h>55</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;30.0</additional_attributes>
@@ -326,10 +326,10 @@ halign=left
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>294</x>
-      <y>966</y>
-      <w>490</w>
-      <h>56</h>
+      <x>363</x>
+      <y>847</y>
+      <w>385</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 10: error</panel_attributes>

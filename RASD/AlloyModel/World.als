@@ -134,7 +134,7 @@ fact noCustomerWithMoreThanAllowedBookings {
 	all c: Customer |
 		all r: c.customerRes |
 			all s: Store |
-				#(r.store -> s) < s.maximumBookingsPerClient
+				#(r.store -> s) < s.maximumBookingsPerClient and r.type = Booked
 }
 
 fact allNotificationSentBeforeCallTime {
@@ -204,7 +204,7 @@ fun getCustomerStatistics[s: Store, c: Customer]: set VisitStatistic {
 }
 
 //at this point of the specification document, no algorithm to intepretate departments'
-//statisticks has been described or implemented, so that here the function will return 
+//statistics has been described or implemented, so that here the function will return 
 //only the client visit time in a visit including the department, 
 //just to model the functionality of getting departments statistics
 

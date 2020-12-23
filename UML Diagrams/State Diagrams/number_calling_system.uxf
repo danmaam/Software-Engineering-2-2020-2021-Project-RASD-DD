@@ -234,19 +234,19 @@ lt=-&gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1162</x>
-      <y>588</y>
-      <w>70</w>
-      <h>21</h>
+      <x>427</x>
+      <y>532</y>
+      <w>21</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>1218</x>
-      <y>588</y>
+      <x>427</x>
+      <y>525</y>
       <w>14</w>
       <h>14</h>
     </coordinates>
