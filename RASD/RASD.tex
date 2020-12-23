@@ -419,13 +419,12 @@
 				\item {\bfseries Transportation}: Is an abstract class that defines the generic means of transport that could be chosen by the customer, such as:
 				
 					\begin{itemize}
-						\itemsep-0.20em
 						\item Public transport
 						\item On foot
 						\item Bike
 						\item Car
 					\end{itemize}
-				
+				\newpage
 				\item {\bfseries User}: Is an abstract class that defines the generic user that can use the application. An user could be either a customer or a store manager, and access functions based on their privileges in the application.
 				
 					\begin{itemize}
@@ -446,13 +445,13 @@
 				\item {\bfseries Department}: This class represents a store's department and is related to its statistics. The store manager can modify the \emph{maxCapacity} and the \emph{maxAllowedBooking} parameters for each department's store in order to avoid an overcrowding inside the store, and to grant fair balance between allowed booked clients and non booked ones. Moreover, the class takes trace of each customer inside the specific store zone.
 				
 				\item {\bfseries Chain Store}: Each store can belong to a chain
-				
+				\newpage
 				\item {\bfseries Reservation}: Each reservation is associated to a customer (if got on the app), is managed by the store and it has many attributes that provides informations about both the entry and exit time (expected and effective). Moreover, a reservation has a status:
 				\begin{itemize}
-					\item Pending: the reservation is in queue and hasn't been already called. So, called, entry and exit times are not present.
-					\item Called: the reservation have been called to enter the store. Called time is present, but not entry and exit one, and the reservation is in store's called tickets.
-					\item Discarded: the reservation have been called, but customer hasn't scanned his QR Code in time. Only call time is present, and the reservation isn't in any store reservation's list.
-					\item Validated: the reservation entered, all the time are present but exit time if the customer hasn't already exited, and the reservation is in store's entered reservations. If the customer is still inside, the reservation in department reservations' inside list.
+					\item {\bfseries Pending}: the reservation is in queue and hasn't been already called. So, called, entry and exit times are not present.
+					\item {\bfseries Called}: the reservation have been called to enter the store. Called time is present, but not entry and exit one, and the reservation is in store's called tickets.
+					\item {\bfseries Discarded}: the reservation have been called, but customer hasn't scanned his \emph{QR Code} in time. Only call time is present, and the reservation isn't in any store reservation's list.
+					\item {\bfseries Validated}: the reservation entered, all the time are present but exit time if the customer hasn't already exited, and the reservation is in store's entered reservations. If the customer is still inside, the reservation in department reservations' inside list.
 				\end{itemize}
 				
 				\item {\bfseries Ticket}: Every reservation has a ticket that provides the most important things: \emph{QR Code} and number to be called. Indeed, if a customer want enter or exit the shop, must scan his \emph{QR Code}.
@@ -461,7 +460,7 @@
 		\begin{figure}
 			\begin{adjustwidth}{-3cm}{}
 				\centering
-				\includegraphics[scale=0.4, angle=90, trim= 0 0 0 -5cm]{ClassDiagrams/classDiagram.pdf} \\
+				\includegraphics[scale=0.38, angle=90, trim= 0 0 0 -5cm]{ClassDiagrams/classDiagram.pdf} \\
 				\caption{\emph{UML Class Diagram}}
 			\end{adjustwidth}
 		\end{figure}
@@ -485,10 +484,12 @@
 		\begin{figure}[!h]
 			
 			\centering
-			\hspace*{-0.0cm}\includegraphics[scale=0.54]{StateCharts/qr_scanner_uml.pdf} \\
+			\hspace*{-0.0cm}\includegraphics[scale=0.49]{StateCharts/qr_scanner_uml.pdf} \\
 			\caption{\emph{QR Code scanner state machine for entering the store}}
 			
 		\end{figure}
+	
+		\newpage
 		
 		As decribed in \emph{Figure 3}, The system doesn't allow entries until a ticket is called by the system described above. Then, the \emph{QR Code} reader waits for a \emph{QR Code} to be scanned. When a \emph{QR Code} is passed under the optical reader, the system checks if it's a valid one; if so, allows the entry, otherwise notify the wrong \emph{QR Code} and continue waiting for the right one. If the valid \emph{QR Code} isn't scanned in time, the system blocks the entry, discards the current called ticket and waits for the next reservation to be called. Otherwise, if the valid \emph{QR Code} is scanned in time, the system allows and registers the entry.
 		
@@ -558,7 +559,7 @@
 	
 		\subsubsection{Notify users}
 		
-		If some account have pending reservations, depending on the position of the customer (retrieved by \emph{GPS}), and the preferred option of reaching the selected store (eg. on foot, by car or public transport), the app will notify the customer when he should depart from his position, by the selected mean, to arrive in time to enter the supermarket, without losing its turn and avoiding long waiting times. Notice that not all of the moving options may be available in all the places, since it depends on the used map service. This service is obviously available only with the internet connection and the GPS active.
+		If some account have pending reservations, depending on the position of the customer (retrieved by \emph{GPS}), and the preferred option of reaching the selected store (eg. on foot, by car or public transport), the app will notify the customer when he should depart from his position, by the selected mean, to arrive in time to enter the supermarket, without losing its turn and avoiding long waiting times. Notice that not all of the moving options may be available in all the places, since it depends on the used map service. This service is obviously available only with the internet connection and the \emph{GPS} active.
 		
 		\subsubsection{Cancel and modify reservations}
 		
@@ -571,9 +572,11 @@
 		
 		\subsubsection{Allow a fair management of the accesses}
 		The system is able to manage in a fair way the process of releasing tickets and accepting bookings. In fact, depending on the store's closing time, and other informations in its possession, such as the number of people in queue, the estimated time of permanency and some other statistics, it's able to notify customers about risk to not enter the store, if any, and to block the generation of new tickets, if there isn't enough time to do the shopping. The store manager is able to decide the maximum number of contemporary bookings allowed in each department, to avoid that it's really difficult to enter the store without a booking. Moreover, a user can make a limited number of bookings per week, and on app can't simultaneously take more than one spot on a queue. \\
-		
 		\subsubsection{Make suggestions}
-		\emph{CLup} is able to suggests customers better options than the chosen ones. In fact
+		\emph{CLup} is able to suggests customers better options than the chosen ones.
+		In fact:
+		
+		\bigskip
 		\begin{itemize}
 			\item If the customer is taking a spot in the queue, and the waiting times are really high, depending on customer's \emph{GPS} position and the preferences inserted in the process, some alternative stores with lower waiting times (where it's considered also the time needed to reach store's position) may be proposed.
 			\item If the customer is booking a visit, and the proposed time intervals are not of his interest, it's possible to request, from the same page, suggestions on other near stores with more booking possibilities.
@@ -1927,17 +1930,19 @@
 		\end{figure}
 		\newpage
 	\subsection{Performance Requirements}
-	\emph{CLup} app is aimed to reduce gatherings due to the \emph{Covid-19} pandemic. So, some components needs a certain responsiveness. Here there are described some parts of the system that are critical to the scope of entire system
+	\emph{CLup} app is aimed to reduce gatherings due to the \emph{Covid-19} pandemic. So, some components needs a certain responsiveness. Here there are described some parts of the system that are critical to the scope of entire system.
+	\bigskip
 	\begin{itemize}
-		\item {\bfseries Requests saving system:} when a client got a reservation, the system needs to process and save it in a very low time, less than 5 seconds, since the requests are fundamental in making estimations about waiting times.
-		\item {\bfseries \emph{QR Code} processing:} each customer must scan his \emph{QR Code} when he enters the store. This means that, to avoid delays and crowds of people, the component processing \emph{QR Codes} must be really fast, and process them in no more than 5 seconds after the code is retrieved from the optical scanner.
-		\item {\bfseries Ticket calling system:} as for \emph{QR Codes} processing, after a customer exits the store, the system must be able to process the next ticket to be called, if any, in a strict time, to avoid that people waits outside the store for long times. This process must not last more than 10 seconds.
-		\item {\bfseries User notifier:} the system must responsively notify users that they must depart for the store in time, with a security margin to avoid lost of turns. 
-		\item{\bfseries Application data updates:} when the customer need to use the application for any purpose, the app must be responsive, and each object required over the network must be available in no more than 5 seconds from its request; if the retrieve from the net fails, the app will show the local stored data to avoid embarrassing situations  (eg. the client must retrieve his \emph{QR Code} to access the store and internet isn't available) 
-		\item{\bfseries Totem ticket printing: } the totem must process each request and print the ticket in no more than 5 seconds.
-		\item{\bfseries Optical scanners: } each optical scanner must take no more than 5 seconds to read and interpret a \emph{QR Code} and its content.
+		\item {\bfseries Requests saving system}: When a client got a reservation, the system needs to process and save it in a very low time, less than 5 seconds, since the requests are fundamental in making estimations about waiting times.
+		\item {\bfseries \emph{QR Code} processing}: Each customer must scan his \emph{QR Code} when he enters the store. This means that, to avoid delays and crowds of people, the component processing \emph{QR Codes} must be really fast, and process them in no more than 5 seconds after the code is retrieved from the optical scanner.
+		\item {\bfseries Ticket calling system}: As for \emph{QR Codes} processing, after a customer exits the store, the system must be able to process the next ticket to be called, if any, in a strict time, to avoid that people waits outside the store for long times. This process must not last more than 10 seconds.
+		\item {\bfseries User notifier}: The system must responsively notify users that they must depart for the store in time, with a security margin to avoid lost of turns. 
+		\item{\bfseries Application data updates}: When the customer need to use the application for any purpose, the app must be responsive, and each object required over the network must be available in no more than 5 seconds from its request; if the retrieve from the net fails, the app will show the local stored data to avoid embarrassing situations  (eg. the client must retrieve his \emph{QR Code} to access the store and internet isn't available) 
+		\item{\bfseries Totem ticket printing}: The totem must process each request and print the ticket in no more than 5 seconds.
+		\item{\bfseries Optical scanners}: Each optical scanner must take no more than 5 seconds to read and interpret a \emph{QR Code} and its content.
 	\end{itemize} 
-The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect these timings. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 simultaneously connected users per each store inside the system.
+	\bigskip
+	The above reported performance constraints must be always verified; that implies the system must be highly scalable to respect these timings. There isn't any limit on the number of registered stores and users, so the system must respect these constraints with at least 200 simultaneously connected users per each store inside the system.
 
 	\newpage
 	
@@ -1945,17 +1950,18 @@ The above reported performance constraints must be always verified; that implies
 		\subsubsection{Standards Compliance}
 	System is compliant to some standards, such as:
 	\begin{itemize}
-		\item Generated \emph{QR Codes} are compliant to ISO/IEC 18004:2015 standard
-		\item Network messages are exchanged through the internet protocol TCP/IP
+		\item Generated \emph{QR Codes} are compliant to \emph{ISO/IEC 18004:2015 standard}
+		\item Network messages are exchanged through the internet protocol \emph{TCP/IP}
 	\end{itemize}
 The same doesn't applies to requests of travel times and for mail sending, since they are achieved by \emph{APIs} of some external services.
 		\subsubsection{Hardware Limitations}
 		To work properly, \emph{CLup} needs some type of hardware, in base of the considered component.
 		\begin{itemize}
-			\item {\bfseries Customer Device:} Customer needs to have a device with a working network module, a \emph{GPS} module and a high resolution display for the QR-Code to be scanned.
+			\item {\bfseries Customer Device:} Customer needs to have a device with a working network module, a \emph{GPS} module and a high resolution display for the \emph{QR Code} to be scanned.
 			\item {\bfseries Totem:} the totem must have a working network module, a ticket printer and a module to make possible interfacing between customer and totem.
-			\item {\bfseries \emph{QR Code} readers:} \emph{QR Code} readers must have a working network module, and a optical scanner to scan QR Codes. 
+			\item {\bfseries \emph{QR Code} readers:} \emph{QR Code} readers must have a working network module, and a optical scanner to scan \emph{QR Codes}. 
 		\end{itemize}
+	\bigskip
 	
 	\subsection{Software System Attributes}
 		\subsubsection{Reliability}
