@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>9</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>774</x>
-      <y>819</y>
-      <w>126</w>
-      <h>63</h>
+      <x>688</x>
+      <y>760</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>symbol=component
 DBMS
@@ -17,10 +17,10 @@ DBMS
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1521</x>
-      <y>351</y>
-      <w>180</w>
-      <h>234</h>
+      <x>1352</x>
+      <y>344</y>
+      <w>160</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>symbol=component
 MobileApp</panel_attributes>
@@ -29,10 +29,10 @@ MobileApp</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1368</x>
-      <y>360</y>
-      <w>171</w>
-      <h>45</h>
+      <x>1216</x>
+      <y>352</y>
+      <w>152</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 CustomerInterface</panel_attributes>
@@ -41,10 +41,10 @@ CustomerInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1323</x>
-      <y>360</y>
-      <w>63</w>
-      <h>36</h>
+      <x>1176</x>
+      <y>352</y>
+      <w>56</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -53,10 +53,10 @@ CustomerInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
-      <y>774</y>
-      <w>27</w>
-      <h>63</h>
+      <x>736</x>
+      <y>720</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -65,10 +65,10 @@ CustomerInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>720</y>
-      <w>90</w>
-      <h>99</h>
+      <x>320</x>
+      <y>672</y>
+      <w>80</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 Email API</panel_attributes>
@@ -77,10 +77,10 @@ Email API</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1323</x>
-      <y>540</y>
-      <w>63</w>
-      <h>36</h>
+      <x>1176</x>
+      <y>512</y>
+      <w>56</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -89,10 +89,10 @@ Email API</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1368</x>
-      <y>540</y>
-      <w>171</w>
-      <h>45</h>
+      <x>1216</x>
+      <y>512</y>
+      <w>152</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 StoreInterface</panel_attributes>
@@ -101,10 +101,10 @@ StoreInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>819</x>
-      <y>720</y>
-      <w>99</w>
-      <h>72</h>
+      <x>728</x>
+      <y>672</y>
+      <w>88</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 DBMS API</panel_attributes>
@@ -113,10 +113,10 @@ DBMS API</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>18</y>
-      <w>90</w>
-      <h>108</h>
+      <x>280</x>
+      <y>48</y>
+      <w>80</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 Maps API</panel_attributes>
@@ -125,10 +125,10 @@ Maps API</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>36</y>
-      <w>126</w>
-      <h>90</h>
+      <x>456</x>
+      <y>64</y>
+      <w>112</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=[]-()
 Notification API</panel_attributes>
@@ -137,10 +137,10 @@ Notification API</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>225</x>
-      <y>108</y>
-      <w>1107</w>
-      <h>621</h>
+      <x>200</x>
+      <y>128</y>
+      <w>984</w>
+      <h>552</h>
     </coordinates>
     <panel_attributes>symbol=component
 CLupServer</panel_attributes>
@@ -149,10 +149,10 @@ CLupServer</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>747</x>
-      <y>351</y>
-      <w>180</w>
-      <h>54</h>
+      <x>664</x>
+      <y>344</y>
+      <w>160</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>symbol=component
 ReservationHandler</panel_attributes>
@@ -161,10 +161,10 @@ ReservationHandler</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>270</x>
-      <y>333</y>
-      <w>234</w>
-      <h>81</h>
+      <x>240</x>
+      <y>328</y>
+      <w>208</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>symbol=component
 StoreComponent
@@ -174,10 +174,10 @@ StoreComponent
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>747</x>
-      <y>450</y>
-      <w>180</w>
-      <h>54</h>
+      <x>664</x>
+      <y>432</y>
+      <w>160</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>symbol=component
 DataManager
@@ -187,10 +187,10 @@ DataManager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>108</y>
-      <w>27</w>
-      <h>72</h>
+      <x>288</x>
+      <y>128</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=</panel_attributes>
@@ -199,10 +199,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
-      <y>360</y>
-      <w>81</w>
-      <h>36</h>
+      <x>440</x>
+      <y>352</y>
+      <w>72</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -211,10 +211,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>360</y>
-      <w>207</w>
-      <h>45</h>
+      <x>496</x>
+      <y>352</y>
+      <w>184</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 ReservationInterface</panel_attributes>
@@ -223,10 +223,10 @@ ReservationInterface</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>477</x>
-      <y>603</y>
-      <w>180</w>
-      <h>90</h>
+      <x>424</x>
+      <y>568</y>
+      <w>160</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>symbol=component
 AccessManager</panel_attributes>
@@ -235,10 +235,10 @@ AccessManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>315</x>
-      <y>216</y>
-      <w>27</w>
-      <h>54</h>
+      <x>280</x>
+      <y>224</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -247,10 +247,10 @@ AccessManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>306</x>
-      <y>252</y>
-      <w>117</w>
-      <h>99</h>
+      <x>272</x>
+      <y>256</y>
+      <w>104</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 MapInterface</panel_attributes>
@@ -259,10 +259,10 @@ MapInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>621</x>
-      <y>459</y>
-      <w>144</w>
-      <h>45</h>
+      <x>552</x>
+      <y>440</y>
+      <w>128</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 DataInterface
@@ -272,10 +272,10 @@ DataInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
-      <y>405</y>
-      <w>198</w>
-      <h>99</h>
+      <x>392</x>
+      <y>392</y>
+      <w>176</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 </panel_attributes>
@@ -284,10 +284,10 @@ DataInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>468</y>
-      <w>27</w>
-      <h>153</h>
+      <x>520</x>
+      <y>448</y>
+      <w>24</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=[]-
 </panel_attributes>
@@ -296,10 +296,10 @@ DataInterface
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>1116</x>
-      <y>351</y>
-      <w>180</w>
-      <h>54</h>
+      <x>992</x>
+      <y>344</y>
+      <w>160</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>symbol=component
 CustomerHandler</panel_attributes>
@@ -308,10 +308,10 @@ CustomerHandler</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>963</x>
-      <y>531</y>
-      <w>180</w>
-      <h>54</h>
+      <x>856</x>
+      <y>504</y>
+      <w>160</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>symbol=component
 StoreManagerHandler</panel_attributes>
@@ -320,10 +320,10 @@ StoreManagerHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>918</x>
-      <y>360</y>
-      <w>63</w>
-      <h>36</h>
+      <x>816</x>
+      <y>352</y>
+      <w>56</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -332,10 +332,10 @@ StoreManagerHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>963</x>
-      <y>360</y>
-      <w>171</w>
-      <h>45</h>
+      <x>856</x>
+      <y>352</y>
+      <w>152</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 CustomerHandler
@@ -345,10 +345,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>333</x>
-      <y>405</y>
-      <w>441</w>
-      <h>171</h>
+      <x>296</x>
+      <y>392</y>
+      <w>392</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -357,10 +357,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>756</x>
-      <y>540</y>
-      <w>225</w>
-      <h>45</h>
+      <x>672</x>
+      <y>512</y>
+      <w>200</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 StoreManagerHandler
@@ -370,10 +370,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>108</y>
-      <w>27</w>
-      <h>72</h>
+      <x>456</x>
+      <y>128</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=</panel_attributes>
@@ -382,10 +382,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
-      <y>495</y>
-      <w>27</w>
-      <h>243</h>
+      <x>736</x>
+      <y>472</y>
+      <w>24</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=</panel_attributes>
@@ -394,10 +394,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1287</x>
-      <y>369</y>
-      <w>63</w>
-      <h>27</h>
+      <x>1144</x>
+      <y>360</y>
+      <w>56</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=</panel_attributes>
@@ -406,10 +406,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1134</x>
-      <y>549</y>
-      <w>216</w>
-      <h>27</h>
+      <x>1008</x>
+      <y>520</y>
+      <w>192</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=</panel_attributes>
@@ -418,10 +418,10 @@ m2=</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>243</x>
-      <y>162</y>
-      <w>171</w>
-      <h>63</h>
+      <x>216</x>
+      <y>176</y>
+      <w>152</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>symbol=component
 MapManager
@@ -431,10 +431,10 @@ MapManager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>135</x>
-      <y>333</y>
-      <w>108</w>
-      <h>45</h>
+      <x>120</x>
+      <y>328</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 Scanner
@@ -444,10 +444,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>225</x>
-      <y>342</y>
-      <w>63</w>
-      <h>27</h>
+      <x>200</x>
+      <y>336</y>
+      <w>56</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=</panel_attributes>
@@ -456,10 +456,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>612</y>
-      <w>90</w>
-      <h>36</h>
+      <x>576</x>
+      <y>576</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -468,10 +468,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>396</y>
-      <w>594</w>
-      <h>306</h>
+      <x>640</x>
+      <y>384</y>
+      <w>528</w>
+      <h>272</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 CustomerAccess
@@ -482,10 +482,10 @@ Interface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>576</y>
-      <w>504</w>
-      <h>81</h>
+      <x>640</x>
+      <y>544</y>
+      <w>448</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 StoreManagerAccess
@@ -495,10 +495,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>648</x>
-      <y>657</y>
-      <w>90</w>
-      <h>36</h>
+      <x>576</x>
+      <y>616</y>
+      <w>80</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -507,10 +507,10 @@ Interface</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>306</x>
-      <y>630</y>
-      <w>144</w>
-      <h>54</h>
+      <x>272</x>
+      <y>592</y>
+      <w>128</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>symbol=component
 MailComponent</panel_attributes>
@@ -519,10 +519,10 @@ MailComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>369</x>
-      <y>675</y>
-      <w>27</w>
-      <h>63</h>
+      <x>328</x>
+      <y>632</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=[].&gt;
 </panel_attributes>
@@ -531,10 +531,10 @@ MailComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>279</x>
-      <y>405</y>
-      <w>126</w>
-      <h>198</h>
+      <x>248</x>
+      <y>392</y>
+      <w>112</w>
+      <h>176</h>
     </coordinates>
     <panel_attributes>lt=[]-(</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0;110.0;180.0;110.0;190.0</additional_attributes>
@@ -542,10 +542,10 @@ MailComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>369</x>
-      <y>585</y>
-      <w>108</w>
-      <h>63</h>
+      <x>328</x>
+      <y>552</y>
+      <w>96</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 MailInterface</panel_attributes>
@@ -554,10 +554,10 @@ MailInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>369</x>
-      <y>558</y>
-      <w>126</w>
-      <h>108</h>
+      <x>328</x>
+      <y>528</y>
+      <w>112</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=[]-</panel_attributes>
     <additional_attributes>120.0;100.0;100.0;100.0;100.0;10.0;10.0;10.0</additional_attributes>
@@ -565,10 +565,10 @@ MailInterface</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>432</x>
-      <y>162</y>
-      <w>189</w>
-      <h>63</h>
+      <x>384</x>
+      <y>176</y>
+      <w>168</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>symbol=component
 NotificationComponent</panel_attributes>
@@ -577,10 +577,10 @@ NotificationComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>459</x>
-      <y>216</y>
-      <w>27</w>
-      <h>72</h>
+      <x>408</x>
+      <y>224</y>
+      <w>24</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -589,10 +589,10 @@ NotificationComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>270</y>
-      <w>162</w>
-      <h>81</h>
+      <x>400</x>
+      <y>272</y>
+      <w>144</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 NotificationInterface</panel_attributes>
@@ -601,10 +601,10 @@ NotificationInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>135</x>
-      <y>369</y>
-      <w>108</w>
-      <h>45</h>
+      <x>120</x>
+      <y>360</y>
+      <w>96</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 Totem
@@ -614,10 +614,10 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>225</x>
-      <y>378</y>
-      <w>63</w>
-      <h>27</h>
+      <x>200</x>
+      <y>368</y>
+      <w>56</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 m2=</panel_attributes>
@@ -626,10 +626,10 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>216</y>
-      <w>27</w>
-      <h>279</h>
+      <x>520</x>
+      <y>224</y>
+      <w>24</w>
+      <h>248</h>
     </coordinates>
     <panel_attributes>lt=[]-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>

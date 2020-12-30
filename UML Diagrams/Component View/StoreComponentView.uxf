@@ -55,7 +55,7 @@ ReservationInterface</panel_attributes>
     <coordinates>
       <x>855</x>
       <y>729</y>
-      <w>90</w>
+      <w>99</w>
       <h>108</h>
     </coordinates>
     <panel_attributes>lt=[]-(
@@ -67,7 +67,7 @@ DataInterface</panel_attributes>
     <coordinates>
       <x>198</x>
       <y>729</y>
-      <w>117</w>
+      <w>126</w>
       <h>108</h>
     </coordinates>
     <panel_attributes>lt=()-[]
@@ -411,7 +411,7 @@ m2=</panel_attributes>
     <coordinates>
       <x>315</x>
       <y>306</y>
-      <w>135</w>
+      <w>144</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=()-
@@ -436,7 +436,7 @@ StatsInterface
     <coordinates>
       <x>117</x>
       <y>198</y>
-      <w>72</w>
+      <w>81</w>
       <h>63</h>
     </coordinates>
     <panel_attributes>lt=()-
@@ -659,7 +659,7 @@ RearrangeComponent</panel_attributes>
     <coordinates>
       <x>648</x>
       <y>333</y>
-      <w>108</w>
+      <w>117</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=()-
