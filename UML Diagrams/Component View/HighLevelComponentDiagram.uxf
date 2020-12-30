@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>9</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>999</x>
-      <y>387</y>
-      <w>126</w>
-      <h>63</h>
+      <x>1240</x>
+      <y>430</y>
+      <w>140</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>symbol=component
 DBMS
@@ -17,10 +17,10 @@ DBMS
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>603</x>
-      <y>594</y>
-      <w>135</w>
-      <h>63</h>
+      <x>640</x>
+      <y>660</y>
+      <w>150</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>symbol=component
 TotemApp
@@ -31,10 +31,10 @@ TotemApp
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>108</x>
-      <y>288</y>
-      <w>171</w>
-      <h>153</h>
+      <x>200</x>
+      <y>320</y>
+      <w>190</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>symbol=component
 MobileApp</panel_attributes>
@@ -43,10 +43,10 @@ MobileApp</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>495</x>
-      <y>288</y>
-      <w>324</w>
-      <h>162</h>
+      <x>630</x>
+      <y>320</y>
+      <w>360</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>symbol=component
 CLupServer</panel_attributes>
@@ -55,10 +55,10 @@ CLupServer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>306</y>
-      <w>198</w>
-      <h>45</h>
+      <x>380</x>
+      <y>340</y>
+      <w>220</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 CustomerInterface</panel_attributes>
@@ -67,10 +67,10 @@ CustomerInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
-      <y>306</y>
-      <w>63</w>
-      <h>36</h>
+      <x>580</x>
+      <y>340</y>
+      <w>70</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -79,58 +79,58 @@ CustomerInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>918</x>
-      <y>396</y>
-      <w>99</w>
-      <h>36</h>
+      <x>1130</x>
+      <y>440</y>
+      <w>130</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
-    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>414</x>
-      <y>387</y>
-      <w>99</w>
-      <h>36</h>
-    </coordinates>
-    <panel_attributes>lt=()-[]
-</panel_attributes>
-    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>270</x>
-      <y>387</y>
-      <w>162</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>lt=[]-(
-StoreInterface</panel_attributes>
-    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>810</x>
-      <y>396</y>
-      <w>126</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>lt=[]-(
-DBMS API</panel_attributes>
     <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>198</y>
-      <w>90</w>
-      <h>108</h>
+      <x>580</x>
+      <y>430</y>
+      <w>70</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=()-[]
+</panel_attributes>
+    <additional_attributes>10.0;20.0;50.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>430</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=[]-(
+StoreInterface</panel_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>440</y>
+      <w>170</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=[]-(
+DBMS API</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>220</y>
+      <w>100</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 Maps API</panel_attributes>
@@ -139,10 +139,10 @@ Maps API</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>810</x>
-      <y>306</y>
-      <w>153</w>
-      <h>45</h>
+      <x>980</x>
+      <y>340</y>
+      <w>170</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 Notification API</panel_attributes>
@@ -151,10 +151,10 @@ Notification API</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>657</x>
-      <y>504</y>
-      <w>117</w>
-      <h>108</h>
+      <x>700</x>
+      <y>560</y>
+      <w>130</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 TotemInterface
@@ -164,10 +164,10 @@ TotemInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>666</x>
-      <y>441</y>
-      <w>27</w>
-      <h>81</h>
+      <x>710</x>
+      <y>490</y>
+      <w>30</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=()-[]</panel_attributes>
     <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
@@ -175,10 +175,10 @@ TotemInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>765</x>
-      <y>504</y>
-      <w>135</w>
-      <h>108</h>
+      <x>900</x>
+      <y>560</y>
+      <w>150</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 ScannerInterface</panel_attributes>
@@ -187,10 +187,10 @@ ScannerInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>774</x>
-      <y>441</y>
-      <w>27</w>
-      <h>81</h>
+      <x>910</x>
+      <y>490</y>
+      <w>30</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=()-[]
 </panel_attributes>
@@ -199,10 +199,10 @@ ScannerInterface</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>765</x>
-      <y>594</y>
-      <w>135</w>
-      <h>63</h>
+      <x>850</x>
+      <y>660</y>
+      <w>150</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>symbol=component
 ScannerApp
@@ -213,10 +213,10 @@ ScannerApp
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>621</x>
-      <y>72</y>
-      <w>171</w>
-      <h>45</h>
+      <x>720</x>
+      <y>110</y>
+      <w>190</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>symbol=component
 NumberCallingApp
@@ -227,37 +227,38 @@ NumberCallingApp
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
-      <y>180</y>
-      <w>171</w>
-      <h>126</h>
+      <x>790</x>
+      <y>220</y>
+      <w>130</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=[]-(
-NumberCallingInterface
+NumberCalling
+Interface
 </panel_attributes>
-    <additional_attributes>20.0;120.0;20.0;20.0</additional_attributes>
+    <additional_attributes>20.0;100.0;20.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>108</y>
-      <w>27</w>
+      <x>800</x>
+      <y>150</y>
+      <w>30</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>lt=()-[]</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
-      <y>441</y>
-      <w>81</w>
-      <h>72</h>
+      <x>920</x>
+      <y>220</y>
+      <w>90</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=[]-(
 MailAPI</panel_attributes>
-    <additional_attributes>20.0;10.0;20.0;50.0</additional_attributes>
+    <additional_attributes>20.0;100.0;20.0;20.0</additional_attributes>
   </element>
 </diagram>
