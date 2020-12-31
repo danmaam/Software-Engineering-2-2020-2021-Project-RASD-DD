@@ -4,8 +4,8 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>546</x>
-      <y>140</y>
+      <x>462</x>
+      <y>126</y>
       <w>728</w>
       <h>518</h>
     </coordinates>
@@ -16,8 +16,8 @@ DataManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>336</y>
+      <x>252</x>
+      <y>322</y>
       <w>238</w>
       <h>70</h>
     </coordinates>
@@ -28,20 +28,20 @@ DataInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>854</x>
-      <y>644</y>
-      <w>154</w>
-      <h>140</h>
+      <x>784</x>
+      <y>630</y>
+      <w>140</w>
+      <h>126</h>
     </coordinates>
-    <panel_attributes>lt=)-[]
+    <panel_attributes>lt=()-[]
 DBMS API</panel_attributes>
-    <additional_attributes>20.0;70.0;20.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>728</x>
-      <y>280</y>
+      <x>644</x>
+      <y>266</y>
       <w>280</w>
       <h>70</h>
     </coordinates>
@@ -52,8 +52,8 @@ DataRequestor</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>728</x>
-      <y>378</y>
+      <x>644</x>
+      <y>364</y>
       <w>280</w>
       <h>70</h>
     </coordinates>
@@ -64,8 +64,8 @@ DataStorer</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>728</x>
-      <y>476</y>
+      <x>644</x>
+      <y>462</y>
       <w>280</w>
       <h>70</h>
     </coordinates>
@@ -76,8 +76,8 @@ QueryExecutor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>868</x>
-      <y>532</y>
+      <x>784</x>
+      <y>518</y>
       <w>42</w>
       <h>140</h>
     </coordinates>
@@ -88,8 +88,8 @@ QueryExecutor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>994</x>
-      <y>294</y>
+      <x>910</x>
+      <y>280</y>
       <w>266</w>
       <h>336</h>
     </coordinates>
@@ -99,8 +99,8 @@ QueryExecutor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>280</y>
+      <x>504</x>
+      <y>266</y>
       <w>168</w>
       <h>70</h>
     </coordinates>
@@ -112,8 +112,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>588</x>
-      <y>392</y>
+      <x>504</x>
+      <y>378</y>
       <w>168</w>
       <h>70</h>
     </coordinates>
@@ -125,8 +125,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
-      <y>280</y>
+      <x>462</x>
+      <y>266</y>
       <w>70</w>
       <h>112</h>
     </coordinates>
@@ -137,8 +137,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
-      <y>364</y>
+      <x>462</x>
+      <y>350</y>
       <w>70</w>
       <h>84</h>
     </coordinates>
@@ -149,8 +149,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>994</x>
-      <y>490</y>
+      <x>910</x>
+      <y>476</y>
       <w>182</w>
       <h>56</h>
     </coordinates>
@@ -161,8 +161,8 @@ Executor</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>994</x>
-      <y>406</y>
+      <x>910</x>
+      <y>392</y>
       <w>196</w>
       <h>126</h>
     </coordinates>

@@ -4,8 +4,8 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>225</x>
-      <y>105</y>
+      <x>150</x>
+      <y>150</y>
       <w>1080</w>
       <h>540</h>
     </coordinates>
@@ -16,8 +16,8 @@ ReservationHandler</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>585</x>
-      <y>255</y>
+      <x>510</x>
+      <y>300</y>
       <w>330</w>
       <h>75</h>
     </coordinates>
@@ -28,8 +28,8 @@ SuggestionComponent</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>675</x>
-      <y>420</y>
+      <x>600</x>
+      <y>465</y>
       <w>390</w>
       <h>60</h>
     </coordinates>
@@ -40,8 +40,8 @@ ASAPQueryComponent</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>675</x>
-      <y>510</y>
+      <x>600</x>
+      <y>555</y>
       <w>390</w>
       <h>60</h>
     </coordinates>
@@ -52,8 +52,8 @@ BookingQueryComponent</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>495</x>
-      <y>345</y>
+      <x>420</x>
+      <y>390</y>
       <w>645</w>
       <h>270</h>
     </coordinates>
@@ -64,8 +64,8 @@ StoreQueryComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>555</x>
-      <y>510</y>
+      <x>480</x>
+      <y>555</y>
       <w>150</w>
       <h>60</h>
     </coordinates>
@@ -76,8 +76,8 @@ Book</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>555</x>
-      <y>420</y>
+      <x>480</x>
+      <y>465</y>
       <w>150</w>
       <h>60</h>
     </coordinates>
@@ -88,8 +88,8 @@ ASAP</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>285</x>
-      <y>270</y>
+      <x>210</x>
+      <y>315</y>
       <w>330</w>
       <h>270</h>
     </coordinates>
@@ -99,8 +99,8 @@ ASAP</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>345</x>
-      <y>510</y>
+      <x>270</x>
+      <y>555</y>
       <w>45</w>
       <h>150</h>
     </coordinates>
@@ -111,22 +111,22 @@ ASAP</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
-      <y>630</y>
-      <w>240</w>
+      <x>255</x>
+      <y>675</y>
+      <w>165</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=)-[]
-CustomerHandler
+Reservation
 Interface</panel_attributes>
     <additional_attributes>20.0;50.0;20.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>615</x>
-      <y>180</y>
-      <w>255</w>
+      <x>540</x>
+      <y>225</y>
+      <w>225</w>
       <h>105</h>
     </coordinates>
     <panel_attributes>lt=()-[]
@@ -136,8 +136,8 @@ SuggestionInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>180</y>
+      <x>195</x>
+      <y>225</y>
       <w>375</w>
       <h>480</h>
     </coordinates>
@@ -148,8 +148,8 @@ SuggestionInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>420</y>
+      <x>405</x>
+      <y>465</y>
       <w>105</w>
       <h>105</h>
     </coordinates>
@@ -159,8 +159,8 @@ SuggestionInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
-      <y>480</y>
+      <x>405</x>
+      <y>525</y>
       <w>105</w>
       <h>105</h>
     </coordinates>
@@ -170,8 +170,8 @@ SuggestionInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>345</x>
-      <y>465</y>
+      <x>270</x>
+      <y>510</y>
       <w>180</w>
       <h>75</h>
     </coordinates>
@@ -183,21 +183,21 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1290</x>
-      <y>465</y>
+      <x>1215</x>
+      <y>510</y>
       <w>210</w>
       <h>75</h>
     </coordinates>
     <panel_attributes>lt=()-[]
-Reservation
-Interface</panel_attributes>
+Store
+Component</panel_attributes>
     <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1050</x>
-      <y>435</y>
+      <x>975</x>
+      <y>480</y>
       <w>120</w>
       <h>90</h>
     </coordinates>
@@ -207,8 +207,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1050</x>
-      <y>480</y>
+      <x>975</x>
+      <y>525</y>
       <w>120</w>
       <h>90</h>
     </coordinates>
@@ -218,8 +218,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1140</x>
-      <y>465</y>
+      <x>1065</x>
+      <y>510</y>
       <w>105</w>
       <h>75</h>
     </coordinates>
@@ -229,13 +229,48 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1200</x>
-      <y>465</y>
+      <x>1125</x>
+      <y>510</y>
       <w>105</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 </panel_attributes>
     <additional_attributes>50.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>915</x>
+      <y>375</y>
+      <w>45</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=[]-[]
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>900</x>
+      <y>285</y>
+      <w>75</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=)-</panel_attributes>
+    <additional_attributes>20.0;20.0;20.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>555</x>
+      <y>210</y>
+      <w>405</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0;250.0;60.0</additional_attributes>
   </element>
 </diagram>
