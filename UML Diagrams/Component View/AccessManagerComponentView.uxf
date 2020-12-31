@@ -4,8 +4,8 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>363</x>
-      <y>176</y>
+      <x>319</x>
+      <y>132</y>
       <w>792</w>
       <h>627</h>
     </coordinates>
@@ -16,8 +16,8 @@ AccessManager</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>605</x>
-      <y>275</y>
+      <x>561</x>
+      <y>231</y>
       <w>231</w>
       <h>55</h>
     </coordinates>
@@ -28,8 +28,8 @@ LoginManager</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>550</x>
-      <y>385</y>
+      <x>506</x>
+      <y>341</y>
       <w>385</w>
       <h>308</h>
     </coordinates>
@@ -40,8 +40,8 @@ RegistrationManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>176</x>
-      <y>506</y>
+      <x>132</x>
+      <y>462</y>
       <w>209</w>
       <h>44</h>
     </coordinates>
@@ -52,8 +52,8 @@ DataInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>418</x>
-      <y>517</y>
+      <x>374</x>
+      <y>473</y>
       <w>319</w>
       <h>297</h>
     </coordinates>
@@ -64,8 +64,8 @@ DataInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>792</y>
+      <x>649</x>
+      <y>748</y>
       <w>132</w>
       <h>88</h>
     </coordinates>
@@ -76,8 +76,8 @@ MailInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
-      <y>286</y>
+      <x>451</x>
+      <y>242</y>
       <w>132</w>
       <h>55</h>
     </coordinates>
@@ -87,8 +87,8 @@ MailInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>704</x>
-      <y>517</y>
+      <x>660</x>
+      <y>473</y>
       <w>88</w>
       <h>99</h>
     </coordinates>
@@ -100,8 +100,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1144</x>
-      <y>506</y>
+      <x>1100</x>
+      <y>462</y>
       <w>209</w>
       <h>55</h>
     </coordinates>
@@ -113,8 +113,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>363</x>
-      <y>517</y>
+      <x>319</x>
+      <y>473</y>
       <w>121</w>
       <h>33</h>
     </coordinates>
@@ -124,8 +124,8 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>825</x>
-      <y>286</y>
+      <x>781</x>
+      <y>242</y>
       <w>187</w>
       <h>187</h>
     </coordinates>
@@ -136,8 +136,8 @@ Login</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>605</x>
-      <y>429</y>
+      <x>561</x>
+      <y>385</y>
       <w>231</w>
       <h>55</h>
     </coordinates>
@@ -148,8 +148,8 @@ RegistrationChecker</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>605</x>
-      <y>594</y>
+      <x>561</x>
+      <y>550</y>
       <w>242</w>
       <h>55</h>
     </coordinates>
@@ -160,8 +160,8 @@ RegistrationStorer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>473</y>
+      <x>649</x>
+      <y>429</y>
       <w>55</w>
       <h>66</h>
     </coordinates>
@@ -171,8 +171,8 @@ RegistrationStorer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>363</x>
-      <y>297</y>
+      <x>319</x>
+      <y>253</y>
       <w>154</w>
       <h>231</h>
     </coordinates>
@@ -182,8 +182,8 @@ RegistrationStorer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>825</x>
-      <y>440</y>
+      <x>781</x>
+      <y>396</y>
       <w>66</w>
       <h>110</h>
     </coordinates>
@@ -194,8 +194,8 @@ RegistrationStorer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>869</x>
-      <y>506</y>
+      <x>825</x>
+      <y>462</y>
       <w>88</w>
       <h>55</h>
     </coordinates>
@@ -205,8 +205,8 @@ RegistrationStorer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>924</x>
-      <y>506</y>
+      <x>880</x>
+      <y>462</y>
       <w>99</w>
       <h>44</h>
     </coordinates>
@@ -217,8 +217,8 @@ Reg</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1001</x>
-      <y>440</y>
+      <x>957</x>
+      <y>396</y>
       <w>165</w>
       <h>99</h>
     </coordinates>
@@ -229,8 +229,8 @@ Reg</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1001</x>
-      <y>506</y>
+      <x>957</x>
+      <y>462</y>
       <w>176</w>
       <h>44</h>
     </coordinates>
@@ -241,8 +241,8 @@ Reg</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>440</x>
-      <y>506</y>
+      <x>396</x>
+      <y>462</y>
       <w>132</w>
       <h>55</h>
     </coordinates>
@@ -252,8 +252,8 @@ Reg</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>550</x>
-      <y>517</y>
+      <x>506</x>
+      <y>473</y>
       <w>77</w>
       <h>132</h>
     </coordinates>
@@ -263,8 +263,8 @@ Reg</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>572</x>
-      <y>440</y>
+      <x>528</x>
+      <y>396</y>
       <w>55</w>
       <h>110</h>
     </coordinates>
