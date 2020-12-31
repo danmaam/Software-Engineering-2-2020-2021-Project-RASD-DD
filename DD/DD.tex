@@ -60,12 +60,149 @@
 \section{Introduction}
 
 	\subsection{Purpose}
-	test
+	The main target of this document is to describe the {\bfseries Customer Line-Up} (\emph{CLup}) design from a more detailed point of view. This document follows faithfully what was defined in the Requirement Analysis and Specification Document and must be read carefully before starting the software implementation in order to understand the software design in detail. Moreover, we tried to maintain independence between \emph{DD} document and \emph{RASD} document in order to allow greater flexibility in case you want to reuse the design model.
+	
 	\subsection{Scope}
+	\emph{CLup} is a booking application and nowadays this type of applications are more and more widespread in people's everyday life and are becoming more and more indispensable. For this reason, intelligent design choices have been made that extrapolate the positive aspects of existing booking apps, in order to make CLup really “achievable” in real life.
+	
+	The main purpose of CLup is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the customer. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easily, and moreover can reduce the crowd in front of the store, that is one of the main purposes of the application. Another important feature deals with obtaining statistics from customers and generic information from stores in order to help customers during their reservation. For this, the system has to store a very large amount of data. This data are mined and used later, which is why it is very important to identify the user's role so that we can provide him with more accurate and suitable information. Indeed a customer wants to provide information about the stores while, for example, a store manager is more interested in information about customer permanence in the store.
+	
 	\subsection{Definitions, Acronyms, Abbreviations}
+	\bigskip
+		\subsubsection{Definitions}
+			\begin{center}
+				\rowcolors{2}{}{gray!20}
+				\rowcolors{1}{gray!20}{white}
+				\renewcommand{\arraystretch}{2.5}
+				
+				\begin{adjustwidth}{-2.3cm}{}
+					\begin{tabular}[h!]{|m{8em}|m{31em}|}
+						\hline
+						\xrowht{5pt}
+						QR Code & Bi dimensional bar code that allows the user to check-in/check-out at the store entries/exits \\
+						\xrowht{5pt}
+						Reservation & Indicates both booked visits and spots on the queue to enter the store as soon as possible \\
+						\xrowht{5pt}
+						Customer & The clients of the store, that uses the system to get a reservation to access the store \\
+						\xrowht{5pt}
+						Store manager & The app user that access to stores’ bookings, occupancy and settings, in order to manage the flow of customers \\
+						\xrowht{5pt}
+						QR Code Reader & Device used to scan customers’ \emph{QR Code} \\
+						\xrowht{5pt}
+						Totem & Electronic device that allows customers to physically get a spot on the queue to enter the store a soon as possible; it allows to specify the same parameters that can be inserted through the app \\
+						\xrowht{5pt}
+						QR Code Printer & Device used by totems to print \emph{QR Code} \\
+						\xrowht{5pt}
+						Department & Part of the store that contains the same category of products \\
+						\xrowht{5pt}
+						Query & Synonym for request \\
+						\hline
+					\end{tabular}
+				\end{adjustwidth}
+			\end{center}
+		\subsubsection{Acronyms}
+			\begin{center}
+				\rowcolors{2}{}{gray!20}
+				\rowcolors{1}{gray!20}{white}
+				\renewcommand{\arraystretch}{2.5}
+				
+				\begin{adjustwidth}{-2.3cm}{}
+					\begin{tabular}[h!]{|m{4em}|m{35em}|}	
+						\hline
+						\xrowht{5pt}
+						\centering RASD & Requirement Analysis and Specification Document \\
+						\xrowht{5pt}
+						\centering DD & Design Document \\
+						\xrowht{5pt}
+						\centering ETA & Estimated Time of Arrival \\
+						\xrowht{5pt}
+						\centering GPS & Global Positioning System \\
+						\xrowht{5pt}
+						\centering API & Application Programming Interface \\
+						\xrowht{5pt}
+						\centering UML & Unified Modeling Language \\
+						\xrowht{5pt}
+						\centering DBMS & DataBase Management Service \\
+						\xrowht{5pt}
+						\centering OS & Operative System \\
+						\xrowht{5pt}
+						\centering HTTPS & HyperText Transfer Protocol over Secure Socket Layer \\
+						\xrowht{5pt}
+						\centering TCP & Trasmissione Control Protocol \\
+						\xrowht{5pt}
+						\centering IP & Internet Protocol \\
+						\hline	
+					\end{tabular}
+				\end{adjustwidth}
+			\end{center}
+		\bigskip
+		\subsubsection{Abbreviations}
+			\begin{center}
+				\rowcolors{2}{}{gray!20}
+				\rowcolors{1}{gray!20}{white}
+				\renewcommand{\arraystretch}{2.5}
+				
+				\begin{adjustwidth}{-2.3cm}{}
+					\begin{tabular}[h!]{|m{4em}|m{35em}|}
+						\hline
+						\xrowht{5pt}
+						\centering IIT & Implementation, Integration and Testing \\
+						\xrowht{5pt}
+						\centering Rn & Requirement number n \\
+						\xrowht{5pt}
+						\centering ASAP & As soon as possible \\
+						\hline
+					\end{tabular}
+				\end{adjustwidth}
+			\end{center}
 	\subsection{Revision History}
+		\begin{center}
+			
+			\renewcommand{\arraystretch}{1.5}
+			\begin{adjustwidth}{-2.3cm}{}
+				\begin{tabular}[h!]{|m{4em}|m{5em}|m{26em}|}	
+					\hline
+					\rowcolor{gray!20}
+					\xrowht{5pt}
+					\centering Version & \centering Date & Changelog \\
+					\hline
+					\xrowht{5pt}
+					\centering 1.0 & 29/11/2020 & First version \\
+					\hline	
+				\end{tabular}
+			\end{adjustwidth}
+			
+		\end{center}
+	\subsection{Software and Tools}
+		\begin{itemize}
+			\item {\LaTeX} as software system for docuement preparation
+			\item UMLet for the UML diagrams and other diagrams
+			\item Photoshop for the mockups
+			\item Git \& Github as work space. The repository is \href{https://github.com/danmaam/MammoneNaroParisi}{here}.
+		\end{itemize}
 	\subsection{Reference Documents}
+		\begin{itemize}
+		\item Specification Document
+		\item Slides of the lectures
+		\end{itemize} 
 	\subsection{Document Structure}
+		The structure of the document is thought with the intention of allowing simple navigation through it. Also, various abbreviations, highlighted in Abbreviations section, have been used to make the content smoother.
+		Hence, the structure of the document is the following one:
+		\begin{itemize}
+			\item {\bfseries Introduction}: this section gives a general view of the problem and describes the scope and purpose of the \emph{DD}, including a set of definitions, acronyms and abbreviations used.
+			
+			\item {\bfseries Architectural Design}: this section starts with a high level description of the architecture of the system and continues going into details, specifying the components and interfaces used.
+			
+			\item {\bfseries User Interface Design}: this section presents the mockups of the application, describing how the clients can navigate the application, highlighting the actions they can do.
+			
+			\item {\bfseries Requirements Traceability}: this section describes the connection between the RASD and the DD, identifying the relation between goals and requirements described previously and the components that allow to realize them.
+			
+			\item {\bfseries Implementation, Integration and Test Plan}: this section establishes a plan for the development of components, identifying the conditions needed to be met before starting the development process and then maximizing the efficiency of the developer teams with a precise schedule.
+			
+			\item {\bfseries Effort Spent}: the main focus of this section is to track the time spent to complete this project. In particular, is highlighted the subdivision of the working hours of the various sections.
+			
+			\item {\bfseries References}: this section is dedicated to all references used in this project.
+		\end{itemize}
 
 \section{Architectural Design}
 	
