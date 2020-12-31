@@ -167,7 +167,7 @@
 					\centering Version & \centering Date & Changelog \\
 					\hline
 					\xrowht{5pt}
-					\centering 1.0 & 29/11/2020 & First version \\
+					\centering 1.0 & 24/12/2020 & First version \\
 					\hline	
 				\end{tabular}
 			\end{adjustwidth}
@@ -205,9 +205,235 @@
 		\end{itemize}
 
 \section{Architectural Design}
+	The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through Component Diagrams, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system, well know the behaviour of each component.
 	
 	\subsection{Overview}
 	\subsection{Component View}
+		The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through {\bfseries Component Diagrams}, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system, well know the behaviour of each component.\\
+		
+		{\bfseries INSERISCI COMPONENT VIEW GLOBALE}
+		
+		\begin{itemize}
+			\item {\bfseries MobileApp}: it is the component relative to the mobile application used by store managers and customers; in order to access \emph{CLup} services. It uses three interfaces: \emph{CustomerInterface}, \emph{StoreInterface}, used to access functionalities respectively for customers and store managers, and \emph{AccessInterface}, that allows users to log-in and register.
+			
+			\item {\bfseries CLupServer}:  it is the component deputy to manage users’ access, and customers requests.
+			
+			\item {\bfseries StoreComponent}: it is the component that principally manages the business logic of the system, since takes care of the functionalities associated with a single store. Each store will have its own {\bfseries Store Component} deployed in a dedicated container. The aim of this is to separate the critical functionalities of each store, to reduce the risk of a complete block of the system and to make maintenance easier in case of malfunctionalities of a single store.
+			
+			\item {\bfseries TotemApp}: it is the component that represents the interface used by a physical totem installed at stores in order to request the issue of a ticket. The totem interface is separated from the Mobile App’s one, since a totem can request tickets only to the store where it’s installed, directly communicating with it.
+			
+			\item {\bfseries ScannerApp}: it is the component that represents \emph{QR Scanners}’, that asks the associated store to process the scanned \emph{QR Codes}.
+			
+			\item {\bfseries NumberCallingApp}: it is the component deputy to notify at stores that a number has been called. It’s used by the associated store to notify that some customers are admitted to enter the store.		
+		\end{itemize}
+	
+		Moreover, to exploit some features, \emph{CLup} relies on some external services, using them through their \emph{API}s:
+		
+		\begin{itemize}
+			\item {\bfseries MapsAPI}: exploits the \emph{API}s of an external map services, necessary to compute percurrency times and sort stores depending on the position.
+			
+			\item {\bfseries NotificationAPI}: it is the interface used to send notifications to customers’ devices. Since each mobile \emph{OS} already has its own notification system, \emph{CLup} exploits this in sending notifications, without the need of building a new in-house notification service.
+			
+			\item {\bfseries EmailAPI}: it is the interface used to communicate with a mail provider service, to send emails to customers.
+			
+			\item {\bfseries DBMSAPI}: the interface used to access the Data Logic of \emph{CLup}.
+		\end{itemize}
+	
+		It has been chosen to not develop these features, since there isn’t a real necessity of making them from scratch: the existing ones work well, are already tested and complete (for example, developing an internal map service will require inserting the whole world cartography, while a non \emph{OS}-integrated notification service must deal with aggressive \emph{OS}es’ power management). Moreover, this outsourcing allows to reduce the time for developing the system, and the maintenance costs, since it’s externally done by the service provider.
+		
+		\subsubsection{Adapters}
+			The system uses some “Adapters” to access the external services; no \emph{API}s are directly exposed to any component but the adapters. So, it is sufficient to change the corresponding adapter to migrate to another service, without the need of rewriting code of other components. Moreover, if required in some circumstances, it’s possible to use different external services: it is sufficient to use the correct adapter in order to access the desidered service.
+			
+			\begin{itemize}
+				\item {\bfseries MapManager}: it is the component that takes requests from other components, and redirect them to the chosen external {\bfseries Map Service}.
+				
+				\item {\bfseries NotificationComponent}: since each mobile \emph{OS} uses its own notification service, this adapter takes in requests of notification sending, and redirect them to the correct service; the latter will take care of delivering the notification to the customer.
+				
+				\item {\bfseries MailComponent}: an adapter used to send emails; as the previous ones, allows to change the used mail service painlessly.
+				
+				\item {\bfseries DataManager}: probably, the most important adapter of the system, since it is the one connecting the other components to the system’s data logic. 
+			\end{itemize}
+		
+		Here, there is described the one for \emph{DBMS}, since it’s the most articulated among those.
+		
+			\paragraph{Data Manager Component}
+				The Data Manager is the component that manages the requests for data manipulation. The components analyzed two aspects:
+				
+				\begin{itemize}
+					\item Data Manipulation
+					\item Query Execution
+				\end{itemize}
+			
+				The components’ services are requested through the \emph{DataInterface}, while it access to the \emph{DBMS} through its \emph{API}s. Data can be accessed or written to the \emph{DBMS}. This partition is very important because it allows to avoid writing instead of reading and vice versa.
+				
+				\begin{itemize}
+					\item {\bfseries DataRequestor}: it is the component that manages the data reading. Indeed if \emph{DataInterface} asks for a data, this component allows to satisfy this request
+					
+					\item {\bfseries DataStorer}: it is the component that manages the data writing. Indeed if \emph{DataInterface} asks to write new data in the \emph{DBMS}, this component allows to satisfy this request.
+					
+					\item {\bfseries QueryExecutor}: it is the component that manages the connection with the \emph{DBMS}. It uses the \emph{DBMSAPI} and both \emph{DataRequestor} and \emph{DataStorer} rely on him to interface directly with the database
+				\end{itemize}
+			
+				{\bfseries DATAMANAGER COMPONENT VIEW}
+			
+			\subsubsection{CLup Server}
+			As said before, it manages customers’ requests and access operations, through the two interfaces it expose:
+			
+			\begin{itemize}
+				\item {\bfseries CustomerInterface}: expose all the methods relative to services a customer can access, such as making a reservation and retrieving already made reservations.
+				
+				\item {\bfseries AccessManager}: the interface deputy to manage login and registration of users. After a login, will send to the user the correct set of operations the user can do, depending on their role: customers or store managers.
+			\end{itemize}
+			
+			In the following paragraphs, there is a description of the most relevant component contained in {\bfseries CLup Server}.
+			
+				\paragraph{Customer Handler Component}
+					The CustomerHandler is the component that manages all the actions that a customer can make within the application. The component analyze the aspects concerning reservations.
+					
+					This component is used by invoking methods on the \emph{CustomerHandlerInterface}. This component is divided in some subcomponents:
+					
+					\begin{itemize}
+						\item {\bfseries ASAPManager}: it is the component that manages the \emph{ASAP} reservations and it is formed from two sub-component: {\bfseries DeleteRes} and {\bfseries AddRes}. The first one deals with deleting an \emph{ASAP} reservation while the second one deals with creating a new \emph{ASAP} reservation.
+						
+						\item {\bfseries BookingManager}: it is the component that manages the booking via app and it is formed from three sub-component: {\bfseries DeleteRes}, {\bfseries ModifyRes} and {\bfseries AddRes}. The first one deals with deleting a reservation, the second one deals with modifying a reservation while the third one deals with adding new reservations. 
+						
+						\item {\bfseries RetriveReservation}: it is the component that is used to retrieve and update all user’s reservations.
+					\end{itemize}
+				
+					All of these components uses the \emph{ReservationInterface} to complete their tasks.
+					
+					{\bfseries CUSTOMERHANDLER COMPONENT VIEW}
+					
+				\paragraph{Access Manager Component}
+					The Access Manager is the component that manages all the issues concerning the access of the users. Indeed, as mentioned above, it is very important to recognize the role of the users in the app in order to provide them correct information, and only the functionalities/data they are authorized to use. The component analyze two main aspects:
+					
+					\begin{itemize}
+						\item Login
+						\item Registration
+					\end{itemize}
+				
+					The component uses two very important interfaces: \emph{EmailAPI} and \emph{DataInterface}. The first one is used for the registration, in order to send confirmation messages, while the second one is used for storing registration data, and to check credentials for log-in operations. Furthermore, its services are requested through the \emph{AccessInterface}, that implements the interfaces exposed by {\bfseries Login Component}, and {\bfseries Registration Component}. This component is invoked by \emph{StoreManageAccessInterface} and \emph{CustomerAccessInterface} in case an user wants to log in or register
+					
+					\begin{itemize}
+						\item {\bfseries LoginManager}: it is the component that manages user’s login. Indeed, if a user logs in, the component checks if the credentials are correct and then allows the user to use their personal area.
+						
+						\item {\bfseries RegistrationManager}: it is the component that manages the user’s registration. Indeed, if a user makes a registration, this component, at the beginning, checks through \emph{DataInterface} if the data inserted by the user are valid (e.g. uniqueness of the email, or certification for store managers). Then, if the data are correct, the user’s data are stored in the \emph{DBMS}.
+						
+						\begin{itemize}
+							\item {\bfseries RegistrationChecker}: it is the component that checks if the information is inserted during the registration, from the user, are valid. In case of customers, this component checks if the email is valid while in case of store manager checks if the store certification is valid and the registration \emph{ID} is unique.
+							
+							\item {\bfseries RegistrationStorer}: it is the component that stores the new data in the \emph{DBMS} after checking.
+						\end{itemize}
+					\end{itemize}
+				
+				{\bfseries ACCESSMANAGER COMPONENT VIEW}
+				
+			\paragraph{Reservation Handler Component}
+				The Reservation Handler is the component that manages the customer’s reservations. The component analyzes two main aspects:
+				
+				\begin{itemize}
+					\item Suggestions
+					\item Reservation Management
+				\end{itemize}
+			
+				The component uses \emph{ReservationInterface} (that implements \emph{QueryInterface} and \emph{SuggestionInterface}) to accept requests that are processed by this component , and {\bfseries Store Component}, used to make requests to a specific store.
+				This component is invoked when the customer tries to make or modify a reservation, or tries to retrieve his ones. Each time a reservation is retrieved, the customer will receive the updated information (such us \emph{ETA} to enter the store).
+				
+				\begin{itemize}
+					\item {\bfseries SuggestionComponent}: it is the component that manages the suggestions that are made available to the customer at the time of reservation. It will query each store registered on the platform, to retrieve availability information, depending on the preferences inserted by the customer and the type of reservation they are making (so, the component will use the right {\bfseries Query Component}); it’s invoked by both the \emph{ReservationInterface} when a customer asks for suggestions on bookings, or by {\bfseries ASAPQueryComponent} while the \emph{ETA} for entering the store \emph{ASAP} is too high.
+					
+					\item {\bfseries StoreQueryComponent}: it is the component that manages the queries that are made at a particular store, indeed this component uses the {\bfseries Store Component}. The queries they can be of two types:
+					
+					\begin{itemize}
+						\item {\bfseries ASAPQueryComponent}: it is the component that manages the \emph{ASAP} reservation, asks the server for waiting times for accessing the store, notifies the store if a reservation is made and manage the deletion of \emph{ASAP} reservations.
+						
+						\item {\bfseries BookingQueryComponent}: it is the component that manages the booking via app, asking the server time slots to enter the store, in case a reservation is confirmed, notify the store to save it, and manage all the requests about modification and cancellation of booking reservations.		
+					\end{itemize}
+				\end{itemize}
+			
+				{\bfseries RESERVATIONHANDLER COMPONENT VIEW}
+			
+		\subsubsection{Store Component}
+			The Store is the component that manages the store from all points of view and it is the most important component of the whole architecture, since implements the whole business tier. The component analyze many important aspect, but the most important are:
+			
+			\begin{itemize}
+				\item Reservation
+				\item Admit Reservations Inside
+				\item Store Parameters
+				\item Statistical Values
+			\end{itemize}
+		
+			As said before, it’s been preferred to separate the logic governing each store by designing a component for each different store. Also here, the store component have been designed in a modular way, to separate the different features offered by a single store; these are:
+			
+			\begin{itemize}
+				\item {\bfseries FlowComponent}: this component manages the functionalities that are requested when a \emph{QR Code} is scanned at the store entry, and uses the {\bfseries Calling Number Component} to authorize the entry, and uses the {\bfseries Department Component} to register the entrance/exit.
+				
+				\item {\bfseries StatisticComponent}: it is the component dedicated to building customer statistics. It’s used by:
+				
+				\begin{itemize}
+					\item {\bfseries EntranceComponent}: in order to update visiting statistics at customers’ exit
+					\item {\bfseries ReservationComponent}: invokes the methods when, during a reservation process, it’s necessary to infer the estimation of customers’ shopping time.
+				\end{itemize}
+			
+				\item {\bfseries RearrangeComponent}: it is the component that rearrange the reservations when a store manager modifies the capacity of some part of the store. Interacts with the {\bfseries Calling Number Component} in order to rearrange the queue. In case of delays or cancellations, the customers will receive a notification.
+				
+				\item {\bfseries StoreDataManager}: it is the adapter between the store and its dedicated \emph{DBMS}. The choice of dedicating a \emph{DBMS} for each store is due to efficiency and security reasons: if a \emph{DBMS} broke, it wouldn't affect the whole system, while a store can access only its data.
+				
+				\item {\bfseries ParameterManager}: it is the component that manages the parameters of the store, the settings and the situation of each department of the store. It’s used by:
+				
+				\begin{itemize}
+					\item {\bfseries EntranceComponent}: is used to update Departments’ situation.
+					\item {\bfseries StoreManagerHandler}: is used to update store parameters, and to access the real-time situation of the store.
+				\end{itemize}
+			
+				Moreover, uses {\bfseries RearrangeReservation} when a parameter is modified, to make coherent the store’s status
+				
+				\item {\bfseries ReservationComponent}: it is the component that is dedicated to the management of reservations. It’s used to retrieve reservations made in that store, to retrieve waiting times, and to store customers’ reservations. Uses the {\bfseries Calling Number Component} to notify the creation of a new reservation, and it’s used by the latter to initialize the queue at store opening. It also handles modifications made by customers and store managers to reservations. Furthermore, a store manager uses it to contact customers about some specific reservation. Because of this, the components interact with {\bfseries Notification Component} and {\bfseries Mail Component} to interact with customers. 
+				To logically separate the management of the two types of reservations, the component is divided in two subcomponents: {\bfseries BookingComponent}, and {\bfseries ASAPComponent}.
+				
+				\item {\bfseries CallingNumberComponent}: it is the component deputy to call in reservations, and to notify customers they should depart for the store. To do this, it interfaces with \emph{MapInterface} to calculate travel time, and with \emph{NotificationInterface} to send customers notification. It’s divided in two subcomponents, each carrying out different functionalities:
+				
+				\begin{itemize}
+					\item {\bfseries CallableReservationComponent}: checks whenever a reservation in the queue is callable, checking the store affluence, through the {bfseries Parameter Manager Component}; when it notice that a customer should be alerted to depart for the store, sends a notification through the {\bfseries Notification Manager Component}.
+					
+					\item {\bfseries CallNumberComponent}: takes a queue of reservations to be called, and when it’s possible, a reservation is called to enter. It’s alerted by the {\bfseries Entrance Component} that somebody exited the store.
+				\end{itemize}
+			\end{itemize}
+		
+			{\bfseries STORECOMPONENT COMPONENT VIEW} \\
+			The core store functionalities are requested through the \emph{ReservationInterface} (dedicated to customers’ features) and the \emph{StoreInterfaces}, dedicated to store managers; their requests pass through an handler, here described. One note: the \emph{StoreComponentInterfaces} implements all the interfaces of the single services requested by the {\bfseries Store Manager Handler}.
+			
+		\subsection{Store Manager Handler Component}
+			The Store Manager Handler is the component that manages all the actions that a store manager can make within the application. The component analyze various aspects:
+			
+			\begin{itemize}
+				\item Reservations
+				\item Modify Parameters
+			\end{itemize}
+		
+			This component handles all the possible settable options of a store manager, it is invoked on the \emph{StoreInterface}, from the mobile application, and it interfaces with \emph{StoreComponentInterface}, that manages all information regarding parameters and reservations.
+			
+			\begin{itemize}
+				\item {\bfseries ManagerReservationHandler}: it is the component that manages the store reservations and it is divided in two sub-component:
+				
+				\begin{itemize}
+					\item {\bfseries DeleteRes}: it is the component that manages the elimination of the reservations.
+					\item {\bfseries ModifyRes}: it is the component that manages the modification of the reservations.
+				\end{itemize}
+				
+				\item {\bfseries ModifyParameters}: it is the component that manages the store parameter. They are of two types:
+				
+				\begin{itemize}
+					\item {\bfseries DepartmentManager}: it is the component that manages all the parameters which concern the individual departments. Indeed, the store manager can add or delete a new department and can modify the maximum capacity of each department.
+					\item {\bfseries StoreSettingManager}: it is the component that manages all the parameters which concern the entire store. Indeed, the store manager, can change the maximum capacity of the people inside the store and can modify the opening and closing hours.
+				\end{itemize}
+			
+				\item {\bfseries RetriveReservation}: it is the component that manages all the reservation of a specific store.
+				
+				\item {\bfseries SituationManager}: it is the component that manages the requests for the real time situation of the store.
+			\end{itemize}
+		
+		{\bfseries STOREMANAGERHANDLER COMPONENT VIEW}
 	\subsection{Deployment View}
 	\subsection{Runtime View}
 	\subsection{Component Interfaces}
