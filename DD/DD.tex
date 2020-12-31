@@ -206,27 +206,22 @@
 		\end{itemize}
 
 \section{Architectural Design}
-<<<<<<< HEAD
-	The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through Component Diagrams, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system, well know the behaviour of each component.
-=======
-	The aim of this section is to give a look to the architectural aspect of the analysed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through Component Diagrams, more and more detailed. This allows us to precisely describe each component of CLup, so that who will develop the system, well know the behaviour of each component.
-	
->>>>>>> f550f07ef946e9642c0cec8e46359d79071b54d4
+	The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through {\bfseries Component Diagrams}, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system, well know the behaviour of each component.
 	
 	\subsection{Overview}
 	A first high level overview can be done through the system's \textbf{Composition Diagram}. In fact, here there is a first subdivision of the system's component, each one with a different task.
 	\begin{itemize}
 		\item \textbf{Communication Interfaces}: to work properly, the system needs to interface overt the network with both remote applications, and external services. Because of this, there are some components devoted to interact with remote devices:
 		\begin{itemize}
-			\item{\bfseries UserHandler}: to interact with users, both Managers and Customers, the latter both at Totems, and on app;
-			\item{\bfseries EntranceManagement}: so that the Store can process a scanned QR Code at entry/exit;
-			\item{\bfseries NumberCallingInterface}: to notify the call of a certain number;
+			\item{\bfseries UserHandler}: to interact with users, both managers and customers, the latter both at \emph{totems}, and on app.
+			\item{\bfseries EntranceManagement}: so that the store can process a scanned \emph{QR Code} at entry/exit.
+			\item{\bfseries NumberCallingInterface}: to notify the call of a certain number.
 		\end{itemize}
 		and others deputy to access external services, such as 
 		\begin{itemize}
-			\item{\bfseries Map Component}: to access an external Map Provider
-			\item{\bfseries Notification Component}: to send notifications to Customers through an external Notification service 
-			\item{\bfseries Mail Component}: to externally sending Mails, avoiding building an internal Mail manager
+			\item{\bfseries Map Component}: to access an external {\bfseries Map Provider}.
+			\item{\bfseries Notification Component}: to send notifications to customers through an external {\bfseries Notification Service}.
+			\item{\bfseries Mail Component}: to externally sending mails, avoiding building an internal {\bfseries Mail Manager}.
 		\end{itemize}
 	\begin{figure}[!h]
 		\centering
@@ -234,28 +229,26 @@
 		\caption{\emph{Number calling system}}
 	\end{figure}
 	
-		\item{\bfseries Business Logic}: here there is the whole \emph{Business Logic} of the system. Since each store may maintain a different logic from another, there is a \emph{Component} for each store managed by the system. Each store, manages the following aspects:
+		\item{\bfseries Business Logic}: here there is the whole Business Logic of the system. Since each store may maintain a different logic from another, there is a Component for each store managed by the system. Each store, manages the following aspects:
 		\begin{itemize}
-			\item{\bfseries Reservation Manager}: manages all the things concerning \emph{reservations} and their making. It's useful also to retrieve some important data, such as ETAs and available time intervals to enter the store;
-			\item{\bfseries Statistic Manager}: it's the part used for the calculation of statistics about customers' shopping time, and about the average time spent in a single department. Since each store is different from the other, the statistics are maintained unique per store. This part is also used by \textbf{Reservation Manager} to calculates ETAs and time intervals;
-			\item{\bfseries Number Calling System}: is the component dedicated to admit reserved customers inside the store;
-			\item{\bfseries Building Flow Manager}: it takes care of processing scanned QR Codes at the entry and the exit of the store;
+			\item{\bfseries Reservation Manager}: manages all the things concerning reservations and their making. It's useful also to retrieve some important data, such as \emph{ETA}s and available time intervals to enter the store.
+			\item{\bfseries Statistic Manager}: it's the part used for the calculation of statistics about customers' shopping time, and about the average time spent in a single department. Since each store is different from the other, the statistics are maintained unique per store. This part is also used by \textbf{Reservation Manager} to calculates \emph{ETA}s and time intervals;
+			\item{\bfseries Number Calling System}: is the component dedicated to admit reserved customers inside the store.
+			\item{\bfseries Building Flow Manager}: it takes care of processing scanned \emph{QR Codes} at the entry and the exit of the store.
 			\item{\bfseries Store Settings Manager}: manages all the things concerning stores' settings and parameters, such as working hours and capacity (also for each department).
 			
 		\end{itemize} This subdivision allows to separate better the logic off each store. Moreover, there are component common to each store, so the ones deputy to allow users to request services to the system.
 		\begin{itemize}
-			\item {\bfseries Access Manager}: manages users' \emph{registraion} and \emph{log-in};
-			\item {\bfseries Suggestion Manager}: manages the retrieve of \emph{suggestions} when required, or necessary;
+			\item {\bfseries Access Manager}: manages users' registraion and log-in;
+			\item {\bfseries Suggestion Manager}: manages the retrieve of suggestions when required, or necessary;
 			\item{\bfseries Customer Alert Service}: takes care of sending departing notifications to customers.
 		\end{itemize}
-	At the end, there is another block: the \textbf{Data Interface}: it represents the \emph{Data Tier} of the system and separates the Business Logic from the data. It interacts with the DBMS to store and load informations.
+	At the end, there is another block: the \textbf{Data Interface}: it represents the \emph{Data Tier} of the system and separates the Business Logic from the data. It interacts with the \emph{DBMS} to store and load informations.
 	\end{itemize}
 
 	
 	\subsection{Component View}
 		The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through {\bfseries Component Diagrams}, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system, well know the behaviour of each component.\\
-		
-		{\bfseries INSERISCI COMPONENT VIEW GLOBALE}
 		
 		\begin{itemize}
 			\item {\bfseries MobileApp}: it is the component relative to the mobile application used by store managers and customers; in order to access \emph{CLup} services. It uses three interfaces: \emph{CustomerInterface}, \emph{StoreInterface}, used to access functionalities respectively for customers and store managers, and \emph{AccessInterface}, that allows users to log-in and register.
@@ -284,7 +277,15 @@
 		\end{itemize}
 	
 		It has been chosen to not develop these features, since there isn’t a real necessity of making them from scratch: the existing ones work well, are already tested and complete (for example, developing an internal map service will require inserting the whole world cartography, while a non \emph{OS}-integrated notification service must deal with aggressive \emph{OS}es’ power management). Moreover, this outsourcing allows to reduce the time for developing the system, and the maintenance costs, since it’s externally done by the service provider.
-		
+
+		\begin{figure}
+			\begin{adjustwidth} {-3cm}{}
+				\centering
+				\includegraphics[scale=0.35, angle=90, trim= 0 0 0 -5cm]{Component Diagrams/HighLevelComponentDiagram.pdf}\\
+			\end{adjustwidth}
+			\caption{\emph{High Level Component Diagram}}
+		\end{figure}
+		\newpage
 		\subsubsection{Adapters}
 			The system uses some “Adapters” to access the external services; no \emph{API}s are directly exposed to any component but the adapters. So, it is sufficient to change the corresponding adapter to migrate to another service, without the need of rewriting code of other components. Moreover, if required in some circumstances, it’s possible to use different external services: it is sufficient to use the correct adapter in order to access the desidered service.
 			
@@ -318,7 +319,13 @@
 					\item {\bfseries QueryExecutor}: it is the component that manages the connection with the \emph{DBMS}. It uses the \emph{DBMSAPI} and both \emph{DataRequestor} and \emph{DataStorer} rely on him to interface directly with the database
 				\end{itemize}
 			
-				{\bfseries DATAMANAGER COMPONENT VIEW}
+				\begin{figure}
+					\begin{adjustwidth} {-1cm}{}
+						\centering
+						\includegraphics[scale=0.5]{Component Diagrams/DataManagerComponentView.pdf}\\
+					\end{adjustwidth}
+					\caption{\emph{Data Manager Component View}}
+				\end{figure}
 			
 			\subsubsection{CLup Server}
 			As said before, it manages customers’ requests and access operations, through the two interfaces it expose:
@@ -330,7 +337,14 @@
 			\end{itemize}
 			
 			In the following paragraphs, there is a description of the most relevant component contained in {\bfseries CLup Server}.
-			
+			\begin{figure}
+				\begin{adjustwidth} {0cm}{}
+					\centering
+					\includegraphics[scale=0.37, angle=90, trim= 0 0 0 -5cm]{Component Diagrams/ServerComponentView.pdf}\\
+				\end{adjustwidth}
+				\caption{\emph{Server Component View}}
+			\end{figure}
+			\newpage
 				\paragraph{Customer Handler Component}
 					The CustomerHandler is the component that manages all the actions that a customer can make within the application. The component analyze the aspects concerning reservations.
 					
@@ -345,9 +359,15 @@
 					\end{itemize}
 				
 					All of these components uses the \emph{ReservationInterface} to complete their tasks.
-					
-					{\bfseries CUSTOMERHANDLER COMPONENT VIEW}
-					
+					\bigskip
+					\begin{figure}[h]
+						\begin{adjustwidth} {-4cm}{}
+							\centering
+							\includegraphics[scale=0.45]{Component Diagrams/CustomerHandlerComponentView.pdf}\\
+						\end{adjustwidth}
+						\caption{\emph{Customer Handler Component View}}
+					\end{figure}
+				\newpage
 				\paragraph{Access Manager Component}
 					The Access Manager is the component that manages all the issues concerning the access of the users. Indeed, as mentioned above, it is very important to recognize the role of the users in the app in order to provide them correct information, and only the functionalities/data they are authorized to use. The component analyze two main aspects:
 					
@@ -370,7 +390,14 @@
 						\end{itemize}
 					\end{itemize}
 				
-				{\bfseries ACCESSMANAGER COMPONENT VIEW}
+				\begin{figure}[h]
+					\begin{adjustwidth} {-2.5cm}{}
+						\centering
+						\includegraphics[scale=0.45]{Component Diagrams/AccessManagerComponentView.pdf}\\
+					\end{adjustwidth}
+					\caption{\emph{Access Manager Component View}}
+				\end{figure}
+				\newpage
 				
 			\paragraph{Reservation Handler Component}
 				The Reservation Handler is the component that manages the customer’s reservations. The component analyzes two main aspects:
@@ -394,8 +421,15 @@
 						\item {\bfseries BookingQueryComponent}: it is the component that manages the booking via app, asking the server time slots to enter the store, in case a reservation is confirmed, notify the store to save it, and manage all the requests about modification and cancellation of booking reservations.		
 					\end{itemize}
 				\end{itemize}
-			
-				{\bfseries RESERVATIONHANDLER COMPONENT VIEW}
+				\bigskip
+				\begin{figure}[h]
+					\begin{adjustwidth} {-0.5cm}{}
+						\centering
+						\includegraphics[scale=0.5]{Component Diagrams/ReservationHandlerComponentView.pdf}\\
+					\end{adjustwidth}
+					\caption{\emph{Reservation Handler Component View}}
+				\end{figure}
+				\newpage
 			
 		\subsubsection{Store Component}
 			The Store is the component that manages the store from all points of view and it is the most important component of the whole architecture, since implements the whole business tier. The component analyze many important aspect, but the most important are:
@@ -444,10 +478,18 @@
 				\end{itemize}
 			\end{itemize}
 		
-			{\bfseries STORECOMPONENT COMPONENT VIEW} \\
 			The core store functionalities are requested through the \emph{ReservationInterface} (dedicated to customers’ features) and the \emph{StoreInterfaces}, dedicated to store managers; their requests pass through an handler, here described. One note: the \emph{StoreComponentInterfaces} implements all the interfaces of the single services requested by the {\bfseries Store Manager Handler}.
 			
-		\subsection{Store Manager Handler Component}
+			\begin{figure}[H]
+				\begin{adjustwidth} {-1cm}{}
+					\centering
+					\includegraphics[scale=0.22, angle=90, trim= 0 0 0 -5cm]{Component Diagrams/ReorderedStoreComponentView.pdf}\\
+				\end{adjustwidth}
+				\caption{\emph{Store Component View}}
+			\end{figure}
+			\newpage
+			
+		\subsubsection{Store Manager Handler Component}
 			The Store Manager Handler is the component that manages all the actions that a store manager can make within the application. The component analyze various aspects:
 			
 			\begin{itemize}
@@ -477,7 +519,14 @@
 				\item {\bfseries SituationManager}: it is the component that manages the requests for the real time situation of the store.
 			\end{itemize}
 		
-		{\bfseries STOREMANAGERHANDLER COMPONENT VIEW}
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{Component Diagrams/StoreManagerHandlerComponentView.pdf}\\
+			\end{adjustwidth}
+			\caption{\emph{Store Manager Handler Component View}}
+		\end{figure}
+		\newpage
 	\subsection{Deployment View}
 	\subsection{Runtime View}
 	\subsection{Component Interfaces}
