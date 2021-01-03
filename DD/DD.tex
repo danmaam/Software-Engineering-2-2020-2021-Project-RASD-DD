@@ -152,6 +152,8 @@
 						\centering Rn & Requirement number n \\
 						\xrowht{5pt}
 						\centering ASAP & As soon as possible \\
+						\xrowht{5pt}
+						\centering POV & Point of view \\
 						\hline
 					\end{tabular}
 				\end{adjustwidth}
@@ -534,6 +536,272 @@
 	\subsection{Other design decisions}
 
 \section{User Interface Design}
+This section shows and describes accurately the mockups of the application, in order to explain how the main functionalities will be offered. The first subsection is dedicated to the illustration of the application flow, shown using two different UX diagram, one for the customer and one for the store manager.
+
+	\subsection{UX Diagrams}
+	The following figures shows the application flow from the customer and the store manager point of view.
+	
+		\subsubsection{Customer Flow}
+				\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/UXDiagrams/CustomerFlow.pdf}\\
+			\end{adjustwidth}
+			\caption{\emph{Customer Flow}}
+		\end{figure}
+	
+		\subsubsection{Store Manager Flow}
+		...
+
+	\subsection{Customer POV}
+		\subsubsection{Registration and Login}
+		the mockup in Figure ??? is the initial page every user will see the first time he uses CLup. A user can interact with the system only if authenticated (as customer or store manager); therefore each first-time user will choose one of the sign up buttons for registering.
+		
+		Clicking on "Sign up as customer" will bring us to Figure ???, in which a new (unregistered) customer has to enter his data (Email, name, surname and a password) and click "Sign up" in order to create the account.
+		
+		Clicking on "Login as customer" will bring us to Figure ???, in which a customer can enter his Email and password in order to log in.
+		
+		After the login we will be on Figure ???
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/InitialPage.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Initial page}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/SignUpCustomer.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Sign up as customer}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/LoginCustomer.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Login as customer}}
+		\end{figure}
+		
+		
+		
+		\subsubsection{Make a reservation}
+		
+		Clicking on "Make a reservation" will bring us to Figure ???, where we have to select the store we want to go to, then in Figure ??? we can select the departments that we want to visit, in Figure ?? we can indicate the estimated time of our grocery, and in Figure ??? we can choose the reservation modality: ASAP or at a specific date and time.
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/SelectStore.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Store selection}}
+		\end{figure}
+	
+		\begin{figure}[H]
+		\begin{adjustwidth} {-4cm}{}
+			\centering
+			\includegraphics[scale=0.45]{../Mockups/SelectDepartments.png}\\
+		\end{adjustwidth}
+		\caption{\emph{Departments selection}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/EstimatedDuration.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Estimated duration}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/ChooseModality.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Choice of modality}}
+		\end{figure}
+		
+		ASAP: choosing the ASAP modality can bring us to Figure ??? if the system find a suitable time slot, or to Figure ??? if there is no suitable time slot for the selected store; in the latter case, we can choose another store where is possible to do an ASAP reservation.
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/ASAPTicket.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Creation of ASAP ticket}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/ASAPSuggestion.png}\\
+			\end{adjustwidth}
+			\caption{\emph{ASAP suggestions}}
+		\end{figure}
+		
+		Booking: choosing the booking modality will bring us to Figure ???; if we find a time slot that is good for us, we can select it and create the reservation (Figure ???), otherwise we can click "Suggestion" that will bring us to Figure ???, where the system show us other store.
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/TimeSlots.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Choice of a time slot}}
+		\end{figure}
+	
+		\begin{figure}[H]
+		\begin{adjustwidth} {-4cm}{}
+			\centering
+			\includegraphics[scale=0.45]{../Mockups/BookedTicket.png}\\
+		\end{adjustwidth}
+		\caption{\emph{Creation of booked ticket}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/BookingSuggestion.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Booking suggestions}}
+		\end{figure}
+		
+		\subsubsection{Show requests}
+		
+		Clicking on "Show requests" will bring us to Figure ???, where we can see all the reservation done through the application, and selecting one of them will show its complete ticket (Figure ???)
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/VisualizeBookings.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Show requests}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/VBpopup.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Reservation details}}
+		\end{figure}
+		
+		\subsubsection{Means of Transport}
+		
+		Clicking on "Means of transport" will bring us to Figure ???, where we can choose our mean of transport (it will be used by the system to calculate the estimated time the customer will need to reach the store, thus the time he will be notified)
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/MeansOfTransport.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Means of transport}}
+		\end{figure}
+
+		
+		
+	\subsection{Store Manager POV}
+		\subsubsection{Registration and Login}
+		We start from the mockup in Figure ??? also in the store manager POV.
+		
+		Clicking on "Sign up as store" will bring us to Figure ???, in which a new (unregistered) store manager has to enter his store's data (Store name, a password, the store capacity and the store certification), and can already add departments to his new account with the "Add department" button; in the end, he can click "Sign up" in order to create the account.
+		
+		Clicking on "Login as store" will bring us to Figure ???, in which a store manager can enter his store's ID and password in order to log in.
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/SignUpStore.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Sign up as a store}}
+		\end{figure}
+	
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/LoginStore.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Login as a store}}
+		\end{figure}
+		
+		\subsubsection{Manage bookings}
+		
+		Clicking on "Manage bookings" will bring us to Figure ???, in which we can see all the future reservations of our store, and selecting one of them will show us some possible actions (Figure ???):
+		
+			- "Contact Client" allow us to send an email to the customer that made the selected reservation;
+			
+			- "Cancel Booking" allow us to delete the selected reservation and send an email to the customer that made that reservation (justifying the deletion);
+			
+			- "Reschedule Booking" allow us to change date and time of the selected reservation
+			
+			\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/ManageBooking.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Manage reservations}}
+			\end{figure}
+		
+			\begin{figure}[H]
+				\begin{adjustwidth} {-4cm}{}
+					\centering
+					\includegraphics[scale=0.45]{../Mockups/MBpopup.png}\\
+				\end{adjustwidth}
+				\caption{\emph{Possible actions for the selected reservation}}
+			\end{figure}
+		
+			\begin{figure}[H]
+				\begin{adjustwidth} {-4cm}{}
+					\centering
+					\includegraphics[scale=0.45]{../Mockups/MBpopup2}\\
+				\end{adjustwidth}
+				\caption{\emph{Contact client}}
+			\end{figure}
+		
+			\begin{figure}[H]
+				\begin{adjustwidth} {-4cm}{}
+					\centering
+					\includegraphics[scale=0.45]{../Mockups/MBpopup3}\\
+				\end{adjustwidth}
+				\caption{\emph{Cancel booking}}
+			\end{figure}
+		
+		\subsubsection{Monitor store}
+		
+		Clicking on "Monitor store" will bring us to Figure ???, in which we can see all the statistics related to our store
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/Statistics.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Monitor store}}
+		\end{figure}
+		
+		\subsubsection{Modify parameters}
+		
+		Clicking on "Modify parameters" will bring us to Figure ???, in which we can:
+		- see our daily settings;
+		- change our general settings (store name, password, max wait time, max simultaneous booking per week and departments settings);
+		- change our daily settings (closing day, opening and closure hours);
+		- save changes or go back without saving.
+		
+		\begin{figure}[H]
+			\begin{adjustwidth} {-4cm}{}
+				\centering
+				\includegraphics[scale=0.45]{../Mockups/ModifyParameters.png}\\
+			\end{adjustwidth}
+			\caption{\emph{Modify parameters}}
+		\end{figure}
+		
+		
+	
+
+
+
 
 \section{Requirements Tracebility}
 
@@ -542,4 +810,4 @@
 \section{Effort Spent}
 
 \section{References}
-\end{document}
+\end{document}.
