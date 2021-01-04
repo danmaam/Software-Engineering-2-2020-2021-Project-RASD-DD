@@ -136,7 +136,7 @@
 					\end{tabular}
 				\end{adjustwidth}
 			\end{center}
-		\bigskip
+		\newpage
 		\subsubsection{Abbreviations}
 			\begin{center}
 				\rowcolors{2}{}{gray!20}
@@ -188,6 +188,7 @@
 		\item Specification Document
 		\item Slides of the lectures
 		\end{itemize} 
+	\newpage
 	\subsection{Document Structure}
 		The structure of the document is thought with the intention of allowing simple navigation through it. Also, various abbreviations, highlighted in Abbreviations section, have been used to make the content smoother.
 		Hence, the structure of the document is the following one:
@@ -206,7 +207,7 @@
 			
 			\item {\bfseries References}: this section is dedicated to all references used in this project.
 		\end{itemize}
-
+	\newpage
 \section{Architectural Design}
 	The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through {\bfseries Component Diagrams}, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system, well know the behaviour of each component.
 	
@@ -226,8 +227,10 @@
 			\item{\bfseries Mail Component}: to externally sending mails, avoiding building an internal {\bfseries Mail Manager}.
 		\end{itemize}
 	\begin{figure}[!h]
-		\centering
-		\includegraphics[scale=0.5]{../UML Diagrams/CompositionDiagram/CompositionDiagram.png} \\
+		\begin{adjustwidth}{-2cm}{}
+			\centering
+			\includegraphics[scale=0.5]{../UML Diagrams/CompositionDiagram/CompositionDiagram.png} \\
+		\end{adjustwidth}
 		\caption{\emph{Number calling system}}
 	\end{figure}
 	
@@ -565,7 +568,7 @@ This section shows and describes accurately the mockups of the application, in o
 		\begin{figure}[!h]
 			\begin{adjustwidth} {0cm}{}
 				\centering
-				\includegraphics[scale=0.15]{../Mockups/InitialPage.png}\\
+				\includegraphics[scale=0.17]{../Mockups/InitialPage.png}\\
 			\end{adjustwidth}
 			\caption{\emph{Home page}}
 		\end{figure}
@@ -702,10 +705,9 @@ This section shows and describes accurately the mockups of the application, in o
 		\subsubsection{Suggestions}
 		In this section is shown the mockups about the suggestions of a reservation. If a customer is not satisfied with the available time slots the app allows to receive suggestions. These one are different based on the type of reservation selected previously:
 		\begin{itemize}
-			\item In case of customer has selected an \emph{ASAP} reservation, if the wait is very long, suggestions are show automatically. In this case are show, in order of waiting, all the stores that have a better time slot available (including the chosen one) and the customer can accept one of the suggestion (or select again the initial store) or refuse the suggestion and finish the reservation.
+			\item In case of customer has selected an \emph{ASAP} reservation, if the wait is very long, suggestions are shown automatically. In this case are show, in order of waiting, all the stores that have a better time slot available (including the chosen one) and the customer can accept one of the suggestion or select again the initial store.
 			\item In case of customer has planned a visit but the time slots do not fully satisfy him, he can select a new store, ordered from best to worst, and see the time slots of these new stores. When the customer identify the better choice for him, he can complete the reservation.
 		\end{itemize}
-		\bigskip
 		\bigskip
 		\begin{figure}[!h]
 			\centering
@@ -716,9 +718,11 @@ This section shows and describes accurately the mockups of the application, in o
 			\hfill
 			\begin{minipage}[!h]{0.4\textwidth}
 				\includegraphics[width=\textwidth]{../Mockups/BookingSuggestion.png}
-				\caption{\emph{Booking suggestion}}
+				\caption{\emph{Reservation suggestion}}
 			\end{minipage}
 		\end{figure}
+	
+		\newpage
 		
 		\subsubsection{Ticket}
 		In this section are shown the mockups about the ticket reservation. When the customer terminates his reservation, a ticket with a \emph{QR Code} is generated and saved. The ticket is used for enter and exit from the store and for both reservations it is the same. the only difference is that in the \emph{ASAP} one the entrance time is updated in real time.
@@ -733,145 +737,110 @@ This section shows and describes accurately the mockups of the application, in o
 			\hfill
 			\begin{minipage}[!h]{0.4\textwidth}
 				\includegraphics[width=\textwidth]{../Mockups/BookedTicket.png}
-				\caption{\emph{Booked ticket}}
+				\caption{\emph{Reservation ticket}}
 			\end{minipage}
 		\end{figure}
 	
 		\newpage
 		
-		\subsubsection{Show requests}
-		
-		Clicking on "Show requests" will bring us to Figure ???, where we can see all the reservation done through the application, and selecting one of them will show its complete ticket (Figure ???)
-		
-		\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
-				\centering
-				\includegraphics[scale=0.45]{../Mockups/VisualizeBookings.png}\\
-			\end{adjustwidth}
-			\caption{\emph{Show requests}}
+		\subsubsection{Visualize Booking}
+		In this section are shown the mockups about the visualization of previous reservation. When the customer wants can see the previous reservation that he made. This functionality helps customer to build a detailed history.\\		\bigskip
+		\bigskip
+		\begin{figure}[!h]
+			\centering
+			\begin{minipage}[!h]{0.4\textwidth}
+				\includegraphics[width=\textwidth]{../Mockups/VisualizeBookings.png}
+				\caption{\emph{Visualize reservations}}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[!h]{0.4\textwidth}
+				\includegraphics[width=\textwidth]{../Mockups/VBpopup.png}
+				\caption{\emph{Visualize reservation detail}}
+			\end{minipage}
 		\end{figure}
-	
-		\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
-				\centering
-				\includegraphics[scale=0.45]{../Mockups/VBpopup.png}\\
-			\end{adjustwidth}
-			\caption{\emph{Reservation details}}
-		\end{figure}
+		
+		\newpage
 		
 		\subsubsection{Means of Transport}
 		
-		Clicking on "Means of transport" will bring us to Figure ???, where we can choose our mean of transport (it will be used by the system to calculate the estimated time the customer will need to reach the store, thus the time he will be notified)
-		
+		In this section is shown the mockup about means of transport. A customer can select his means of transport and that is very important beacuse, based on the choice made, all travel times are calculated accordingly. Moreover, means of transport used influence also the moment in which the notification, that warns the customer to leave his current position to reach the store in time, is sent.
+		\bigskip
+		\bigskip
 		\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
+			\begin{adjustwidth} {0cm}{}
 				\centering
-				\includegraphics[scale=0.45]{../Mockups/MeansOfTransport.png}\\
+				\includegraphics[scale=0.17]{../Mockups/MeansOfTransport.png}\\
 			\end{adjustwidth}
 			\caption{\emph{Means of transport}}
 		\end{figure}
-
 		
-		
-	\subsection{Store Manager POV}
-		\subsubsection{Registration and Login}
-		We start from the mockup in Figure ??? also in the store manager POV.
-		
-		Clicking on "Sign up as store" will bring us to Figure ???, in which a new (unregistered) store manager has to enter his store's data (Store name, a password, the store capacity and the store certification), and can already add departments to his new account with the "Add department" button; in the end, he can click "Sign up" in order to create the account.
-		
-		Clicking on "Login as store" will bring us to Figure ???, in which a store manager can enter his store's ID and password in order to log in.
-		
-		\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
-				\centering
-				\includegraphics[scale=0.45]{../Mockups/SignUpStore.png}\\
-			\end{adjustwidth}
-			\caption{\emph{Sign up as a store}}
+		\newpage
+	
+		\subsubsection{Manage Bookings}
+		In this section are shown the mockups about the management of the customers' reservations. A store manager can:
+		\begin{itemize}
+			\item View the current entry queue
+			\item Contact a customer via email
+			\item Delete a customer reservation
+			\item Reschedule a customer reservation
+		\end{itemize}
+		\bigskip
+		\bigskip
+		\begin{figure}[!h]
+			\centering
+			\begin{minipage}[!h]{0.4\textwidth}
+				\includegraphics[width=\textwidth]{../Mockups/ManageBookings.png}
+				\caption{\emph{Manage bookings}}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[!h]{0.4\textwidth}
+				\includegraphics[width=\textwidth]{../Mockups/MBpopup.png}
+				\caption{\emph{Manage bookings functionalities}}
+			\end{minipage}
+		\end{figure}
+		\newpage
+		\begin{figure}[!h]
+			\centering
+			\begin{minipage}[!h]{0.4\textwidth}
+				\includegraphics[width=\textwidth]{../Mockups/MBpopup2.png}
+				\caption{\emph{Contact customer via email}}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[!h]{0.4\textwidth}
+				\includegraphics[width=\textwidth]{../Mockups/MBpopup3.png}
+				\caption{\emph{Delete reservation}}
+			\end{minipage}
 		\end{figure}
 	
-		\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
-				\centering
-				\includegraphics[scale=0.45]{../Mockups/LoginStore.png}\\
-			\end{adjustwidth}
-			\caption{\emph{Login as a store}}
-		\end{figure}
-		
-		\subsubsection{Manage bookings}
-		
-		Clicking on "Manage bookings" will bring us to Figure ???, in which we can see all the future reservations of our store, and selecting one of them will show us some possible actions (Figure ???):
-		
-			- "Contact Client" allow us to send an email to the customer that made the selected reservation;
-			
-			- "Cancel Booking" allow us to delete the selected reservation and send an email to the customer that made that reservation (justifying the deletion);
-			
-			- "Reschedule Booking" allow us to change date and time of the selected reservation
-			
-			\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
-				\centering
-				\includegraphics[scale=0.45]{../Mockups/ManageBookings.png}\\
-			\end{adjustwidth}
-			\caption{\emph{Manage reservations}}
-			\end{figure}
-		
-			\begin{figure}[H]
-				\begin{adjustwidth} {-4cm}{}
-					\centering
-					\includegraphics[scale=0.45]{../Mockups/MBpopup.png}\\
-				\end{adjustwidth}
-				\caption{\emph{Possible actions for the selected reservation}}
-			\end{figure}
-		
-			\begin{figure}[H]
-				\begin{adjustwidth} {-4cm}{}
-					\centering
-					\includegraphics[scale=0.45]{../Mockups/MBpopup2}\\
-				\end{adjustwidth}
-				\caption{\emph{Contact client}}
-			\end{figure}
-		
-			\begin{figure}[H]
-				\begin{adjustwidth} {-4cm}{}
-					\centering
-					\includegraphics[scale=0.45]{../Mockups/MBpopup3}\\
-				\end{adjustwidth}
-				\caption{\emph{Cancel booking}}
-			\end{figure}
+		\newpage
+		\newpage
 		
 		\subsubsection{Monitor store}
 		
-		Clicking on "Monitor store" will bring us to Figure ???, in which we can see all the statistics related to our store
-		
-		\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
+		In this section is shown the mockup about the store statistics. A store manager can view the statistics about flow of people inside the store, when he wants. Indeed statistics analyze the number of people that visit the store during an entire day and the time spent in average inside the store and each departments.
+		\bigskip
+		\bigskip
+		\begin{figure}[!h]
+			\begin{adjustwidth} {0cm}{}
 				\centering
-				\includegraphics[scale=0.45]{../Mockups/Statistics.png}\\
+				\includegraphics[scale=0.17]{../Mockups/Statistics.png}\\
 			\end{adjustwidth}
-			\caption{\emph{Monitor store}}
+			\caption{\emph{Monitor statistics}}
 		\end{figure}
 		
+		\newpage
+		
 		\subsubsection{Modify parameters}
-		
-		Clicking on "Modify parameters" will bring us to Figure ???, in which we can:
-		- see our daily settings;
-		- change our general settings (store name, password, max wait time, max simultaneous booking per week and departments settings);
-		- change our daily settings (closing day, opening and closure hours);
-		- save changes or go back without saving.
-		
-		\begin{figure}[H]
-			\begin{adjustwidth} {-4cm}{}
+		In this section is shown the mockup about the management of the store parameters. A store manager can decide to modify many personal parameters like Store \emph{ID} and password and many parameters that influence the customers' reservations. Indeed is possible to modify the opening and closure time of the store, the max simoultaneous booking per week by a customer and the capacity allowed for each deaprtments and for the entire store
+		\bigskip
+		\bigskip
+		\begin{figure}[!h]
+			\begin{adjustwidth} {0cm}{}
 				\centering
-				\includegraphics[scale=0.45]{../Mockups/ModifyParameters.png}\\
+				\includegraphics[scale=0.17]{../Mockups/ModifyParameters.png}\\
 			\end{adjustwidth}
 			\caption{\emph{Modify parameters}}
 		\end{figure}
-		
-		
-	
-
-
-
 
 \section{Requirements Tracebility}
 
