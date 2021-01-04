@@ -673,7 +673,7 @@ m2=</panel_attributes>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
-MapInterface</panel_attributes>
+MapAPI</panel_attributes>
     <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
   </element>
   <element>
@@ -685,7 +685,7 @@ MapInterface</panel_attributes>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=[]-()
-NotificationInterface</panel_attributes>
+NotificationAPI</panel_attributes>
     <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
@@ -828,7 +828,7 @@ m2=</panel_attributes>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=()-[]
-DataInterface</panel_attributes>
+DBMS API</panel_attributes>
     <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
   </element>
   <element>
