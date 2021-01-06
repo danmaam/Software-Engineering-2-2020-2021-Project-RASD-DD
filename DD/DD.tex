@@ -849,7 +849,109 @@ This section shows and describes accurately the mockups of the application, in o
 			\caption{\emph{Modify parameters}}
 		\end{figure}
 
-\section{Requirements Tracebility}
+\section{Requirements Traceability}
+In this section it is described how the requirements of the application are mapped to the components defined previously.
+
+\begin{itemize}
+\item {\bfseries R1}: The system must allow the customers to register \\
+\textbf{AccessManager}
+
+\item {\bfseries R2}: The system must allow store managers to register their store \\
+\textbf{AccessManager}
+
+\item {\bfseries R3}: The system must allow customers to log in \\
+\textbf{AccessManager}
+
+\item {\bfseries R4}: The system must allow store managers to log in \\ 
+\textbf{AccessManager}
+
+\item {\bfseries R5}: The system allows the customers to view their visits \\
+\textbf{CustomerHandler}
+
+\item {\bfseries R6}: The system allows the customers to cancel their visits \\
+\textbf{CustomerHandler}
+
+\item {\bfseries R7}: The system allows the customers to modify their visits \\
+\textbf{CustomerHandler}
+
+\item {\bfseries R8}: The system allows the customers to select their favourite means of transportation \\
+\textbf{MobileApp}
+
+\item {\bfseries R9}: The system allows customers to select the departments in which they are interested in doing shopping \\
+\textbf{ReservationHandler}
+
+\item {\bfseries R10}: The system must let in customers only if it's their turn \\
+\textbf{StoreComponent}
+
+\item {\bfseries R11}: The system must consider the estimate shopping time inserted by customers \\
+\textbf{ReservationHandler}
+
+\item {\bfseries R12}: The system must show the customers of the time periods in which they can enter the store, according to store's booking policies and the estimate of customers' shopping time \\
+\textbf{DataManager}
+
+\item {\bfseries R13}: The system have to make a reasonable estimate of when a user with a spot on the queue is able to enter the store \\
+\textbf{StatisticComponent}
+
+\item {\bfseries R14}: The system can send notification to the clients \\
+\textbf{NotificationManager}
+
+\item {\bfseries R15}: The system is able to ask for the position of the customers \\
+\textbf{MapManager}
+
+\item {\bfseries R16}: The system permits to store manager to modify some critical parameters of the store related to customers' affluence management \\
+\textbf{StoreManagerHandler}
+
+\item {\bfseries R17}: The system allows the manager to establish the maximum simultaneously allowed booked clients in a specific department \\
+\textbf{StoreManagerHandler}
+
+\item {\bfseries R18}: The store manager can cancel the reservation of each client \\
+\textbf{StoreManagerHandler}
+
+\item {\bfseries R19}: The store manager can modify the reservation of each client \\
+\textbf{StoreManagerHandler}
+
+\item {\bfseries R20}: The store manager can view the reservation of each client \\
+\textbf{StoreManagerHandler}
+
+\item {\bfseries R21}: The store manager can handle the working days and hours of the store, for each day of the week \\
+\textbf{StoreManagerHandler}
+
+\item {\bfseries R22}: The system knows the situation in real time of each store \\
+\textbf{DataManager}
+
+\item {\bfseries R23}: The system takes trace of each customer entry and exit from the store \\
+\textbf{DataManager}
+
+\item {\bfseries R24}: The system contains a list of bookable stores \\
+\textbf{DataManager}
+
+\item {\bfseries R25}: The system is able to print a paper ticket \\
+textbf{TotemApp}
+
+\item {\bfseries R26}: The system can reasonably estimate the time needed from a customer to complete his shopping \\
+\textbf{StatisticComponent}
+
+\item {\bfseries R27}: The system saves clients' tickets \\
+\textbf{DataManager}
+
+\item {\bfseries R28}: The system is able to smartly call clients with a ticket to enter the building depending on reservations and people inside the building \\
+\textbf{NumberCallingApp}
+
+\item {\bfseries R29}: The system is able to scan and analyse a \emph{QR Code} \\
+\textbf{ScannerApp}
+
+\item{\bfseries R30}: The system is able to send emails \\
+\textbf{MailComponent}
+
+\item {\bfseries R31}: The system knows how the maximum number of bookings allowed weekly per customer \\
+\textbf{DataManager}
+
+\item{\bfseries R32}: The system can automatically rearrange reservations, if necessary \\
+\textbf{DataManager}
+
+\end{itemize}
+
+
 
 \section{Implementation, Integration and Test Plan}
 	\subsection{Overview}
@@ -958,6 +1060,6 @@ This section shows and describes accurately the mockups of the application, in o
 	\end{tabular}
 \end{center}
 
-\end{document}
 \section{References}
+
 \end{document}
