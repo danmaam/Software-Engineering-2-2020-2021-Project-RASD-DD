@@ -13,6 +13,7 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{float}
+\usepackage{comment}
 
 \newcommand\xrowht[2][0]
 {\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
@@ -256,11 +257,11 @@
 		The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through {\bfseries Component Diagrams}, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system, well know the behaviour of each component.\\
 		
 		\begin{itemize}
-			\item {\bfseries MobileApp}: it is the component relative to the mobile application used by store managers and customers; in order to access \emph{CLup} services. It uses three interfaces: \emph{CustomerInterface}, \emph{StoreInterface}, used to access functionalities respectively for customers and store managers, and \emph{AccessInterface}, that allows users to log-in and register.
+			\item {\bfseries MobileApp}: it is the component relative to the mobile application used by store managers and customers; in order to access \emph{CLup} services. It uses three interfaces: \emph{CustomerInterface}, \emph{StoreInterface}, used to access functionalities respectively for customers and store managers, and \emph{AccessInterface}, that allows users to log-in and register. Moreover, uses \emph{MapsAPI} to access to cartographic services, and \emph{NotificationAPI} to send local notifications.
 			
 			\item {\bfseries CLupServer}:  it is the component deputy to manage users’ access, and customers requests.
 			
-			\item {\bfseries StoreComponent}: it is the component that principally manages the business logic of the system, since takes care of the functionalities associated with a single store. Each store will have its own {\bfseries Store Component} deployed in a dedicated container. The aim of this is to separate the critical functionalities of each store, to reduce the risk of a complete block of the system and to make maintenance easier in case of malfunctionalities of a single store.
+			\item {\bfseries StoreComponent}: it is the component that principally manages the business logic of the system, since takes care of the functionalities associated with a single store. Each store will have its own {\bfseries Store Component} deployed in a dedicated container. The aim of this is to separate the critical functionalities of each store, to reduce the risk of a complete block of the system and to make maintenance easier in case of dysfunctionality of a single store.
 			
 			\item {\bfseries TotemApp}: it is the component that represents the interface used by a physical totem installed at stores in order to request the issue of a ticket. The totem interface is separated from the Mobile App’s one, since a totem can request tickets only to the store where it’s installed, directly communicating with it.
 			
@@ -282,6 +283,8 @@
 		\end{itemize}
 	
 		It has been chosen to not develop these features, since there isn’t a real necessity of making them from scratch: the existing ones work well, are already tested and complete (for example, developing an internal map service will require inserting the whole world cartography, while a non \emph{OS}-integrated notification service must deal with aggressive \emph{OS}es’ power management). Moreover, this outsourcing allows to reduce the time for developing the system, and the maintenance costs, since it’s externally done by the service provider.
+		
+		
 
 		\begin{figure}
 			\begin{adjustwidth} {-3cm}{}
@@ -291,37 +294,40 @@
 			\caption{\emph{High Level Component Diagram}}
 		\end{figure}
 		\newpage
-		\subsubsection{Adapters}
-			The system uses some “Adapters” to access the external services; no \emph{API}s are directly exposed to any component but the adapters. So, it is sufficient to change the corresponding adapter to migrate to another service, without the need of rewriting code of other components. Moreover, if required in some circumstances, it’s possible to use different external services: it is sufficient to use the correct adapter in order to access the desidered service.
-			
-			\begin{itemize}
-				\item {\bfseries MapManager}: it is the component that takes requests from other components, and redirect them to the chosen external {\bfseries Map Service}.
-				
-				\item {\bfseries NotificationComponent}: since each mobile \emph{OS} uses its own notification service, this adapter takes in requests of notification sending, and redirect them to the correct service; the latter will take care of delivering the notification to the customer.
-				
-				\item {\bfseries MailComponent}: an adapter used to send emails; as the previous ones, allows to change the used mail service painlessly.
-				
-				\item {\bfseries DataManager}: probably, the most important adapter of the system, since it is the one connecting the other components to the system’s data logic. 
-			\end{itemize}
 		
-		Here, there is described the one for \emph{DBMS}, since it’s the most articulated among those.
+		\subsubsection{Adapters}
+		The system uses some “Adapters” to access the external services; no \emph{API}s are directly exposed to any component but the adapters. So, it is sufficient to change the corresponding adapter to migrate to another service, without the need of rewriting code of other components. Moreover, if required in some circumstances, it’s possible to use different external services: it is sufficient to use the correct adapter in order to access the desidered service.
+		
+		\begin{itemize}
+			\item {\bfseries MapManager}: it is the component that takes requests from other components, and redirect them to the chosen external {\bfseries Map Service}.
+			
+			\item {\bfseries NotificationComponent}: since each mobile \emph{OS} uses its own notification service, this adapter takes in requests of notification sending, and redirect them to the correct service; the latter will take care of delivering the notification to the customer.
+			
+			\item {\bfseries MailComponent}: an adapter used to send emails; as the previous ones, allows to change the used mail service painlessly.
+			
+			\item {\bfseries DataManager}: probably, the most important adapter of the system, since it is the one connecting the other components to the system’s data logic. 
+		\end{itemize}
+		
+		
+		Here, there is described the adapter for \emph{DBMS}, since it’s the most articulated among those.
 		
 			\paragraph{Data Manager Component}
-				The Data Manager is the component that manages the requests for data manipulation. The components analyzed two aspects:
+				The Data Manager is the component that manages the requests for data manipulation. The component handles two aspects:
 				
 				\begin{itemize}
 					\item Data Manipulation
 					\item Query Execution
 				\end{itemize}
 			
-				The components’ services are requested through the \emph{DataInterface}, while it access to the \emph{DBMS} through its \emph{API}s. Data can be accessed or written to the \emph{DBMS}. This partition is very important because it allows to avoid writing instead of reading and vice versa.
+				The components’ services are requested through the \emph{DataInterface}, while it access to the \emph{DBMS} through its \emph{API}s. Data can be accessed or written to the \emph{DBMS}. This partition is very important because it allows to separate the query for obtaining data from the ones to manipulate the databse.
 				
 				\begin{itemize}
-					\item {\bfseries DataRequestor}: it is the component that manages the data reading. Indeed if \emph{DataInterface} asks for a data, this component allows to satisfy this request
+					\item {\bfseries DataRequestor}: it is the component that manages the data reading. Indeed if \emph{DataInterface} asks for a data, this component allows to satisfy this request.
 					
-					\item {\bfseries DataStorer}: it is the component that manages the data writing. Indeed if \emph{DataInterface} asks to write new data in the \emph{DBMS}, this component allows to satisfy this request.
+					\item {\bfseries DataStorer}: it is the component that manages the data writing. Indeed if \emph{DataInterface} asks to manipulate the \emph{DBMS}, this component allows to satisfy this request.
 					
-					\item {\bfseries QueryExecutor}: it is the component that manages the connection with the \emph{DBMS}. It uses the \emph{DBMSAPI} and both \emph{DataRequestor} and \emph{DataStorer} rely on him to interface directly with the database
+					\item {\bfseries QueryExecutor}: it is the component that manages the connection with the \emph{DBMS}. It uses the \emph{DBMSAPI} and both \emph{DataRequestor} and \emph{DataStorer} rely on him to interface directly with the database.
+					
 				\end{itemize}
 			
 				\begin{figure}
@@ -412,8 +418,8 @@
 					\item Reservation Management
 				\end{itemize}
 			
-				The component uses \emph{ReservationInterface} (that implements \emph{QueryInterface} and \emph{SuggestionInterface}) to accept requests that are processed by this component , and {\bfseries Store Component}, used to make requests to a specific store.
-				This component is invoked when the customer tries to make or modify a reservation, or tries to retrieve his ones. Each time a reservation is retrieved, the customer will receive the updated information (such us \emph{ETA} to enter the store).
+				The component uses \emph{ReservationInterface} (that implements \emph{QueryInterface} and \emph{SuggestionInterface}) to accept requests, and {\bfseries Store Component}, used to make requests to a specific store.
+				This component is invoked when the customer tries to make or modify a reservation, or tries to retrieve his ones. Each time a reservation is retrieved, the customer will receive the updated information (such us \emph{ETA} to enter the store). Moreover, it uses the \emph{Data Interface} to access to CLups' general DBMS, in order to retrieve informations on stores.
 				
 				\begin{itemize}
 					\item {\bfseries SuggestionComponent}: it is the component that manages the suggestions that are made available to the customer at the time of reservation. It will query each store registered on the platform, to retrieve availability information, depending on the preferences inserted by the customer and the type of reservation they are making (so, the component will use the right {\bfseries Query Component}); it’s invoked by both the \emph{ReservationInterface} when a customer asks for suggestions on bookings, or by {\bfseries ASAPQueryComponent} while the \emph{ETA} for entering the store \emph{ASAP} is too high.
@@ -449,7 +455,7 @@
 			As said before, it’s been preferred to separate the logic governing each store by designing a component for each different store. Also here, the store component have been designed in a modular way, to separate the different features offered by a single store; these are:
 			
 			\begin{itemize}
-				\item {\bfseries FlowComponent}: this component manages the functionalities that are requested when a \emph{QR Code} is scanned at the store entry, and uses the {\bfseries Calling Number Component} to authorize the entry, and uses the {\bfseries Department Component} to register the entrance/exit.
+				\item {\bfseries FlowComponent}: this component manages the functionalities that are requested when a \emph{QR Code} is scanned at the store entry, and uses the {\bfseries Calling Number Component} to check the scanned QR Code status, the {\bfseries Department Component} to register the entrance/exit and the {\bfseries StatisticComponent} to update visit statistics.
 				
 				\item {\bfseries StatisticComponent}: it is the component dedicated to building customer statistics. It’s used by:
 				
@@ -458,26 +464,27 @@
 					\item {\bfseries ReservationComponent}: invokes the methods when, during a reservation process, it’s necessary to infer the estimation of customers’ shopping time.
 				\end{itemize}
 			
-				\item {\bfseries RearrangeComponent}: it is the component that rearrange the reservations when a store manager modifies the capacity of some part of the store. Interacts with the {\bfseries Calling Number Component} in order to rearrange the queue. In case of delays or cancellations, the customers will receive a notification.
+				\item {\bfseries RearrangeComponent}: it is the component that rearrange the reservations when a store manager modifies the capacity of some part of the store, or some reservations are changed, and the queue must be reschedules. Interacts with the {\bfseries Calling Number Component} in order to rearrange the queue. In case of delays or cancellations, the customers will receive a notification.
 				
 				\item {\bfseries StoreDataManager}: it is the adapter between the store and its dedicated \emph{DBMS}. The choice of dedicating a \emph{DBMS} for each store is due to efficiency and security reasons: if a \emph{DBMS} broke, it wouldn't affect the whole system, while a store can access only its data.
 				
 				\item {\bfseries ParameterManager}: it is the component that manages the parameters of the store, the settings and the situation of each department of the store. It’s used by:
 				
 				\begin{itemize}
-					\item {\bfseries EntranceComponent}: is used to update Departments’ situation.
+					\item {\bfseries FlowComponent}: is used to update Departments’ situation.
 					\item {\bfseries StoreManagerHandler}: is used to update store parameters, and to access the real-time situation of the store.
+					\item {\bfseries ReservationComponent}: is used to request store situation in order to make a reservation.
 				\end{itemize}
 			
 				Moreover, uses {\bfseries RearrangeReservation} when a parameter is modified, to make coherent the store’s status
 				
-				\item {\bfseries ReservationComponent}: it is the component that is dedicated to the management of reservations. It’s used to retrieve reservations made in that store, to retrieve waiting times, and to store customers’ reservations. Uses the {\bfseries Calling Number Component} to notify the creation of a new reservation, and it’s used by the latter to initialize the queue at store opening. It also handles modifications made by customers and store managers to reservations. Furthermore, a store manager uses it to contact customers about some specific reservation. Because of this, the components interact with {\bfseries Notification Component} and {\bfseries Mail Component} to interact with customers. 
+				\item {\bfseries ReservationComponent}: it is the component that is dedicated to the management of reservations. It’s used to retrieve reservations made in that store, to retrieve waiting times, and to store customers’ reservations. Uses the {\bfseries Calling Number Component} to notify a modification in reservations list, and it’s used by the latter latter to initialize the queue at store opening. It also handles modifications made by customers and store managers to reservations. Furthermore, a store manager uses it to contact customers about some specific reservation. Because of this, the components interact with {\bfseries Notification Component} and {\bfseries Mail Component} to interact with customers. 
 				To logically separate the management of the two types of reservations, the component is divided in two subcomponents: {\bfseries BookingComponent}, and {\bfseries ASAPComponent}.
 				
-				\item {\bfseries CallingNumberComponent}: it is the component deputy to call in reservations, and to notify customers they should depart for the store. To do this, it interfaces with \emph{MapInterface} to calculate travel time, and with \emph{NotificationInterface} to send customers notification. It’s divided in two subcomponents, each carrying out different functionalities:
+				\item {\bfseries CallingNumberComponent}: it is the component deputy to call in reservations, and to notify customers they should depart for the store. It’s divided in two subcomponents, each carrying out different functionalities:
 				
 				\begin{itemize}
-					\item {\bfseries CallableReservationComponent}: checks whenever a reservation in the queue is callable, checking the store affluence, through the {bfseries Parameter Manager Component}; when it notice that a customer should be alerted to depart for the store, sends a notification through the {\bfseries Notification Manager Component}.
+					\item {\bfseries CallableReservationComponent}: checks whenever a reservation in the queue is callable, checking the store affluence, through the {\bfseries Parameter Manager Component};
 					
 					\item {\bfseries CallNumberComponent}: takes a queue of reservations to be called, and when it’s possible, a reservation is called to enter. It’s alerted by the {\bfseries Entrance Component} that somebody exited the store.
 				\end{itemize}
@@ -533,10 +540,117 @@
 		\end{figure}
 		\newpage
 	\subsection{Deployment View}
+	As said in the previous pages, the system have been developed in a very modular way, trying to handle all the required functionalities through dedicated components.\\
+	Since the application needs to remotely communicate with various actor, the architecture which best fit for \emph{CLup} purposed is the {\bfseries client-server} one. Moreover, this architecture has been implemented through the {\bfseries three-tier} paradigm. This aims to separate the different logic part of the system: {\bfseries presentation}, {\bfseries business} and {\bfseries data}.
+	\subsubsection{Client-side}
+	In \emph{CLup}, there are many actors constituting the system's clients, since they are necessary for many \emph{CLup's} features:
+	\begin{itemize}
+		\item {\bfseries Mobile app}: it's the mobile application used by \emph{customers} and \emph{store managers} to request services to CLup. It also represents the {\bfseries Presentation tier} of the system, developed following the \emph{thin client} paradigm, leaving the whole business logic to the server, but for a thing: the notifications when a customer should depart for the store, and the map related functions. In fact, it's the mobile app that monitors when a it's time to go to the store. Even if a \emph{thin client} shouldn't handle operations, this aims to reduce the work load of the server: it's useless to remotely request the customer's position, and then send it to the \emph{Map Service}, while mobile devices can do it on their own (the same applies for distance and travel time);
+		\item{\bfseries QR Code Scanner}: it's role is to send server the scanned QR Code to process it;
+		\item{\bfseries Totem}: a client needed to allow making requests at any store;
+		\item{\bfseries Number Calling Device}: it's the device used to receive from the server the called reservations, so that a customer in front of the store knows when they can enter.  
+	\end{itemize}
+	\subsubsection{Server-side}
+	\emph{CLup}'s server side implements both {\bfseries business logic} and {\bfseries data logic}.
+	\begin{itemize}
+		\item {\bfseries Business-logic}: it's implemented by {\bfseries CLupServer} and {\bfseries StoreComponent}. The first is needed to manage users access to \emph{CLup} services, and to manage reservations request, forwarding them to the correct store, or to generate suggestions querying all the store managed by the system. Instead, \emph{StoreComponent} manages the business logic related to each store, including reservations, ticket calling, capacity ecc. This design choice is to separate the logic of each store, and to avoid disservices to the whole CLup system if something may fail.
+		\item{\bfseries Data-logic}: it's implemented through various {\bfseries DBMS}s: one for the general server, and one for each store. Business components can access the DBMS though their related DataManager, the adapter between DBMS and other components.
+	\end{itemize}
+	Here, follows a diagram of the subdivision of the various tiers. The clients (implementing the presentation tier) are in \textcolor{red}{red}, the components related to the business logic in \textcolor{blue}{blue}, while the data-related parts are in \textcolor{green}{green}.
+	\bigskip
+	\begin{figure}[H]
+		\begin{adjustwidth} {-3cm}{}
+			\centering
+			\includegraphics[scale=0.45]{Component Diagrams/ColorfulHighLevel.pdf}\\
+		\end{adjustwidth}
+		\caption{\emph{Component mapping with tiers}}
+	\end{figure}
+	\subsubsection{Deployment Diagram}
+	Here there is the deployment diagram of the described system. As described in the \emph{RASD}, all the communications are routed via the \emph{TCP-IP} transmission protocol, using a secure transport protocol (such as \emph{TLS}). For example, \emph{HTTPS} may be used to connect client and server, and to access external services.
+	
+		\begin{figure}[H]
+		\begin{adjustwidth} {-3cm}{}
+			\centering
+			\includegraphics[scale=0.45]{Component Diagrams/DeploymentDiagram.pdf}\\
+		\end{adjustwidth}
+		\caption{\emph{Deployment Diagram}}
+	\end{figure}
+	
+	
 	\subsection{Runtime View}
+	In this section will be analysed the runtime view of the system, through some \emph{Sequence Diagrams}. This should help to understand how the different components interact. Some aspects have been simplified to make the diagrams more readable; e.g., some interactions with the DBMS have been omitted, some operations with identical behaviour have been collapsed in generic requests, through a generic method, just to model the interaction. The \emph{Component Interfaces diagram} will report all these methods in detail.
+	\subsubsection{User login}
+	 Since the interactions for both \emph{customers} and \emph{managers} log-in are the same, here there is reported only the ones relative to customers.
+	
+	\begin{figure}[H]
+		\begin{adjustwidth} {0cm}{}
+			\centering
+			\includegraphics[scale=0.4]{Sequence Diagrams/sd__CustomerLogin__CustomerLogin.png}
+		\end{adjustwidth}
+		\caption{\emph{Customer Login Sequence Diagram}}
+	\end{figure}
+
+	First of all, the {\bfseries Mobile App} requests the {\bfseries Access Manager} to check the credentials. This is done by asking the {\bfseries Data Manager} to query the \emph{DBMS} for the selected credentials. Once the operations on \emph{DBMS} ended, the {\bfseries Access Manager} will send an error message if the credentials are not valid, or a confirmation. Then, in the latter case, AccessManager forwards the user's session. If it's a manager to log-in, the {\bfseries MobileApp} will use the \emph{storeManagerLogin} method, passing as parameter the \emph{StoreID} instead of the \emph{email}.
+	
+	\subsubsection{Customer Registration}
+		\begin{figure}[H]
+		\begin{adjustwidth} {-3cm}{}
+			\centering
+			\includegraphics[scale=0.4]{Sequence Diagrams/sd__CustomerLogin__CustomerRegistration.png}
+		\end{adjustwidth}
+		\caption{\emph{Customer Registration Sequence Diagram}}
+	\end{figure}
+	
+	The registration process for a customer is quite similar to the login one. In fact, the app requests the {\bfseries AccessManager} to register the customer with the inserted data. Then a request to check the selected credentials is forwarded from the {\bfseries RegistrationChecker} to the {\bfseries DataManager} . If the selected email isn't already in the system, the registration process continues, and the user is stored in the DBMS; at the end, the \emph{MobileApp} receives the confirmation and the session. If the credentials are not valid, an error message is sent.
+	
+	\subsubsection{Store Manager Registration}
+	The registration process for a \emph{Store Manager} is identical to \emph{customers} one, but for the intermediate step of certification check. In fact, if the credentials are valid, before registering the user, the {\bfseries RegistrationChecker} verify the validity of the uploaded certification. If valid, the process continue, else an error message is thrown to the {\bfseries MobileApp}.
+	\begin{figure}[H]
+		\begin{adjustwidth} {-3cm}{}
+			\centering
+			\includegraphics[scale=0.4]{Sequence Diagrams/sd__CustomerLogin__StoreManagerRegistration.png}
+		\end{adjustwidth}
+		\caption{\emph{Store Manager Registration Sequence Diagram}}
+	\end{figure}
+	
+	\subsection{Make a reservation}
+	To make a \emph{reservation}, it's necessary to retrieve the list of stores. So, through the {\bfseries CustomerHandler}, the {\bfseries MobileApp} requests to the {\bfseries ReservationHandler} the list of stores. Once retrieved from the \emph{DBMS}, this list is sent to the {\bfseries MobileApp} and sorted by distance, through the \emph{map service}.
+	Then, after the customer select the store, the departments, and insert the shopping time estimation (here it's not treated the calculation by the CLup for the sake of simplicity), they can both make an \emph{ASAP reservation}, or a \emph{Booking}.
+	\begin{figure}[H]
+		\begin{adjustwidth} {-1cm}{}
+			\centering
+			\includegraphics[scale=0.4]{Sequence Diagrams/sd__CustomerGetReservationOptions__CustomerGetReservationOptions.png}
+		\end{adjustwidth}
+		\caption{\emph{Reservation Options Sequence Diagram}}
+	\end{figure}
+
+	
+	\begin{figure}[H]
+		\begin{adjustwidth} {-1.5cm}{}
+			\centering
+			\includegraphics[scale=0.3]{Sequence Diagrams/sd__CustomerASAPReservation__CustomerASAPReservation.png}
+		\end{adjustwidth}
+		\caption{\emph{ASAP Reservation Sequence Diagram}}
+	\end{figure}
+	In the case of an ASAP reservation, a request is sent to the {\bfseries ReservationHandler}, that asks to the component of the selected store if the reservation is possible, with the eventual waiting time. In the case the user choice is ok and optimal, the {\bfseries Store Component} receives the request to save the reservation, and after queueing it, the ticket is sent to the customer; else, some \emph{suggestions} are generated and sent to the customer, who can choose among them. After an option have been selected, it starts the previously described process.\\\\
+	Instead, if the customer desire to make a \emph{booking}, the {\bfseries ReservationHandler} asks the selected store's {\bfseries StoreComponent} when the customer can enter the store, and forward it to the {\bfseries MobileApp}. Then, the time intervals are shown to the customer. If they're not satisfied with the proposed options, it's possible to ask for suggestion. So, the {\bfseries ReservationHandler} queries all the stores for time intervals, and send them back to the MobileApp. So, the customer can select a store, and see its time intervals. When they are satisfied, select a time interval and confirm the selection. The request arrives at the {\bfseries StoreComponent}, that, if the selection is correct, creates the \emph{reservation}, puts it in queue and forward to the customer. If the selection is wrong, an error message is sent to the {\bfseries MobileApp} and the time interval page is reloaded.
+	\bigskip
+	
+	\begin{figure}[H]
+		\begin{adjustwidth} {-1cm}{}
+			\centering
+			\includegraphics[scale=0.3]{Sequence Diagrams/sd__CustomerBookingReservation__CustomerBookingReservation.png}
+		\end{adjustwidth}
+		\caption{\emph{Book Reservation Sequence Diagram}}
+	\end{figure}
+	
+	
+	
+	
 	\subsection{Component Interfaces}
 	\subsection{Selected Architectural Styles and Patterns}
 	\subsection{Other design decisions}
+
 
 \section{User Interface Design}
 This section shows and describes accurately the mockups of the application, in order to explain how the main functionalities will be offered. The first subsection is dedicated to the illustration of the application flow, shown using two different UX diagram, one for the customer and one for the store manager.
@@ -667,7 +781,7 @@ This section shows and describes accurately the mockups of the application, in o
 				\caption{\emph{Departments selection}}
 			\end{minipage}
 		\end{figure}
-		After this first phase, the customer can insert the estimation time of the duration of his exapense. In case this parameter is not inserted fby the customer, the system will calculate a reasonable estimation time with two criteria, based on the situation:
+		After this first phase, the customer can insert the estimation time of the duration of his expense. In case this parameter is not inserted by the customer, the system will calculate a reasonable estimation time with two criteria, based on the situation:
 		\begin{itemize}
 			\item In case of the system have sufficient data about customer, it provided to calculate the estimation time based on customer's previous expenses.
 			\item In case of the system does not have sufficient data about customer, it provides to calculate the estimation time based on the data of other customers who have made a similar expense, referring to the departments that the customer has previously selected.
@@ -700,7 +814,7 @@ This section shows and describes accurately the mockups of the application, in o
 		\bigskip
 		\bigskip
 		\begin{figure}[!h]
-			\begin{adjustwidth} {0cm}{}
+ 			\begin{adjustwidth} {0cm}{}
 				\centering
 				\includegraphics[scale=0.2]{../Mockups/TimeSlots.png}\\
 			\end{adjustwidth}
@@ -848,8 +962,7 @@ This section shows and describes accurately the mockups of the application, in o
 			\end{adjustwidth}
 			\caption{\emph{Modify parameters}}
 		\end{figure}
-
-\section{Requirements Tracebility}
+\section{Requirements Traceability}
 
 \section{Implementation, Integration and Test Plan}
 	\subsection{Overview}
