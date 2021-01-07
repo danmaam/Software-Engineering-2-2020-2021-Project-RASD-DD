@@ -578,12 +578,12 @@
 	
 	
 	\subsection{Runtime View}
-	In this section will be analysed the runtime view of the system, through some \emph{Sequence Diagrams}. This should help to understand how the different components interact. Some aspects have been simplified to make the diagrams more readable; e.g., some interactions with the DBMS have been omitted, some operations with identical behaviour have been collapsed in generic requests, through a generic method, just to model the interaction. The \emph{Component Interfaces diagram} will report all these methods in detail.
+	In this section will be analysed the runtime view of the system, through some \emph{Sequence Diagrams}. This should help to understand how the different components interact. Some aspects have been simplified to make the diagrams more readable; e.g., some interactions with the DBMS and between adapters and external services have been omitted, some operations with identical behaviour have been collapsed in generic requests, through a generic method, just to model the interaction. The \emph{Component Interfaces diagram} will report all these methods in detail.
 	\subsubsection{User login}
 	 Since the interactions for both \emph{customers} and \emph{managers} log-in are the same, here there is reported only the ones relative to customers.
 	
 	\begin{figure}[H]
-		\begin{adjustwidth} {0cm}{}
+		\begin{adjustwidth} {-0.6cm}{}
 			\centering
 			\includegraphics[scale=0.4]{Sequence Diagrams/sd__CustomerLogin__CustomerLogin.png}
 		\end{adjustwidth}
@@ -594,7 +594,7 @@
 	
 	\subsubsection{Customer Registration}
 		\begin{figure}[H]
-		\begin{adjustwidth} {-3cm}{}
+		\begin{adjustwidth} {-3.5cm}{}
 			\centering
 			\includegraphics[scale=0.4]{Sequence Diagrams/sd__CustomerLogin__CustomerRegistration.png}
 		\end{adjustwidth}
@@ -613,7 +613,7 @@
 		\caption{\emph{Store Manager Registration Sequence Diagram}}
 	\end{figure}
 	
-	\subsection{Make a reservation}
+	\subsubsection{Make a reservation}
 	To make a \emph{reservation}, it's necessary to retrieve the list of stores. So, through the {\bfseries CustomerHandler}, the {\bfseries MobileApp} requests to the {\bfseries ReservationHandler} the list of stores. Once retrieved from the \emph{DBMS}, this list is sent to the {\bfseries MobileApp} and sorted by distance, through the \emph{map service}.
 	Then, after the customer select the store, the departments, and insert the shopping time estimation (here it's not treated the calculation by the CLup for the sake of simplicity), they can both make an \emph{ASAP reservation}, or a \emph{Booking}.
 	\begin{figure}[H]
@@ -643,6 +643,104 @@
 		\end{adjustwidth}
 		\caption{\emph{Book Reservation Sequence Diagram}}
 	\end{figure}
+
+	\subsubsection{Customer Reservations Handling}
+	\emph{CLup} allows customers to retrieve and manage their reservations from the \emph{Mobile App}. When a reservation is opened from the personal area on the app, its details (such as ETA to enter the store and the needed time to get physically at the building) are updated.
+	\begin{figure}[H]
+		\begin{adjustwidth} {-1cm}{}
+			\centering
+			\includegraphics[scale=0.3]{Sequence Diagrams/sd__CustomerGetReservations__CustomerGetReservations.png}
+		\end{adjustwidth}
+		\caption{\emph{Get Reservations Sequence Diagram}}
+	\end{figure}
+	When the customer open the app's area reserved for made reservations, and there is an internet connection, the Mobile App requests the server for all the reservations made by the logged customer; the process is mainly handled by the Reservation Handler, that queries all the Stores for the reservations. Once this process is completed, the customer have a list of reservations. When someone is opened, the app requests the travel time for the store to the MapManager, and, in case of an ASAP reservation, the new ETA to enter the store at the ReservationHandler (which forward the request to the correct store component).\\\\
+	In the following diagram there are modelled the interactions occurring when a reservation is modified; the diagram is simplified, since each specific operation (such as delete, reschedule ecc.) are substituted by a generic modifyReservations; that's not a problem, since the interactions are the same for all type of operation.
+	When the related store's {\bfseries ReservationComponent} receives the modification request, process it, register it in the DBMS and notify the {\bfseries CallingNumberComponent} of the modification, so that the queue can be accordingly updated.
+	\begin{figure}[H]
+		\begin{adjustwidth} {-0.8cm}{}
+			\centering
+			\includegraphics[scale=0.3]{Sequence Diagrams/sd__ManageReservationCustomer__ManageReservationCustomer.png}
+		\end{adjustwidth}
+		\caption{\emph{Reservation Modification Sequence Diagram}}
+	\end{figure}
+
+	\subsubsection{Store Management}
+	As done for the customer side, here there is described how the different components dialogue to allow a \emph{Store Manager} in managing their store.\\
+	A note on these sequence diagram: to make them more compact, the interactions with the {\bfseries StoreManagerHandler} have been avoided, since it's only a redirector from the mobile app to the correct component of the {\bfseries Store Component}.\\
+	First of all, all the reservations must be retrieved from the server. The request is received from the {\bfseries ReservationComponent}, that queries the \emph{DBMS} for all the made reservations. Once retrieved the store's reservation, a manger can both contact customers about a specific reservation, or modify one.\\\\
+	In the first case, after inserting a message, a mail send is requested to the {\bfseries StoreComponent}'s {\bfseries MailManager}.\\\\
+	In case of a modification, the request is sent to the {\bfseries ReservationComponent}. After the changes are registered in the \emph{DBMS}, the {\bfseries ReservationComponent} asks the {\bfseries CallingNumberComponent} to update the store's queue, and then a notification of the changes is sent to the customer. 
+		\begin{figure}[H]
+		\begin{adjustwidth} {-1cm}{}
+			\centering
+			\includegraphics[scale=0.3]{Sequence Diagrams/sd__ManageStoreBookings__ManageStoreBookings.png}
+		\end{adjustwidth}
+		\caption{\emph{Store Manager Reservation Handling Sequence Diagram}}
+	\end{figure}
+
+	A store manager may also see the situation inside their store. To do this, a request to the {\bfseries ParameterComponent} is made, the \emph{DBMS} queried for the situation, and the details than sent to the {\bfseries MobileApp}, where they will be elaborated.
+
+	\begin{figure}[H]
+		\begin{adjustwidth} {-0.5cm}{}
+			\centering
+			\includegraphics[scale=0.4]{Sequence Diagrams/sd__ViewStoreSituation__ViewStoreSituation.png}
+			\end{adjustwidth}
+		\caption{\emph{Monitor Store Situation Sequence Diagram}}
+	\end{figure}
+	\subsubsection{CLup Critical Features}
+	In the previous sections, there are described the diagrams related to requests made by customers and store manager. But, CLup also need to handle on its own some processes, needed to manage the store's flow.\\
+
+	\begin{figure}[H]
+		\begin{adjustwidth} {-1.2cm}{}
+			\centering
+			\includegraphics[scale=0.42]{Sequence Diagrams/sd__QRCodeScanned__QRCodeScanned.png}
+		\end{adjustwidth}
+		\caption{\emph{QR Code processing Sequence Diagram}}
+	\end{figure}	
+	In order to register customers' entry and exit, the scanned QR Coded must be processed. When a QR Code is scanned, a request of processing is forwarded to the FlowComponent, that asks the CallingNumberComponent to check the status of the scanned QR Code, and some case can happen:
+	\begin{itemize}
+		\item{\bfseries A customer exits the store}: in this case, the visit's statistics are updated through the StatisticComponent (that registers the exit in the DBMS), and then the reservation is removed from the "inside" of the store, through a request to the ParameterManager (that updates the departments' status on the DBMS). But, before returning the QR status to the FlowComponent, the CallingNumberComponent starts the process to call a new number inside the store.
+		\item{\bfseries Invalid QR Code}: a wrong QR Code is scanned, and an error message sent to the store.
+		\item{\bfseries Valid QR Code at entry} in this case, the CallingNumberComponent dequeues the reservation and notifies the FlowComponent of the QR status. So, the visit statistics are generated and the customer put "inside the store", through the same components and dual requests used for the exit case. Finally, the authorization for entry is sent to the store. 
+	\end{itemize}
+
+	\subsubsection{Call A Number}
+	Here there are described the actions made by the system to handle the process for calling a customer to get inside the store. This process is mainly triggered when the queue is modified in some way, such us someone exits the store, some reservation has been rescheduled or cancelled or someone didn't enter the store in time, and their reservation has been discarded. \\\\
+	First of all, the CallingNumberComponent process the status of the queue, getting the first reservation that has the right to be called. Then, the ParameterManager is asked for the current situation of the store, and the data are sent back. In case there is the possibility to allow the considered customer to enter the store, the reservation is set as called called, this status registered in the DBMS, and the call is notified to the NumberCallingApp, so that outside the store the number can be called. Finally, the system checks if the ETA for some future reservation decreased, and if so sends a notification to the related customer's mobile app, so that the calculation of the departure time is precise. Even if not described in other diagrams, this last process takes place each time a modification in the queue is done.\\\\
+	This process takes runs until the store is full and/or no other reservation can enter the store.
+
+	\begin{figure}[H]
+		\begin{adjustwidth} {-1.8cm}{}
+			\centering
+			\includegraphics[scale=0.5]{Sequence Diagrams/sd__CallANumber__CallANumber.png}
+		\end{adjustwidth}
+		\caption{\emph{Calling Number Sequence Diagram}}
+	\end{figure}	
+
+	\bigskip
+	
+	
+
+	The last process to be analysed is the notification when a customer should depart to get in time, and not too late to the store. As described before, this operation is entirely handled by the MobileApp: if this is processed by the server, it would be necessary to continuously request to the client the GPS Position, forward it to Map Service to calculate the travel time, and if necessary send to the customer a notification. This may overload the server of useless traffic, since this operation can be handled by the MobileApp, directly accessing to the map external service.
+	\begin{figure}[H]
+		\begin{adjustwidth} {-1.8cm}{}
+			\centering
+			\includegraphics[scale=0.5]{Sequence Diagrams/sd__NotifyForDeparture__NotifyForDeparture.png}
+		\end{adjustwidth}
+		\caption{\emph{Calling Number Sequence Diagram}}
+	\end{figure}
+
+	The process is quite simple: the MobileApp requests to the MapManager the travel time from the current place, to the considered store, and by the mean of transport selected by the customer. Than, the ETA for the call of the reservation is asked to the CLup Server trough the ReservationHandler, that will forward the request to the correct store. Finally, when all the data are available, the MobileApp can decide if it's the time to send an "internal" notification to alert customer it's time to depart, or not.
+
+	
+	
+	
+	
+	
+	
+	
+
+	
 	
 	
 	
@@ -658,7 +756,7 @@ This section shows and describes accurately the mockups of the application, in o
 	\subsection{UX Diagrams}
 	The following figures shows the application flow from the customer and the store manager point of view.
 	
-	\newpage
+	
 	
 		\subsubsection{Customer Flow}
 			\begin{figure}[H]
@@ -962,6 +1060,7 @@ This section shows and describes accurately the mockups of the application, in o
 			\end{adjustwidth}
 			\caption{\emph{Modify parameters}}
 		\end{figure}
+
 
 \section{Requirements Traceability}
 In this section it is described how the requirements of the application are mapped to the components defined previously.
