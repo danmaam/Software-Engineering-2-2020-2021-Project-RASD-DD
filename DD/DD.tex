@@ -490,7 +490,7 @@
 				\end{itemize}
 			\end{itemize}
 		
-			The core store functionalities are requested through the \emph{ReservationInterface} (dedicated to customers’ features) and the \emph{StoreInterfaces}, dedicated to store managers; their requests pass through an handler, here described. One note: the \emph{StoreComponentInterfaces} implements all the interfaces of the single services requested by the {\bfseries Store Manager Handler}.
+			The core store functionalities are requested through the \emph{ReservationInterface} (dedicated to customers’ features) and the \emph{StoreInterfaces}, dedicated to store managers; their requests pass through an handler, here described. 
 			
 			\begin{figure}[H]
 				\begin{adjustwidth} {-1cm}{}
@@ -747,13 +747,41 @@
 		\item{\bfseries RearrangeInterface}: all the methods here described are related to the processes needed to put the store in a consistent state after some parameters (such as departments and working hours) are modified in a way that not all the requests can be satisfied.
 		\item{\bfseries ReservationInterface}: implements all the methods necessary to allow a customer to do and to manage his own reservations. It acts like a forwarder of requests from the general server, where these methods are implemented, to the correct component of the store involved in the request. Moreover, there are functionalities deputy to query all the stores in order to give customers suggestions on reservations, both ASAP and Booked.
 		\item{\bfseries AccessInterface}: all the operations needed to process login and registration features are contained in this interface, that can be directly accessed from the \emph{Mobile App}. It makes use of the {\bfseries DataManager} to check and store credentials on the \emph{DBMS}.
+		\item{\bfseries Data Interface}: exposes the methods needed by the components of the general server to access data necessary to do the business tasks related to the system, such as checking and storing credentials in respectively login and registration process, and to store all the stores that are managed by the system.
+		\item{\bfseries FlowInterface}: defines the methods used by QR Code Scanner App to make requests at the system, precisely to invoke the analysis and processing of a scanned QR Code, so that precise actions are made depending on the given code, and a feedback is sent to the local store.
+		\item{\bfseries CallingInterface}: contains the methods necessary to communicate and make requests to the component devoted for gradually admit people inside the store. For example these methods allow to rearrange the queue if some reservation is modified, or to get the \emph{ETA} associated to a specific reservation.
+		\item{\bfseries StatisticInterface}: this interface allow to communicate with the {\bfseries StatisticComponent} in order to get visits' statistics, to create and update visits' data.
+		\item{NumberCallingInterface}: specifies methods necessary to notify something using the {\bfseries NumberCallingApp} that some reservation have been called inside the store.
+		\item{\bfseries NotificationInterface}, {\bfseries MailInterface}, {\bfseries MapInterface} and {\bfseries ClientNotificationInterface}: the interfaces implemented by the adapters for using the respectively associated service.
+		
+		
 		
 	\end{itemize}
 	\subsection{Selected Architectural Styles and Patterns}
-	\subsection{Other design decisions}
+	\subsubsection{System Architecture}
+	As briefly introduced before, since \emph{CLup} is a service usable by a great amount of people, and the operations made trough the systems must be considered in each function everyone can access, the architectural style best fitting for the described service is the {\bfseries client-server} one. In fact, there are clients that make requests to a server, that processes them and reply to clients with the response of each computation.\\
+	In implementing the {\bfseries client-server} architecture many alternatives have been analysed, but at the end the more suitable for \emph{CLup} scope is a {\bfseries three tier architecture}, that, as previously said and described, logically separates the {\bfseries presentation}, {\bfseries business} and {\bfseries data} tier.\\
+	A particular description must be done about the particular {\bfseries business} and {\bfseries data} tier here implemented. In fact, in the system there isn't a unique principal business component, and/or a unique data tier. Since each store is independent from the other, and should access only to data of their competence, the business tier is divided so that each store has his own business logic. This helps in various situations, such as greater flexibility in accepting managers requests to implement a certain business logic, maybe different from the one of some other store; in case of dysfunctionality, only the broken store won't work, while the components of the others will work, and it's easier to isolate the broken one and repairing it without touching anything else; each store's {\bfseries business tier} has an associated and unique {\bfseries data tier} to access: this allows to separate each store's data, in order to make data consultation faster and more secure, since each store can access only to the associated \emph{DBMS}.\\
+	\begin{figure}
+		\begin{adjustwidth} {0cm}{}
+			\centering
+			\includegraphics[scale=0.5]{ThreeTier.png}
+		\end{adjustwidth}
+		\caption{\emph{The Three Tier Architecture}}
+	\end{figure}
+	An advantage of this is that each client that makes operation on a single store, can connect directly to the correct {\bfseries business tier}. Regarding customers, instead, they connect to a dedicated {\bfseries business tier} with its own {\bfseries data tier}; it's scope it's to redirect requests from customers to a specific store, and to generate suggestions querying all the possible stores, which informations are stored in the general \emph{DBMS}.
+	\subsubsection{Used Patterns}
+	In this section will be described some of the \emph{design patterns} used in the development of \emph{CLup}.
+	\begin{itemize}
+		\item {\bfseries Pattern Adapter}: the adapter pattern have been used in multiple part \emph{CLup}. For example, each external service is accessed though an adapter that takes requests, and send them to the requires service. This help to easily implement multiple external service or to change them without a great effort. Moreover, also the {\bfseries CLup server} is an adapter, since takes in requests from the \emph{mobile app} and redirects them to the correct {\bfseries StoreComponent}.
+		\item{\bfseries Model View Controller}: this design pattern is used in each client developed for the system.
+		\item{\bfseries Facade Pattern}: used to allow the {\bfseries StoreManagerHandler} to access more easily to multiple components trough the different interfaces they implement.
+	\end{itemize}
+	
 
 
-\begin{comment}
+
+
 \section{User Interface Design}
 This section shows and describes accurately the mockups of the application, in order to explain how the main functionalities will be offered. The first subsection is dedicated to the illustration of the application flow, shown using two different UX diagram, one for the customer and one for the store manager.
 
@@ -768,16 +796,16 @@ This section shows and describes accurately the mockups of the application, in o
 				\end{adjustwidth}
 				\caption{\emph{Customer Flow}}
 			\end{figure}
-		\newpage
+
 		\subsubsection{Store Manager Flow}
-		\begin{figure}[H]
+		\begin{figure}
 			\begin{adjustwidth} {-3cm}{}
 				\centering
 				\includegraphics[scale=0.7, angle=180, trim= 0 0 0 -5cm]{../Mockups/UXDiagrams/StoreManagerFlow.pdf} \\
 			\end{adjustwidth}
 			\caption{\emph{Customer Flow}}
 		\end{figure}
-		\newpage
+
 
 	\subsection{User Mobile App}
 	In this paragraph are shown mockups that are used to define which interfaces are present within the application. All interfaces are shown and accompanied by a description explaining their functionality. The {\bfseries Mobile App} version is truly intuitive and can be used without problems by everyone, customers or store managers. The application is flanked by totems placed at the entrance of each store, in case someone does not have the application or does not have a telephone and they only have one type of reservation, that is the \emph{ASAP} one, in the shop they belong to.
@@ -1062,7 +1090,7 @@ This section shows and describes accurately the mockups of the application, in o
 			\end{adjustwidth}
 			\caption{\emph{Modify parameters}}
 		\end{figure}
-\end{comment}
+
 
 
 \section{Requirements Traceability}
@@ -1142,7 +1170,7 @@ In this section it is described how the requirements of the application are mapp
 \textbf{DataManager}
 
 \item {\bfseries R25}: The system is able to print a paper ticket \\
-textbf{TotemApp}
+\textbf{TotemApp}
 
 \item {\bfseries R26}: The system can reasonably estimate the time needed from a customer to complete his shopping \\
 \textbf{StatisticComponent}
