@@ -228,7 +228,7 @@
 			\item{\bfseries Mail Component}: to externally sending mails, avoiding building an internal {\bfseries Mail Manager}.
 		\end{itemize}
 	\begin{figure}[!h]
-		\begin{adjustwidth}{-2cm}{}
+		\begin{adjustwidth}{-0.8cm}{}
 			\centering
 			\includegraphics[scale=0.5]{../UML Diagrams/CompositionDiagram/CompositionDiagram.png} \\
 		\end{adjustwidth}
@@ -678,12 +678,12 @@
 		\caption{\emph{Store Manager Reservation Handling Sequence Diagram}}
 	\end{figure}
 
-	A store manager may also see the situation inside their store. To do this, a request to the {\bfseries ParameterComponent} is made, the \emph{DBMS} queried for the situation, and the details than sent to the {\bfseries MobileApp}, where they will be elaborated.
+	A store manager may also see the situation inside their store, among visits statistics. To do this, a request to the {\bfseries ParameterComponent} is made, that will query the \emph{DBMS} for the actual situation, the {\bfseries StatisticComponent} for the statistics, and finally send the data to the {\bfseries MobileApp}, that will elaborate them.
 
 	\begin{figure}[H]
 		\begin{adjustwidth} {-0.5cm}{}
 			\centering
-			\includegraphics[scale=0.4]{Sequence Diagrams/sd__ViewStoreSituation__ViewStoreSituation.png}
+			\includegraphics[scale=0.33]{Sequence Diagrams/sd__ViewStoreSituation__ViewStoreSituation.png}
 			\end{adjustwidth}
 		\caption{\emph{Monitor Store Situation Sequence Diagram}}
 	\end{figure}
@@ -721,7 +721,7 @@
 	
 	
 
-	The last process to be analysed is the notification when a customer should depart to get in time, and not too late to the store. As described before, this operation is entirely handled by the MobileApp: if this is processed by the server, it would be necessary to continuously request to the client the GPS Position, forward it to Map Service to calculate the travel time, and if necessary send to the customer a notification. This may overload the server of useless traffic, since this operation can be handled by the MobileApp, directly accessing to the map external service.
+	The last process to be analysed is the notification when a customer should depart to get in time, and not too late to the store. As described before, this operation is entirely handled by the MobileApp: if this is processed by the server, it would be necessary to continuously request to the client the GPS Position, forward it to Map Service to calculate the travel time, and if necessary send to the customer a notification. This may overload the server of useless traffic, since this operation can be handled by the MobileApp, directly accessing to the map external service and the \emph{GPS Module} of the mobile device running it.
 	\begin{figure}[H]
 		\begin{adjustwidth} {-1.8cm}{}
 			\centering
@@ -730,33 +730,35 @@
 		\caption{\emph{Calling Number Sequence Diagram}}
 	\end{figure}
 
-	The process is quite simple: the MobileApp requests to the MapManager the travel time from the current place, to the considered store, and by the mean of transport selected by the customer. Than, the ETA for the call of the reservation is asked to the CLup Server trough the ReservationHandler, that will forward the request to the correct store. Finally, when all the data are available, the MobileApp can decide if it's the time to send an "internal" notification to alert customer it's time to depart, or not.
-
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
+	The process is quite simple: the MobileApp requests to the MapManager the travel time from the current place, to the considered store, and by the mean of transport selected by the customer. Than, the ETA for the call of the reservation is asked to the CLup Server trough the ReservationHandler, that will forward the request to the correct StoreComponent. Finally, when all the data are available, the MobileApp processes them to infer if it's necessary to send an "internal" notification, in order to alert customer it's time to depart. If so, the NotificationManager is invoked, with a request for a \emph{Departure Notification}.
 	\subsection{Component Interfaces}
+	\begin{figure}
+		\begin{adjustwidth} {0cm}{}
+			\centering
+			\includegraphics[scale=0.31, angle = 90]{Interface Diagram/class__InterfaceDiagram.png}
+		\end{adjustwidth}
+		\caption{\emph{Component Interfaces Diagram}}
+	\end{figure}
+	The previous diagram represents the interfaces of the most important and critic components of witch \emph{CLup} is composed. All of these interfaces contains the methods used in the previously described \emph{Sequence Diagrams}, and in such a way shows how the methods used by a component uses other parts of the system to complete its tasks. Not all the interfaces are described here, such as the one related to \emph{CustomerHandler}, since it is an adapter between \emph{presentation Tier} and \emph{Business Tier}, only going to repeat methods already reported.\\
+	As \emph{Sequence Diagrams} are simplified, here the methods type and parameters are totally fictitious, and used only to gave an idea of the content transmitted from a component to another.
+	\begin{itemize}
+		\item {\bfseries StoreData}: it's exposed by the {\bfseries DataManager} of each {\bfseries StoreComponent}, and it's used by all the other component that needs to access to \emph{DBMS} to retrieve data, or to permanently modified informations related to the associated Store.
+		\item {\bfseries StoreManagerHandlerInterface}: represents all the functionalities that a \emph{Store Manager} can access to using the \emph{MobileApp}. Since the main things that a manager can do is to manage reservations and settings of the store, this interface implements the two interfaces relative to the {\bfseries ParameterComponent} and to the {\bfseries ReservationComponent}. The first expose all the methods necessary to manage the settings of the store, and can also be used by other components, that need to access store preferences; the second is related to the management of store's reservation, and expose all the methods necessary to access and manage store's reservation.
+		\item{\bfseries RearrangeInterface}: all the methods here described are related to the processes needed to put the store in a consistent state after some parameters (such as departments and working hours) are modified in a way that not all the requests can be satisfied.
+		\item{\bfseries ReservationInterface}: implements all the methods necessary to allow a customer to do and to manage his own reservations. It acts like a forwarder of requests from the general server, where these methods are implemented, to the correct component of the store involved in the request. Moreover, there are functionalities deputy to query all the stores in order to give customers suggestions on reservations, both ASAP and Booked.
+		\item{\bfseries AccessInterface}: all the operations needed to process login and registration features are contained in this interface, that can be directly accessed from the \emph{Mobile App}. It makes use of the {\bfseries DataManager} to check and store credentials on the \emph{DBMS}.
+		
+	\end{itemize}
 	\subsection{Selected Architectural Styles and Patterns}
 	\subsection{Other design decisions}
 
 
+\begin{comment}
 \section{User Interface Design}
 This section shows and describes accurately the mockups of the application, in order to explain how the main functionalities will be offered. The first subsection is dedicated to the illustration of the application flow, shown using two different UX diagram, one for the customer and one for the store manager.
 
 	\subsection{UX Diagrams}
 	The following figures shows the application flow from the customer and the store manager point of view.
-	
-	
 	
 		\subsubsection{Customer Flow}
 			\begin{figure}[H]
@@ -1060,6 +1062,7 @@ This section shows and describes accurately the mockups of the application, in o
 			\end{adjustwidth}
 			\caption{\emph{Modify parameters}}
 		\end{figure}
+\end{comment}
 
 
 \section{Requirements Traceability}
