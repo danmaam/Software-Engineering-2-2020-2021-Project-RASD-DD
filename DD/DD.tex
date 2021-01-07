@@ -1170,18 +1170,44 @@ textbf{TotemApp}
 \section{Implementation, Integration and Test Plan}
 	\subsection{Overview}
 	In this section we are going to show a clear plan on how implementation, integration and test plan should be done in order to optimize the work flow.
-	We mainly focused on a \textbf{bottom-up} approach to define the plan, starting from the essential components and, starting from there, creating all the functionalities needed.
+	
 	\subsection{Implementation Plan}
+	We mainly focused on a \textbf{bottom-up} approach to define the plan, starting from the essential components and, starting from there, creating all the functionalities needed. Moreover, our system has been created with the intention of preserving modularity, in order to have loose coupling between components, thus simplifying future changes and maintenance.
+	
+		\subsubsection{High Level Plan}
+		There are some components that rely on some others so we need a priority list under which the components have to be created.\\
+		- first of all we need to implement "independent" components, such as \textbf{Store DBMS}, \textbf{General DBMS}, \textbf{NumberCallingApp};\\
+		- after that we can proceed implementing the \textbf{StoreComponent} with all its interfaces, the \textbf{TotemApp} and \textbf{ScannerApp};\\
+		- at this point we can implement also the \textbf{CLupServer}\\
+		- in the end, having all what we need to implement it, we can proceed with the \textbf{MobileApp};\\
+		
+		\subsubsection{StoreComponent Plan}
+		In the StoreComponent we need to pay attention to the implementation order:\\
+		- as in the high level plan, we start implementing "independent" components, such as \textbf{DataManager}, \textbf{MailComponent}, \textbf{StatisticComponent}, \textbf{MapManager}, \textbf{NotificationManager}, \textbf{StoreManagerHandler} and \textbf{FlowComponent};\\
+		- then, we can proceed with the \textbf{CallingNumberComponent} and \textbf{ReservationComponent};\\
+		- at this point we have all we need to implement the \textbf{RearrangeComponent}, followed by \textbf{ParameterManager} that rely on it;\\
+		- the only things missing to our StoreComponent now are the outer interfaces, so we proceed creating them.\\
+		
+		\subsubsection{CLup Server Plan}
+		Also in the CLup Server we have to establish a priority order to avoid errors and waste of time:\\
+		- firstly we implement \textbf{DataManager} and \textbf{MailComponent} that don't rely on any inner component of the server;\\
+		- then we implement \textbf{AccessManager} and \textbf{ReservationHandler};\\
+		- in the end we create the \textbf{CustomerHandler}, followed by the outer interfaces.\\
+		
+		
+		
+		
 	
 	\subsection{Integration Strategy}
+	
 	\subsection{System Testing}
 	Once the system is completely integrated, we can proceed testing it, to verify that functional and non-functional requirements are satisfied.
 	In order to consider all the possible issues that our system could have, we have to test it in different ways:
 	\begin{itemize}
-		\item \textbf{Functional Testing}: ascertains that the system meet the functional requirements described in the RASD.
-		\item \textbf{Performance Testing}: highlights problems related to the performance and bottlenecks.
-		\item \textbf{Load Testing}: highlights problems memory-related such as memory leaks and buffer overflows.
-		\item \textbf{Stress Testing}: ascertains that the application recovers in the right way after failure.
+		\item \textbf{Functional Testing}: ascertains that the system meet the functional requirements described in the RASD (e.g. verify that, after creating a reservation, the system saves it in the database)
+		\item \textbf{Performance Testing}: highlights problems related to the performance and bottlenecks (e.g. verify how much time the system need to do a specific operation like changing a store parameter or generating statistics)
+		\item \textbf{Load Testing}: highlights problems memory-related such as memory leaks and buffer overflows (e.g. verify if the system works even with a large number of customer and store manager operating at the same time)
+		\item \textbf{Stress Testing}: ascertains that the application recovers in the right way after failure (e.g. see what happens after an unexpected internet disconnection during an operation)
 	\end{itemize}
 		
 	\subsection{Additional Specification on Testing}
