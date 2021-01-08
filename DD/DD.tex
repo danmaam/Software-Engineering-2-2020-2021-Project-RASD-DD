@@ -781,7 +781,6 @@
 
 
 
-
 \section{User Interface Design}
 This section shows and describes accurately the mockups of the application, in order to explain how the main functionalities will be offered. The first subsection is dedicated to the illustration of the application flow, shown using two different UX diagram, one for the customer and one for the store manager.
 
@@ -1092,7 +1091,6 @@ This section shows and describes accurately the mockups of the application, in o
 		\end{figure}
 
 
-
 \section{Requirements Traceability}
 In this section it is described how the requirements of the application are mapped to the components defined previously.
 
@@ -1199,47 +1197,62 @@ In this section it is described how the requirements of the application are mapp
 	\subsection{Overview}
 	In this section we are going to show a clear plan on how implementation, integration and test plan should be done in order to optimize the work flow.
 	
-	\subsection{Implementation Plan}
-	We mainly focused on a \textbf{bottom-up} approach to define the plan, starting from the essential components and, starting from there, creating all the functionalities needed. Moreover, our system has been created with the intention of preserving modularity, in order to have loose coupling between components, thus simplifying future changes and maintenance.
+	After considered the various options available to define a \emph{Implementation Plan}, it's been decided to use the {\bfseries bottom-up approach}. So, each subcomponent will be developed, following an order different from to component to another, depending on the dependencies needed. Moreover, our system has been created with the intention of preserving modularity, in order to have loose coupling between components, thus simplifying future changes and maintenance. In the described plan, the component that can be simultaneously developed are grouped, to give an idea how the work can be managed in order to save time in the integration process.
+	The first two components that must be implemented and integrated are {\bfseries StoreComponent} and {\bfseries CLupServer}.
 	
-		\subsubsection{High Level Plan}
-		There are some components that rely on some others so we need a priority list under which the components have to be created.\\
-		- first of all we need to implement "independent" components, such as \textbf{Store DBMS}, \textbf{General DBMS}, \textbf{NumberCallingApp};\\
-		- after that we can proceed implementing the \textbf{StoreComponent} with all its interfaces, the \textbf{TotemApp} and \textbf{ScannerApp};\\
-		- at this point we can implement also the \textbf{CLupServer}\\
-		- in the end, having all what we need to implement it, we can proceed with the \textbf{MobileApp};\\
+
+		\subsection{StoreComponent}
+		Before defining the Implementation Plan of the {\bfseries Store Component}, a \emph{Use Relation Hierarchy Diagram} have been traced, to understand the dependencies between the various components, so that an order of implementation can be defined.
 		
-		\subsubsection{StoreComponent Plan}
-		In the StoreComponent we need to pay attention to the implementation order:\\
-		- as in the high level plan, we start implementing "independent" components, such as \textbf{DataManager}, \textbf{MailComponent}, \textbf{StatisticComponent}, \textbf{MapManager}, \textbf{NotificationManager}, \textbf{StoreManagerHandler} and \textbf{FlowComponent};\\
-		- then, we can proceed with the \textbf{CallingNumberComponent} and \textbf{ReservationComponent};\\
-		- at this point we have all we need to implement the \textbf{RearrangeComponent}, followed by \textbf{ParameterManager} that rely on it;\\
-		- the only things missing to our StoreComponent now are the outer interfaces, so we proceed creating them.\\
+		\begin{figure}[!h]
+			\begin{adjustwidth} {-2cm}{}
+				\centering
+				\includegraphics[scale=0.4]{Hierchical Diagrams/StoreHierarchy.pdf}\\
+			\end{adjustwidth}
+			\caption{\emph{Use Relation Hierarchy Diagram of StoreComponent}}
+		\end{figure}
+				
+		\begin{itemize}
+		\item the components that have no other dependencies to others are {\bfseries DataManager}, {\bfseries MailComponent}, {\bfseries NotificationManager}. So, they are the first components that will be implemented. In particular,  {\bfseries DataManager} will be implemented after the installation of 			the \emph{DBMS}, to avoid the use of Stubs since the DBMS is already implemented and deployed, without need to test it. Instead, for {\bfseries NotificationManager} and {\bfseries MailComponent} there is the necessity to use some \emph{Drivers} waiting for the implementation of the components that uses them.  
+		\item then, it's easy to implement the {\bfseries StatisticComponent}, integrating it with the already developed {\bfseries DataManager}, also using here some Drivers.
+		\item at this point, the most critic part of the integration plan is about {\bfseries ParameterManager}, {\bfseries ReservationComponent} and {\bfseries CallingNumberComponent}, since are related in couple. For this reason, we can use some \emph{Drivers} and \emph{Stubs} for the other components not already implemented, but in the simultaneous development of the three, it's suggested to implement and integrate them using the "Thread" technique, so that the dependencies between them can be integrated going on with the work. Done the three component, it's possible to integrate them with the one they use, as reported in the graph ({\bfseries NotificationManager}, {\bfseries MailManager}, {\bfseries DataManager}). For {\bfseries CallingNumberComponent}, it's necessary to use some \emph{Stubs} to simulate the {\bfseries NumberCallingApp}, and some \emph{Drivers} for the {\bfseries ReservationComponent}.
+		\item after that these have been completed, it's possible to implement {\bfseries FlowComponent}, {\bfseries RearrangeComponent} and {\bfseries StoreManagerHanlder}, without the need of using \emph{Stubs} or \emph{Driver} since their dependencies are implemented, but for {\bfseries ScannerApp}, for which a \emph{Driver} is needed in order to complete the testing of {\bfseries FlowComponent}.
+		 \end{itemize}     
+		 
+		\subsection{CLupServer}
 		
-		\subsubsection{CLup Server Plan}
-		Also in the CLup Server we have to establish a priority order to avoid errors and waste of time:\\
-		- firstly we implement \textbf{DataManager} and \textbf{MailComponent} that don't rely on any inner component of the server;\\
-		- then we implement \textbf{AccessManager} and \textbf{ReservationHandler};\\
-		- in the end we create the \textbf{CustomerHandler}, followed by the outer interfaces.\\
 		
+		\begin{figure}[!h]
+			\begin{adjustwidth} {0cm}{}
+				\centering
+				\includegraphics[scale=0.5]{Hierchical Diagrams/ServerHierarchy.pdf}\\
+			\end{adjustwidth}
+			\caption{\emph{Use Relation Hierarchy Diagram of CLupServer}}
+		\end{figure}	
 		
+		Also for {\bfseries CLupServer} a \emph{Use Relation Hierarchy Diagram} have been done, in order to identify the order with the single components can be implemented. 
+		\begin{itemize}
+		\item the first components that can be implemented are {\bfseries MailComponent} and {\bfseries DataManager}; as for the {\bfseries StoreComponent}, the {\bfseries DataManager} should be implemented and integrated after the associated \emph{DBMS} has been installed.
+		\item then, it's possible to implement the {\bfseries AccessManager} and the {\bfseries ReservationHandler}, which can be integrated with the {\bfseries DataManager}. Some \emph{Drivers} simulating {\bfseries CustomerHandler} and {\bfseries MobileApp} are required to complete the test phase, and a \emph{Driver} is needed to simulate the {\bfseries StoreComponent} in testing the {\bfseries ReservationHandler}
+		\item finally, the {\bfseries CustomerHandler} can be implemented, integrated with the {\bfseries ReservationHandler} and tested. In this last phase, is needed a \emph{Driver} to simulate the {\bfseries MobileApp}
+		\end{itemize}
 		
+		After the previously described components have been developed, integrated and unit tested, it's possible to develop all the clients using them, and integrate the system in his completeness.
 		
-	
-	\subsection{Integration Strategy}
+
+		
+
 	
 	\subsection{System Testing}
 	Once the system is completely integrated, we can proceed testing it, to verify that functional and non-functional requirements are satisfied.
 	In order to consider all the possible issues that our system could have, we have to test it in different ways:
 	\begin{itemize}
-		\item \textbf{Functional Testing}: ascertains that the system meet the functional requirements described in the RASD (e.g. verify that, after creating a reservation, the system saves it in the database)
-		\item \textbf{Performance Testing}: highlights problems related to the performance and bottlenecks (e.g. verify how much time the system need to do a specific operation like changing a store parameter or generating statistics)
-		\item \textbf{Load Testing}: highlights problems memory-related such as memory leaks and buffer overflows (e.g. verify if the system works even with a large number of customer and store manager operating at the same time)
-		\item \textbf{Stress Testing}: ascertains that the application recovers in the right way after failure (e.g. see what happens after an unexpected internet disconnection during an operation)
+		\item \textbf{Functional Testing}: ascertains that the system meet the functional requirements described in the RASD. Some tests that can be conducted are creating a reservation and check if it's created correctly, checking if correct suggestions are generated, trying the working of the management of QR Codes and of number calling. Moreover, also the correctness of calculation of statistics (and so of shopping time estimation) must be tested.
+		\item \textbf{Performance Testing}: highlights problems related to the performance and bottlenecks; this test aims to check that the time constraint introduced in the RASD are respected, such as \emph{QR Codes} processing time, the time needed to call a new reservations and the one necessary to process a new one, general system responsiveness and departure notification generated in time
+		\item \textbf{Load Testing}: highlights problems memory-related such as memory leaks and buffer overflows (e.g. verify if the system works even with a large number of customer and store manager operating at the same time, respecting the constraints of 200 simultaneous users per store registered in the system, as described in the RASD)
+		\item \textbf{Stress Testing}: ascertains that the application recovers in the right way after failure (e.g. see what happens after an unexpected internet disconnection during an operation, and how the system responds to recover the data and operativity)
 	\end{itemize}
-		
-	\subsection{Additional Specification on Testing}
-	
+			
 	
 
 \section{Effort Spent}
