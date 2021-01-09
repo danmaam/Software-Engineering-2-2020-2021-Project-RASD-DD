@@ -4,7 +4,7 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>27</x>
+      <x>36</x>
       <y>522</y>
       <w>126</w>
       <h>63</h>
@@ -17,7 +17,7 @@ DBMS
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
+      <x>1053</x>
       <y>243</y>
       <w>207</w>
       <h>45</h>
@@ -30,7 +30,7 @@ CustomerInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>81</x>
+      <x>90</x>
       <y>423</y>
       <w>27</w>
       <h>117</h>
@@ -42,7 +42,7 @@ CustomerInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
+      <x>558</x>
       <y>639</y>
       <w>90</w>
       <h>99</h>
@@ -54,7 +54,7 @@ Email API</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
+      <x>1053</x>
       <y>342</y>
       <w>198</w>
       <h>45</h>
@@ -67,7 +67,7 @@ AccessInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>90</x>
+      <x>99</x>
       <y>414</y>
       <w>117</w>
       <h>45</h>
@@ -79,7 +79,7 @@ DBMS API</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>189</x>
+      <x>198</x>
       <y>153</y>
       <w>864</w>
       <h>495</h>
@@ -91,7 +91,7 @@ CLupServer</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>342</x>
+      <x>351</x>
       <y>234</y>
       <w>180</w>
       <h>54</h>
@@ -103,7 +103,7 @@ ReservationHandler</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>351</x>
+      <x>360</x>
       <y>405</y>
       <w>180</w>
       <h>54</h>
@@ -116,7 +116,7 @@ DataManager
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>261</x>
+      <x>270</x>
       <y>243</y>
       <w>99</w>
       <h>45</h>
@@ -128,7 +128,7 @@ DataManager
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>657</x>
+      <x>666</x>
       <y>369</y>
       <w>180</w>
       <h>90</h>
@@ -140,9 +140,9 @@ AccessManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>423</x>
+      <x>432</x>
       <y>342</y>
-      <w>99</w>
+      <w>108</w>
       <h>81</h>
     </coordinates>
     <panel_attributes>lt=()-[]
@@ -153,7 +153,7 @@ DataInterface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>441</x>
+      <x>450</x>
       <y>333</y>
       <w>315</w>
       <h>54</h>
@@ -165,7 +165,7 @@ DataInterface
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>675</x>
+      <x>684</x>
       <y>234</y>
       <w>180</w>
       <h>54</h>
@@ -177,7 +177,7 @@ CustomerHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
+      <x>522</x>
       <y>243</y>
       <w>135</w>
       <h>54</h>
@@ -191,7 +191,7 @@ Interface
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>189</x>
+      <x>198</x>
       <y>423</y>
       <w>90</w>
       <h>27</h>
@@ -203,7 +203,7 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>828</x>
+      <x>837</x>
       <y>405</y>
       <w>162</w>
       <h>45</h>
@@ -216,7 +216,7 @@ AccessInterface
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>495</x>
+      <x>504</x>
       <y>549</y>
       <w>144</w>
       <h>54</h>
@@ -228,7 +228,7 @@ MailComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
+      <x>567</x>
       <y>594</y>
       <w>27</w>
       <h>63</h>
@@ -240,9 +240,9 @@ MailComponent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
+      <x>567</x>
       <y>504</y>
-      <w>99</w>
+      <w>108</w>
       <h>63</h>
     </coordinates>
     <panel_attributes>lt=()-[]
@@ -252,7 +252,7 @@ MailInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>549</x>
+      <x>558</x>
       <y>405</y>
       <w>126</w>
       <h>117</h>
@@ -263,7 +263,7 @@ MailInterface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>18</x>
+      <x>27</x>
       <y>243</y>
       <w>189</w>
       <h>36</h>
@@ -275,7 +275,7 @@ Store Component</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
+      <x>855</x>
       <y>243</y>
       <w>180</w>
       <h>45</h>
@@ -288,7 +288,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
+      <x>639</x>
       <y>243</y>
       <w>63</w>
       <h>45</h>
@@ -300,7 +300,7 @@ Interface</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1008</x>
+      <x>1017</x>
       <y>252</y>
       <w>90</w>
       <h>27</h>
@@ -312,7 +312,7 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>963</x>
+      <x>972</x>
       <y>342</y>
       <w>135</w>
       <h>81</h>
@@ -324,7 +324,7 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>261</x>
+      <x>270</x>
       <y>414</y>
       <w>108</w>
       <h>45</h>
@@ -336,7 +336,7 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>414</x>
+      <x>423</x>
       <y>279</y>
       <w>45</w>
       <h>72</h>
@@ -348,7 +348,7 @@ m2=</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>189</x>
+      <x>198</x>
       <y>243</y>
       <w>90</w>
       <h>36</h>
