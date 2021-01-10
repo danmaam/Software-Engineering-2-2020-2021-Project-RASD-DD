@@ -67,7 +67,7 @@
 	\subsection{Scope}
 	\emph{CLup} is a booking application and nowadays this type of applications are more and more widespread in people's everyday life and are becoming more and more indispensable. For this reason, intelligent design choices have been made that extrapolate the positive aspects of existing booking apps, in order to make CLup really “achievable” in real life.
 	
-	The main purpose of CLup is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the customer. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easily, and moreover can reduce the crowd in front of the store, that is one of the main purposes of the application. Another important feature deals with obtaining statistics from customers and generic information from stores in order to help customers during their reservation. For this, the system has to store a very large amount of data. This data are mined and used later, which is why it is very important to identify the user's role so that we can provide him with more accurate and suitable information. Indeed a customer wants to provide information about the stores while, for example, a store manager is more interested in information about customer permanence in the store.
+	The main purpose of CLup is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the customer. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easily, and moreover can reduce the crowd in front of the store, that is one of the main purposes of the application. Another important feature deals with obtaining statistics from customers and generic information from stores in order to help customers during their reservation. For this, the system has to store a very large amount of data. This data are mined and used later, which is why it is very important to identify the user's role so that we can provide him with more accurate and suitable information. Indeed a customer wants to provide informations about the stores while, for example, a store manager is more interested in information about customer permanence in the store.
 	
 	\subsection{Definitions, Acronyms, Abbreviations}
 	\bigskip
@@ -217,15 +217,15 @@
 	\begin{itemize}
 		\item \textbf{Communication Interfaces}: to work properly, the system needs to interface over the network with both remote applications, and external services. Because of this, there are some components devoted to interact with remote devices:
 		\begin{itemize}
-			\item{\bfseries UserHandler}: to interact with users, both managers and customers, the latter both at \emph{totems}, and on app.
-			\item{\bfseries EntranceManagement}: so that the store can process a scanned \emph{QR Code} at entry/exit.
+			\item{\bfseries UserHandlerInterfaces}: to interact with users, both managers and customers, the latter both at \emph{totems}, and on app.
+			\item{\bfseries ScannerInterface}: so that the store can process a scanned \emph{QR Code} at entry/exit.
 			\item{\bfseries NumberCallingInterface}: to notify the call of a certain number.
 		\end{itemize}
 		and others designated to access external services, such as 
 		\begin{itemize}
-			\item{\bfseries Map Component}: to access an external {\bfseries Map Provider}.
+			\item{\bfseries MapComponent}: to access an external {\bfseries Map Provider}.
 			\item{\bfseries Notification Component}: to send notifications to customers through an external {\bfseries Notification Service}.
-			\item{\bfseries Mail Component}: to externally sending mails, avoiding building an internal {\bfseries Mail Manager}.
+			\item{\bfseries MailComponent}: to externally sending mails, avoiding building an internal mail service.
 		\end{itemize}
 	\begin{figure}[!h]
 		\begin{adjustwidth}{-0.8cm}{}
@@ -237,11 +237,11 @@
 	
 		\item{\bfseries Business Logic}: here there is the whole Business Logic of the system. Since each store may maintain a different logic from another, there is a Component for each store managed by the system. Each store, manages the following aspects:
 		\begin{itemize}
-			\item{\bfseries Reservation Manager}: manages all the things concerning reservations and their making. It's useful also to retrieve some important data, such as \emph{ETA}s and available time intervals to enter the store.
-			\item{\bfseries Statistic Manager}: it's the part used for the calculation of statistics about customers' shopping time, and about the average time spent in a single department. Since each store is different from the other, the statistics are maintained unique per store. This part is also used by \textbf{Reservation Manager} to calculates \emph{ETA}s and time intervals;
-			\item{\bfseries Number Calling System}: is the component dedicated to admit reserved customers inside the store.
-			\item{\bfseries Building Flow Manager}: it takes care of processing scanned \emph{QR Codes} at the entry and the exit of the store.
-			\item{\bfseries Store Settings Manager}: manages all the things concerning stores' settings and parameters, such as working hours and capacity (also for each department).
+			\item{\bfseries ReservationComponent}: manages all the things concerning reservations and their making. It's useful also to retrieve some important data, such as \emph{ETA}s and available time intervals to enter the store.
+			\item{\bfseries StatisticComponent}: it's the part used for the calculation of statistics about customers' shopping time, and about the average time spent in a single department. Since each store is different from the other, the statistics are maintained unique per store. This part is also used by \textbf{Reservation Manager} to calculates \emph{ETA}s and time intervals;
+			\item{\bfseries CallingNumberComponent}: is the component dedicated to admit reserved customers inside the store.
+			\item{\bfseries FlowComponent}: it takes care of processing scanned \emph{QR Codes} at the entry and the exit of the store.
+			\item{\bfseries ParameterManager}: manages all the things concerning stores' settings and parameters, such as working hours and capacity (also for each department, for that takes which customer is currently inside the department).
 			
 		\end{itemize} This subdivision allows to separate better the logic of each store. Moreover, there are component common to each store, so the ones designated to allow users to request services to the system.
 		\begin{itemize}
