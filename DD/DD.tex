@@ -67,7 +67,11 @@
 	\subsection{Scope}
 	\emph{CLup} is a booking application and nowadays this type of applications are more and more widespread in people's everyday life and are becoming more and more indispensable. For this reason, intelligent design choices have been made that extrapolate the positive aspects of existing booking apps, in order to make \emph{CLup} really “achievable” in real life.
 	
+<<<<<<< HEAD
 	The main purpose of \emph{CLup} is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the customer. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easily, and moreover can reduce the crowd in front of the store, that is one of the main purposes of the application. Another important feature deals with obtaining statistics from customers and generic information from stores in order to help customers during their reservation. For this, the system has to store a very large amount of data. This data are mined and used later, which is why it is very important to identify the user's role so that we can provide him with more accurate and suitable information. Indeed a customer wants to provide information about the stores while, for example, a store manager is more interested in information about customer permanence in the store.
+=======
+	The main purpose of CLup is to facilitate customers to access at a store in {\bfseries security}, both allowing them to reserve a spot on the queue for entering the store through the app and to book a visit at the store at a determined time of a certain day, selected by the customer. Thanks to this, store managers can manage the {\bfseries affluence} in their store more easily, and moreover can reduce the crowd in front of the store, that is one of the main purposes of the application. Another important feature deals with obtaining statistics from customers and generic information from stores in order to help customers during their reservation. For this, the system has to store a very large amount of data. This data are mined and used later, which is why it is very important to identify the user's role so that we can provide him with more accurate and suitable information. Indeed a customer wants to provide informations about the stores while, for example, a store manager is more interested in information about customer permanence in the store.
+>>>>>>> 49683a88ca7b1955579735be0fdaf6b35c4445ef
 	
 	\subsection{Definitions, Acronyms, Abbreviations}
 	\bigskip
@@ -217,15 +221,15 @@
 	\begin{itemize}
 		\item \textbf{Communication Interfaces}: to work properly, the system needs to interface over the network with both remote applications, and external services. Because of this, there are some components devoted to interact with remote devices:
 		\begin{itemize}
-			\item{\bfseries UserHandler}: to interact with users, both managers and customers, the latter both at \emph{totems}, and on app.
-			\item{\bfseries EntranceManagement}: so that the store can process a scanned \emph{QR Code} at entry/exit.
+			\item{\bfseries UserHandlerInterfaces}: to interact with users, both managers and customers, the latter both at \emph{totems}, and on app.
+			\item{\bfseries ScannerInterface}: so that the store can process a scanned \emph{QR Code} at entry/exit.
 			\item{\bfseries NumberCallingInterface}: to notify the call of a certain number.
 		\end{itemize}
 		and others designated to access external services, such as 
 		\begin{itemize}
-			\item{\bfseries Map Component}: to access an external {\bfseries Map Provider}.
+			\item{\bfseries MapComponent}: to access an external {\bfseries Map Provider}.
 			\item{\bfseries Notification Component}: to send notifications to customers through an external {\bfseries Notification Service}.
-			\item{\bfseries Mail Component}: to externally sending mails, avoiding building an internal {\bfseries Mail Manager}.
+			\item{\bfseries MailComponent}: to externally sending mails, avoiding building an internal mail service.
 		\end{itemize}
 	\begin{figure}[!h]
 		\begin{adjustwidth}{-0.8cm}{}
@@ -239,22 +243,22 @@
 		\begin{itemize}
 			\item{\bfseries Reservation Manager}: manages all the things concerning reservations and their making. It's useful also to retrieve some important data, such as \emph{ETA}s and available time intervals to enter the store.
 			\item{\bfseries Statistic Manager}: it's the part used for the calculation of statistics about customers' shopping time, and about the average time spent in a single department. Since each store is different from the other, the statistics are maintained unique per store. This part is also used by \textbf{Reservation Manager} to calculates \emph{ETA}s and time intervals;
-			\item{\bfseries Number Calling System}: is the component dedicated to admit reserved customers inside the store.
+			\item{\bfseries Number Calling Manager}: is the component dedicated to admit reserved customers inside the store.
 			\item{\bfseries Building Flow Manager}: it takes care of processing scanned \emph{QR Codes} at the entry and the exit of the store.
-			\item{\bfseries Store Settings Manager}: manages all the things concerning stores' settings and parameters, such as working hours and capacity (also for each department).
+			\item{\bfseries Store Settings Manager}: manages all the things concerning stores' settings and parameters, such as working hours and capacity (also for each department, for that takes which customer is currently inside the department).
 			
 		\end{itemize} This subdivision allows to separate better the logic of each store. Moreover, there are component common to each store, so the ones designated to allow users to request services to the system.
 		\begin{itemize}
 			\item {\bfseries Access Manager}: manages users' registration and log-in;
-			\item {\bfseries Suggestion Manager}: manages the retrieve of suggestions when required, or necessary;
-			\item{\bfseries Customer Alert Service}: takes care of sending departing notifications to customers.
+			\item {\bfseries Suggestion Manager}: manages the generation of suggestions, when needed;
+			\item{\bfseries Customer Alert Service}: handles the send of notifications to tell customers it's time to leave for the store.
 		\end{itemize}
-	At the end, there is another block: the \textbf{Data Interface}: it represents the \emph{Data Tier} of the system and separates the Business Logic from the data. It interacts with the \emph{DBMS} to store and load informations.
+	At the end, there is another block: the \textbf{Data Tier}: it separates the Business Logic from the data. It interacts with the \emph{DBMS} to store and load informations.
 	\end{itemize}
 
 	
 	\subsection{Component View}
-		The aim of this section is to give a look to the architectural aspect of the analyzed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through {\bfseries Component Diagrams}, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system would know the behaviour of each component.\\
+		The aim of this section is to give a look to the architectural aspect of the analysed system. In doing this, a top-down approach will be followed, starting from a very general view of the system, then going into more detail through {\bfseries Component Diagrams}, more and more detailed. This allows us to precisely describe each component of \emph{CLup}, so that who will develop the system would know the behaviour of each component.\\
 		
 		\begin{itemize}
 			\item {\bfseries MobileApp}: it is the component relative to the mobile application used by store managers and customers; in order to access \emph{CLup} services. It uses three interfaces: \emph{CustomerInterface}, \emph{StoreInterface}, used to access functionalities respectively for customers and store managers, and \emph{AccessInterface}, that allows users to log-in and register. Moreover, uses \emph{MapsAPI} to access to cartographic services, and \emph{NotificationAPI} to send local notifications.
@@ -263,9 +267,9 @@
 			
 			\item {\bfseries StoreComponent}: it is the component that principally manages the business logic of the system, since takes care of the functionalities associated with a single store. Each store will have its own {\bfseries Store Component} deployed in a dedicated container. The aim of this is to separate the critical functionalities of each store, to reduce the risk of a complete block of the system and to make maintenance easier in case of dysfunctionality of a single store.
 			
-			\item {\bfseries TotemApp}: it is the component that represents the interface used by a physical totem installed at stores in order to request the issue of a ticket. The totem interface is separated from the Mobile App’s one, since a totem can request tickets only to the store where it’s installed, directly communicating with it.
+			\item {\bfseries TotemApp}: it is the component that represents the interface used by a physical totem installed at stores in order to request the issue of a ticket. The totem interface is separated from the Mobile App’s one, since a totem can request tickets only to the store where it’s installed, directly communicating with it, through its handler.
 			
-			\item {\bfseries ScannerApp}: it is the component that represents \emph{QR Scanners}’, that asks the associated store to process the scanned \emph{QR Codes}.
+			\item {\bfseries ScannerApp}: it is the component that represents \emph{QR Scanners}, that asks the associated store to process the scanned \emph{QR Codes}.
 			
 			\item {\bfseries NumberCallingApp}: it is the component designated to notify at stores that a number has been called. It’s used by the associated store to notify that some customers are admitted to enter the store.		
 		\end{itemize}
@@ -283,7 +287,19 @@
 		\end{itemize}
 	
 		It has been chosen to not develop these features, since there isn’t a real necessity of making them from scratch: the existing ones work well, are already tested and complete (for example, developing an internal map service will require inserting the whole world cartography, while a non \emph{OS}-integrated notification service must deal with aggressive \emph{OS}es’ power management). Moreover, this outsourcing allows to reduce the time for developing the system, and the maintenance costs, since it’s externally done by the service provider.
+
+		\subsubsection{Adapters}
+		The system uses some “Adapters” to access the external services; no \emph{API}s are directly exposed to any component but the adapters. 		So, it is sufficient to change the corresponding adapter to migrate to another service, without the need of rewriting code of other components. Moreover, if required in some circumstances, it’s possible to use different external services: it is sufficient to use the correct adapter in order to access the desired service.
 		
+				\begin{itemize}
+			\item {\bfseries MapManager}: it is the component that takes requests from other components, and redirects them to the chosen external {\bfseries Map Service}.
+			
+			\item {\bfseries NotificationComponent}: since each mobile \emph{OS} uses its own notification service, this adapter takes in requests of notification sending, and redirects them to the correct service; the latter will take care of delivering the notification to the customer.
+			
+			\item {\bfseries MailComponent}: an adapter used to send emails; as the previous ones, allows to change the used mail service painlessly.
+			
+			\item {\bfseries DataManager}: probably, the most important adapter of the system, since it is the one connecting the other components to the system’s data logic. 
+		\end{itemize}
 		
 
 		\begin{figure}
@@ -295,18 +311,9 @@
 		\end{figure}
 		\newpage
 		
-		\subsubsection{Adapters}
-		The system uses some “Adapters” to access the external services; no \emph{API}s are directly exposed to any component but the adapters. So, it is sufficient to change the corresponding adapter to migrate to another service, without the need of rewriting code of other components. Moreover, if required in some circumstances, it’s possible to use different external services: it is sufficient to use the correct adapter in order to access the desired service.
+
 		
-		\begin{itemize}
-			\item {\bfseries MapManager}: it is the component that takes requests from other components, and redirects them to the chosen external {\bfseries Map Service}.
-			
-			\item {\bfseries NotificationComponent}: since each mobile \emph{OS} uses its own notification service, this adapter takes in requests of notification sending, and redirects them to the correct service; the latter will take care of delivering the notification to the customer.
-			
-			\item {\bfseries MailComponent}: an adapter used to send emails; as the previous ones, allows to change the used mail service painlessly.
-			
-			\item {\bfseries DataManager}: probably, the most important adapter of the system, since it is the one connecting the other components to the system’s data logic. 
-		\end{itemize}
+
 		
 		
 		Here, there is described the adapter for \emph{DBMS}, since it’s the most articulated among those.
@@ -387,10 +394,10 @@
 						\item Registration
 					\end{itemize}
 				
-					The component uses two very important interfaces: \emph{EmailAPI} and \emph{DataInterface}. The first one is used for the registration, in order to send confirmation messages, while the second one is used for storing registration data, and to check credentials for log-in operations. Furthermore, its services are requested through the \emph{AccessInterface}, that implements the interfaces exposed by {\bfseries Login Component}, and {\bfseries Registration Component}. This component is invoked by \emph{StoreManagerAccessInterface} and \emph{CustomerAccessInterface} in case an user wants to log in or register
+					The component uses two very important interfaces: \emph{EmailAPI} and \emph{DataInterface}. The first one is used for the registration, in order to send confirmation messages, while the second one is used for storing registration data, and to check credentials for log-in operations. Furthermore, its services are requested through the \emph{AccessInterface}, that implements the interfaces exposed by {\bfseries Login Component}, and {\bfseries Registration Component}. This component is invoked by MobileApp's \emph{AccessManager} in case an user wants to log in or register
 					
 					\begin{itemize}
-						\item {\bfseries LoginManager}: it is the component that manages user’s login. Indeed, if a user logs in, the component checks if the credentials are correct and then allows the user to use their personal area.
+						\item {\bfseries LoginManager}: it is the component that manages user’s login. Indeed, if a user logs in, the component checks if the credentials are correct and then allows the user to use their personal area, and the only functions for that they are authorized.
 						
 						\item {\bfseries RegistrationManager}: it is the component that manages the user’s registration. Indeed, if a user makes a registration, this component, at the beginning, checks through \emph{DataInterface} if the data inserted by the user are valid (e.g. uniqueness of the email, or certification for store managers). Then, if the data are correct, the user’s data are stored in the \emph{DBMS}.
 						
@@ -776,6 +783,11 @@
 		\item{\bfseries Facade Pattern}: used to allow the {\bfseries StoreManagerHandler} to access more easily to multiple components trough the different interfaces they implement.
 	\end{itemize}
 	
+<<<<<<< HEAD
+=======
+
+\newpage
+>>>>>>> 49683a88ca7b1955579735be0fdaf6b35c4445ef
 \section{User Interface Design}
 This section shows and describes accurately the mockups of the application, in order to explain how the main functionalities will be offered. The first subsection is dedicated to the illustration of the application flow, shown using two different \emph{UX diagram}, one for the customer and one for the store manager.
 	\subsection{UX Diagrams}
@@ -1073,7 +1085,7 @@ This section shows and describes accurately the mockups of the application, in o
 		In this section is shown the mockup about the management of the store parameters. A store manager can decide to modify many personal parameters like Store \emph{ID} and password and many parameters that influence the customers' reservations. Indeed is possible to modify the opening and closure time of the store, the max simoultaneous booking per week by a customer and the capacity allowed for each deaprtments and for the entire store
 		\bigskip
 		\bigskip
-		\begin{figure}[!h]
+		\begin{figure}
 			\begin{adjustwidth} {0cm}{}
 				\centering
 				\includegraphics[scale=0.17]{../Mockups/ModifyParameters.png}\\
